@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,OAAO,CAAC,qFAAI",
     "sources": [
-        "../Sass/style.scss"
+        "../Sass/style.scss",
+        "../Sass/_mixins.scss"
     ],
     "names": [],
     "file": "style.css"
