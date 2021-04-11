@@ -1,5 +1,27 @@
-@mixin font($size, $weight){
+@mixin font($color, $line-height, $size, $weight){
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    text-align: center; /*à voir si je dois le passer en argument plus tard*/    
+    color: $color;
+    line-height: $line-height;
     font-size: $size;
     font-weight: $weight;
-    font-family: 'DM Sans', sans-serif;
+}
+
+@mixin card($top, $left){
+    position: absolute;
+    width: 200px;
+    height: 310px;
+    top: $top;
+    left: $left;
+}
+
+@mixin tag-link($width){
+    display: inline-block;
+    border: 0.5px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    padding: 0.8px;
+    width: $width;
+    @include font($darkColor, 16px, 12px, 500);
 }

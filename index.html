@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fisheye-Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -12,19 +13,21 @@
             <img class="logo" src="images/logo.png" alt="Fisheye Home page">
         </a>
         <nav>
-            <a class="tags-links" href="">#Portrait</a>
-            <a class="tags-links" href="">#Art</a>
-            <a class="tags-links" href="">#Fashion</a>
-            <a class="tags-links" href="">#Architecture</a>
-            <a class="tags-links" href="">#Travel</a>
-            <a class="tags-links" href="">#Sport</a>
-            <a class="tags-links" href="">#Animals</a>
-            <a class="tags-links" href="">#Events</a>
+            <ul>
+                <li id="tag-link--portrait"><a href="">#Portrait</a></li>
+                <li id="tag-link--art"><a href="">#Art</a></li>
+                <li id="tag-link--fashion"><a href="">#Fashion</a></li>
+                <li id="tag-link--architecture"><a href="">#Architecture</a></li>
+                <li id="tag-link--travel"><a href="">#Travel</a></li>
+                <li id="tag-link--sport"><a href="">#Sport</a></li>
+                <li id="tag-link--animals"><a href="">#Animals</a></li>
+                <li id="tag-link--events"><a href="">#Events</a></li>
+            </ul>
         </nav>
     </header>
     <main>
         <h1 class="home-first-heading">Nos photographes</h1>
-        <article class="card"><!--carte Mimi Keel-->
+        <article id="card1" class="card"><!--carte Mimi Keel-->
             <section class="card-profile">
                 <a href="">
                     <img class="card-profile__img" src="images/Mimi/Portrait_Nora.jpg" alt="">
@@ -37,16 +40,22 @@
                 <p class="card-info__price">400€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#portrait</a>
-                <a class="tags-links" href="">#events</a>
-                <a class="tags-links" href="">#travel</a>
-                <a class="tags-links" href="">#animals</a>
+                <ul>
+                    <li id="mimi-tag1" class="tags-links"><a href="">#portrait</a></li>
+                    <li id="mimi-tag2" class="tags-links"><a href="">#events</a></li>
+                    <li id="mimi-tag3" class="tags-links"><a href="">#travel</a></li>
+                    <li id="mimi-tag4" class="tags-links"><a href="">#animals</a></li>
+                </ul>
+                
+                
+                
+                
             </section>
         </article>
-        <article class="card"><!--carte Ellie-Rose Wilkens-->
+        <article id="card2" class="card"><!--carte Ellie-Rose Wilkens-->
             <section class="card-profile">
                 <a href="">
-                    <img class="card-profile__img" src="images/Ellie Rose/Architecture_Horseshoe.jpg" alt="">
+                    <img class="card-profile__img" src="images/ellie-rose/Architecture_Horseshoe.jpg" alt="">
                     <h2 class="card-profile__name">Ellie-Rose Wilkens</h2>
                 </a>
             </section>
@@ -56,11 +65,13 @@
                 <p class="card-info__price">250€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#sports</a>
-                <a class="tags-links" href="">#architecture</a>
+                <ul>
+                    <li id="ellie-tag1" class="tags-links"><a href="">#sports</a></li>
+                    <li id="ellie-tag2" class="tags-links"><a href="">#architecture</a></li>
+                </ul>
             </section>
         </article>
-        <article class="card"><!--carte Tracy Galindo-->
+        <article id="card3" class="card"><!--carte Tracy Galindo-->
             <section class="card-profile">
                 <a href="">
                     <img class="card-profile__img" src="images/Tracy/Fashion_Urban_Jungle.jpg" alt="">
@@ -73,12 +84,14 @@
                 <p class="card-info__price">500€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#art</a>
-                <a class="tags-links" href="">#fashion</a>
-                <a class="tags-links" href="">#events</a>
+                <ul>
+                    <li id="tracy-tag1" class="tags-links"><a href="">#art</a></li>
+                    <li id="tracy-tag2" class="tags-links"><a href="">#fashion</a></li>
+                    <li id="tracy-tag3" class="tags-links"><a href="">#events</a></li>
+                </ul>
             </section>
         </article>
-        <article class="card"><!--carte Nabeel Bradtord-->
+        <article id="card4" class="card"><!--carte Nabeel Bradtord-->
             <section class="card-profile">
                 <a href="">
                     <img class="card-profile__img" src="images/Nabeel/Travel_Outdoor_Baths.jpg" alt="">
@@ -91,11 +104,13 @@
                 <p class="card-info__price">350€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#travel</a>
-                <a class="tags-links" href="">#portraits</a>
+                <ul>
+                    <li><a id="nabeel-tag1" class="tags-links" href="">#travel</a></li>
+                    <li><a id="nabeel-tag2" class="tags-links" href="">#portraits</a></li>
+                </ul>
             </section>
         </article>
-        <article class="card"><!--carte Rhode Dubois-->
+        <article id="card5" class="card"><!--carte Rhode Dubois-->
             <section class="card-profile">
                 <a href="">
                     <img class="card-profile__img" src="images/Rhode/Fashion_Melody_Red_on_Stripes.jpg" alt="">
@@ -108,13 +123,15 @@
                 <p class="card-info__price">375€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#sport</a>
-                <a class="tags-links" href="">#fashion</a>
-                <a class="tags-links" href="">#events</a>
-                <a class="tags-links" href="">#animals</a>
+                <ul>
+                    <li id="rhode-tag1" class="tags-links"><a href="">#sport</a></li>
+                    <li id="rhode-tag2" class="tags-links"><a href="">#fashion</a></li>
+                    <li id="rhode-tag3" class="tags-links"><a href="">#events</a></li>
+                    <li id="rhode-tag4" class="tags-links"><a href="">#animals</a></li>
+                </ul>
             </section>
         </article>
-        <article class="card"><!--carte Marcel Nikolic-->
+        <article id="card6" class="card"><!--carte Marcel Nikolic-->
             <section class="card-profile">
                 <a href="">
                     <img class="card-profile__img" src="images/Marcel/Travel_Tower.jpg" alt="">
@@ -127,8 +144,10 @@
                 <p class="card-info__price">300€/jour</p>
             </section>
             <section class="card-tags">
-                <a class="tags-links" href="">#travel</a>
-                <a class="tags-links" href="">#architecture</a>
+                <ul>
+                    <li id="marcel-tag1" class="tags-links"><a href="">#travel</a></li>
+                    <li id="marcel-tag2" class="tags-links"><a href="">#architecture</a></li>
+                </ul>
             </section>
         </article>
     </main>

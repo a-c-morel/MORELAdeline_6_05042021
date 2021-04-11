@@ -1,1 +1,480 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'), 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap'), 'variables', 'mixins', 'extensions';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    background: #ffffff;
+}
+
+main{
+    height: 240vh;
+}
+
+ul{
+    list-style-type: none;
+    /*width: 100%;*/
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li{
+        margin-right: 5px
+    }
+}
+
+a{
+    text-decoration: none;
+    &:visited{
+        color: inherit;
+    }
+}
+
+.logo{
+    position: absolute;
+    width: 150px;
+    height: 37.5px;
+    left: 20px;
+    top: 40px;
+}
+
+.home-first-heading{
+    @include font($darkColor, 18px, 14px, normal);
+    position: absolute;
+    width: 119px;
+    height: 18px;
+    left: 234px;
+    top: 50px;
+}
+
+header{
+    nav{
+    position: absolute;
+    width: 285px;
+    height: 50px;
+    left: 39px;
+    top: 109px;
+    #tag-link{
+        &--portrait{
+            @include tag-link(68px);
+        }
+        &--art{
+            @include tag-link(41px);
+        }
+        &--fashion{
+            @include tag-link(68px);
+        }
+        &--architecture{
+            @include tag-link(92px);
+            margin-right: 0;
+        }
+        &--travel{
+            @include tag-link(58px);
+            margin-top: 5px;
+        }
+        &--sport{
+            @include tag-link(55px);
+            margin-top: 5px;
+        }
+        &--animals{
+            @include tag-link(65px);
+            margin-top: 5px;
+        }
+        &--events{
+            @include tag-link(63px);
+            margin-right: 0;
+            margin-top: 5px;
+        }
+    }
+    }
+}
+
+#card1{
+    position: absolute;
+    @include card(205px, 88px);
+    .card-profile__img{
+        @extend %profile-image;
+        object-position: 70% 0%;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: 10.5%;
+        right: 10%;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 33.5%;
+        right: 33%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 32px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: -28px;
+        }
+        #mimi-tag1{
+            @include tag-link(64px);
+        }
+        #mimi-tag2{
+            @include tag-link(59px);
+        }
+        #mimi-tag3{
+            @include tag-link(54px);
+        }
+        #mimi-tag4{
+            @include tag-link(62px);
+            margin-right: 0;
+        }
+    }
+}
+
+#card2{
+    position: absolute;
+    @include card(576px, 88px);
+    .card-profile__img{
+        @extend %profile-image;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: -25%;
+        right: -25.5%;;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+        width: 301px;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 31%;
+        right: 31%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+        width: 76px;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 4px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal);
+        /* la line-height doit être la mm que la box height */
+        width: 192px;
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            /*width: 100vw;*/
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #ellie-tag1{
+            @include tag-link(58px);
+        }
+        #ellie-tag2{
+            @include tag-link(88px);
+            margin-right: 0;
+        }
+    }
+}
+
+#card3{
+    position: absolute;
+    @include card(947px, 88px);
+    .card-profile__img{
+        @extend %profile-image;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: -7%;
+        right: -7.5%;;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+        width: 229px;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 24%;
+        right: 23.5%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+        width: 105px;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 48px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal);
+        /* la line-height doit être la mm que la box height */
+        width: 105px;
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            /*width: 100vw;*/
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #tracy-tag1{
+            @include tag-link(39px);
+        }
+        #tracy-tag2{
+            @include tag-link(61px);
+        }
+        #tracy-tag3{
+            @include tag-link(54px);
+            margin-right: 0; 
+        }
+    }
+}
+
+#card4{
+    position: absolute;
+    @include card(1318px, 88px);
+    /*Il faut ajouter 371px à chaque fois pour le top*/
+    .card-profile__img{
+        @extend %profile-image;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: -17.5%;
+        right: -17.5%;;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+        width: 272px;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 20.5%;
+        right: 20%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+        width: 119px;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 41px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal);
+        /* la line-height doit être la mm que la box height */
+        width: 119px;
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            /*width: 100vw;*/
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #nabeel-tag1{
+            @include tag-link(52px);
+        }
+        #nabeel-tag2{
+            @include tag-link(67px);
+            margin-right: 0;
+        }
+    }
+}
+
+#card5{
+    position: absolute;
+    @include card(1689px, 88px);
+    /*Il faut ajouter 371px à chaque fois pour le top*/
+    .card-profile__img{
+        @extend %profile-image;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: -8%;
+        right: -8.5%;;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+        width: 234px;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 25.5%;
+        right: 25%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+        width: 99px;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 50px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal);
+        /* la line-height doit être la mm que la box height */
+        width: 101px;
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            /*width: 100vw;*/
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #rhode-tag1{
+            @include tag-link(51px);
+        }
+        #rhode-tag2{
+            @include tag-link(60px);
+        }
+        #rhode-tag3{
+            @include tag-link(56px);
+        }
+        #rhode-tag4{
+            @include tag-link(62px);
+            margin-right: 0;
+        }
+    }
+}
+
+#card6{
+    position: absolute;
+    @include card(2060px, 88px);
+    /*Il faut ajouter 371px à chaque fois pour le top*/
+    .card-profile__img{
+        @extend %profile-image;
+    }
+    .card-profile__name{
+        position: absolute;
+        left: -7.5%;
+        right: -7.5%;;
+        top: 70.97%;
+        bottom: 13.87%;
+        @extend %profile-name;
+        width: 232px;
+    }
+    .card-info__location{
+        position: absolute;
+        left: 26.5%;
+        right: 26%;
+        top: 86.13%;
+        bottom: 8.39%;
+        @extend %info-location;
+        width: 95px;
+    }
+    .card-info__quote{
+        position: absolute;
+        left: 17px;
+        top: 287px;
+        @include font(#000000, 13px, 10px, normal);
+        /* la line-height doit être la mm que la box height */
+        width: 167px;
+    }
+    .card-info__price{
+        position: absolute;
+        width: 45px;
+        height: 12px;
+        left: 78px;
+        top: 303px;
+        @include font(#757575, 12px, 9px, normal)
+        /* la line-height doit être la mm que la box height */
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            /*width: 100vw;*/
+            flex-wrap: nowrap;
+            position: absolute;
+            top: 104.19%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #marcel-tag1{
+            @include tag-link(53px);
+        }
+        #marcel-tag2{
+            @include tag-link(88px);
+        }
+    }
+}
+

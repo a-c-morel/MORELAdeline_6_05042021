@@ -1,0 +1,23 @@
+%profile-image{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    width: 200px;
+    height: 200px;
+    background: #C4C4C4;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
+    border-radius: $round;
+}
+
+%profile-name{
+    @include font($mediumColor, 47px, 36px, normal);
+    /* la line-height doit être la mm que la box height */
+}
+
+%info-location{
+    @include font($darkColor, 17px, 13px, normal);
+    /* la line-height doit être la mm que la box height */
+}
