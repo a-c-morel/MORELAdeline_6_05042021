@@ -1,0 +1,301 @@
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    background: #721010;
+}
+
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li{
+        margin-right: .3rem
+    }
+}
+
+a{
+    text-decoration: none;
+    &:visited{
+        color: inherit;
+    }
+}
+
+.logo{
+    width: 9.4rem;
+    height: 2.3rem;
+}
+
+.home-first-heading{
+    @include font($darkColor, 1.13rem, .86rem, normal);
+    position: absolute;
+    width: 7.4rem;
+    height: 1.1rem;
+    left: 14.6rem;
+    top: 3.1rem;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2.7rem;
+    padding-left: 1.25rem;
+    nav{
+    width: 17.8rem;
+    height: 3.1rem;
+    margin-top: 2rem;
+    margin-bottom: 3.1rem;
+    margin-left: 1.2rem;
+    #tag-link{
+        &--portrait{
+            @include tag-link(4.3rem);
+        }
+        &--art{
+            @include tag-link(2.5rem);
+        }
+        &--fashion{
+            @include tag-link(4.25rem);
+        }
+        &--architecture{
+            @include tag-link(5.75rem);
+            margin-right: 0;
+        }
+        &--travel{
+            @include tag-link(3.63rem);
+            margin-top: .31rem;
+        }
+        &--sport{
+            @include tag-link(3.44rem);
+            margin-top: .31rem;
+        }
+        &--animals{
+            @include tag-link(4.06rem);
+            margin-top: .31rem;
+        }
+        &--events{
+            @include tag-link(3.94rem);
+            margin-right: 0;
+            margin-top: .31rem;
+        }
+    }
+    }
+}
+
+
+
+#card1{
+    .card-profile__img{
+        @include profile-image(25rem, 25rem, -3.1rem -5rem);
+    }
+    .card-info__price{
+        width: 2.81rem;
+        height: .75rem;
+        @include font(#757575, .75rem, .56rem, normal);
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: nowrap;
+        }
+        #mimi-tag1{
+            @include tag-link(4rem);
+        }
+        #mimi-tag2{
+            @include tag-link(3.68rem);
+        }
+        #mimi-tag3{
+            @include tag-link(3.38rem);
+        }
+        #mimi-tag4{
+            @include tag-link(3.88rem);
+            margin-right: 0;
+        }
+    }
+}
+
+#card2{
+    .card-profile__name{
+        width: 18.8rem;
+    }
+    .card-info__location{
+        width: 4.75rem;
+    }
+    /*.card-info__quote{
+        width: 12.1rem;
+    }*/
+    .card-info__price{
+        @include font(#757575, .75rem, .56rem, normal)
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        #ellie-tag1{
+            @include tag-link(3.6rem);
+        }
+        #ellie-tag2{
+            @include tag-link(5.5rem);
+            margin-right: 0;
+        }
+    }
+}
+
+#card3{
+    .card-profile__img{
+        @include profile-image(40.6rem, 40.6rem, -9.4rem -11.9rem);
+    }
+    .card-profile__name{
+        width: 14.31rem;
+    }
+    .card-info__location{
+        width: 6.56rem;
+    }
+    /*.card-info__quote{
+        width: 6.6rem;
+    }*/
+    .card-info__price{
+        @include font(#757575, .75rem, .56rem, normal)
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        #tracy-tag1{
+            @include tag-link(2.44rem);
+        }
+        #tracy-tag2{
+            @include tag-link(3.81rem);
+        }
+        #tracy-tag3{
+            @include tag-link(3.38rem);
+            margin-right: 0; 
+        }
+    }
+}
+
+#card4{
+    .card-profile__img{
+        @include profile-image(40.63rem, 40.63rem, -9.38rem -12.2rem);
+    }
+    .card-profile__name{
+        width: 17rem;
+    }
+    .card-info__location{
+        width: 7.44rem;
+    }
+    /*.card-info__quote{
+        width: 7.5rem;
+    }*/
+    .card-info__price{
+        @include font(#757575, .75rem, .56rem, normal)
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        #nabeel-tag1{
+            @include tag-link(3.25rem);
+        }
+        #nabeel-tag2{
+            @include tag-link(4.2rem);
+            margin-right: 0;
+        }
+    }
+}
+
+#card5{
+    .card-profile__img{
+        @include profile-image(46.9rem, 46.9rem, -7.5rem -5rem);
+    }
+    .card-profile__name{
+        width: 14.63rem;
+    }
+    .card-info__location{
+        width: 6.2rem;
+    }
+    /*.card-info__quote{
+        width: 6.4rem;
+    }*/
+    .card-info__price{
+        @include font(#757575, .75rem, .56rem, normal)
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        #rhode-tag1{
+            @include tag-link(3.2rem);
+        }
+        #rhode-tag2{
+            @include tag-link(3.75rem);
+        }
+        #rhode-tag3{
+            @include tag-link(3.5rem);
+        }
+        #rhode-tag4{
+            @include tag-link(3.9rem);
+            margin-right: 0;
+        }
+    }
+}
+
+#card6{
+    .card-profile__img{
+        @include profile-image(25rem, 25rem, -12.5rem -5rem);
+    }
+    .card-profile__name{
+        width: 14.5rem;
+    }
+    .card-info__location{
+        width: 5.94rem;
+    }
+    /*.card-info__quote{
+        width: 10.5rem;
+    }*/
+    .card-info__price{
+        @include font(#757575, .75rem, .56rem, normal)
+        /* la line-height doit être la mm que la box height ???*/
+    }
+    .card-tags{
+        ul{
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        #marcel-tag1{
+            @include tag-link(3.31rem);
+        }
+        #marcel-tag2{
+            @include tag-link(5.5rem);
+        }
+    }
+}

@@ -1,0 +1,761 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+/*COLOURS*/
+/*VALUES*/
+.card {
+  max-width: 32.87rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  /*width: 12.5rem;*/
+  height: 19.4rem;
+  margin-bottom: 1.8rem;
+  background-color: red;
+}
+.card .card-profile a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.card .card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 32.87rem;
+}
+.card .card-profile figure {
+  max-width: 12.5rem;
+  max-height: 12.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.card .card-profile__img {
+  width: 12.5rem;
+  height: 12.5rem;
+  max-width: 12.5rem;
+  background: #C4C4C4;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+  border-radius: 50%;
+}
+.card .card-profile__name {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #D3573C;
+  line-height: 2.9rem;
+  font-size: 2.25rem;
+  font-weight: normal;
+}
+.card .card-info__location {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1.06rem;
+  font-size: 0.81rem;
+  font-weight: normal;
+}
+.card .card-info__quote {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #000000;
+  line-height: 0.81rem;
+  font-size: 0.63rem;
+  font-weight: normal;
+  /* la line-height doit être la mm que la box height ???*/
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #721010;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ul li {
+  margin-right: 0.3rem;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+}
+
+.logo {
+  width: 9.4rem;
+  height: 2.3rem;
+}
+
+.home-first-heading {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1.13rem;
+  font-size: 0.86rem;
+  font-weight: normal;
+  position: absolute;
+  width: 7.4rem;
+  height: 1.1rem;
+  left: 14.6rem;
+  top: 3.1rem;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 2.7rem;
+  padding-left: 1.25rem;
+}
+header nav {
+  width: 17.8rem;
+  height: 3.1rem;
+  margin-top: 2rem;
+  margin-bottom: 3.1rem;
+  margin-left: 1.2rem;
+}
+header nav #tag-link--portrait {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 4.3rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+header nav #tag-link--art {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 2.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+header nav #tag-link--fashion {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 4.25rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+header nav #tag-link--architecture {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 5.75rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+header nav #tag-link--travel {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.63rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.31rem;
+}
+header nav #tag-link--sport {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.44rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.31rem;
+}
+header nav #tag-link--animals {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 4.06rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.31rem;
+}
+header nav #tag-link--events {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.94rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+  margin-top: 0.31rem;
+}
+
+#card1 .card-profile__img {
+  height: 25rem;
+  width: 25rem;
+  object-position: -3.1rem -5rem;
+}
+#card1 .card-info__price {
+  width: 2.81rem;
+  height: 0.75rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+  /* la line-height doit être la mm que la box height ???*/
+}
+#card1 .card-tags ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+#card1 .card-tags #mimi-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 4rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card1 .card-tags #mimi-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.68rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card1 .card-tags #mimi-tag3 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.38rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card1 .card-tags #mimi-tag4 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.88rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+
+#card2 {
+  /*.card-info__quote{
+      width: 12.1rem;
+  }*/
+}
+#card2 .card-profile__name {
+  width: 18.8rem;
+}
+#card2 .card-info__location {
+  width: 4.75rem;
+}
+#card2 .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+}
+#card2 .card-tags ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#card2 .card-tags #ellie-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.6rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card2 .card-tags #ellie-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 5.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+
+#card3 {
+  /*.card-info__quote{
+      width: 6.6rem;
+  }*/
+}
+#card3 .card-profile__img {
+  height: 40.6rem;
+  width: 40.6rem;
+  object-position: -9.4rem -11.9rem;
+}
+#card3 .card-profile__name {
+  width: 14.31rem;
+}
+#card3 .card-info__location {
+  width: 6.56rem;
+}
+#card3 .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+}
+#card3 .card-tags ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#card3 .card-tags #tracy-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 2.44rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card3 .card-tags #tracy-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.81rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card3 .card-tags #tracy-tag3 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.38rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+
+#card4 {
+  /*.card-info__quote{
+      width: 7.5rem;
+  }*/
+}
+#card4 .card-profile__img {
+  height: 40.63rem;
+  width: 40.63rem;
+  object-position: -9.38rem -12.2rem;
+}
+#card4 .card-profile__name {
+  width: 17rem;
+}
+#card4 .card-info__location {
+  width: 7.44rem;
+}
+#card4 .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+}
+#card4 .card-tags ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#card4 .card-tags #nabeel-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.25rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card4 .card-tags #nabeel-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 4.2rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+
+#card5 {
+  /*.card-info__quote{
+      width: 6.4rem;
+  }*/
+}
+#card5 .card-profile__img {
+  height: 46.9rem;
+  width: 46.9rem;
+  object-position: -7.5rem -5rem;
+}
+#card5 .card-profile__name {
+  width: 14.63rem;
+}
+#card5 .card-info__location {
+  width: 6.2rem;
+}
+#card5 .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+}
+#card5 .card-tags ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#card5 .card-tags #rhode-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.2rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card5 .card-tags #rhode-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.75rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card5 .card-tags #rhode-tag3 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card5 .card-tags #rhode-tag4 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.9rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-right: 0;
+}
+
+#card6 {
+  /*.card-info__quote{
+      width: 10.5rem;
+  }*/
+}
+#card6 .card-profile__img {
+  height: 25rem;
+  width: 25rem;
+  object-position: -12.5rem -5rem;
+}
+#card6 .card-profile__name {
+  width: 14.5rem;
+}
+#card6 .card-info__location {
+  width: 5.94rem;
+}
+#card6 .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+}
+#card6 .card-tags ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+#card6 .card-tags #marcel-tag1 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 3.31rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+#card6 .card-tags #marcel-tag2 {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  width: 5.5rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */
