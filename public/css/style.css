@@ -18,13 +18,6 @@
   justify-content: space-around;
   align-items: center;
 }
-.card .card-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  max-width: 32.87rem;
-}
 .card .card-profile figure {
   max-width: 12.5rem;
   max-height: 12.5rem;
@@ -50,6 +43,13 @@
   font-size: 2.25rem;
   font-weight: normal;
 }
+.card .card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 32.87rem;
+}
 .card .card-info__location {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
@@ -59,6 +59,7 @@
   line-height: 1.06rem;
   font-size: 0.81rem;
   font-weight: normal;
+  margin-bottom: 0.19rem;
 }
 .card .card-info__quote {
   font-family: "DM Sans", sans-serif;
@@ -69,7 +70,23 @@
   line-height: 0.81rem;
   font-size: 0.63rem;
   font-weight: normal;
-  /* la line-height doit être la mm que la box height ???*/
+  margin-bottom: 0.19rem;
+}
+.card .card-info__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #757575;
+  line-height: 0.75rem;
+  font-size: 0.56rem;
+  font-weight: normal;
+  margin-bottom: 0.38rem;
+}
+.card .card-tags ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
 }
 
 * {
@@ -292,25 +309,7 @@ header nav #tag-link--events {
   width: 25rem;
   object-position: -3.1rem -5rem;
 }
-#card1 .card-info__price {
-  width: 2.81rem;
-  height: 0.75rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-  /* la line-height doit être la mm que la box height ???*/
-}
-#card1 .card-tags ul {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-}
-#card1 .card-tags #mimi-tag1 {
+#card1 #mimi-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -327,7 +326,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card1 .card-tags #mimi-tag2 {
+#card1 #mimi-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -344,7 +343,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card1 .card-tags #mimi-tag3 {
+#card1 #mimi-tag3 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -361,7 +360,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card1 .card-tags #mimi-tag4 {
+#card1 #mimi-tag4 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -380,33 +379,7 @@ header nav #tag-link--events {
   margin-right: 0;
 }
 
-#card2 {
-  /*.card-info__quote{
-      width: 12.1rem;
-  }*/
-}
-#card2 .card-profile__name {
-  width: 18.8rem;
-}
-#card2 .card-info__location {
-  width: 4.75rem;
-}
-#card2 .card-info__price {
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-}
-#card2 .card-tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-#card2 .card-tags #ellie-tag1 {
+#card2 #ellie-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -423,7 +396,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card2 .card-tags #ellie-tag2 {
+#card2 #ellie-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -442,38 +415,12 @@ header nav #tag-link--events {
   margin-right: 0;
 }
 
-#card3 {
-  /*.card-info__quote{
-      width: 6.6rem;
-  }*/
-}
 #card3 .card-profile__img {
   height: 40.6rem;
   width: 40.6rem;
   object-position: -9.4rem -11.9rem;
 }
-#card3 .card-profile__name {
-  width: 14.31rem;
-}
-#card3 .card-info__location {
-  width: 6.56rem;
-}
-#card3 .card-info__price {
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-}
-#card3 .card-tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-#card3 .card-tags #tracy-tag1 {
+#card3 #tracy-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -490,7 +437,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card3 .card-tags #tracy-tag2 {
+#card3 #tracy-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -507,7 +454,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card3 .card-tags #tracy-tag3 {
+#card3 #tracy-tag3 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -526,38 +473,12 @@ header nav #tag-link--events {
   margin-right: 0;
 }
 
-#card4 {
-  /*.card-info__quote{
-      width: 7.5rem;
-  }*/
-}
 #card4 .card-profile__img {
   height: 40.63rem;
   width: 40.63rem;
   object-position: -9.38rem -12.2rem;
 }
-#card4 .card-profile__name {
-  width: 17rem;
-}
-#card4 .card-info__location {
-  width: 7.44rem;
-}
-#card4 .card-info__price {
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-}
-#card4 .card-tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-#card4 .card-tags #nabeel-tag1 {
+#card4 #nabeel-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -574,7 +495,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card4 .card-tags #nabeel-tag2 {
+#card4 #nabeel-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -593,38 +514,12 @@ header nav #tag-link--events {
   margin-right: 0;
 }
 
-#card5 {
-  /*.card-info__quote{
-      width: 6.4rem;
-  }*/
-}
 #card5 .card-profile__img {
   height: 46.9rem;
   width: 46.9rem;
   object-position: -7.5rem -5rem;
 }
-#card5 .card-profile__name {
-  width: 14.63rem;
-}
-#card5 .card-info__location {
-  width: 6.2rem;
-}
-#card5 .card-info__price {
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-}
-#card5 .card-tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-#card5 .card-tags #rhode-tag1 {
+#card5 #rhode-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -641,7 +536,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card5 .card-tags #rhode-tag2 {
+#card5 #rhode-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -658,7 +553,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card5 .card-tags #rhode-tag3 {
+#card5 #rhode-tag3 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -675,7 +570,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card5 .card-tags #rhode-tag4 {
+#card5 #rhode-tag4 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -694,38 +589,12 @@ header nav #tag-link--events {
   margin-right: 0;
 }
 
-#card6 {
-  /*.card-info__quote{
-      width: 10.5rem;
-  }*/
-}
 #card6 .card-profile__img {
   height: 25rem;
   width: 25rem;
   object-position: -12.5rem -5rem;
 }
-#card6 .card-profile__name {
-  width: 14.5rem;
-}
-#card6 .card-info__location {
-  width: 5.94rem;
-}
-#card6 .card-info__price {
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #757575;
-  line-height: 0.75rem;
-  font-size: 0.56rem;
-  font-weight: normal;
-}
-#card6 .card-tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-#card6 .card-tags #marcel-tag1 {
+#card6 #marcel-tag1 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
@@ -742,7 +611,7 @@ header nav #tag-link--events {
   font-size: 0.75rem;
   font-weight: 500;
 }
-#card6 .card-tags #marcel-tag2 {
+#card6 #marcel-tag2 {
   display: inline-block;
   border: 0.03rem solid #C4C4C4;
   /*= 0.5px*/
