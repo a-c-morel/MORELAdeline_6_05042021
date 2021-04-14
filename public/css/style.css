@@ -10,7 +10,7 @@
   align-items: center;
   /*width: 12.5rem;*/
   height: 19.4rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 3rem;
 }
 .card .card-profile a {
   display: flex;
@@ -123,7 +123,8 @@ a:visited {
   position: absolute;
   width: 7.4rem;
   height: 1.1rem;
-  left: 14.6rem;
+  /*left: 14.6rem;*/
+  right: 1.4rem;
   top: 3.1rem;
 }
 
@@ -135,9 +136,11 @@ header {
   padding-left: 1.25rem;
 }
 header nav {
+  align-self: center;
   width: 17.8rem;
   height: 3.1rem;
   margin-top: 2rem;
+  margin-right: 3.19rem;
   margin-bottom: 3.1rem;
   margin-left: 1.2rem;
 }
@@ -755,6 +758,52 @@ header nav #tag-link--events {
   line-height: 1rem;
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+/*700px
+remonter la nav au mm niveau que le logo et le h1*/
+@media screen and (min-width: 700px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70.6%;
+  }
+  header .logo {
+    width: 12.5rem;
+    height: 3.13rem;
+  }
+  header nav {
+    margin-right: auto;
+    margin-top: 0;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1052px) {
+  main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: 30rem;
+  }
+
+  .home-first-heading {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #901C1C;
+    line-height: 2.94rem;
+    font-size: 2.25rem;
+    font-weight: normal;
+    width: 19.13rem;
+    height: 2.94rem;
+    /*left: 14.6rem;*/
+    right: 7.31rem;
+    top: 2.75rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,37 @@
+/*700px
+remonter la nav au mm niveau que le logo et le h1*/
+@media screen and (min-width: 700px){
+    header{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70.6%;
+        .logo{
+            width: 12.5rem;
+            height: 3.13rem;
+        }
+        nav{
+            margin-right: auto;
+            margin-top: 0;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 1052px){
+    main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card{
+        width: 30rem
+    }
+    .home-first-heading{
+        @include font($darkColor, 2.94rem, 2.25rem, normal);
+        width: 19.13rem;
+        height: 2.94rem;
+        /*left: 14.6rem;*/
+        right: 7.31rem;
+        top: 2.75rem;
+    }
+}
