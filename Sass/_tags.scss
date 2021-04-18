@@ -1,0 +1,10 @@
+.tags-links{
+    display: inline-block;
+    border: .03rem solid #C4C4C4; /*= 0.5px*/
+    box-sizing: border-box;
+    border-radius: 11px;
+    padding: .05rem;
+    padding-left: .3rem;
+    padding-right: .3rem;
+    @include font($darkColor, 1rem, .75rem, 500);
+}

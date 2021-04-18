@@ -2,6 +2,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 /*COLOURS*/
 /*VALUES*/
+/*@mixin tag-link($width){
+    display: inline-block;
+    border: .03rem solid #C4C4C4; = 0.5px
+    box-sizing: border-box;
+    border-radius: 11px;
+    padding: .05rem;
+    width: $width;
+    @include font($darkColor, 1rem, .75rem, 500);
+}*/
 .card {
   max-width: 32.87rem;
   display: flex;
@@ -89,6 +98,25 @@
   flex-wrap: nowrap;
 }
 
+.tags-links {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -154,481 +182,136 @@ header {
 }
 header nav {
   align-self: center;
+  display: flex;
+  align-items: center;
   width: 17.8rem;
   height: 3.1rem;
   margin-top: 2rem;
   margin-right: 3.19rem;
   margin-bottom: 3.1rem;
   margin-left: 1.2rem;
-}
-header nav #tag-link--portrait {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 4.3rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-header nav #tag-link--art {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 2.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-header nav #tag-link--fashion {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 4.25rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-header nav #tag-link--architecture {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 5.75rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
-}
-header nav #tag-link--travel {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.63rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-top: 0.31rem;
-}
-header nav #tag-link--sport {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.44rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-top: 0.31rem;
-}
-header nav #tag-link--animals {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 4.06rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-top: 0.31rem;
-}
-header nav #tag-link--events {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.94rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
-  margin-top: 0.31rem;
+  /*#tag-link{
+      &--portrait{
+          @include tag-link(4.3rem);
+      }
+      &--art{
+          @include tag-link(2.5rem);
+      }
+      &--fashion{
+          @include tag-link(4.25rem);
+      }
+      &--architecture{
+          @include tag-link(5.75rem);
+          margin-right: 0;
+      }
+      &--travel{
+          @include tag-link(3.63rem);
+          margin-top: .31rem;
+      }
+      &--sport{
+          @include tag-link(3.44rem);
+          margin-top: .31rem;
+      }
+      &--animals{
+          @include tag-link(4.06rem);
+          margin-top: .31rem;
+      }
+      &--events{
+          @include tag-link(3.94rem);
+          margin-right: 0;
+          margin-top: .31rem;
+      }
+  }*/
 }
 
-#card1 .card-profile__img {
-  height: 25rem;
-  width: 25rem;
-  object-position: -3.1rem -5rem;
-}
-#card1 #mimi-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 4rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card1 #mimi-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.68rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card1 #mimi-tag3 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.38rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card1 #mimi-tag4 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.88rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
+/*#card1{
+    .card-profile__img{
+        @include profile-image(25rem, 25rem, -3.1rem -5rem);
+    }
+    #mimi-tag1{
+        @include tag-link(4rem);
+    }
+    #mimi-tag2{
+        @include tag-link(3.68rem);
+    }
+    #mimi-tag3{
+        @include tag-link(3.38rem);
+    }
+    #mimi-tag4{
+        @include tag-link(3.88rem);
+        margin-right: 0;
+    }
 }
 
-#card2 #ellie-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.6rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card2 #ellie-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 5.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
+#card2{
+    #ellie-tag1{
+        @include tag-link(3.6rem);
+    }
+    #ellie-tag2{
+        @include tag-link(5.5rem);
+        margin-right: 0;
+    }
 }
 
-#card3 .card-profile__img {
-  height: 40.6rem;
-  width: 40.6rem;
-  object-position: -9.4rem -11.9rem;
-}
-#card3 #tracy-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 2.44rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card3 #tracy-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.81rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card3 #tracy-tag3 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.38rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
+#card3{
+    .card-profile__img{
+        @include profile-image(40.6rem, 40.6rem, -9.4rem -11.9rem);
+    }
+    #tracy-tag1{
+        @include tag-link(2.44rem);
+    }
+    #tracy-tag2{
+        @include tag-link(3.81rem);
+    }
+    #tracy-tag3{
+        @include tag-link(3.38rem);
+        margin-right: 0; 
+    }
 }
 
-#card4 .card-profile__img {
-  height: 40.63rem;
-  width: 40.63rem;
-  object-position: -9.38rem -12.2rem;
-}
-#card4 #nabeel-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.25rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card4 #nabeel-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 4.2rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
+#card4{
+    .card-profile__img{
+        @include profile-image(40.63rem, 40.63rem, -9.38rem -12.2rem);
+    }
+    #nabeel-tag1{
+        @include tag-link(3.25rem);
+    }
+    #nabeel-tag2{
+        @include tag-link(4.2rem);
+        margin-right: 0;
+    }
 }
 
-#card5 .card-profile__img {
-  height: 46.9rem;
-  width: 46.9rem;
-  object-position: -7.5rem -5rem;
-}
-#card5 #rhode-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.2rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card5 #rhode-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.75rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card5 #rhode-tag3 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card5 #rhode-tag4 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.9rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-right: 0;
+#card5{
+    .card-profile__img{
+        @include profile-image(46.9rem, 46.9rem, -7.5rem -5rem);
+    }
+    #rhode-tag1{
+        @include tag-link(3.2rem);
+    }
+    #rhode-tag2{
+        @include tag-link(3.75rem);
+    }
+    #rhode-tag3{
+        @include tag-link(3.5rem);
+    }
+    #rhode-tag4{
+        @include tag-link(3.9rem);
+        margin-right: 0;
+    }
 }
 
-#card6 .card-profile__img {
-  height: 25rem;
-  width: 25rem;
-  object-position: -12.5rem -5rem;
-}
-#card6 #marcel-tag1 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 3.31rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-#card6 #marcel-tag2 {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  width: 5.5rem;
-  font-family: "DM Sans", sans-serif;
-  font-style: normal;
-  text-align: center;
-  /*à voir si je dois le passer en argument plus tard*/
-  color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
+#card6{
+    .card-profile__img{
+        @include profile-image(25rem, 25rem, -12.5rem -5rem);
+    }
+    #marcel-tag1{
+        @include tag-link(3.31rem);
+    }
+    #marcel-tag2{
+        @include tag-link(5.5rem);
+    }
+}*/
 /*700px
 remonter la nav au mm niveau que le logo et le h1*/
 @media screen and (min-width: 700px) {

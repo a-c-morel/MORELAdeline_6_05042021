@@ -22,7 +22,7 @@ ul{
     justify-content: center;
     flex-wrap: wrap;
     li{
-        margin-right: .3rem
+        margin-right: .3rem;
     }
 }
 
@@ -56,13 +56,15 @@ header{
     padding-left: 1.25rem;
     nav{
     align-self: center;
+    display: flex;
+    align-items: center;
     width: 17.8rem;
     height: 3.1rem;
     margin-top: 2rem;
     margin-right: 3.19rem;
     margin-bottom: 3.1rem;
     margin-left: 1.2rem;
-    #tag-link{
+    /*#tag-link{
         &--portrait{
             @include tag-link(4.3rem);
         }
@@ -93,13 +95,13 @@ header{
             margin-right: 0;
             margin-top: .31rem;
         }
-    }
+    }*/
     }
 }
 
 
 
-#card1{
+/*#card1{
     .card-profile__img{
         @include profile-image(25rem, 25rem, -3.1rem -5rem);
     }
@@ -186,4 +188,4 @@ header{
     #marcel-tag2{
         @include tag-link(5.5rem);
     }
-}
+}*/
