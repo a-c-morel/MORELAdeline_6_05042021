@@ -38,16 +38,6 @@ a{
     height: 2.3rem;
 }
 
-.home-first-heading{
-    @include font($darkColor, 1.13rem, .86rem, normal);
-    position: absolute;
-    width: 7.4rem;
-    height: 1.1rem;
-    /*left: 14.6rem;*/
-    right: 1.4rem;
-    top: 3.1rem;
-}
-
 header{
     display: flex;
     flex-direction: column;
@@ -64,128 +54,15 @@ header{
     margin-right: 3.19rem;
     margin-bottom: 3.1rem;
     margin-left: 1.2rem;
-    /*#tag-link{
-        &--portrait{
-            @include tag-link(4.3rem);
-        }
-        &--art{
-            @include tag-link(2.5rem);
-        }
-        &--fashion{
-            @include tag-link(4.25rem);
-        }
-        &--architecture{
-            @include tag-link(5.75rem);
-            margin-right: 0;
-        }
-        &--travel{
-            @include tag-link(3.63rem);
-            margin-top: .31rem;
-        }
-        &--sport{
-            @include tag-link(3.44rem);
-            margin-top: .31rem;
-        }
-        &--animals{
-            @include tag-link(4.06rem);
-            margin-top: .31rem;
-        }
-        &--events{
-            @include tag-link(3.94rem);
-            margin-right: 0;
-            margin-top: .31rem;
-        }
-    }*/
     }
 }
 
-
-
-/*#card1{
-    .card-profile__img{
-        @include profile-image(25rem, 25rem, -3.1rem -5rem);
-    }
-    #mimi-tag1{
-        @include tag-link(4rem);
-    }
-    #mimi-tag2{
-        @include tag-link(3.68rem);
-    }
-    #mimi-tag3{
-        @include tag-link(3.38rem);
-    }
-    #mimi-tag4{
-        @include tag-link(3.88rem);
-        margin-right: 0;
-    }
+.home-first-heading{
+    @include font($darkColor, 1.13rem, .86rem, normal);
+    position: absolute;
+    width: 7.4rem;
+    height: 1.1rem;
+    /*left: 14.6rem;*/
+    right: 1.4rem;
+    top: 3.1rem;
 }
-
-#card2{
-    #ellie-tag1{
-        @include tag-link(3.6rem);
-    }
-    #ellie-tag2{
-        @include tag-link(5.5rem);
-        margin-right: 0;
-    }
-}
-
-#card3{
-    .card-profile__img{
-        @include profile-image(40.6rem, 40.6rem, -9.4rem -11.9rem);
-    }
-    #tracy-tag1{
-        @include tag-link(2.44rem);
-    }
-    #tracy-tag2{
-        @include tag-link(3.81rem);
-    }
-    #tracy-tag3{
-        @include tag-link(3.38rem);
-        margin-right: 0; 
-    }
-}
-
-#card4{
-    .card-profile__img{
-        @include profile-image(40.63rem, 40.63rem, -9.38rem -12.2rem);
-    }
-    #nabeel-tag1{
-        @include tag-link(3.25rem);
-    }
-    #nabeel-tag2{
-        @include tag-link(4.2rem);
-        margin-right: 0;
-    }
-}
-
-#card5{
-    .card-profile__img{
-        @include profile-image(46.9rem, 46.9rem, -7.5rem -5rem);
-    }
-    #rhode-tag1{
-        @include tag-link(3.2rem);
-    }
-    #rhode-tag2{
-        @include tag-link(3.75rem);
-    }
-    #rhode-tag3{
-        @include tag-link(3.5rem);
-    }
-    #rhode-tag4{
-        @include tag-link(3.9rem);
-        margin-right: 0;
-    }
-}
-
-#card6{
-    .card-profile__img{
-        @include profile-image(25rem, 25rem, -12.5rem -5rem);
-    }
-    #marcel-tag1{
-        @include tag-link(3.31rem);
-    }
-    #marcel-tag2{
-        @include tag-link(5.5rem);
-    }
-}*/
