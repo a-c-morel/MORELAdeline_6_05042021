@@ -1,3 +1,6 @@
+const mainElement = document.createElement("main");
+document.body.appendChild(mainElement);
+
 fetch('./JS/photographers.json')
     .then((response) => { //récupère une promesse
         return response.json(); //on formate la réponse au format json, pour dire que ce n'est pas simplement du contenu texte qu'on veut récupérer
@@ -6,16 +9,16 @@ fetch('./JS/photographers.json')
         console.log(obj);
         //Est-ce que c'est bien ici que je dois écrire ce que je veux faire avec ces données ?
         for (const photographer of obj.photographers){ //cela va énumérer les objets contenus dans obj
-            
+                        
             //créer un article :
-            const newArticle = document.createElement("article"); //crée un nouvel élément <article>
+            const newArticle = document.createElement("article"); //crée un nouvel élément <article></article>
             newArticle.classList.add("card"); //ajoute la classe .card au nouvel article créé
-            document.body.appendChild(newArticle); //ajoute le nouvel article au body (à la suite de ce qui se trouve déjà dans le body) récupérer main d'abord
+            mainElement.appendChild(newArticle); //ajoute le nouvel article au body (à la suite de ce qui se trouve déjà dans le body) récupérer main d'abord
             
             //créer 3 sections dans l'article :
-            const firstSection = document.createElement("section"); //crée un nouvel élement <section>
-            const secondSection = document.createElement("section"); //crée un nouvel élement <section>
-            const thirdSection = document.createElement("section"); //crée un nouvel élement <section>
+            const firstSection = document.createElement("section"); //crée un nouvel élement <section></section>
+            const secondSection = document.createElement("section"); //crée un nouvel élement <section></section>
+            const thirdSection = document.createElement("section"); //crée un nouvel élement <section></section>
             //donner la classe .card-profile à la première
             firstSection.classList.add("card-profile");
             //donner la classe .card-info à la deuxième
@@ -27,21 +30,40 @@ fetch('./JS/photographers.json')
             newArticle.appendChild(secondSection);
             newArticle.appendChild(thirdSection);
 
-            firstSection.innerHTML =
-             `<a href="">
-            <figure>
-                <img class="card-profile__img" src="images/Photographers ID Photos/${photographer.portrait}" alt=""> 
-            </figure>
-            <h2 class="card-profile__name">${photographer.name}</h2>
-            </a>`
+            const firstSectionLink = document.createElement("a"); //crée un nouvel élément <a></a>
+            /*firstSectionLink.setAttribute("src", `page_du_photographe${variable}`); //A MODIFIER !*/
+            firstSection.appendChild(firstSectionLink); //ajoute l'élément <a></a> à la première section
 
-            secondSection.innerHTML =
-            `<p class="card-info__location">${photographer.city}, ${photographer.country}</p>
-            <p class="card-info__quote">${photographer.tagline}</p>
-            <p class="card-info__price">${photographer.price}/jour</p>`
+            const newFigure = document.createElement("figure"); //crée un nouvel élément <figure></figure>
+            firstSectionLink.appendChild(newFigure); //ajoute l'élément <figure></figure> à la première section de l'article
+
+            const newProfileImg = document.createElement("img"); //crée un nouvel élément <img></img>
+            newProfileImg.classList.add("card-profile__img");
+            newProfileImg.setAttribute("src", `images/Photographers ID Photos/${photographer.portrait}`);
+            newFigure.appendChild(newProfileImg); //ajoute l'élément <img></img> à l'intérieur de <figure></figure>
+
+            const newProfileTitle = document.createElement("h2"); //crée un nouvel élément <h2></h2>
+            newProfileTitle.classList.add("card-profile__name"); //ajoute la classe .card-profile__name au h2
+            newProfileTitle.innerHTML = `${photographer.name}`; //récupère le nom du photographe dynamiquement dans les données JSON et l'ajoute comme contenu du h2
+            firstSectionLink.appendChild(newProfileTitle); //ajoute le h2 après l'élément figure dans le <a></a>
+
+            const locationParagraph = document.createElement("p");
+            locationParagraph.classList.add("card-info__location");
+            locationParagraph.innerHTML = `${photographer.city}, ${photographer.country}`;
+            secondSection.appendChild(locationParagraph);
+
+            const quoteParagraph = document.createElement("p");
+            quoteParagraph.classList.add("card-info__quote");
+            quoteParagraph.innerHTML = `${photographer.tagline}`;
+            secondSection.appendChild(quoteParagraph);
+
+            const priceParagraph = document.createElement("p");
+            priceParagraph.classList.add("card-info__price");
+            priceParagraph.innerHTML = `${photographer.price}/jour`;
+            secondSection.appendChild(priceParagraph);
 
             //Je ne suis pas sûre de moi pour ce qui suit :
-            /*for (let tag of tags){
+            /*for (let tag of photographer.tags){
                 thirdSection.innerHTML = `<li class="tags-links"><a href="">#${[tag]}</a></li>`
             }*/
         }
