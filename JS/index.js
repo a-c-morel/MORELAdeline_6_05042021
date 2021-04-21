@@ -1,5 +1,9 @@
 const mainElement = document.createElement("main");
 document.body.appendChild(mainElement);
+const mainH1 = document.createElement("h1");
+mainH1.classList.add("home-first-heading");
+mainH1.innerHTML = "Nos photographes";
+mainElement.appendChild(mainH1);
 
 fetch('./JS/photographers.json')
     .then((response) => { //récupère une promesse
@@ -62,10 +66,18 @@ fetch('./JS/photographers.json')
             priceParagraph.innerHTML = `${photographer.price}/jour`;
             secondSection.appendChild(priceParagraph);
 
-            //Je ne suis pas sûre de moi pour ce qui suit :
-            /*for (let tag of photographer.tags){
-                thirdSection.innerHTML = `<li class="tags-links"><a href="">#${[tag]}</a></li>`
-            }*/
+            const thirdSectionList = document.createElement("ul");
+            thirdSection.appendChild(thirdSectionList);
+            for (const tag of photographer.tags){
+                const liTag = document.createElement("li");
+                liTag.classList.add("tags-links");
+                thirdSectionList.appendChild(liTag);
+
+                const hashtag = document.createElement("a");
+                hashtag.setAttribute("href", ``); //à remplir plus tard
+                hashtag.innerHTML = `#${tag}`;
+                liTag.appendChild(hashtag);
+            }
         }
     })
     .catch((error) => {
