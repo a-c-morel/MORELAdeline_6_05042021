@@ -11,7 +11,7 @@ headerNav.appendChild(headerList);
 
 /***Comment créer mes cartes en Programmation Orientée Objet***/
 
-//variables pour créer les balises (je les mets ici pour qu'elles soient accessibles depuis le scope global)
+//variables pour créer les différents éléments (je les mets ici pour qu'elles soient accessibles depuis le scope global)
 const newArticle = document.createElement("article"); //crée un nouvel élément <article></article>
 const firstSection = document.createElement("section"); //crée un nouvel élement <section></section>
 const secondSection = document.createElement("section"); //crée un nouvel élement <section></section>
@@ -94,7 +94,7 @@ class Card{
 
     createTags(){
         thirdSection.appendChild(thirdSectionList); //ajoute le ul à la troisième section de la carte
-        for (const tag of photographer.tags){ //boucle qui parcourt le array qui contient les tags
+        for (const tag of this.tags){ //boucle qui parcourt le array qui contient les tags
             liTag.classList.add("tags-links"); //ajoute la classe .tags-links au li
             thirdSectionList.appendChild(liTag); //ajoute le li dans le ul de la 3e section
 
@@ -130,6 +130,7 @@ fetch('./JS/photographers.json')
             myCard.createPrice();
             myCard.createTags();
         }
+        //Ne fonctionne pas car myCard prend tour à tour les valeurs de chaque objet photographer et s'arrête en prenant celles du dernier (au dernier tour de boucle) : il faudrait que cela crée des noms de variables différents je pense ? (myCard1, myCard2, myCard3...)
             
             /*         
             //créer un article :
