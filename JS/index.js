@@ -1,13 +1,16 @@
 const mainElement = document.createElement("main");
+const headerElement = document.createElement("header");
+document.body.appendChild(headerElement);
 document.body.appendChild(mainElement);
+
 const mainH1 = document.createElement("h1");
 mainH1.classList.add("home-first-heading");
 mainH1.innerHTML = "Nos photographes";
 mainElement.appendChild(mainH1);
 
-const headerNav = document.querySelector("nav");
+/*const headerNav = document.querySelector("nav");
 const headerList = document.createElement("ul");
-headerNav.appendChild(headerList);
+headerNav.appendChild(headerList);*/
 
 let photographers = [];
 let tags = [];
@@ -28,7 +31,20 @@ fetch('./JS/photographers.json')
         console.log(tags);
         tags = new Set(tags);
         console.log(tags);
-        //Je pense que ça ne fonctionne pas car myCard prend tour à tour les valeurs de chaque objet photographer et s'arrête en prenant celles du dernier (au dernier tour de boucle) : il faudrait que cela crée des noms de variables différents à chaque tour je pense ? (myCard1, myCard2, myCard3...)
+        const navigation = document.createElement("nav");
+        const navigationList = document.createElement("ul");
+
+        for(let tag of tags){
+            const tagContainer = document.createElement("li");
+            const tagLink = document.createElement("a");
+            tagContainer.classList.add("tags-links");
+            //tagLink.setAttribute(href, ...)
+            tagLink.innerHTML = `#${tag}`
+            navigationList.appendChild(tagContainer);
+            tagContainer.appendChild(tagLink);
+            navigation.appendChild(navigationList);
+        }
+        headerElement.appendChild(navigation);
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
@@ -37,25 +53,6 @@ fetch('./JS/photographers.json')
   
  
 //Créer une boucle qui parcourt toutes les cartes pour en extraire les tags :
-
-const numberOfCards = mainElement.getElementsByTagName("article");
-console.log(numberOfCards.length); //donne 6 (si j'ai réussi à créer les 6 cartes...)
-
-/*for(let i=0; i < numberOfCards.length; i++){
-    - Créer un array qui stocke les tags existants
-    let hashtagsList = [];
-    hashtagsList.push(); -> cette étape m'embête car je ne sais pas très bien comment obtenir les tags... (ils sont maintenant existants dans le DOM donc je devrais pouvoir les cibler)
-        - Utiliser hashtable pour supprimer les doublons de mon array (faisable car ne contient que des types string, ça n'aurait pas été possible avec un array contenant des objets)
-
-        - Créer une boucle qui parcourt mon array
-
-            - à chaque tour de boucle, ajouter un li contenant le tag à cet index dans la nav (que je dois d'abord créer, vide)
-}
-
-N.B. : il va falloir que je mette ça dans le fetch car le fetch est asynchrone, si je mets ça à la suite ça de la requête fetch ça ne va pas fonctionner car ça va s'exécuter alors que les cartes ne sont pas encore créées !
-*/
-
-
 
 
 
