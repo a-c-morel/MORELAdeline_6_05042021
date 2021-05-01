@@ -1,4 +1,4 @@
-class Tags{
+/*class Tags{
 
     constructor(tag){
         this.tag = `${tag}`
@@ -21,4 +21,4 @@ class Tags{
         return navigation;
     }
     
-}
+}*/

@@ -38,6 +38,7 @@ fetch('./JS/photographers.json')
             const tagContainer = document.createElement("li");
             const tagLink = document.createElement("a");
             tagContainer.classList.add("tags-links");
+            tagLink.classList.add("tag-filter");
             //tagLink.setAttribute(href, ...)
             tagLink.innerHTML = `#${tag}`
             navigationList.appendChild(tagContainer);
@@ -45,15 +46,73 @@ fetch('./JS/photographers.json')
             navigation.appendChild(navigationList);
         }
         headerElement.appendChild(navigation);
+
+       //éléments à cibler (variables à créer ou à récupérer):
+        //- un array pour chaque carte qui contient tous ses tags
+        //d'abord je cible l'ensemble des cartes :
+        const articles = document.querySelectorAll("article");
+        //puis je crée une boucle qui va regarder chaque carte :
+        for (let article of articles){
+            //je récupère le ul
+            const tagCardContainer = article.querySelector("article ul");
+            //je récupère le texte de chaque li dans un array
+            tagCardArray = tagCardContainer.textContent;
+            //je sépare la chaîne de caractère obtenue
+            splittedArray = tagCardArray.split('#');
+            //je supprime le premier string (qui est vide)
+            splittedArray.shift();
+            console.log(splittedArray);
+
+            //je cible les tags de la nav
+            tags = document.querySelectorAll("tag-filter");
+            //j'ajoute un id différent pour chaque tag
+            /*for (let tag of tags){
+                tag.id = `tag- ${[tag] +1}`
+
+
+
+
+                for (let i = 0; i < splittedArray.length; i++){
+                    tag.addEventListener("click", function(){
+                        if(tag === splittedArray[i]){
+                            console.log([i]);
+                        } else{
+                            console.log("les tags ne matchent pas");
+                        }
+                    });
+                }
+            }*/
+        }
+
+
+
+                    //ce qui se passe quand on clique sur un tag :
+                    //boucle qui parcourt chaque array de chaque carte (pour chaque carte, si dans array il y a une occurrence du tag = montrer la carte = la mettre en display block, sinon la passer en display none)
+                
+        
+
+        /*- l'ensemble des tags de la nav
+        tags = document.querySelectorAll("tag-filter");
+
+        -> le tag cliqué dans la nav (à l'index)
+        for (let tag of tags){
+            tag.addEventListener("click", function(){
+                //ce qui se passe quand on clique sur un tag :
+                boucle qui parcourt chaque array de chaque carte (pour chaque carte, si dans array il y a une occurrence du tag = montrer la carte = la mettre en display block, sinon la passer en display none)
+            });
+        }
+        
+        
+        Quand on clique sur un des tags de la nav...
+        - eventListener(uniquement sur ce tag précis, attention que l'event ne s'applique pas à une classe entière...)
+        - 
+        */
+        
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
         console.error(error);
     });
-  
- 
-//Créer une boucle qui parcourt toutes les cartes pour en extraire les tags :
-
 
 
 
