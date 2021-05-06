@@ -15,99 +15,53 @@ headerNav.appendChild(headerList);*/
 let photographers = [];
 let tags = [];
 
+/*function filtrer(tag){
+    console.log(tag);
+    console.log(photographers);
+    photographers.filter(photographer => photographer.tags === tag);
+    console.log(photographers);
+}*/
+
 fetch('./JS/photographers.json')
     .then((response) => { //récupère une promesse
         return response.json(); //on formate la réponse au format json, pour dire que ce n'est pas simplement du contenu texte qu'on veut récupérer
     })
     .then((obj) => { //traitement des objets dans notre page web
-        console.log(obj); //output attendu: Object { photographers: (6) […], media: (59) […] }
+        //console.log(obj); //output attendu: Object { photographers: (6) […], media: (59) […] }
         photographers = obj.photographers;
         for (const photographer of photographers){ //cela va énumérer les objets contenus dans obj
             let myCard = new Photographer(photographer.portrait, photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.tags);
             tags.push(...photographer.tags);
             mainElement.appendChild(myCard.display());
-            console.log(myCard);
+            //console.log(myCard);
         }
-        console.log(tags);
+        //console.log(tags);
         tags = new Set(tags);
-        console.log(tags);
+        //console.log(tags);
         const navigation = document.createElement("nav");
         const navigationList = document.createElement("ul");
 
         for(let tag of tags){
             const tagContainer = document.createElement("li");
-            const tagLink = document.createElement("a");
+            tagContainer.innerHTML = `#${tag}`;
+            tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
-            tagLink.classList.add("tag-filter");
             //tagLink.setAttribute(href, ...)
-            tagLink.innerHTML = `#${tag}`
             navigationList.appendChild(tagContainer);
-            tagContainer.appendChild(tagLink);
+            tagContainer.addEventListener("click", () =>{
+                //filtrer(tag);
+                for (let photographer of photographers){
+                    console.log(photographer.tags);
+                    if(!photographer.tags.includes(tag)){
+                        console.log(`le tag recherché (${tag}) ne se trouve pas ici`);
+                    }else{
+                        console.log('bingo !')
+                    }
+                }
+            });
             navigation.appendChild(navigationList);
         }
         headerElement.appendChild(navigation);
-
-       //éléments à cibler (variables à créer ou à récupérer):
-        //- un array pour chaque carte qui contient tous ses tags
-        //d'abord je cible l'ensemble des cartes :
-        const articles = document.querySelectorAll("article");
-        //puis je crée une boucle qui va regarder chaque carte :
-        for (let article of articles){
-            //je récupère le ul
-            const tagCardContainer = article.querySelector("article ul");
-            //je récupère le texte de chaque li dans un array
-            tagCardArray = tagCardContainer.textContent;
-            //je sépare la chaîne de caractère obtenue
-            splittedArray = tagCardArray.split('#');
-            //je supprime le premier string (qui est vide)
-            splittedArray.shift();
-            console.log(splittedArray);
-
-            //je cible les tags de la nav
-            tags = document.querySelectorAll("tag-filter");
-            //j'ajoute un id différent pour chaque tag
-            /*for (let tag of tags){
-                tag.id = `tag- ${[tag] +1}`
-
-
-
-
-                for (let i = 0; i < splittedArray.length; i++){
-                    tag.addEventListener("click", function(){
-                        if(tag === splittedArray[i]){
-                            console.log([i]);
-                        } else{
-                            console.log("les tags ne matchent pas");
-                        }
-                    });
-                }
-            }*/
-        }
-
-
-
-                    //ce qui se passe quand on clique sur un tag :
-                    //boucle qui parcourt chaque array de chaque carte (pour chaque carte, si dans array il y a une occurrence du tag = montrer la carte = la mettre en display block, sinon la passer en display none)
-                
-        
-
-        /*- l'ensemble des tags de la nav
-        tags = document.querySelectorAll("tag-filter");
-
-        -> le tag cliqué dans la nav (à l'index)
-        for (let tag of tags){
-            tag.addEventListener("click", function(){
-                //ce qui se passe quand on clique sur un tag :
-                boucle qui parcourt chaque array de chaque carte (pour chaque carte, si dans array il y a une occurrence du tag = montrer la carte = la mettre en display block, sinon la passer en display none)
-            });
-        }
-        
-        
-        Quand on clique sur un des tags de la nav...
-        - eventListener(uniquement sur ce tag précis, attention que l'event ne s'applique pas à une classe entière...)
-        - 
-        */
-        
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
