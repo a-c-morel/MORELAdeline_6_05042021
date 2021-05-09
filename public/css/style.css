@@ -85,7 +85,7 @@
 }
 .card .card-tags ul {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: nowrap;
 }
 
@@ -106,6 +106,7 @@
   line-height: 1rem;
   font-size: 0.75rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 * {
@@ -160,7 +161,7 @@ header nav {
   align-items: center;
   width: 17.8rem;
   height: 3.1rem;
-  margin-top: 2rem;
+  margin-top: -2rem;
   margin-right: 3.19rem;
   margin-bottom: 3.1rem;
   margin-left: 1.2rem;

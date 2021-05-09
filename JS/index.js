@@ -8,6 +8,14 @@ mainH1.classList.add("home-first-heading");
 mainH1.innerHTML = "Nos photographes";
 mainElement.appendChild(mainH1);
 
+const headerLink = document.createElement("a");
+headerLink.setAttribute("href", "index.html");
+headerElement.appendChild(headerLink);
+const logoImg = document.createElement("img");
+logoImg.classList.add("logo");
+logoImg.setAttribute("src", "images/logo.png");
+headerElement.appendChild(logoImg);
+
 //ne pas oublier d'ajouter le logo !
 
 let photographers = [];
@@ -20,10 +28,10 @@ function filtrer(tag){
         card.style.display = "block";
         //console.log(card.innerText);
         if(!card.innerText.includes(tag)){
-            console.log(`le tag ${tag} ne se trouve pas dans la carte ${card.innerText}`);
+            //console.log(`le tag ${tag} ne se trouve pas dans la carte ${card.innerText}`);
             card.style.display = "none";
         }else{
-            console.log(`le tag ${tag} se trouve bien dans la carte ${card.innerText}`);
+            //console.log(`le tag ${tag} se trouve bien dans la carte ${card.innerText}`);
         }
     }
     /*for (let photographer of photographers){
