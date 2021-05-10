@@ -15,7 +15,7 @@ const logoImg = document.createElement("img");
 logoImg.classList.add("logo");
 logoImg.setAttribute("src", "images/logo.png");
 logoImg.setAttribute("alt", "Fisheye Home page");
-headerElement.appendChild(logoImg);
+headerLink.appendChild(logoImg);
 
 //ne pas oublier d'ajouter le logo !
 

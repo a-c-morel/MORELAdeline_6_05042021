@@ -25,6 +25,7 @@ class Photographer{
 
         //add classes and attributes + content
         newArticle.classList.add("card"); //ajoute la classe .card au nouvel article que l'on veut ajouter
+        newArticle.setAttribute("role", "article");
         firstSection.classList.add("card-profile");
         firstSection.setAttribute("role", "region");
         firstSection.setAttribute("aria-labelledby", "photographer-name");
