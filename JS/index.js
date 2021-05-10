@@ -14,6 +14,7 @@ headerElement.appendChild(headerLink);
 const logoImg = document.createElement("img");
 logoImg.classList.add("logo");
 logoImg.setAttribute("src", "images/logo.png");
+logoImg.setAttribute("alt", "Fisheye Home page");
 headerElement.appendChild(logoImg);
 
 //ne pas oublier d'ajouter le logo !
@@ -34,19 +35,6 @@ function filtrer(tag){
             //console.log(`le tag ${tag} se trouve bien dans la carte ${card.innerText}`);
         }
     }
-    /*for (let photographer of photographers){
-        console.log(photographer.tags);
-        if(!photographer.tags.includes(tag)){
-            console.log(`le tag recherché (${tag}) ne se trouve pas ici`);
-            //c'est ici qu'il faut que je trouve comment passer la carte en display none
-            //Le pb est que l'array est constitué à partir des données JSON directement, et non pas à partir de la carte générée...
-            let cardsToFilter = document.querySelectorAll(".card");
-            console.log(cardsToFilter);
-        }else{
-            console.log('bingo !')
-            //je pourrai supprimer le else par la suite je pense
-        }
-    }*/
 }
 
 fetch('./JS/photographers.json')

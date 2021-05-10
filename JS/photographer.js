@@ -15,7 +15,7 @@ class Photographer{
         const secondSection = document.createElement("section"); //crée un nouvel élement <section></section>
         const thirdSection = document.createElement("section"); //crée un nouvel élement <section></section>
         const firstSectionLink = document.createElement("a"); //crée un nouvel élément <a></a>
-        const newFigure = document.createElement("figure"); //crée un nouvel élément <figure></figure>
+        const newDiv = document.createElement("div"); //crée un nouvel élément <figure></figure>
         const newProfileImg = document.createElement("img"); //crée un nouvel élément <img></img>
         const newProfileTitle = document.createElement("h2"); //crée un nouvel élément <h2></h2>
         const locationParagraph = document.createElement("p"); //crée un nouvel élément <p></p>
@@ -26,6 +26,9 @@ class Photographer{
         //add classes and attributes + content
         newArticle.classList.add("card"); //ajoute la classe .card au nouvel article que l'on veut ajouter
         firstSection.classList.add("card-profile");
+        firstSection.setAttribute("role", "region");
+        firstSection.setAttribute("aria-labelledby", "photographer-name");
+        newProfileTitle.setAttribute("id", "photographer-name");
         secondSection.classList.add("card-info");
         thirdSection.classList.add("card-tags");
         //firstSectionLink.setAttribute("src", `page_du_photographe${variable}`); //A MODIFIER !
@@ -38,15 +41,15 @@ class Photographer{
         quoteParagraph.classList.add("card-info__quote"); //ajoute la classe .card-info__quote
         quoteParagraph.innerHTML = `${this.tagline}`; //récupère la citation dans les paramètres de la carte et l'ajoute comme contenu du p
         priceParagraph.classList.add("card-info__price"); //ajoute la classe .card-info__price
-        priceParagraph.innerHTML = `${this.price}/jour`; //récupère le prix dans les paramètres de la carte et l'ajoute comme contenu du p
+        priceParagraph.innerHTML = `${this.price}€/jour`; //récupère le prix dans les paramètres de la carte et l'ajoute comme contenu du p
 
         //add elements to their parents
         newArticle.appendChild(firstSection);
         newArticle.appendChild(secondSection);
         newArticle.appendChild(thirdSection);
         firstSection.appendChild(firstSectionLink); //ajoute l'élément <a></a> à la première section
-        firstSectionLink.appendChild(newFigure); //ajoute l'élément <figure></figure> à la première section de l'article
-        newFigure.appendChild(newProfileImg); //ajoute l'élément <img></img> à l'intérieur de <figure></figure>
+        firstSectionLink.appendChild(newDiv); //ajoute l'élément <figure></figure> à la première section de l'article
+        newDiv.appendChild(newProfileImg); //ajoute l'élément <img></img> à l'intérieur de <figure></figure>
         firstSectionLink.appendChild(newProfileTitle); //ajoute le h2 après l'élément figure dans le <a></a>
         secondSection.appendChild(locationParagraph); //ajoute le p à la 2è section de la carte
         secondSection.appendChild(quoteParagraph); //ajoute le p après le précédent
