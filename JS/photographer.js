@@ -9,6 +9,10 @@ class Photographer{
         this.tags = tags;
     }
     display(){
+        let nameWithSpaces = this.name; 
+        let nameWithoutSpaces = (nameWithSpaces).replace(/ /g, ""); 
+        let nameToLowerCase = nameWithoutSpaces.toLowerCase();
+
         //create elements
         const newArticle = document.createElement("article"); //crée un nouvel élément <article></article>
         const firstSection = document.createElement("section"); //crée un nouvel élement <section></section>
@@ -32,7 +36,7 @@ class Photographer{
         newProfileTitle.setAttribute("id", "photographer-name");
         secondSection.classList.add("card-info");
         thirdSection.classList.add("card-tags");
-        //firstSectionLink.setAttribute("src", `page_du_photographe${variable}`); //A MODIFIER !
+        firstSectionLink.setAttribute("href", `${nameToLowerCase}.html`); //A MODIFIER !
         newProfileImg.classList.add("card-profile__img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
         newProfileTitle.classList.add("card-profile__name"); //ajoute la classe .card-profile__name au h2
