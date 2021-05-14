@@ -17,31 +17,23 @@ logoImg.setAttribute("src", "images/logo.png");
 logoImg.setAttribute("alt", "Fisheye Home page");
 headerLink.appendChild(logoImg);
 
-//ne pas oublier d'ajouter le logo !
-
-let photographers = [];
 let tags = [];
 
 function filtrer(tag){
     let cards = document.querySelectorAll(".card");
-    //console.log(cards);
     for (let card of cards){
         card.style.display = "block";
-        //console.log(card.innerText);
         if(!card.innerText.includes(tag)){
-            //console.log(`le tag ${tag} ne se trouve pas dans la carte ${card.innerText}`);
             card.style.display = "none";
-        }else{
-            //console.log(`le tag ${tag} se trouve bien dans la carte ${card.innerText}`);
         }
     }
 }
 
 fetch('./JS/photographers.json')
-    .then((response) => { //récupère une promesse
-        return response.json(); //on formate la réponse au format json, pour dire que ce n'est pas simplement du contenu texte qu'on veut récupérer
+    .then((response) => {
+        return response.json();
     })
-    .then((obj) => { //traitement des objets dans notre page web
+    .then((obj) => {
         photographers = obj.photographers;
         for (const photographer of photographers){ //cela va énumérer les objets contenus dans obj
             let myCard = new Photographer(photographer.portrait, photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.tags);
@@ -55,10 +47,14 @@ fetch('./JS/photographers.json')
 
         for(let tag of tags){
             const tagContainer = document.createElement("li");
-            tagContainer.innerHTML = `#${tag}`;
             tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
-            //tagLink.setAttribute(href, ...)
+            tagContainer.innerHTML = `<span aria-hidden ="true">#</span>${tag}`;
+            /*const sharpSpan = document.createElement("span");
+            sharpSpan.setAttribute("aria-hidden", "true");
+            sharpSpan.innerText = '#'
+            tagContainer.appendChild(sharpSpan);
+            tagContainer.innerText = `${tag}`;*/
             navigationList.appendChild(tagContainer);
             tagContainer.addEventListener("click", () =>{
                 filtrer(tag);
