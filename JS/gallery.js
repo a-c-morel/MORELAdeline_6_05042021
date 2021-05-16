@@ -8,6 +8,8 @@ class Gallery{
         //créer input
     }
     displayPictures(){
+        const pictures = [];
+        
         //picture 1
         //picture 2
         //...

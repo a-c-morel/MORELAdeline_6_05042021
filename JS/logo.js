@@ -4,17 +4,14 @@ class Logo{
         this.imgAttribute = imgAttribute;
     }
     display(){
-        const photographerHeader = document.createElement("header");
-        const logoLink = document.createElement("a");
+        const headerLink = document.createElement("a");
+        headerLink.setAttribute("href", "index.html");
+        headerElement.appendChild(headerLink);
         const logoImg = document.createElement("img");
-    
-        logoLink.setAttribute("href", `${this.linkAttribute}`); //"index.html"
         logoImg.classList.add("logo");
-        logoImg.setAttribute("src", `${this.imgAttribute}`); //images/logo.png
-    
-        document.body.appendChild(photographerHeader);
-        photographerHeader.appendChild(logoLink);
-        logoLink.appendChild(logoImg);
-        return logoLink;
+        logoImg.setAttribute("src", "images/logo.png");
+        logoImg.setAttribute("alt", "Fisheye Home page");
+        headerLink.appendChild(logoImg);
+        return headerLink;
     }
 }

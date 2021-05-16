@@ -12,9 +12,9 @@ class Picture {
         const pictureTitle = document.createElement("p");
         const pictureLikes = document.createElement("i");
 
-        pictureImg.setAttribute("src", `${this.img}`);
-        pictureTitle.innerHTML = `${this.title}`;
-        pictureLikes.innerHTML = `${this.numberOfLikes}`;
+        pictureImg.setAttribute("src", `${this.img}`); //media.image dans le JSON
+        pictureTitle.innerHTML = `${this.title}`; //? pas trouvé dans le JSON
+        pictureLikes.innerHTML = `${this.numberOfLikes}`; //media.likes dans le JSON
 
         pictureArticle.appendChild(pictureSection);
         pictureArticle.appendChild(pictureInfoSection);

@@ -1,22 +1,14 @@
-const mainElement = document.createElement("main");
-
 class PhotographerPage{
-    constructor(logo, profile, input, menu, gallery){
-        this.logo = logo;
+    constructor(profile, input, menu, gallery){
         this.profile = profile
         this.input = input;
         this.menu = menu;
         this.gallery = gallery;
     }
-    displayLogo(){
-        logo = new Logo("index.html", "images/logo.png");
-        logo.display();
-        return logo;
-    }
 
     displayProfile(){
-        let profile = new PhotographerProfile(photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.tags, photographer.portrait);
-        profile.display();
+        let profile = new Photographer(photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.tags, photographer.portrait);
+        profile.displayProfile();
         return profile;
         /*fetch('./JS/photographers.json')
         .then((response) => {
