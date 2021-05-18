@@ -1,5 +1,5 @@
 class Photographer{
-    constructor(portrait, name, city, country, tagline, price, tags){
+    constructor(portrait, name, city, country, tagline, price, tags, id){
         this.portrait = portrait;
         this.name = name;
         this.city = city;
@@ -7,6 +7,7 @@ class Photographer{
         this.tagline = tagline;
         this.price = price;
         this.tags = tags;
+        this.id = id;
     }
     displayCard(){
         let nameWithSpaces = this.name; 
@@ -36,7 +37,7 @@ class Photographer{
         newProfileTitle.setAttribute("id", "photographer-name");
         secondSection.classList.add("card-info");
         thirdSection.classList.add("card-tags");
-        firstSectionLink.setAttribute("href", `${nameToLowerCase}.html`);
+        firstSectionLink.setAttribute("href", `detail.html?id=${this.id}`);
         newProfileImg.classList.add("card-profile__img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
         newProfileTitle.classList.add("card-profile__name");
