@@ -1,19 +1,30 @@
-class Photographer{
-    constructor(portrait, name, city, country, tagline, price, tags, id){
-        this.portrait = portrait;
-        this.name = name;
-        this.city = city;
-        this.country = country;
-        this.tagline = tagline;
-        this.price = price;
-        this.tags = tags;
-        this.id = id;
+class PhotographerFactory{
+    constructor(type, props){
+        this.type = type; //"card" ou "profile"
+        if(type === "card"){
+            return new Card(props);
+        }
+        if(type === "profile"){
+            return new Profile(props);
+        }
     }
-    displayCard(){
-        let nameWithSpaces = this.name; 
-        let nameWithoutSpaces = (nameWithSpaces).replace(/ /g, ""); 
-        let nameToLowerCase = nameWithoutSpaces.toLowerCase();
+    display(){
+        console.log("ceci est un message provenant de la factory Photographer");
+    }
+}
 
+class Card extends PhotographerFactory{
+    constructor(props){
+        this.portrait = props.portrait;
+        this.name = props.name;
+        this.city = props.city;
+        this.country = props.country;
+        this.tagline = props.tagline;
+        this.price = props.price;
+        this.tags = props.tags;
+        this.id = props.id;
+    }
+    display(){
         //create elements
         const newArticle = document.createElement("article");
         const firstSection = document.createElement("section");
@@ -61,7 +72,7 @@ class Photographer{
         secondSection.appendChild(quoteParagraph);
         secondSection.appendChild(priceParagraph);
         thirdSection.appendChild(thirdSectionList);
-        
+
         //create tags
         for (const tag of this.tags){
             const liTag = document.createElement("li");
@@ -72,10 +83,21 @@ class Photographer{
             hashtag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
             liTag.appendChild(hashtag);
         }
-
         return newArticle;
     }
-    displayProfile(){
+}
+
+class Profile extends PhotographerFactory{
+    constructor(props){
+        this.portrait = props.portrait;
+        this.name = props.name;
+        this.city = props.city;
+        this.country = props.country;
+        this.tagline = props.tagline;
+        this.tags = props.tags;
+        this.id = props.id;
+    }
+    display(){
         //create elements
         const sectionContainer = document.createElement("section");
         const newArticle = document.createElement("article");

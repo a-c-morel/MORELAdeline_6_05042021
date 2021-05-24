@@ -7,9 +7,14 @@ fetch('./JS/photographers.json')
     .then((obj) => {
         photographers = obj.photographers;
         for (const photographer of photographers){ //cela va énumérer les objets contenus dans obj
-            let myCard = new Photographer(photographer.portrait, photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.tags);
+            let myCard = factory("card");
+            myCard.display();
+            
+            
+            /*new Photographer(photographer.portrait, photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.price, photographer.tags);
             tags.push(...photographer.tags);
-            mainElement.appendChild(myCard.displayCard());
+
+            mainElement.appendChild(myCard.displayCard());*/
         }
         
         tags = new Set(tags);

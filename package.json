@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/a-c-morel/MORELAdeline_6_05042021/issues"
   },
-  "homepage": "https://github.com/a-c-morel/MORELAdeline_6_05042021#readme"
+  "homepage": "https://github.com/a-c-morel/MORELAdeline_6_05042021#readme",
+  "devDependencies": {
+    "eslint": "^7.26.0"
+  }
 }

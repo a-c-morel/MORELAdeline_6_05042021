@@ -29,12 +29,14 @@ selectMenu.appendChild(popularityOption);
 selectMenu.appendChild(dateOption);
 selectMenu.appendChild(titleOption);
 
+//ce qui suit va générer la page HTML "detail" en fonction de l'id du photographe cliqué dans "index"
 fetch('./JS/photographers.json')
     .then((response) => {
         return response.json();
     })
     .then((obj) => {
         photographers = obj.photographers;
+
         /*let photographer1 = photographers[0];
         let profile1 = new Photographer(photographer1.portrait, photographer1.name, photographer1.city, photographer1.country, photographer1.tagline, photographer1.price, photographer1.tags);
         console.log(profile1);*/
