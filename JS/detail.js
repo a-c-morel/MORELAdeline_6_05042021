@@ -29,6 +29,10 @@ selectMenu.appendChild(popularityOption);
 selectMenu.appendChild(dateOption);
 selectMenu.appendChild(titleOption);
 
+let params = new URLSearchParams(window.location.search);
+let photographerId = params.get("id");
+console.log(photographerId);
+
 //ce qui suit va générer la page HTML "detail" en fonction de l'id du photographe cliqué dans "index"
 fetch('./JS/photographers.json')
     .then((response) => {
