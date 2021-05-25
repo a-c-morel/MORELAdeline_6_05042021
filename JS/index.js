@@ -12,8 +12,6 @@ fetch('./JS/photographers.json')
             
             tags.push(...photographer.tags);
 
-            console.log(myCard.id);
-
             mainElement.appendChild(myCard.display());
         }
         

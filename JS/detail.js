@@ -29,6 +29,7 @@ selectMenu.appendChild(popularityOption);
 selectMenu.appendChild(dateOption);
 selectMenu.appendChild(titleOption);
 
+//récupération de la valeur de l'id du photographe dans l'url
 let params = new URLSearchParams(window.location.search);
 let photographerId = params.get("id");
 console.log(photographerId);
@@ -41,18 +42,24 @@ fetch('./JS/photographers.json')
     .then((obj) => {
         photographers = obj.photographers;
 
+        for (let photographer of photographers){
+            if(photographer.id == photographerId){
+                let photographerProfile = new PhotographerFactory("profile", {portrait: photographer.portrait, name: photographer.name, city: photographer.city, country: photographer.country, tagline: photographer.tagline, tags: photographer.tags, id: photographer.id});
+                mainElement.appendChild(photographerProfile.display());
+            }
+        }
         /*let photographer1 = photographers[0];
         let profile1 = new Photographer(photographer1.portrait, photographer1.name, photographer1.city, photographer1.country, photographer1.tagline, photographer1.price, photographer1.tags);
         console.log(profile1);*/
 
         //let photographer1Id = photographers[0].id;
 
-        medias = obj.media;
+        /*medias = obj.media;
         for (let media of medias){
             if(media.id === photographer1Id){
                 //creer une instance de picture
             }
-        }
+        }*/
 
         /*let photographerPage1 = new PhotographerPage(profile1, photographerForm, menu, gallery);*/
         //tags.push(...photographer.tags);
