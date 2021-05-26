@@ -15,6 +15,7 @@ class MediaFactory{
 
 class Video extends MediaFactory{
     constructor(props){
+        super(props);
         this.id = props.id;
         this.url = props.url;
         this.title = props.title;
@@ -33,7 +34,7 @@ class Video extends MediaFactory{
         const newVideoTitle = document.createElement("p");
 
         //newVideoLink.setAttribute(); ?
-        newVideoSource.setAttribute("src", `${this.url}`);
+        newVideoSource.setAttribute("src", `images/medias/${this.url}`);
         newVideoTitle.innerHTML = `${this.title}`;
 
         mainElement.appendChild(newVideoArticle);
@@ -47,6 +48,7 @@ class Video extends MediaFactory{
 
 class Image extends MediaFactory{
     constructor(props){
+        super(props);
         this.id = props.id;
         this.url = props.url;
         this.photographerId = props.photographerId;
