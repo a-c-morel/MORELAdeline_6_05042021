@@ -115,6 +115,7 @@ class Profile extends PhotographerFactory{
         const newProfileImg = document.createElement("img");
 
         //add classes and attributes + content
+        newArticle.classList.add("card");
         firstSection.classList.add("card-profile");
         firstSectionH1.classList.add("card-profile__name");
         firstSectionH1.innerHTML = `${this.name}`;

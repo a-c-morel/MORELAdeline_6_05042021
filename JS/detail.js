@@ -4,6 +4,7 @@ const label = document.createElement("label");
 const input = document.createElement("input");
 
 form.setAttribute("action", "");
+form.style.order = "1";
 label.setAttribute("for", "");
 input.setAttribute("type", "text");
 
@@ -17,6 +18,7 @@ const popularityOption = document.createElement("option");
 const dateOption = document.createElement("option");
 const titleOption = document.createElement("option");
 
+selectMenu.style.order = "2";
 popularityOption.setAttribute("value", "0");
 popularityOption.innerHTML = "Popularité"; 
 dateOption.setAttribute("value", "1");
