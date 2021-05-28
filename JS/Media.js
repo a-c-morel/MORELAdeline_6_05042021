@@ -36,6 +36,7 @@ class Video extends MediaFactory{
         //newVideoLink.setAttribute(); ?
         newVideoSource.setAttribute("src", `images/medias/${this.url}`);
         newVideoTitle.innerHTML = `${this.title}`;
+        newVideoThumbnail.classList.add("gallery__video");
 
         mainElement.appendChild(newVideoArticle);
         newVideoArticle.appendChild(newVideoLink);
@@ -43,6 +44,7 @@ class Video extends MediaFactory{
         newVideoLink.appendChild(newVideoThumbnail);
         newVideoThumbnail.appendChild(newVideoSource);
 
+        return newVideoArticle;
     }
 }
 
@@ -51,6 +53,7 @@ class Image extends MediaFactory{
         super(props);
         this.id = props.id;
         this.url = props.url;
+        this.title = props.title;
         this.photographerId = props.photographerId;
         this.tags = props.tags;
         this.likes = props.likes;
@@ -59,8 +62,22 @@ class Image extends MediaFactory{
     }
     display(){
         //ce que doit faire la méthode pour générer un objet de type photo
+        const newImageArticle = document.createElement("article");
+        const newImageLink = document.createElement("a");
         const newImage = document.createElement("img");
+        const newImageTitle = document.createElement("p");
 
+        //newVideoLink.setAttribute(); ?
+        newImage.setAttribute("src", `images/medias/${this.url}`);
+        newImage.classList.add("gallery__picture");
+        newImageTitle.innerHTML = `${this.title}`;
+
+        mainElement.appendChild(newImageArticle);
+        newImageArticle.appendChild(newImageLink);
+        newImageLink.appendChild(newImage);
+        newImageArticle.appendChild(newImageTitle);
+
+        return newImageArticle;
     }
 }
 

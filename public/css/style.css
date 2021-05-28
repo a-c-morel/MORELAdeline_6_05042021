@@ -109,6 +109,16 @@
   cursor: pointer;
 }
 
+.gallery__picture {
+  max-width: 400px;
+  height: auto;
+}
+
+.gallery__video {
+  max-width: 400px;
+  height: auto;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

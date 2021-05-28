@@ -55,10 +55,10 @@ fetch('./JS/photographers.json')
             if((media.image == undefined) && (media.photographerId == photographerId)){
                 let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 mainElement.appendChild(video.display());
-            }/*else if((media.video == undefined) && (media.photographerId == photographerId)){
+            }else if((media.video == undefined) && (media.photographerId == photographerId)){
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 mainElement.appendChild(image.display());
-            }*/
+            }
         }
         /*let photographer1 = photographers[0];
         let profile1 = new Photographer(photographer1.portrait, photographer1.name, photographer1.city, photographer1.country, photographer1.tagline, photographer1.price, photographer1.tags);
