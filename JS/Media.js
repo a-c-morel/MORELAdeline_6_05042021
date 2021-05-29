@@ -34,6 +34,7 @@ class Video extends MediaFactory{
         const newVideoTitle = document.createElement("p");
 
         //newVideoLink.setAttribute(); ?
+        newVideoArticle.classList.add("gallery");
         newVideoSource.setAttribute("src", `images/medias/${this.url}`);
         newVideoTitle.innerHTML = `${this.title}`;
         newVideoThumbnail.classList.add("gallery__video");
@@ -67,10 +68,12 @@ class Image extends MediaFactory{
         const newImage = document.createElement("img");
         const newImageTitle = document.createElement("p");
 
-        //newVideoLink.setAttribute(); ?
+        newImageArticle.classList.add("gallery");
+        newImageLink.classList.add("gallery__link");
         newImage.setAttribute("src", `images/medias/${this.url}`);
         newImage.classList.add("gallery__picture");
         newImageTitle.innerHTML = `${this.title}`;
+        newImageTitle.classList.add("gallery__title");
 
         mainElement.appendChild(newImageArticle);
         newImageArticle.appendChild(newImageLink);

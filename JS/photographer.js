@@ -123,6 +123,7 @@ class Profile extends PhotographerFactory{
         quoteParagraph.innerHTML = `${this.tagline}`;
         secondSection.classList.add("profile-image");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+        tagsSection.classList.add("profile-info__tags");
 
         //add elements to their parents
         mainElement.appendChild(newArticle);

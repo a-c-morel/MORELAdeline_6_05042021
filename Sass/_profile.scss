@@ -1,12 +1,16 @@
 .profile{
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    padding-left : 1.25rem;
+    padding-right: 1.25rem;
     .profile-info{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         &__name{
             @include font($mediumColor, 2.9rem, 2.25rem, normal);
+            margin-top: 1.8rem;
         }
         &__location{
             @include font($darkColor, 1.06rem, .81rem, normal);
@@ -18,9 +22,8 @@
         }
         &__tags{
             ul{
-                display: flex;
-                justify-content: center;
-                flex-wrap: nowrap;
+                justify-content: flex-start;
+                margin-bottom: 2.9rem;
             }
         }
     }

@@ -1,9 +1,18 @@
 .gallery__picture{
-    max-width: 400px;
+    max-width: 335px;
     height: auto;
+    border-radius: .3rem;
 }
 
 .gallery__video{
-    max-width: 400px;
+    max-width: 335px;
     height: auto;
+    border-radius: .3rem;
+}
+
+.gallery__title{
+    @include font($darkColor, 1.13rem, .88rem, normal);
+    text-align: left;
+    margin-top: .63rem;
+    margin-bottom: .63rem;
 }

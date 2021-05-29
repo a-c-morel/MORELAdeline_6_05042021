@@ -89,9 +89,32 @@
   flex-wrap: nowrap;
 }
 
+.tags-links {
+  display: inline-block;
+  border: 0.03rem solid #C4C4C4;
+  /*= 0.5px*/
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0.05rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
 .profile {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 .profile .profile-info {
   display: flex;
@@ -107,6 +130,7 @@
   line-height: 2.9rem;
   font-size: 2.25rem;
   font-weight: normal;
+  margin-top: 1.8rem;
 }
 .profile .profile-info__location {
   font-family: "DM Sans", sans-serif;
@@ -131,9 +155,8 @@
   margin-bottom: 0.19rem;
 }
 .profile .profile-info__tags ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin-bottom: 2.9rem;
 }
 
 .profile-image {
@@ -217,34 +240,30 @@
         }
     }
 }*/
-.tags-links {
-  display: inline-block;
-  border: 0.03rem solid #C4C4C4;
-  /*= 0.5px*/
-  box-sizing: border-box;
-  border-radius: 11px;
-  padding: 0.05rem;
-  padding-left: 0.3rem;
-  padding-right: 0.3rem;
+.gallery__picture {
+  max-width: 335px;
+  height: auto;
+  border-radius: 0.3rem;
+}
+
+.gallery__video {
+  max-width: 335px;
+  height: auto;
+  border-radius: 0.3rem;
+}
+
+.gallery__title {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   text-align: center;
   /*à voir si je dois le passer en argument plus tard*/
   color: #901C1C;
-  line-height: 1rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.gallery__picture {
-  max-width: 400px;
-  height: auto;
-}
-
-.gallery__video {
-  max-width: 400px;
-  height: auto;
+  line-height: 1.13rem;
+  font-size: 0.88rem;
+  font-weight: normal;
+  text-align: left;
+  margin-top: 0.63rem;
+  margin-bottom: 0.63rem;
 }
 
 * {
