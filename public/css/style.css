@@ -131,6 +131,7 @@
   font-size: 2.25rem;
   font-weight: normal;
   margin-top: 1.8rem;
+  text-align: left;
 }
 .profile .profile-info__location {
   font-family: "DM Sans", sans-serif;

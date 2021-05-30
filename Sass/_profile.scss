@@ -11,6 +11,7 @@
         &__name{
             @include font($mediumColor, 2.9rem, 2.25rem, normal);
             margin-top: 1.8rem;
+            text-align: left;
         }
         &__location{
             @include font($darkColor, 1.06rem, .81rem, normal);
