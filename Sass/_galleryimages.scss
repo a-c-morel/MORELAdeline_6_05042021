@@ -1,18 +1,33 @@
-.gallery__picture{
-    max-width: 335px;
-    height: auto;
-    border-radius: .3rem;
+.gallery{
+    .gallery-link{
+        &__media{
+        max-width: 335px;
+        height: auto;
+        border-radius: .3rem;
+        }
+    }
+    .gallery-info{
+        margin-top: .63rem;
+        margin-bottom: .63rem;
+        display: flex;
+        justify-content: space-between;
+        &__title{
+            @include font($darkColor, 1.13rem, .88rem, normal);
+            text-align: left;
+        }
+        &__likes{
+            @include font($darkColor, 1.13rem, .88rem, normal);
+            text-align: left;
+        }
+    }
 }
 
-.gallery__video{
-    max-width: 335px;
-    height: auto;
-    border-radius: .3rem;
-}
 
-.gallery__title{
-    @include font($darkColor, 1.13rem, .88rem, normal);
-    text-align: left;
-    margin-top: .63rem;
-    margin-bottom: .63rem;
-}
+
+
+
+
+
+
+
+
