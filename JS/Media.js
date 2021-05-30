@@ -1,6 +1,5 @@
 class MediaFactory{
     constructor(type, props){
-        this.type = type; //"video" ou "image"
         if(type === "image"){
             return new Image(props);
         }
@@ -9,13 +8,12 @@ class MediaFactory{
         }
     }
     display(){
-        console.log("ceci est un message provenant de la factory des medias")
+        console.log("ceci est un message provenant de la factory des medias");
     }
 }
 
-class Video extends MediaFactory{
+class Video{
     constructor(props){
-        super(props);
         this.id = props.id;
         this.url = props.url;
         this.title = props.title;
@@ -58,9 +56,8 @@ class Video extends MediaFactory{
     }
 }
 
-class Image extends MediaFactory{
+class Image{
     constructor(props){
-        super(props);
         this.id = props.id;
         this.url = props.url;
         this.title = props.title;

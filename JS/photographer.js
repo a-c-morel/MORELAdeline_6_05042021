@@ -13,9 +13,8 @@ class PhotographerFactory{
     }
 }
 
-class Card extends PhotographerFactory{
+class Card{
     constructor(props){
-        super(props);
         this.portrait = props.portrait;
         this.name = props.name;
         this.city = props.city;
@@ -88,9 +87,8 @@ class Card extends PhotographerFactory{
     }
 }
 
-class Profile extends PhotographerFactory{
+class Profile{
     constructor(props){
-        super(props);
         this.portrait = props.portrait;
         this.name = props.name;
         this.city = props.city;

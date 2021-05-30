@@ -16,5 +16,3 @@ headerLink.appendChild(logoImg);
 /*return headerLink;*/
 
 let tags = [];
-let photographers = [];
-let medias = [];
