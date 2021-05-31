@@ -40,6 +40,8 @@ let photographers = [];
 let photographerProfile = null;
 let medias = [];
 
+
+
 //ce qui suit va générer la page HTML "detail" en fonction de l'id du photographe cliqué dans "index"
 fetch('./JS/photographers.json')
     .then((response) => {
@@ -68,25 +70,19 @@ fetch('./JS/photographers.json')
         }
         console.log(medias);
 
+        //ouverture de la modale
+        const modaleLink = document.querySelectorAll(".gallery-link");
+        const modale = document.createElement("div");
+        modale.classList.add("modale");
 
+        console.log(modaleLink);
 
-        /*let photographer1 = photographers[0];
-        let profile1 = new Photographer(photographer1.portrait, photographer1.name, photographer1.city, photographer1.country, photographer1.tagline, photographer1.price, photographer1.tags);
-        console.log(profile1);*/
+        modaleLink.forEach((link) => link.addEventListener("click", launchModale));
 
-        //let photographer1Id = photographers[0].id;
-
-        /*medias = obj.media;
-        for (let media of medias){
-            if(media.id === photographer1Id){
-                //creer une instance de picture
-            }
-        }*/
-
-        /*let photographerPage1 = new PhotographerPage(profile1, photographerForm, menu, gallery);*/
-        //tags.push(...photographer.tags);
-        
-        //mainElement.appendChild(photographerPage1.display());
+        function launchModale(){
+            mainElement.appendChild(modale);
+            console.log("vous avez cliqué sur un media");
+        }
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
