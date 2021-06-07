@@ -274,13 +274,27 @@
   text-align: left;
 }
 
-.modale {
-  width: 400px;
-  height: 400px;
-  background-color: red;
+/*classes pour montrer ou cacher la lightbox*/
+.lightbox-hidden {
+  display: none;
+}
+
+.lightbox-showed {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
   position: absolute;
-  left: 40px;
-  top: 40px;
+  left: 0;
+  top: 0;
+}
+
+.lightbox-media {
+  width: 18rem;
+  height: auto;
+  position: absolute;
+  top: 17.6rem;
+  left: 2.7rem;
+  border-radius: 0.3rem;
 }
 
 * {

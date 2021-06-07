@@ -1,4 +1,14 @@
-heading();
+let tags = [];
+
+function filtrer(tag){
+    let cards = document.querySelectorAll(".card");
+    for (let card of cards){
+        card.style.display = "block";
+        if(!card.innerText.includes(tag)){
+            card.style.display = "none";
+        }
+    }
+}
 
 fetch('./JS/photographers.json')
     .then((response) => {

@@ -68,61 +68,11 @@ fetch('./JS/photographers.json')
                 medias.push(image);
             }
         }
+
         console.log(medias);
-
-        //ouverture de la modale
-        const modaleLink = document.querySelectorAll(".gallery-link");
-        const modale = document.createElement("div");
-        modale.classList.add("modale");
-
-        console.log(modaleLink);
-
-        modaleLink.forEach((link) => link.addEventListener("click", launchModale));
-
-        function launchModale(){
-            mainElement.appendChild(modale);
-            console.log("vous avez cliqué sur un media");
-        }
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
         console.error(error);
     });
-
-
-
-
-
-
-
-/*class PhotographerPage{
-    constructor(profile, form, menu, gallery){
-        this.profile = profile
-        this.form = form;
-        this.menu = menu;
-        this.gallery = gallery;
-    }
-
-    createProfile(){
-        let profile = new Photographer(photographer.name, photographer.city, photographer.country, photographer.tagline, photographer.tags, photographer.portrait);
-        profile.displayProfile();
-        return profile;
-        
-    }
-    createGallery(){
-        let form = new Form("test", "test", "text");
-        form.display();
-        return form;
-    }
-    createMenu(){
-        let menu = new Menu("Popularité", "Date", "Titre");
-        menu.display();
-        return menu;
-    }
-    createGallery(){
-        let gallery = new Gallery();
-        gallery.display();
-        return gallery;
-    }
-}*/
 
