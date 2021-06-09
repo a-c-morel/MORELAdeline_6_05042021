@@ -36,13 +36,9 @@ class Video{
         const newVideoInfoSection = document.createElement("section");
         const newVideoTitle = document.createElement("p");
         const newVideoLikes = document.createElement("p");
-        const lightbox = new ModalFactory("lightbox", {id: this.id, url: this.video, photographerId: this.photographerId});
-        const lightboxVideo = document.createElement("video");
-        const lightboxVideoSource = document.createElement("source");
 
         newVideoArticle.classList.add("gallery");
         newVideoLink.classList.add("gallery-link");
-        newVideoLink.setAttribute("onclick", `launchLightbox(${lightbox})`);
         newVideoSource.setAttribute("src", `images/medias/${this.url}`);
         newVideoThumbnail.classList.add("gallery-link__media");
         newVideoInfoSection.classList.add("gallery-info")
@@ -50,11 +46,8 @@ class Video{
         newVideoTitle.classList.add("gallery-info__title");
         newVideoLikes.classList.add("gallery-info__likes");
         newVideoLikes.innerHTML = `${this.likes}`;
-        lightboxVideo.classList.add("lightbox-media");
-        lightboxVideoSource.setAttribute("src", `images/medias/${this.url}`);
         
         mainElement.appendChild(newVideoArticle);
-        mainElement.appendChild(lightbox.display());
         newVideoArticle.appendChild(newVideoLink);
         newVideoArticle.appendChild(newVideoInfoSection);
         newVideoLink.appendChild(newVideoThumbnail);
@@ -62,7 +55,6 @@ class Video{
         newVideoInfoSection.appendChild(newVideoTitle);
         newVideoInfoSection.appendChild(newVideoLikes);
         //lightbox.appendChild(lightboxVideo);
-        lightboxVideo.appendChild(lightboxVideoSource);
         
         return newVideoArticle;
     }
@@ -87,8 +79,7 @@ class Image{
         const newImageInfoSection = document.createElement("section");
         const newImageTitle = document.createElement("p");
         const newImageLikes = document.createElement("p");
-        const lightboxImage = document.createElement("img");
-
+        
         newImageArticle.classList.add("gallery");
         newImageLink.classList.add("gallery-link");
         newImageLink.setAttribute("onclick", "");
@@ -99,9 +90,7 @@ class Image{
         newImageTitle.classList.add("gallery-info__title");
         newImageLikes.classList.add("gallery-info__likes")
         newImageLikes.innerHTML = `${this.likes}`;
-        lightboxImage.classList.add("lightbox-media");
-        lightboxImage.setAttribute("src", `images/medias/${this.url}`);
-
+        
         mainElement.appendChild(newImageArticle);
         newImageArticle.appendChild(newImageLink);
         newImageLink.appendChild(newImage);
@@ -111,10 +100,4 @@ class Image{
         
         return newImageArticle;
     }
-
-    /*launchLightbox(){
-        const lightbox = new ModalFactory("lightbox", {id: this.id, url: this.image, photographerId: this.photographerId});
-        mainElement.appendChild(lightbox);
-        console.log("vous avez cliqué sur un media");
-    }*/
 }

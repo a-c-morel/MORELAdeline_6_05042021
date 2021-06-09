@@ -8,20 +8,63 @@
 //classe qui s'ajoute en JS quand l'utilisateur clique sur un media
 //et est remove lorsqu'il clique sur la croix de fermeture de la lightbox
 .lightbox-showed{
+    display: block;
     width: 100vw;
     height: 100vh;
     background-color: white;
     position: absolute;
+    display: flex;
+    flex-direction: column;
     left: 0;
     top: 0;
+    z-index: 10;
 }
+
+//boutons de la lightbox
+.fas{
+    color: $darkColor;
+}
+
+.fa-times{
+    cursor: pointer;
+}
+
+.lightbox-btn{
+    cursor: pointer;
+    &__close{
+        position: absolute;
+        top: 286.13px;
+        right: 25.43px;
+    }
+    &__previous{
+        position: absolute;
+        top: 399.39px;
+        left: 25.81px;
+    }
+    &__next{
+        position: absolute;
+        top: 399.39px;
+        right: 25.81px;
+    }
+}
+
+.lightbox-container{
+    width: 289.13px;
+    height: 248px;
+    align-self: center;
+    position: absolute;
+    top: 282px;
+  }
 
 //video ou image de la lightbox
 .lightbox-media{
     width: 18rem;
     height: auto;
     position: absolute;
-    top: 17.6rem;
-    left: 2.7rem;
+    top: 0;
+    left: 0;
     border-radius: .3rem;
+    object-fit: cover;
+    max-width: 289.13px;
+    max-height: 248px;
 }

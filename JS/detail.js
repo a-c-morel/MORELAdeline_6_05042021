@@ -40,8 +40,6 @@ let photographers = [];
 let photographerProfile = null;
 let medias = [];
 
-
-
 //ce qui suit va générer la page HTML "detail" en fonction de l'id du photographe cliqué dans "index"
 fetch('./JS/photographers.json')
     .then((response) => {
@@ -60,7 +58,10 @@ fetch('./JS/photographers.json')
             if((media.image == undefined) && (media.photographerId == photographerId)){
                 let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 console.log(video);
+                //video.addEventListener("click", functi
+
                 mainElement.appendChild(video.display());
+
                 medias.push(video);
             }else if((media.video == undefined) && (media.photographerId == photographerId)){
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
@@ -75,4 +76,3 @@ fetch('./JS/photographers.json')
         console.error("Cela n'a pas fonctionné");
         console.error(error);
     });
-
