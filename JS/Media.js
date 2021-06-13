@@ -1,7 +1,3 @@
-function launchLightbox(elem){
-    elem.classList.add("lightbox-showed");
-}
-
 class MediaFactory{
     constructor(type, props){
         if(type === "image"){
@@ -82,7 +78,6 @@ class Image{
         
         newImageArticle.classList.add("gallery");
         newImageLink.classList.add("gallery-link");
-        newImageLink.setAttribute("onclick", "");
         newImage.setAttribute("src", `images/medias/${this.url}`);
         newImage.classList.add("gallery-link__media");
         newImageInfoSection.classList.add("gallery-info");

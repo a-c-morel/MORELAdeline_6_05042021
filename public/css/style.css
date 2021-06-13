@@ -339,6 +339,23 @@
   object-position: top;
 }
 
+.lightbox-title {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: #901C1C;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+  position: absolute;
+  left: 11.47%;
+  right: 14%;
+  top: 66.13%;
+  bottom: 31.65%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

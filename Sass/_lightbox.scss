@@ -68,3 +68,13 @@
     object-fit: cover;
     object-position: top;
 }
+
+.lightbox-title{
+    @include font($darkColor, 18px, 14px, normal);
+    text-align: left;
+    position: absolute;
+    left: 11.47%;
+    right: 14%;
+    top: 66.13%;
+    bottom: 31.65%;
+}
