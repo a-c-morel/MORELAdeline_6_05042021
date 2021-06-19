@@ -34,7 +34,7 @@ selectMenu.appendChild(titleOption);
 //récupération de la valeur de l'id du photographe dans l'url
 let params = new URLSearchParams(window.location.search);
 let photographerId = params.get("id");
-console.log(photographerId);
+console.log(`id du photographe : ${photographerId}`);
 
 let photographers = [];
 let photographerProfile = null;
@@ -44,15 +44,17 @@ function launchLightbox(elem){
     elem.classList.add("lightbox-showed");
 }
 
-/*function navigation(array){
+/*PSEUDO CODE :
+
+function navigation(array des médias){
     let currentMedia = media cliqué
     let previousMedia = media cliqué --
     let nextMedia = media cliqué ++
-    if "clic sur prev"
-    for (let i = 0; i < array.length; i--){ //array = medias
+    eventListener sur le bouton prev :
+    for (let i = 0; i < array.length; i--){
         ?????
     }
-    if "clic sur next"
+    eventListener sur le bouton next :
     for (let i = 0; i < array.length; i++){
         ?????
     }
@@ -72,11 +74,11 @@ fetch('./JS/photographers.json')
                 mainElement.appendChild(photographerProfile.display());
             }
         }
+
         for (let media of obj.media){
             if((media.image == undefined) && (media.photographerId == photographerId)){
                 let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
-                console.log(video);
-                
+                                
                 mainElement.appendChild(video.display());
 
                 medias.push(video);
@@ -86,23 +88,24 @@ fetch('./JS/photographers.json')
                 medias.push(image);
             }
             
-            let lightboxVideo = new LightboxFactory("video", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId});
-            mainElement.appendChild(lightboxVideo.display());
+            
+            /*let lightboxVideo = new LightboxFactory("video", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId});
+            mainElement.appendChild(lightboxVideo.display());*/
         }
 
         console.log(medias);
+
+        let lightbox = new LightboxFactory(medias);
+
         console.log(document.querySelectorAll(".gallery-link"));
-        //const myLink = document.querySelectorAll(".gallery-link");
+        let myLinks = document.querySelectorAll(".gallery-link");
             
-        /*myLink.addEventListener("click", function(){
-            let currentId = video.id ou image.id
-            let currentUrl = video.url ou image.url
-            let currentTitle = video.title ou image.title
-            let currentVideo = {id: currentId, url: currentUrl, title: currentTitle} ou currentImage
-            let lightboxVideo = new LightboxFactory("video", currentVideo); ou "image"  ou currentImage
-            mainElement.appendChild(lightboxVideo.display()); ou lightboxImage
-            launchLightbox(lightboxVideo); ou lightboxImage
-        });*/
+        myLinks.forEach(myLink =>{
+            myLink.addEventListener("click", (e)=>{
+                lightbox.createElement();
+                console.log(lightbox);
+            })            
+        });
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");
