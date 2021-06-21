@@ -1,12 +1,12 @@
-.gallery{
-    .gallery-link{
+.media{
+    .media-preview{
         &__media{
         max-width: 335px;
         height: auto;
         border-radius: .3rem;
         }
     }
-    .gallery-info{
+    .media-info{
         margin-top: .63rem;
         margin-bottom: .63rem;
         display: flex;

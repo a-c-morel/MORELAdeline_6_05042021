@@ -240,18 +240,18 @@
         }
     }
 }*/
-.gallery .gallery-link__media {
+.media .media-preview__media {
   max-width: 335px;
   height: auto;
   border-radius: 0.3rem;
 }
-.gallery .gallery-info {
+.media .media-info {
   margin-top: 0.63rem;
   margin-bottom: 0.63rem;
   display: flex;
   justify-content: space-between;
 }
-.gallery .gallery-info__title {
+.media .media-info__title {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   text-align: center;
@@ -262,7 +262,7 @@
   font-weight: normal;
   text-align: left;
 }
-.gallery .gallery-info__likes {
+.media .media-info__likes {
   font-family: "DM Sans", sans-serif;
   font-style: normal;
   text-align: center;
