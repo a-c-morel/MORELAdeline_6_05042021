@@ -1,3 +1,6 @@
+const mainElement = document.createElement("main");
+document.body.appendChild(mainElement);
+
 //creation du formulaire (input, label)
 const form = document.createElement("form");
 const label = document.createElement("label");
@@ -48,15 +51,15 @@ function launchLightbox(elem){
 
 function navigation(array des médias){
     let currentMedia = media cliqué
-    let previousMedia = media cliqué --
-    let nextMedia = media cliqué ++
-    eventListener sur le bouton prev :
-    for (let i = 0; i < array.length; i--){
-        ?????
+
+    eventListener sur le bouton prev et sur le bouton next avec les conditions :
+    if(position == 0){
+        e.preventDefault sur l'event listener de prev
     }
-    eventListener sur le bouton next :
-    for (let i = 0; i < array.length; i++){
-        ?????
+    if(position > medias.length){
+        e.preventDefault sur l'event listener de next
+    } else{
+        position ++ ou position -- à chaque clic
     }
 }*/
 
@@ -87,10 +90,6 @@ fetch('./JS/photographers.json')
                 mainElement.appendChild(image.display());
                 medias.push(image);
             }
-            
-            
-            /*let lightboxVideo = new LightboxFactory("video", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId});
-            mainElement.appendChild(lightboxVideo.display());*/
         }
 
         console.log(medias);
@@ -103,7 +102,8 @@ fetch('./JS/photographers.json')
         myLinks.forEach(myLink =>{
             myLink.addEventListener("click", (e)=>{
                 lightbox.createElement();
-                console.log(lightbox);
+                console.log(lightbox); //pb : me sort toujours la position 0 et me dit que la vidéo est une img...
+                //Je pense que c'est parce que l'event est non pas sur l'objet lui-même mais sur un enfant de cet objet (la balise <a></a>)
             })            
         });
     })

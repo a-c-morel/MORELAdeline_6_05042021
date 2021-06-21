@@ -24,8 +24,30 @@ class Video{
         this.price = props.price
     }
     display(){
-        //ce que doit faire la méthode pour générer un objet de type vidéo
-        const newVideoArticle = document.createElement("article");
+        const newVideoArticle = document.createElement("article") ;
+        newVideoArticle.classList.add("media") ;
+        const newMediaSection = document.createElement("section") ;
+        newMediaSection.classList.add("media-preview") ;
+        const newInfoSection = document.createElement("section") ;
+        newInfoSection.classList.add("media-info") ;
+        const newVideo = document.createElement("video") ;
+        newVideo. classList.add("media-preview__media") ;
+        const newSource = document.createElement("source") ;
+        newSource.setAttribute("src", `images/medias/${this.url}`);
+        const newVideoTitle = document.createElement("h2") ;
+        newVideoTitle.classList.add(" media-info__title") ;
+        newVideoTitle.innerHTML = `${this.title}`;
+        const newVideoLikes = document.createElement("p") ;
+        newVideoLikes.classList.add("media-info__likes") ;
+
+        //mainElement.appendChild(newVideoArticle);
+        newVideoArticle.appendChild( newMediaSection) ;
+        newVideoArticle.appendChild( newInfoSection) ;
+        newMediaSection.appendChild(newVideo) ;
+        newVideo.appendChild(newSource) ;
+        newInfoSection.appendChild(newVideoTitle) ;
+        newInfoSection.appendChild(newVideoLikes) ;
+        /*const newVideoArticle = document.createElement("article");
         const newVideoLink = document.createElement("a");
         const newVideoThumbnail = document.createElement("video");
         const newVideoSource = document.createElement("source");
@@ -50,7 +72,7 @@ class Video{
         newVideoThumbnail.appendChild(newVideoSource);
         newVideoInfoSection.appendChild(newVideoTitle);
         newVideoInfoSection.appendChild(newVideoLikes);
-        //lightbox.appendChild(lightboxVideo);
+        //lightbox.appendChild(lightboxVideo);*/
         
         return newVideoArticle;
     }
