@@ -80,10 +80,8 @@ fetch('./JS/photographers.json')
 
         for (let media of obj.media){
             if((media.image == undefined) && (media.photographerId == photographerId)){
-                let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
-                                
+                let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});          
                 mainElement.appendChild(video.display());
-
                 medias.push(video);
             }else if((media.video == undefined) && (media.photographerId == photographerId)){
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
@@ -96,16 +94,27 @@ fetch('./JS/photographers.json')
 
         let lightbox = new LightboxFactory(medias);
 
-        console.log(document.querySelectorAll(".gallery-link"));
-        let myLinks = document.querySelectorAll(".gallery-link");
+        lightbox.createElement();
+        mainElement.appendChild(lightbox.display());
+
+        /*let mediaArticles = document.querySelectorAll(".media");
+
+        mediaArticles.forEach(mediaArticle => {
+            mediaArticle.addEventListener('click', (e) => {
+                console.log(lightbox.createElement());
+            })
+        });*/
+
+        /*console.log(document.querySelectorAll(".gallery-link"));
+        let myLinks = document.querySelectorAll(".gallery-link");*/
             
-        myLinks.forEach(myLink =>{
+        /*myLinks.forEach(myLink =>{
             myLink.addEventListener("click", (e)=>{
                 lightbox.createElement();
                 console.log(lightbox); //pb : me sort toujours la position 0 et me dit que la vidéo est une img...
                 //Je pense que c'est parce que l'event est non pas sur l'objet lui-même mais sur un enfant de cet objet (la balise <a></a>)
             })            
-        });
+        });*/
     })
     .catch((error) => {
         console.error("Cela n'a pas fonctionné");

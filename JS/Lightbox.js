@@ -26,7 +26,7 @@ class LightboxFactory{
         const lightboxMedia = this.element; //?????
         const lightboxTitle = document.createElement("p");
 
-        lightboxDiv.classList.add("lightbox-hidden");
+        lightboxDiv.classList.add("lightbox");
         lightboxCloseBtn.classList.add("lightbox-btn__close");
         lightboxPreviousBtn.classList.add("lightbox-btn__previous");
         leftArrow.classList.add("fas");

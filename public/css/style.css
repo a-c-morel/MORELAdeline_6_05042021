@@ -275,11 +275,7 @@
 }
 
 /*classes pour montrer ou cacher la lightbox*/
-.lightbox-hidden {
-  display: none;
-}
-
-.lightbox-showed {
+.lightbox {
   display: block;
   width: 100vw;
   height: 100vh;

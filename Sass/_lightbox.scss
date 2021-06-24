@@ -1,13 +1,6 @@
 /*classes pour montrer ou cacher la lightbox*/
 
-//de base
-.lightbox-hidden{
-    display: none;
-}
-
-//classe qui s'ajoute en JS quand l'utilisateur clique sur un media
-//et est remove lorsqu'il clique sur la croix de fermeture de la lightbox
-.lightbox-showed{
+.lightbox{
     display: block;
     width: 100vw;
     height: 100vh;
