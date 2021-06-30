@@ -24,21 +24,28 @@ class Image{
         this.price = props.price
     }
     display(){
+        //create elements
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
+
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
+
         const newInfoSection = document.createElement("section");
         newInfoSection.classList.add("media-info");
+
         const newImage = document.createElement("img");
         newImage. classList.add("media-preview__media");
         newImage.setAttribute("src", `images/medias/${this.url}`);
+
         const newImageTitle = document.createElement("h2");
         newImageTitle.classList.add("media-info__title");
         newImageTitle.innerHTML = `${this.title}`;
+
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
-
+        
+        //add elements to their parents
         newImageArticle.appendChild(newMediaSection);
         newImageArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newImage);
@@ -61,22 +68,30 @@ class Video{
         this.price = props.price
     }
     display(){
+        //create elements
         const newVideoArticle = document.createElement("article");
         newVideoArticle.classList.add("media");
+
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
+
         const newInfoSection = document.createElement("section");
         newInfoSection.classList.add("media-info");
+
         const newVideo = document.createElement("video");
         newVideo. classList.add("media-preview__media");
+
         const newSource = document.createElement("source");
         newSource.setAttribute("src", `images/medias/${this.url}`);
+
         const newVideoTitle = document.createElement("h2");
         newVideoTitle.classList.add("media-info__title");
         newVideoTitle.innerHTML = `${this.title}`;
+
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
-
+        
+        //add elements to their parents
         newVideoArticle.appendChild(newMediaSection);
         newVideoArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newVideo);

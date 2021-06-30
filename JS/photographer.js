@@ -27,38 +27,47 @@ class Card{
     display(){
         //create elements
         const newArticle = document.createElement("article");
-        const firstSection = document.createElement("section");
-        const secondSection = document.createElement("section");
-        const thirdSection = document.createElement("section");
-        const firstSectionLink = document.createElement("a");
-        const newDiv = document.createElement("div");
-        const newProfileImg = document.createElement("img");
-        const newProfileTitle = document.createElement("h2");
-        const locationParagraph = document.createElement("p");
-        const quoteParagraph = document.createElement("p");
-        const priceParagraph = document.createElement("p");
-        const thirdSectionList = document.createElement("ul");
-
-        //add classes and attributes + content
         newArticle.classList.add("card");
         newArticle.setAttribute("role", "article");
+
+        const firstSection = document.createElement("section");
         firstSection.classList.add("card-profile");
         firstSection.setAttribute("role", "region");
         firstSection.setAttribute("aria-labelledby", "photographer-name");
-        newProfileTitle.setAttribute("id", "photographer-name");
+
+        const secondSection = document.createElement("section");
         secondSection.classList.add("card-info");
+
+        const thirdSection = document.createElement("section");
         thirdSection.classList.add("card-tags");
+
+        const firstSectionLink = document.createElement("a");
         firstSectionLink.setAttribute("href", `detail.html?id=${this.id}`);
+
+        const newDiv = document.createElement("div");
+
+        const newProfileImg = document.createElement("img");
         newProfileImg.classList.add("card-profile__img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+
+        const newProfileTitle = document.createElement("h2");
+        newProfileTitle.setAttribute("id", "photographer-name");
         newProfileTitle.classList.add("card-profile__name");
         newProfileTitle.innerHTML = `${this.name}`;
+
+        const locationParagraph = document.createElement("p");
         locationParagraph.classList.add("card-info__location");
         locationParagraph.innerHTML = `${this.city}, ${this.country}`;
+
+        const quoteParagraph = document.createElement("p");
         quoteParagraph.classList.add("card-info__quote");
         quoteParagraph.innerHTML = `${this.tagline}`;
+
+        const priceParagraph = document.createElement("p");
         priceParagraph.classList.add("card-info__price");
         priceParagraph.innerHTML = `${this.price}€/jour`;
+
+        const thirdSectionList = document.createElement("ul");
 
         //add elements to their parents
         newArticle.appendChild(firstSection);
@@ -100,28 +109,35 @@ class Profile{
     display(){
         //create elements
         const newArticle = document.createElement("article");
-        const firstSection = document.createElement("section");
-        const firstSectionH1 = document.createElement("h1");
-        const locationParagraph = document.createElement("p");
-        const quoteParagraph = document.createElement("p");
-        const tagsSection = document.createElement("section");
-        const tagsSectionList = document.createElement("ul");
-        const secondSection = document.createElement("section");
-        const newDiv = document.createElement("div");
-        const newProfileImg = document.createElement("img");
-
-        //add classes and attributes + content
         newArticle.classList.add("profile"); //dans le scss, je pourrai prendre les propriétés que j'ai appliquées à .card et les modifier un peu
+
+        const firstSection = document.createElement("section");
         firstSection.classList.add("profile-info");
+
+        const firstSectionH1 = document.createElement("h1");
         firstSectionH1.classList.add("profile-info__name");
         firstSectionH1.innerHTML = `${this.name}`;
+
+        const locationParagraph = document.createElement("p");
         locationParagraph.classList.add("profile-info__location");
         locationParagraph.innerHTML = `${this.city}, ${this.country}`;
+
+        const quoteParagraph = document.createElement("p");
         quoteParagraph.classList.add("profile-info__quote");
         quoteParagraph.innerHTML = `${this.tagline}`;
-        secondSection.classList.add("profile-image");
-        newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+
+        const tagsSection = document.createElement("section");
         tagsSection.classList.add("profile-info__tags");
+
+        const tagsSectionList = document.createElement("ul");
+
+        const secondSection = document.createElement("section");
+        secondSection.classList.add("profile-image");
+
+        const newDiv = document.createElement("div");
+
+        const newProfileImg = document.createElement("img");
+        newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
 
         //add elements to their parents
         mainElement.appendChild(newArticle);

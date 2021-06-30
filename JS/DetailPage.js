@@ -3,29 +3,41 @@ let params = new URLSearchParams(window.location.search);
 let photographerId = params.get("id");
 console.log(`id du photographe : ${photographerId}`);
 
-let photographers = [];
+//let photographers = [];
 let photographerProfile = null;
 let medias = [];
 
 class Detail{
     constructor(){
-        this.photographers = [];
         this.tags = [];
     }
 
     async getPhotographer(){
         const response = await fetch('./JS/photographers.json');
-        console.log(response);
+        //console.log(response);
         const obj = await response.json();
-        console.log(obj);
+        //console.log(obj);
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
+
+        const photographers = obj.photographers;
+
         for (let photographer of photographers){
             if(photographer.id == photographerId){
                 photographerProfile = new PhotographerFactory("profile", {portrait: photographer.portrait, name: photographer.name, city: photographer.city, country: photographer.country, tagline: photographer.tagline, tags: photographer.tags, id: photographer.id});
                 mainElement.appendChild(photographerProfile.display());
             }
+        }
+    }
+
+    async displayMedias(){
+        const response = await fetch('./JS/photographers.json');
+        //console.log(response);
+        const obj = await response.json();
+        //console.log(obj);
+        if (!response.ok) {
+            throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
         for (let media of obj.media){
             if((media.image == undefined) && (media.photographerId == photographerId)){
@@ -38,11 +50,11 @@ class Detail{
                 medias.push(image);
             }
         }
-        console.log(medias);
-
-        let lightbox = new LightboxFactory(medias);
-
-        lightbox.createElement();
-        mainElement.appendChild(lightbox.display());
+        //console.log(medias);
     }
 }
+
+/*let lightbox = new LightboxFactory(medias);
+
+        lightbox.createElement();
+        mainElement.appendChild(lightbox.display());*/
