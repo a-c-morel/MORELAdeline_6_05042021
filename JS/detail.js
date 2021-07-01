@@ -1,3 +1,4 @@
+//ajout du main au body
 const mainElement = document.createElement("main");
 document.body.appendChild(mainElement);
 
@@ -44,10 +45,21 @@ selectMenu.appendChild(titleOption);
     myDetail.displayMedias();
 })();
 
-/*let myDetail = new Detail();
-myDetail.getPhotographer();*/
+    /*const clickableMedias = document.querySelectorAll(".media");
 
-/*PSEUDO CODE :
+    clickableMedias.forEach(clickableMedia =>{
+    clickableMedia.addEventListener('click', e =>{
+        console.log("vous avez cliqué");
+        let lightbox = new LightboxFactory(medias);
+        lightbox.createElement();
+        mainElement.appendChild(lightbox.display());
+    });
+});
+
+
+
+
+PSEUDO CODE :
 
 function navigation(array des médias){
     let currentMedia = media cliqué

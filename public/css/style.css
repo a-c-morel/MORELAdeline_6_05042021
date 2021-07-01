@@ -88,6 +88,9 @@
   justify-content: center;
   flex-wrap: nowrap;
 }
+.card .card-tags ul .tags-links {
+  cursor: default;
+}
 
 .tags-links {
   display: inline-block;

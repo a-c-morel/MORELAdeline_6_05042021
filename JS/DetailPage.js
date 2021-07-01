@@ -8,15 +8,12 @@ let photographerProfile = null;
 let medias = [];
 
 class Detail{
-    constructor(){
-        this.tags = [];
-    }
+    /*constructor(){
+    }*/
 
     async getPhotographer(){
         const response = await fetch('./JS/photographers.json');
-        //console.log(response);
         const obj = await response.json();
-        //console.log(obj);
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
@@ -33,9 +30,7 @@ class Detail{
 
     async displayMedias(){
         const response = await fetch('./JS/photographers.json');
-        //console.log(response);
         const obj = await response.json();
-        //console.log(obj);
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
@@ -50,11 +45,5 @@ class Detail{
                 medias.push(image);
             }
         }
-        //console.log(medias);
     }
 }
-
-/*let lightbox = new LightboxFactory(medias);
-
-        lightbox.createElement();
-        mainElement.appendChild(lightbox.display());*/

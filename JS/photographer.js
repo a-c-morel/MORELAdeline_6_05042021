@@ -85,10 +85,11 @@ class Card{
         //create tags
         for (const tag of this.tags){
             const liTag = document.createElement("li");
-            const hashtag = document.createElement("a");
+            const hashtag = document.createElement("p");
+            //const hashtag = document.createElement("a");
             liTag.classList.add("tags-links");
             thirdSectionList.appendChild(liTag);
-            hashtag.setAttribute("href", ``);
+            //hashtag.setAttribute("href", ``);
             hashtag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
             liTag.appendChild(hashtag);
         }
