@@ -3,6 +3,7 @@ class LightboxFactory{
         this.medias = medias; //quand on va appeler la factory on écrira dans les parenthèses l'array sur lequel on veut agir (du coup ce sera aussi appelé "medias")
         this.position = 0; //cela va correspondre à la position du premier média de l'array "medias"
         this.element = null; //pour le moment on ne dit pas si cela va être une vidéo ou une image
+        this.mainElement = document.querySelector("main");
     }
     createElement(){
         //si le média à cette position correspond à une instance de l'objet "Image" :
@@ -16,30 +17,39 @@ class LightboxFactory{
         }
     }
     display(){
+        //create elements
         const lightboxDiv = document.createElement("div");
-        const lightboxCloseBtn = document.createElement("button");
-        const lightboxPreviousBtn = document.createElement("button");
-        const lightboxNextBtn = document.createElement("button");
-        const leftArrow = document.createElement("i");
-        const rightArrow = document.createElement("i");
-        const lightboxContainer = document.createElement("div");
-        const lightboxMedia = this.element; //?????
-        const lightboxTitle = document.createElement("p");
-
         lightboxDiv.classList.add("lightbox");
+
+        const lightboxCloseBtn = document.createElement("button");
         lightboxCloseBtn.classList.add("lightbox-btn__close");
+
+        const lightboxPreviousBtn = document.createElement("button");
         lightboxPreviousBtn.classList.add("lightbox-btn__previous");
+
+        const lightboxNextBtn = document.createElement("button");
+        lightboxNextBtn.classList.add("lightbox-btn__next");
+
+        const leftArrow = document.createElement("i");
         leftArrow.classList.add("fas");
         leftArrow.classList.add("fa-chevron-left");
+
+        const rightArrow = document.createElement("i");
         rightArrow.classList.add("fas");
         rightArrow.classList.add("fa-chevron-right");
-        lightboxNextBtn.classList.add("lightbox-btn__next");
+
+        const lightboxContainer = document.createElement("div");
         lightboxContainer.classList.add("lightbox-container");
+
+        const lightboxMedia = this.element; //?????
         lightboxMedia.classList.add("lightbox-media");
+
+        const lightboxTitle = document.createElement("p");
         lightboxTitle.classList.add("lightbox-title");
         lightboxTitle.innerHTML = `${this.title}`;
-
-        mainElement.appendChild(lightboxDiv);
+        
+        //add elements to their parents
+        this.mainElement.appendChild(lightboxDiv);
         lightboxDiv.appendChild(lightboxCloseBtn);
         lightboxDiv.appendChild(lightboxPreviousBtn);
         lightboxDiv.appendChild(lightboxNextBtn);

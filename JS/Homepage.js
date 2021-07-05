@@ -1,21 +1,16 @@
-const mainElement = document.createElement("main");
-document.body.appendChild(mainElement);
-
-let tags = [];
-
 class Homepage{
     constructor(){
         this.photographers = [];
         this.tags = [];
-        this.mainElement = document.createElement("main");
-        document.body.appendChild(mainElement);
+        this.mainElement = document.querySelector("main");
+        this.headerElement = document.querySelector("header");
     }
 
     heading(){
         const mainH1 = document.createElement("h1");
         mainH1.classList.add("home-first-heading");
         mainH1.innerHTML = "Nos photographes";
-        mainElement.appendChild(mainH1);
+        this.mainElement.appendChild(mainH1);
     }
 
     async getPhotographers(){
@@ -39,17 +34,17 @@ class Homepage{
 
     displayPhotographers(){
         this.photographers.forEach(photographer =>{
-            mainElement.appendChild(photographer.display());
+            this.mainElement.appendChild(photographer.display());
         });
     }
 
     displayTags(){
-        tags = new Set(this.tags);
+        this.tags = new Set(this.tags);
         
         const navigation = document.createElement("nav");
         const navigationList = document.createElement("ul");
 
-        for(let tag of tags){
+        for(let tag of this.tags){
             const tagContainer = document.createElement("li");
             tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
@@ -72,7 +67,7 @@ class Homepage{
 
             navigation.appendChild(navigationList);
         }
-        headerElement.appendChild(navigation);
+        this.headerElement.appendChild(navigation);
     }
 
 }

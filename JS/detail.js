@@ -1,6 +1,4 @@
-//ajout du main au body
-const mainElement = document.createElement("main");
-document.body.appendChild(mainElement);
+let mainElement = document.querySelector("main");
 
 //creation du formulaire (input, label)
 const form = document.createElement("form");
@@ -39,27 +37,35 @@ selectMenu.appendChild(dateOption);
 selectMenu.appendChild(titleOption);
 
 //instance de la classe Detail qui affiche les medias en fonction de l'ID du photographe:
+
+
+
 (async function createDetailPage(){
+    let params = new URLSearchParams(window.location.search);
+    let photographerId = params.get("id");
     let myDetail = new Detail();
-    await myDetail.getPhotographer();
+    await myDetail.getPhotographer(photographerId);
+    myDetail.displayPhotographer();
     myDetail.displayMedias();
 })();
 
-    /*const clickableMedias = document.querySelectorAll(".media");
+/*console.log(document.getElementsByClassName("media"));
 
-    clickableMedias.forEach(clickableMedia =>{
+const clickableMedias = document.getElementsByClassName("media");
+
+clickableMedias.forEach(clickableMedia =>{
     clickableMedia.addEventListener('click', e =>{
         console.log("vous avez cliqué");
         let lightbox = new LightboxFactory(medias);
         lightbox.createElement();
         mainElement.appendChild(lightbox.display());
     });
-});
+});*/
 
 
 
 
-PSEUDO CODE :
+/*PSEUDO CODE :
 
 function navigation(array des médias){
     let currentMedia = media cliqué

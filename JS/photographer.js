@@ -85,13 +85,12 @@ class Card{
         //create tags
         for (const tag of this.tags){
             const liTag = document.createElement("li");
-            const hashtag = document.createElement("p");
+            //const hashtag = document.createElement("p");
             //const hashtag = document.createElement("a");
             liTag.classList.add("tags-links");
             thirdSectionList.appendChild(liTag);
             //hashtag.setAttribute("href", ``);
-            hashtag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
-            liTag.appendChild(hashtag);
+            liTag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
         }
         return newArticle;
     }
@@ -106,6 +105,7 @@ class Profile{
         this.tagline = props.tagline;
         this.tags = props.tags;
         this.id = props.id;
+        this.mainElement = document.querySelector("main");
     }
     display(){
         //create elements

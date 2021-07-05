@@ -1,6 +1,6 @@
 //Creation du header
-const headerElement = document.createElement("header");
-document.body.appendChild(headerElement);
+const headerElement = document.querySelector("header");
+//document.body.appendChild(headerElement);
 
 //Creation du logo
 
