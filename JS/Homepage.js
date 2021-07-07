@@ -49,20 +49,10 @@ class Homepage{
             tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
             tagContainer.innerHTML = `<span aria-hidden ="true">#</span>${tag}`;
-
             navigationList.appendChild(tagContainer);
 
             tagContainer.addEventListener("click", () =>{
-                (function filtrer(){
-                    let cards = document.querySelectorAll(".card");
-    
-                    for (let card of cards){
-                    card.style.display = "block";
-                        if(!card.innerText.includes(tag)){
-                            card.style.display = "none";
-                        }
-                    }
-                })();
+                this.filterTags(tag);
             });
 
             navigation.appendChild(navigationList);
@@ -70,4 +60,14 @@ class Homepage{
         this.headerElement.appendChild(navigation);
     }
 
+    filterTags(tag){
+        let cards = document.querySelectorAll(".card");
+    
+        for (let card of cards){
+        card.style.display = "block";
+            if(!card.innerText.includes(tag)){
+                card.style.display = "none";
+            }
+        }
+    }
 }

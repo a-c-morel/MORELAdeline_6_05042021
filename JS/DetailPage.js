@@ -1,11 +1,8 @@
-let photographerProfile = null;
-let medias = [];
-
 class Detail{
     constructor(){
         this.photographer = null;
         this.medias = [];
-        this.mainElement = document.createElement("main");
+        this.mainElement = document.querySelector("main");
     }
 
     async getPhotographer(id){
@@ -29,22 +26,24 @@ class Detail{
         this.mainElement.appendChild(this.photographer.display());
     }
 
-    async displayMedias(){
+    async getMedias(id){
         const response = await fetch('./JS/photographers.json');
         const obj = await response.json();
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
         for (let media of obj.media){
-            if((media.image == undefined) && (media.photographerId == photographerId)){
+            if((media.image == undefined) && (media.photographerId == id)){
                 let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});          
                 this.mainElement.appendChild(video.display());
-                medias.push(video);
-            }else if((media.video == undefined) && (media.photographerId == photographerId)){
+                this.medias.push(video);
+            }else if((media.video == undefined) && (media.photographerId == id)){
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 this.mainElement.appendChild(image.display());
-                medias.push(image);
+                this.medias.push(image);
             }
         }
     }
 }
+
+//créer une méthode displayMedias() pour afficher les médias (après la méthode getMedias()).

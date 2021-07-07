@@ -1,7 +1,7 @@
-let mainElement = document.querySelector("main");
+//let mainElement = document.querySelector("main");
 
 //creation du formulaire (input, label)
-const form = document.createElement("form");
+/*const form = document.createElement("form");
 form.setAttribute("action", "");
 form.style.order = "1";
 
@@ -13,10 +13,10 @@ input.setAttribute("type", "text");
 
 mainElement.appendChild(form);
 form.appendChild(label);
-form.appendChild(input);
+form.appendChild(input);*/
 
 //creation du menu de selection
-const selectMenu = document.createElement("select");
+/*const selectMenu = document.createElement("select");
 selectMenu.style.order = "2";
 
 const popularityOption = document.createElement("option");
@@ -34,19 +34,17 @@ titleOption.innerHTML = "Titre";
 mainElement.appendChild(selectMenu);
 selectMenu.appendChild(popularityOption);
 selectMenu.appendChild(dateOption);
-selectMenu.appendChild(titleOption);
+selectMenu.appendChild(titleOption);*/
 
 //instance de la classe Detail qui affiche les medias en fonction de l'ID du photographe:
-
-
-
 (async function createDetailPage(){
     let params = new URLSearchParams(window.location.search);
     let photographerId = params.get("id");
+    console.log(photographerId);
     let myDetail = new Detail();
     await myDetail.getPhotographer(photographerId);
     myDetail.displayPhotographer();
-    myDetail.displayMedias();
+    myDetail.getMedias(photographerId);
 })();
 
 /*console.log(document.getElementsByClassName("media"));

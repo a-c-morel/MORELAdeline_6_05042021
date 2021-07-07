@@ -141,7 +141,7 @@ class Profile{
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
 
         //add elements to their parents
-        mainElement.appendChild(newArticle);
+        this.mainElement.appendChild(newArticle);
         newArticle.appendChild(firstSection);
         newArticle.appendChild(secondSection);
         firstSection.appendChild(firstSectionH1);
