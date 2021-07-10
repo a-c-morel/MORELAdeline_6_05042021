@@ -34,16 +34,19 @@ class Detail{
         }
         for (let media of obj.media){
             if((media.image == undefined) && (media.photographerId == id)){
-                let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});          
-                this.mainElement.appendChild(video.display());
+                let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 this.medias.push(video);
             }else if((media.video == undefined) && (media.photographerId == id)){
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
-                this.mainElement.appendChild(image.display());
                 this.medias.push(image);
             }
         }
     }
-}
 
-//créer une méthode displayMedias() pour afficher les médias (après la méthode getMedias()).
+    displayMedias(){
+        console.log(this.medias);
+        for(let media of this.medias){
+            this.mainElement.appendChild(media.display());
+        }
+    }
+}

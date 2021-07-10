@@ -7,9 +7,6 @@ class MediaFactory{
             return new Video(props);
         }
     }
-    display(){
-        console.log("ceci est un message provenant de la factory des medias");
-    }
 }
 
 class Image{

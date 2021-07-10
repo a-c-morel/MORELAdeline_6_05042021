@@ -28,8 +28,6 @@ class Homepage{
             this.photographers.push(myCard);
             this.tags.push(...photographer.tags);
         }
-
-        //console.log(this.photographers);
     }
 
     displayPhotographers(){
@@ -52,7 +50,7 @@ class Homepage{
             navigationList.appendChild(tagContainer);
 
             tagContainer.addEventListener("click", () =>{
-                this.filterTags(tag);
+                this.filter(tag);
             });
 
             navigation.appendChild(navigationList);
@@ -60,7 +58,18 @@ class Homepage{
         this.headerElement.appendChild(navigation);
     }
 
-    filterTags(tag){
+    /*filterPhotographers(){
+        const tagContainers = document.getElementsByClassName("tag-filter");
+        for(let tag of this.tags){
+            for (let tagContainer of tagContainers){
+                tagContainer.addEventListener('click', () =>{
+                    this.filter(tag);
+                });
+            }
+        }
+    }*/
+
+    filter(tag){
         let cards = document.querySelectorAll(".card");
     
         for (let card of cards){
