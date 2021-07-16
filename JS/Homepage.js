@@ -49,25 +49,30 @@ class Homepage{
             tagContainer.innerHTML = `<span aria-hidden ="true">#</span>${tag}`;
             navigationList.appendChild(tagContainer);
 
-            tagContainer.addEventListener("click", () =>{
-                this.filter(tag);
-            });
+            //tagContainer.addEventListener("click", () =>{
+                //this.filter(tag);
+            //}); //Il faudrait que j'arrive à créer une méthode à part pour ça (cf. °°° ci-dessous)
 
             navigation.appendChild(navigationList);
         }
         this.headerElement.appendChild(navigation);
     }
 
-    /*filterPhotographers(){
-        const tagContainers = document.getElementsByClassName("tag-filter");
+    /* °°° */
+    filterPhotographers(){
+        const tagContainers = document.querySelectorAll(".tag-filter");
         for(let tag of this.tags){
-            for (let tagContainer of tagContainers){
+            tagContainers.forEach(tagContainer =>{
                 tagContainer.addEventListener('click', () =>{
-                    this.filter(tag);
+                this.filter(tag);
                 });
-            }
+            });
         }
-    }*/
+    }
+   /* NE FONCTIONNE PAS :
+    pb 1 = peu importe le tag cliqué, ce sont toujours les 2 mêmes cards qui s'affichent, et elles n'ont pas de rapport avec le tag...
+    pb 2 = si je mets tagContainer directement dans le constructor (this.tagContainer), il est en dehors de la boucle for de displayTags(), et la méthode displayTags() n'affiche que le premier tag.
+    */
 
     filter(tag){
         let cards = document.querySelectorAll(".card");

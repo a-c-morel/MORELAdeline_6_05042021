@@ -1,28 +1,37 @@
 class LightboxMediaFactory{
-    constructor(medias, mainElement, lightbox, closeButton, previousButton, nextButton){
-        this.medias = medias; //quand on va appeler la factory on écrira dans les parenthèses l'array sur lequel on veut agir (du coup ce sera aussi appelé "medias")
-        this.position = 0; //cela va correspondre à la position du premier média de l'array "medias"
-        this.element = null; //pour le moment on ne dit pas si cela va être une vidéo ou une image
-        this.mainElement = mainElement;
+    constructor(medias, position, lightbox){
+        this.medias = medias;
+        //this.position = 0;
+        this.position = position;
+        this.element = null;
+        //this.mainElement = mainElement;
         this.lightbox = lightbox;
-        this.closeButton = closeButton;
-        this.previousButton = previousButton;
-        this.nextButton = nextButton;
+        this.closeButton = document.querySelector("#lightbox-btn__close");
+        this.previousButton = document.querySelector("#lightbox-btn__previous");
+        this.nextButton = document.querySelector("#lightbox-btn__next");
     }
-    createMedia(){
+
+    createElem(){
         //si le média à cette position correspond à une instance de l'objet "Image" :
-        if(this.medias[this.position] instanceof Image){
-            this.element = document.createElement("img");
-            this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
-        }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
-        else if(this.medias[this.position] instanceof Video){
-            this.element = document.createElement("source");
-            this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
-        }
+            if(this.medias[this.position] instanceof Image){
+                this.element = document.createElement("img");
+                this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
+            }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
+            else if(this.medias[this.position] instanceof Video){
+                this.element = document.createElement("source");
+                this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
+            }
     }
+
     displayMedia(){
-        const lightboxMedia = this.element; //?????
+        const lightboxMedia = this.element;
+        console.log(lightboxMedia);
+        
         lightboxMedia.classList.add("lightbox-media");
+
+        //utiliser du CSS ensuite, cette ligne est juste faite pour les tests :
+        lightboxMedia.style.maxWidth = "300px";
+        lightboxMedia.style.height = "auto";
 
         const lightboxTitle = document.createElement("p");
         lightboxTitle.classList.add("lightbox-title");
@@ -32,7 +41,18 @@ class LightboxMediaFactory{
         this.lightbox.appendChild(lightboxTitle);
     }
 
-    openLightbox(){}
-    closeLightbox(){}
-    navigate(){}
+    closeLightbox(){
+        //fermeture de la Lightbox quand on clique sur la croix ?
+    }
+
+    /*navigate(){
+        //itération de this.position quand on clique sur prev (--)
+        //et sur next (++)
+        
+        for(let i = 0; i<(this.medias).length; i++){
+            this.position++;
+            console.log(this.position);
+            console.log(this.medias[i]);
+        }
+    }*/
 }

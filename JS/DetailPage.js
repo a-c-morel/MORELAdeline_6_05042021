@@ -2,6 +2,7 @@ class Detail{
     constructor(){
         this.photographer = null;
         this.medias = [];
+        this.position = 0;
         this.mainElement = document.querySelector("main");
     }
 
@@ -44,9 +45,17 @@ class Detail{
     }
 
     displayMedias(){
-        console.log(this.medias);
+        const lightbox = document.querySelector(".lightbox");
+    
         for(let media of this.medias){
-            this.mainElement.appendChild(media.display());
+            this.mainElement.appendChild(media.display()).addEventListener('click', () => {
+                console.log(media);
+                this.position = this.medias.indexOf(media);
+                console.log(this.position);
+                const lightboxMedia = new LightboxMediaFactory(this.medias, this.position, lightbox);
+                lightboxMedia.createElem();
+                lightboxMedia.displayMedia();
+            });
         }
     }
 }

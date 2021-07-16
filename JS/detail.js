@@ -1,43 +1,13 @@
 (async function createDetailPage(){
     let params = new URLSearchParams(window.location.search);
     let photographerId = params.get("id");
-    console.log(photographerId);
+    console.log(`L'Id du photographe est ${photographerId}`);
     let myDetail = new Detail();
     await myDetail.getPhotographer(photographerId);
     myDetail.displayPhotographer();
     await myDetail.getMedias(photographerId);
     myDetail.displayMedias();
 })();
-
-/*mainElement = document.querySelector("main");
-lightbox = document.querySelector(".lightbox");
-closeButton = document.querySelector("#lightbox-btn__close");
-previousButton = document.querySelector("#lightbox-btn__previous");
-nextButton = document.querySelector("#lightbox-btn__next"); 
-
-let lightbox = new LightboxFactory(medias, mainElement, lightbox, closeButton, previousButton, nextButton);
-quand on clique sur un media (eventListener):
-lightbox.createMedia();
-lightbox.displayMedia();
-lightbox.openLightbox();
-
-*/
-
-/*console.log(document.getElementsByClassName("media"));
-
-const clickableMedias = document.getElementsByClassName("media");
-
-clickableMedias.forEach(clickableMedia =>{
-    clickableMedia.addEventListener('click', e =>{
-        console.log("vous avez cliqué");
-        let lightbox = new LightboxFactory(medias);
-        lightbox.createElement();
-        mainElement.appendChild(lightbox.display());
-    });
-});*/
-
-
-
 
 /*PSEUDO CODE :
 
