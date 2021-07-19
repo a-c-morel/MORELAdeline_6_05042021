@@ -43,16 +43,41 @@ class LightboxMediaFactory{
 
     closeLightbox(){
         //fermeture de la Lightbox quand on clique sur la croix ?
+        this.closeButton.addEventListener('click', () => {
+            this.lightbox.style.display = "none";
+        })
     }
 
-    /*navigate(){
+    navigation(){
+
+        this.previousButton.addEventListener('click', () => {
+            //enlever le media qui était affiché
+            if(this.position > 0){
+                this.position--;
+                console.log(this.position);
+                this.createElem();
+                this.displayMedia();
+            }
+        });
+
+        this.nextButton.addEventListener('click', () => {
+            //enlever le media qui était affiché
+            if(this.position < (this.medias).length){
+                this.position++;
+                console.log(this.position);
+                this.createElem();
+                this.displayMedia();
+            }
+        });
+
+
         //itération de this.position quand on clique sur prev (--)
         //et sur next (++)
         
-        for(let i = 0; i<(this.medias).length; i++){
+        /*for(let i = 0; i<(this.medias).length; i++){
             this.position++;
             console.log(this.position);
             console.log(this.medias[i]);
-        }
-    }*/
+        }*/
+    }
 }

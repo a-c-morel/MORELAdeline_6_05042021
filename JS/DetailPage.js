@@ -53,8 +53,10 @@ class Detail{
                 this.position = this.medias.indexOf(media);
                 console.log(this.position);
                 const lightboxMedia = new LightboxMediaFactory(this.medias, this.position, lightbox);
+                lightboxMedia.closeLightbox();
                 lightboxMedia.createElem();
                 lightboxMedia.displayMedia();
+                lightboxMedia.navigation();
             });
         }
     }
