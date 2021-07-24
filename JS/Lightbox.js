@@ -1,83 +1,87 @@
-class LightboxMediaFactory{
-    constructor(medias, position, lightbox){
+class LightboxFactory{
+    constructor(medias, lightbox){
         this.medias = medias;
-        //this.position = 0;
-        this.position = position;
+        this.position = 0;
         this.element = null;
-        //this.mainElement = mainElement;
         this.lightbox = lightbox;
-        this.closeButton = document.querySelector("#lightbox-btn__close");
-        this.previousButton = document.querySelector("#lightbox-btn__previous");
-        this.nextButton = document.querySelector("#lightbox-btn__next");
     }
 
     createElem(){
+        const lightboxTitle = document.createElement("p");
+
         //si le média à cette position correspond à une instance de l'objet "Image" :
             if(this.medias[this.position] instanceof Image){
                 this.element = document.createElement("img");
+                //this.element.classList.add("lightbox-media");
                 this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
             }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
             else if(this.medias[this.position] instanceof Video){
                 this.element = document.createElement("source");
+                //this.element.classList.add("lightbox-media");
                 this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
             }
-    }
-
-    displayMedia(){
-        const lightboxMedia = this.element;
-        console.log(lightboxMedia);
-        
-        lightboxMedia.classList.add("lightbox-media");
-
         //utiliser du CSS ensuite, cette ligne est juste faite pour les tests :
-        lightboxMedia.style.maxWidth = "300px";
-        lightboxMedia.style.height = "auto";
+        this.element.style.maxWidth = "300px";
+        this.element.style.height = "auto";
 
-        const lightboxTitle = document.createElement("p");
         lightboxTitle.classList.add("lightbox-title");
-        lightboxTitle.innerHTML = `${this.title}`;
-
-        this.lightbox.appendChild(lightboxMedia);
+        lightboxTitle.innerHTML = `${this.title}`; //undefined ... normal je ne l'ai déclaré nulle part
+        this.lightbox.appendChild(this.element);
         this.lightbox.appendChild(lightboxTitle);
     }
 
-    closeLightbox(){
-        //fermeture de la Lightbox quand on clique sur la croix ?
-        this.closeButton.addEventListener('click', () => {
-            this.lightbox.style.display = "none";
-        })
+    //pb = si j'exécute clearMedia avant createElement, this.element est encore de type null donc pas possible.
+    //et si je fais l'inverse, children aura déjà bien 2 nodes puisque ils auront été ajouté avant le clear...
+    //il faudrait ajouter 1 condition Si le nombre de childNodes est supérieur à 2
+    //fait -> pb = du coup ça affiche le dernier element des medias après avoir suppr tous les childNodes précédents...
+
+    clearMedia(){
+        if(this.lightbox.hasChildNodes()){
+            let children = this.lightbox.childNodes;
+            while(children.length >= 2){
+                console.log(children);
+                children.forEach((child)=>{
+                    this.lightbox.removeChild(child);
+                });   
+            }
+        }
+        this.lightbox.appendChild(this.element);
     }
 
-    navigation(){
+    display(){
+        this.lightbox.classList.add("lightbox-showed");
+        this.clearMedia();
+    }
+    
+    start(i = 0){
+        this.position = i;
+        this.createElem();
+        this.display();
+    }
 
-        this.previousButton.addEventListener('click', () => {
-            //enlever le media qui était affiché
+    goPrev(){
+        this.previousButton.addEventListener('click', () => { //cet event sera à mettre dans detail.js
+
             if(this.position > 0){
                 this.position--;
                 console.log(this.position);
                 this.createElem();
-                this.displayMedia();
+                this.clearMedia();
+            }else{
+                this.position = this.medias.length -1
             }
         });
+    }
 
-        this.nextButton.addEventListener('click', () => {
-            //enlever le media qui était affiché
+    goNext(){
+        this.nextButton.addEventListener('click', () => { //cet event sera à mettre dans detail.js
             if(this.position < (this.medias).length){
                 this.position++;
                 console.log(this.position);
                 this.createElem();
-                this.displayMedia();
+            }else{
+                this.position = 0;
             }
         });
-
-
-        //itération de this.position quand on clique sur prev (--)
-        //et sur next (++)
-        
-        /*for(let i = 0; i<(this.medias).length; i++){
-            this.position++;
-            console.log(this.position);
-            console.log(this.medias[i]);
-        }*/
     }
 }

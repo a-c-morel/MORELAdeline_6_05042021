@@ -2,8 +2,9 @@ class Detail{
     constructor(){
         this.photographer = null;
         this.medias = [];
-        this.position = 0;
+        //this.position = 0;
         this.mainElement = document.querySelector("main");
+        this.lightboxMediaContainer = document.querySelector(".lightbox-media");
     }
 
     async getPhotographer(id){
@@ -42,22 +43,37 @@ class Detail{
                 this.medias.push(image);
             }
         }
+        //this.lightboxMediaContainer = document.querySelector(".lightbox-media");
+        this.lightbox = new LightboxFactory(this.medias, this.lightboxMediaContainer);
+        // je ne comprends pas ce this.lightbox ni ce que ces 2 lignes font ici...
     }
 
     displayMedias(){
-        const lightbox = document.querySelector(".lightbox");
     
         for(let media of this.medias){
             this.mainElement.appendChild(media.display()).addEventListener('click', () => {
                 console.log(media);
-                this.position = this.medias.indexOf(media);
-                console.log(this.position);
-                const lightboxMedia = new LightboxMediaFactory(this.medias, this.position, lightbox);
-                lightboxMedia.closeLightbox();
-                lightboxMedia.createElem();
-                lightboxMedia.displayMedia();
-                lightboxMedia.navigation();
+                //this.position = this.medias.indexOf(media);
+                //console.log(this.position);
+                //attention ici 1 lightbox par média...
+
+                //this.lightbox.start(this.position) (créer la méthode start dans Lightbox)
+                //this.lightbox.closeLightbox();
+                
+                
+                this.lightbox.createElem();
+                this.lightbox.clearMedia();
+                this.lightbox.display();
+                this.startLightbox();
             });
         }
     }
+
+    startLightbox(){
+        for (let i = 0; i < this.medias.length; i++) {
+                this.lightbox.start(i);
+        }
+    }
+
+    
 }

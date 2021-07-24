@@ -7,7 +7,48 @@
     myDetail.displayPhotographer();
     await myDetail.getMedias(photographerId);
     myDetail.displayMedias();
+    
+    const lightboxModal = document.querySelector(".lightbox");
+
+    //close the lightbox
+    const closeButton = document.querySelector("#lightbox-btn__close");
+
+    closeLightbox();
+
+    function closeLightbox(){
+        closeButton.addEventListener('click', () => {
+            lightboxModal.style.display = "none";
+        })
+    }
+
+    //navigate inside lightbox
+    const previousButton = document.querySelector("#lightbox-btn__previous");
+
+    prevListener();
+    nextListener();
+    
+    function prevListener(){
+        previousButton.addEventListener('click', () => {
+            myDetail.lightbox.goPrev();
+        })
+    }
+
+    function nextListener(){
+        previousButton.addEventListener('click', () => {
+            myDetail.lightbox.goNext();
+        })
+    }
+
 })();
+
+
+
+
+const nextButton = document.querySelector("#lightbox-btn__next");
+
+
+
+
 
 /*PSEUDO CODE :
 
