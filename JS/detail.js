@@ -9,9 +9,11 @@
     myDetail.displayMedias();
     
     const lightboxModal = document.querySelector(".lightbox");
+    console.log(lightboxModal); //null
 
     //close the lightbox
     const closeButton = document.querySelector("#lightbox-btn__close");
+    console.log(closeButton);
 
     closeLightbox();
 
@@ -42,27 +44,3 @@
     }
 
 })();
-
-
-
-
-
-
-
-
-
-/*PSEUDO CODE :
-
-function navigation(array des médias){
-    let currentMedia = media cliqué
-
-    eventListener sur le bouton prev et sur le bouton next avec les conditions :
-    if(position == 0){
-        e.preventDefault sur l'event listener de prev
-    }
-    if(position > medias.length){
-        e.preventDefault sur l'event listener de next
-    } else{
-        position ++ ou position -- à chaque clic
-    }
-}*/

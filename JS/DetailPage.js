@@ -63,17 +63,17 @@ class Detail{
                 this.lightbox.createElem();
                 this.lightbox.clearMedia();
                 this.lightbox.display();
-                this.startLightbox(media);
+                this.startLightbox(this.medias.indexOf(media));
 
             });
         }
     }
 
-    startLightbox(i){
-        /*for (let i = 0; i < this.medias.length; i++) {
-                this.lightbox.start(i);
-        }*/
-        this.lightbox.start(i);
+    startLightbox(index){
+        for (let i = 0; i < this.medias.length; i++) {
+                this.lightbox.start(index); //seul le dernier media s'affiche...
+        }
+        //this.lightbox.start(i); -> seul le premier media s'affiche...
     }
 
     
