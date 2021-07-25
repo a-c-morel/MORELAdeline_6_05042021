@@ -4,7 +4,7 @@ class Detail{
         this.medias = [];
         //this.position = 0;
         this.mainElement = document.querySelector("main");
-        this.lightboxMediaContainer = document.querySelector(".lightbox-media");
+        this.lightboxContainer = document.querySelector(".lightbox-media");
     }
 
     async getPhotographer(id){
@@ -43,8 +43,8 @@ class Detail{
                 this.medias.push(image);
             }
         }
-        //this.lightboxMediaContainer = document.querySelector(".lightbox-media");
-        this.lightbox = new LightboxFactory(this.medias, this.lightboxMediaContainer);
+        //this.lightboxContainer = document.querySelector(".lightbox-media");
+        this.lightbox = new LightboxFactory(this.medias, this.lightboxContainer);
         // je ne comprends pas ce this.lightbox ni ce que ces 2 lignes font ici...
     }
 
@@ -59,20 +59,21 @@ class Detail{
 
                 //this.lightbox.start(this.position) (créer la méthode start dans Lightbox)
                 //this.lightbox.closeLightbox();
-                
-                
+
                 this.lightbox.createElem();
                 this.lightbox.clearMedia();
                 this.lightbox.display();
-                this.startLightbox();
+                this.startLightbox(media);
+
             });
         }
     }
 
-    startLightbox(){
-        for (let i = 0; i < this.medias.length; i++) {
+    startLightbox(i){
+        /*for (let i = 0; i < this.medias.length; i++) {
                 this.lightbox.start(i);
-        }
+        }*/
+        this.lightbox.start(i);
     }
 
     

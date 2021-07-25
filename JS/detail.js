@@ -23,6 +23,8 @@
 
     //navigate inside lightbox
     const previousButton = document.querySelector("#lightbox-btn__previous");
+    const nextButton = document.querySelector("#lightbox-btn__next");
+
 
     prevListener();
     nextListener();
@@ -34,7 +36,7 @@
     }
 
     function nextListener(){
-        previousButton.addEventListener('click', () => {
+        nextButton.addEventListener('click', () => {
             myDetail.lightbox.goNext();
         })
     }
@@ -44,7 +46,6 @@
 
 
 
-const nextButton = document.querySelector("#lightbox-btn__next");
 
 
 

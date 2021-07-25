@@ -327,6 +327,11 @@
 }
 
 .lightbox-media {
+  display: none;
+}
+
+.lightbox-showed {
+  display: block;
   width: 100%;
   height: auto;
   position: absolute;

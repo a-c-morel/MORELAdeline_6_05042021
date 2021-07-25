@@ -49,6 +49,8 @@ class LightboxFactory{
     }
 
     display(){
+        const lightboxContainer = document.querySelector("#lightbox-modal");
+        lightboxContainer.classList.add("lightbox");
         this.lightbox.classList.add("lightbox-showed");
         this.clearMedia();
     }
