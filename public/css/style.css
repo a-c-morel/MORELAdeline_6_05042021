@@ -278,19 +278,27 @@
 }
 
 /*classes pour montrer ou cacher la lightbox*/
-.lightbox {
-  display: block;
+#lightbox-modal {
+  display: none;
   width: 100vw;
-  height: 100vh;
-  background-color: white;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  left: 0;
+  height: 100%;
+  position: fixed;
   top: 0;
-  z-index: 10;
+  background-color: white;
+  flex-direction: column;
 }
 
+/*.lightbox{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    top: 0;
+}*/
 .fas {
   color: #901C1C;
 }
@@ -299,20 +307,20 @@
   cursor: pointer;
 }
 
-.lightbox-btn {
+#lightbox-btn {
   cursor: pointer;
 }
-.lightbox-btn__close {
+#lightbox-btn__close {
   position: absolute;
   top: 35.2%;
   right: 6.26%;
 }
-.lightbox-btn__previous {
+#lightbox-btn__previous {
   position: absolute;
   top: 49.2%;
   left: 6.9%;
 }
-.lightbox-btn__next {
+#lightbox-btn__next {
   position: absolute;
   top: 49.2%;
   right: 6.9%;
@@ -326,10 +334,9 @@
   top: 34.7%;
 }
 
-.lightbox-media {
-  display: none;
-}
-
+/*.lightbox-media{
+    display: none;
+}*/
 .lightbox-showed {
   display: block;
   width: 100%;
@@ -341,6 +348,16 @@
   max-height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+.lightbox-media {
+  max-width: 289.13px;
+  height: 248px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 43.43px;
+  overflow: hidden;
 }
 
 .lightbox-title {

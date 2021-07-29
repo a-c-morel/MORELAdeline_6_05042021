@@ -60,9 +60,9 @@ class Detail{
                 //this.lightbox.start(this.position) (créer la méthode start dans Lightbox)
                 //this.lightbox.closeLightbox();
 
-                this.lightbox.createElem();
-                this.lightbox.clearMedia();
-                this.lightbox.display();
+                //this.lightbox.createElem();
+                //this.lightbox.clearMedia();
+                //this.lightbox.display();
                 this.startLightbox(this.medias.indexOf(media));
 
             });
@@ -70,10 +70,11 @@ class Detail{
     }
 
     startLightbox(index){
-        for (let i = 0; i < this.medias.length; i++) {
-                this.lightbox.start(index); //seul le dernier media s'affiche...
-        }
-        //this.lightbox.start(i); -> seul le premier media s'affiche...
+        /*for (let i = 0; i < this.medias.length; i++) {
+                this.lightbox.start(index);
+        }*/
+        this.lightbox.start(index);
+
     }
 
     

@@ -8,39 +8,30 @@
     await myDetail.getMedias(photographerId);
     myDetail.displayMedias();
     
-    const lightboxModal = document.querySelector(".lightbox");
+    const lightboxModal = document.querySelector("#lightbox-modal");
     console.log(lightboxModal); //null
 
     //close the lightbox
     const closeButton = document.querySelector("#lightbox-btn__close");
-    console.log(closeButton);
 
-    closeLightbox();
+    //closeLightbox();
 
-    function closeLightbox(){
         closeButton.addEventListener('click', () => {
+            console.log("test");
             lightboxModal.style.display = "none";
-        })
-    }
+        });
 
     //navigate inside lightbox
     const previousButton = document.querySelector("#lightbox-btn__previous");
     const nextButton = document.querySelector("#lightbox-btn__next");
 
-
-    prevListener();
-    nextListener();
     
-    function prevListener(){
-        previousButton.addEventListener('click', () => {
+    previousButton.addEventListener('click', () => {
             myDetail.lightbox.goPrev();
-        })
-    }
+        });
 
-    function nextListener(){
-        nextButton.addEventListener('click', () => {
+    nextButton.addEventListener('click', () => {
             myDetail.lightbox.goNext();
-        })
-    }
+        });
 
 })();
