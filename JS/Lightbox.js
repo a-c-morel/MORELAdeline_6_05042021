@@ -28,7 +28,6 @@ class LightboxFactory{
 
         lightboxTitle.classList.add("lightbox-title");
         lightboxTitle.innerText = `${this.medias[this.position].title}`
-        //lightboxTitle.innerHTML = `${this.title}`; //undefined ... normal je ne l'ai déclaré nulle part
         this.lightbox.appendChild(this.element);
         this.lightbox.appendChild(lightboxTitle);
     }
@@ -81,7 +80,7 @@ class LightboxFactory{
 
     goNext(){
         //this.nextButton.addEventListener('click', () => { //cet event sera à mettre dans detail.js
-            if(this.position < (this.medias).length){
+            if(this.position < (this.medias).length-1){
                 this.position++;
                 console.log(this.position);
             }else{
