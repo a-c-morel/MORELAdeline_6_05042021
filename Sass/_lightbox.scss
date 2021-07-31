@@ -1,40 +1,22 @@
-/*classes pour montrer ou cacher la lightbox*/
 #lightbox-modal{
     display: none;
     width: 100vw;
     height: 100%;
     position: fixed;
     top: 0;
-    //left: 25%;
     background-color: white;
-    //display: flex;
-    flex-direction: column;
 }
-
-
-/*.lightbox{
-    display: block;
-    width: 100vw;
-    height: 100vh;
-    background-color: white;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    top: 0;
-}*/
 
 //boutons de la lightbox
 .fas{
     color: $darkColor;
 }
 
-.fa-times{
+.fa-times, .fa-chevron-left, .fa-chevron-right{
     cursor: pointer;
 }
 
 #lightbox-btn{
-    cursor: pointer;
     &__close{
         position: absolute;
         top: 35.2%;
@@ -52,48 +34,24 @@
     }
 }
 
-.lightbox-container{
-    width: 77.31%;
-    height: 30.5%;
-    align-self: center;
-    position: absolute;
-    top: 34.7%;
-  }
-
-//video ou image de la lightbox
-/*.lightbox-media{
-    display: none;
-}*/
-
-.lightbox-showed{
-    display: block;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: .3rem;
-    max-height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
-
 .lightbox-media{
-        max-width: 289.13px;
-        height: 248px;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 43.43px;
+        top:50%;
+        left:50%;
+        transform:translate(-50%, -50%);
         overflow: hidden;
-}
-
-.lightbox-title{
-    @include font($darkColor, 18px, 14px, normal);
-    text-align: left;
-    position: absolute;
-    left: 11.47%;
-    right: 14%;
-    top: 66.13%;
-    bottom: 31.65%;
+        width:100%;
+        max-width: 300px;
+        max-height:80vh;
+        
+        &__title{
+            @include font($darkColor, 18px, 14px, normal);
+            text-align: left;
+            margin-top: 0;
+        }
+        &__image, &__video{
+            width: 100%;
+            //-o-object-fit:contain;
+            //object-fit:contain;
+        }
 }

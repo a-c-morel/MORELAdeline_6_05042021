@@ -12,21 +12,21 @@ class LightboxFactory{
         //si le média à cette position correspond à une instance de l'objet "Image" :
             if(this.medias[this.position] instanceof Image){
                 this.element = document.createElement("img");
-                //this.element.classList.add("lightbox-media");
+                this.element.classList.add("lightbox-media__image");
                 this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
             }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
             else if(this.medias[this.position] instanceof Video){
                 this.element = document.createElement("video");
                 const videoSource = document.createElement("source");
                 videoSource.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
-                //this.element.classList.add("lightbox-media");
+                this.element.classList.add("lightbox-media__video");
                 this.element.appendChild(videoSource);
             }
         //utiliser du CSS ensuite, cette ligne est juste faite pour les tests :
-        this.element.style.maxWidth = "300px";
-        this.element.style.height = "auto";
+        //this.element.style.maxWidth = "300px";
+        //this.element.style.height = "auto";
 
-        lightboxTitle.classList.add("lightbox-title");
+        lightboxTitle.classList.add("lightbox-media__title");
         lightboxTitle.innerText = `${this.medias[this.position].title}`
         this.lightbox.appendChild(this.element);
         this.lightbox.appendChild(lightboxTitle);
@@ -52,7 +52,7 @@ class LightboxFactory{
         const lightboxContainer = document.querySelector("#lightbox-modal");
         lightboxContainer.style.display = "flex";
         //lightboxContainer.classList.add("lightbox");
-        this.lightbox.classList.add("lightbox-showed");
+        //this.lightbox.classList.add("lightbox-showed");
         this.clearMedia();
     }
     
