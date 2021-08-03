@@ -53,16 +53,6 @@ class Detail{
         for(let media of this.medias){
             this.mainElement.appendChild(media.display()).addEventListener('click', () => {
                 console.log(media);
-                //this.position = this.medias.indexOf(media);
-                //console.log(this.position);
-                //attention ici 1 lightbox par média...
-
-                //this.lightbox.start(this.position) (créer la méthode start dans Lightbox)
-                //this.lightbox.closeLightbox();
-
-                //this.lightbox.createElem();
-                //this.lightbox.clearMedia();
-                //this.lightbox.display();
                 this.startLightbox(this.medias.indexOf(media));
 
             });

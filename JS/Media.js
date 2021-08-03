@@ -41,6 +41,11 @@ class Image{
 
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
+        newImageLikes.style.zIndex = "3"; //test
+        newImageLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+        newImageLikes.addEventListener('click', ()=> {
+            newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+        });
         
         //add elements to their parents
         newImageArticle.appendChild(newMediaSection);
@@ -50,6 +55,11 @@ class Image{
         newInfoSection.appendChild(newImageLikes);
 
         return newImageArticle;
+    }
+    increment(likes){
+        let numberOfLikes = likes;
+        numberOfLikes++;
+        return numberOfLikes;
     }
 }
 
@@ -87,7 +97,11 @@ class Video{
 
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
-        
+        newVideoLikes.style.zIndex = "3"; //test
+        newVideoLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+        newVideoLikes.addEventListener('click', ()=> {
+            newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+        });
         //add elements to their parents
         newVideoArticle.appendChild(newMediaSection);
         newVideoArticle.appendChild(newInfoSection);
@@ -97,5 +111,10 @@ class Video{
         newInfoSection.appendChild(newVideoLikes);
         
         return newVideoArticle;
+    }
+    increment(likes){
+        let numberOfLikes = likes;
+        numberOfLikes++;
+        return numberOfLikes;
     }
 }

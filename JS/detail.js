@@ -9,7 +9,6 @@
     myDetail.displayMedias();
     
     const lightboxModal = document.querySelector("#lightbox-modal");
-    console.log(lightboxModal); //null
 
     //close the lightbox
     const closeButton = document.querySelector("#lightbox-btn__close");
@@ -17,7 +16,6 @@
     //closeLightbox();
 
         closeButton.addEventListener('click', () => {
-            console.log("test");
             lightboxModal.style.display = "none";
         });
 
