@@ -43,7 +43,8 @@ class Image{
         newImageLikes.classList.add("media-info__likes");
         newImageLikes.style.zIndex = "3"; //test
         newImageLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
-        newImageLikes.addEventListener('click', ()=> {
+        newImageLikes.addEventListener('click', (e)=> {
+            e.stopPropagation();
             newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
         });
         
@@ -99,7 +100,8 @@ class Video{
         newVideoLikes.classList.add("media-info__likes");
         newVideoLikes.style.zIndex = "3"; //test
         newVideoLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
-        newVideoLikes.addEventListener('click', ()=> {
+        newVideoLikes.addEventListener('click', (e)=> {
+            e.stopPropagation();
             newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
         });
         //add elements to their parents
