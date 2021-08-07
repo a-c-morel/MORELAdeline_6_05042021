@@ -275,6 +275,45 @@
   font-size: 0.88rem;
   font-weight: normal;
   text-align: left;
+  cursor: pointer;
+  user-select: none;
+}
+
+.recap-infos {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 376px;
+  background-color: #DB8876;
+}
+.recap-infos__likes {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: black;
+  line-height: 1.95rem;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.recap-infos__likes #total-likes__icon {
+  color: black;
+  line-height: 1.95rem;
+  font-size: 1.5rem;
+}
+.recap-infos__price {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: black;
+  line-height: 1.95rem;
+  font-size: 1.5rem;
+  font-weight: normal;
 }
 
 #lightbox-modal {

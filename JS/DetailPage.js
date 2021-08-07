@@ -43,9 +43,7 @@ class Detail{
                 this.medias.push(image);
             }
         }
-        //this.lightboxContainer = document.querySelector(".lightbox-media");
         this.lightbox = new LightboxFactory(this.medias, this.lightboxContainer);
-        // je ne comprends pas ce this.lightbox ni ce que ces 2 lignes font ici...
     }
 
     displayMedias(){
@@ -54,7 +52,6 @@ class Detail{
             this.mainElement.appendChild(media.display()).addEventListener('click', () => {
                 console.log(media);
                 this.startLightbox(this.medias.indexOf(media));
-
             });
         }
     }
@@ -64,8 +61,18 @@ class Detail{
                 this.lightbox.start(index);
         }*/
         this.lightbox.start(index);
-
     }
 
-    
+    totalLikesDefault(){
+        const totalLikes = document.querySelector(".recap-infos__likes");
+        const mediasLikes = document.querySelectorAll(".media-info__likes");
+        
+        let arrayLikes = [];
+        mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
+
+        const sum = arrayLikes.reduce((a, b) => a + b);
+        console.log(sum);
+        totalLikes.innerText = `${sum}`;
+    }
+
 }

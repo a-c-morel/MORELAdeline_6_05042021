@@ -58,7 +58,7 @@ class LightboxFactory{
     
     start(index = 0){
         this.position = index;
-        console.log(this.position);
+        //console.log(this.position);
         this.display();
         this.createElem();
     }

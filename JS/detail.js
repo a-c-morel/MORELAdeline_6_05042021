@@ -7,7 +7,8 @@
     myDetail.displayPhotographer();
     await myDetail.getMedias(photographerId);
     myDetail.displayMedias();
-    
+    myDetail.totalLikesDefault();
+
     const lightboxModal = document.querySelector("#lightbox-modal");
 
     //close the lightbox

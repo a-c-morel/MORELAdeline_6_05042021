@@ -18,9 +18,37 @@
         &__likes{
             @include font($darkColor, 1.13rem, .88rem, normal);
             text-align: left;
+            cursor: pointer;
+            user-select: none;
         }
     }
 }
+
+.recap-infos{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 376px;
+    //height: 73px;
+    background-color: $hoverAndFocusBtn1;
+    &__likes{
+        @include font(black, 1.95rem, 1.5rem, normal);
+        #total-likes__icon{
+            color: black;
+            line-height: 1.95rem;
+            font-size: 1.5rem;
+        }
+    }
+    &__price{
+        @include font(black, 1.95rem, 1.5rem, normal);
+    }
+}
+
+
 
 
 

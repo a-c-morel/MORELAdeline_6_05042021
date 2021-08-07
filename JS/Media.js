@@ -42,9 +42,11 @@ class Image{
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
         newImageLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+
         newImageLikes.addEventListener('click', (e)=> {
             e.stopPropagation();
             newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+            this.totalLikesCounter();
         });
         
         //add elements to their parents
@@ -57,11 +59,25 @@ class Image{
         return newImageArticle;
     }
     increment(likes){
-        let startingNumber = likes;
-        let numberOfLikes = 0;
-        numberOfLikes++;
-        this.likes = numberOfLikes+startingNumber;
+        let numberOfLikes = likes;
+        let counter = 0;
+        counter++;
+        this.likes = numberOfLikes+counter;
         return this.likes;
+    }
+
+    totalLikesCounter(){
+        const totalLikes = document.querySelector(".recap-infos__likes");
+        const mediasLikes = document.querySelectorAll(".media-info__likes");
+        
+        let arrayLikes = [];
+        mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
+
+        //arrayLikes.push(number);
+            
+        const sum = arrayLikes.reduce((a, b) => a + b);
+        console.log(sum);
+        totalLikes.innerText = `${sum}`;
     }
 }
 
@@ -100,9 +116,11 @@ class Video{
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
         newVideoLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+
         newVideoLikes.addEventListener('click', (e)=> {
             e.stopPropagation();
             newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+            this.totalLikesCounter();
         });
         //add elements to their parents
         newVideoArticle.appendChild(newMediaSection);
@@ -115,10 +133,24 @@ class Video{
         return newVideoArticle;
     }
     increment(likes){
-        let startingNumber = likes;
-        let numberOfLikes = 0;
-        numberOfLikes++;
-        this.likes = numberOfLikes+startingNumber;
+        let numberOfLikes = likes;
+        let counter = 0;
+        counter++;
+        this.likes = numberOfLikes+counter;
         return this.likes;
+    }
+
+    totalLikesCounter(){
+        const totalLikes = document.querySelector(".recap-infos__likes");
+        const mediasLikes = document.querySelectorAll(".media-info__likes");
+        
+        let arrayLikes = [];
+        mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
+
+        //arrayLikes.push(number);
+            
+        const sum = arrayLikes.reduce((a, b) => a + b);
+        console.log(sum);
+        totalLikes.innerText = `${sum}`;
     }
 }
