@@ -30,15 +30,15 @@
     </div>
 
     <!--Menu de sélection-->
-    <form action="">
-      <label for=""></label>
-      <input type="text">
+    <form action="" method="post">
+      <label for="sorting-options">Trier par:</label>
+      <select name="sorting-group" id="sorting-options"> <!--onchange="sort()"-->
+        <option value="0">Popularité</option>
+        <option value="1">Date</option>
+        <option value="2">Titre</option>
+      </select>
     </form>
-    <select name="" id="">
-      <option value="0">Popularité</option>
-      <option value="1">Date</option>
-      <option value="2">Titre</option>
-    </select>
+    
 
     <div class="recap-infos">
       <p class="recap-infos__likes">likes

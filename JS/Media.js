@@ -59,10 +59,7 @@ class Image{
         return newImageArticle;
     }
     increment(likes){
-        let numberOfLikes = likes;
-        let counter = 0;
-        counter++;
-        this.likes = numberOfLikes+counter;
+        this.likes++
         return this.likes;
     }
 
@@ -72,11 +69,9 @@ class Image{
         
         let arrayLikes = [];
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
-
-        //arrayLikes.push(number);
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        console.log(sum);
+        //console.log(sum);
         totalLikes.innerText = `${sum}`;
     }
 }
@@ -134,9 +129,8 @@ class Video{
     }
     increment(likes){
         let numberOfLikes = likes;
-        let counter = 0;
-        counter++;
-        this.likes = numberOfLikes+counter;
+        numberOfLikes++;
+        this.likes = numberOfLikes;
         return this.likes;
     }
 
@@ -146,11 +140,9 @@ class Video{
         
         let arrayLikes = [];
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
-
-        //arrayLikes.push(number);
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        console.log(sum);
+        //console.log(sum);
         totalLikes.innerText = `${sum}`;
     }
 }

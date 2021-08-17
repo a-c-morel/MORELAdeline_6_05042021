@@ -22,9 +22,6 @@ class LightboxFactory{
                 this.element.classList.add("lightbox-media__video");
                 this.element.appendChild(videoSource);
             }
-        //utiliser du CSS ensuite, cette ligne est juste faite pour les tests :
-        //this.element.style.maxWidth = "300px";
-        //this.element.style.height = "auto";
 
         lightboxTitle.classList.add("lightbox-media__title");
         lightboxTitle.innerText = `${this.medias[this.position].title}`
@@ -36,36 +33,21 @@ class LightboxFactory{
         while (this.lightbox.firstChild) {
             this.lightbox.removeChild(this.lightbox.firstChild);
         }
-        /*if(this.lightbox.hasChildNodes()){
-            let children = this.lightbox.childNodes;
-            while(children.length >= 2){
-                console.log(children);
-                children.forEach((child)=>{
-                    this.lightbox.removeChild(child);
-                });   
-            }
-        }
-        this.lightbox.appendChild(this.element);*/ //ce n'est pas ça qu'il va falloir mettre car cela ne prend pas en compte le titre
     }
 
     display(){
         const lightboxContainer = document.querySelector("#lightbox-modal");
         lightboxContainer.style.display = "flex";
-        //lightboxContainer.classList.add("lightbox");
-        //this.lightbox.classList.add("lightbox-showed");
         this.clearMedia();
     }
     
     start(index = 0){
         this.position = index;
-        //console.log(this.position);
         this.display();
         this.createElem();
     }
 
     goPrev(){
-        //this.previousButton.addEventListener('click', () => { //cet event sera à mettre dans detail.js
-
             if(this.position > 0){
                 this.position--;
                 console.log(this.position);
@@ -75,11 +57,9 @@ class LightboxFactory{
             }
             this.clearMedia();
             this.createElem();
-        //});
     }
 
     goNext(){
-        //this.nextButton.addEventListener('click', () => { //cet event sera à mettre dans detail.js
             if(this.position < (this.medias).length-1){
                 this.position++;
                 console.log(this.position);
@@ -88,6 +68,5 @@ class LightboxFactory{
             }
             this.clearMedia();
             this.createElem();
-        //});
     }
 }

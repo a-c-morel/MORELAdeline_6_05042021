@@ -85,11 +85,8 @@ class Card{
         //create tags
         for (const tag of this.tags){
             const liTag = document.createElement("li");
-            //const hashtag = document.createElement("p");
-            //const hashtag = document.createElement("a");
             liTag.classList.add("tags-links");
             thirdSectionList.appendChild(liTag);
-            //hashtag.setAttribute("href", ``);
             liTag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
         }
         return newArticle;
@@ -110,7 +107,7 @@ class Profile{
     display(){
         //create elements
         const newArticle = document.createElement("article");
-        newArticle.classList.add("profile"); //dans le scss, je pourrai prendre les propriétés que j'ai appliquées à .card et les modifier un peu
+        newArticle.classList.add("profile");
 
         const firstSection = document.createElement("section");
         firstSection.classList.add("profile-info");
