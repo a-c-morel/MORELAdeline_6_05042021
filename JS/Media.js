@@ -17,7 +17,7 @@ class Image{
         this.photographerId = props.photographerId;
         this.tags = props.tags;
         this.likes = props.likes;
-        this.date = props.date;
+        this.date = new Date(props.date);
         this.price = props.price
     }
     display(){
@@ -84,7 +84,7 @@ class Video{
         this.photographerId = props.photographerId;
         this.tags = props.tags;
         this.likes = props.likes;
-        this.date = props.date;
+        this.date = new Date(props.date);
         this.price = props.price
     }
     display(){

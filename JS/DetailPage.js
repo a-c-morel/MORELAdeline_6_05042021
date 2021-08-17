@@ -2,9 +2,6 @@ class Detail{
     constructor(){
         this.photographer = null;
         this.medias = [];
-        this.popularity = [];
-        this.titles = [];
-        this.dates = [];
         this.mainElement = document.querySelector("main");
         this.lightboxContainer = document.querySelector(".lightbox-media");
     }
@@ -108,7 +105,7 @@ class Detail{
             return a.likes - b.likes;
         });
         console.log(this.medias);
-    } //en vrai ça ne va pas fonctionner comme ça car l'utilisateur peut influencer le nb de likes, il ne faut pas se baser sur le JSON
+    }
 
     byDate(){
         this.medias.sort( (a, b) => {
@@ -118,16 +115,15 @@ class Detail{
     }
 
     byTitle(){
-        this.medias.sort
-        ( (a, b) => {
-            console.log(a.title > b.title);
-            if (a.title < b.title)
+        this.medias.sort( (a, b) => {
+            if (a.title < b.title){
                 return -1;
-            if (a.title > b.title)
+            }
+            if (a.title > b.title){
                 return 1;
-            // a doit être égal à b
-            return 0;
-            //return a.title - b.title;
+            }else{
+                return 0;
+            }
         });
         console.log(this.medias);
     }
