@@ -20,6 +20,7 @@ class LightboxFactory{
                 const videoSource = document.createElement("source");
                 videoSource.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
                 this.element.classList.add("lightbox-media__video");
+                this.element.controls = true;
                 this.element.appendChild(videoSource);
             }
 

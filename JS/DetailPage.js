@@ -100,6 +100,8 @@ class Detail{
         totalLikes.innerText = `${sum}`;
     }
 
+
+    //Je pense que je vais revert l'ordre car il est plus logique de mettre les + populaires et les + récents en premier
     byPopularity(){
         this.medias.sort( (a, b) => {
             return a.likes - b.likes;
