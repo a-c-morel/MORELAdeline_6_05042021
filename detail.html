@@ -23,21 +23,37 @@
       <button id="lightbox-btn__previous">
         <i class= "fas fa-chevron-left"></i>
       </button>
-      <div class="lightbox-media"></div> <!--C'est cette div que je vais devoir cibler pour le appendChild qui affiche le media-->
+      <div class="lightbox-media"></div>
       <button id="lightbox-btn__next">
         <i class= "fas fa-chevron-right"></i>
       </button>
     </div>
 
+    <div class="contact-modal">
+      <h1 class="contact-modal__heading"></h1>
+      <form name="reserve" id="modal-form" method="get">
+        <label for="first">Prénom</label>
+        <input class="text-control" type="text" id="first" name="first" minlength="2"/>
+        <label for="last">Nom</label>
+        <input class="text-control" type="text" id="last" name="last"/>
+        <label for="email">Email</label>
+        <input class="text-control" type="email" id="email" name="email"/>
+        <label for="message">Votre message</label>
+        <input class="text-control" type="text" id="message" name="message" minlength="10"/>
+      <input id="submitdata" class="btn-submit button" type="submit" value="C'est parti"/>
+    </form>
+  </div>
+
     <!--Menu de sélection-->
     <form action="" method="post">
       <label for="sorting-options">Trier par:</label>
-      <select name="sorting-group" id="sorting-options"> <!--onchange="sort()"-->
+      <select name="sorting-group" id="sorting-options">
         <option value="0">Popularité</option>
         <option value="1">Date</option>
         <option value="2">Titre</option>
       </select>
     </form>
+    
     
 
     <div class="recap-infos">
@@ -52,6 +68,7 @@
     <script src="JS/Photographer.js"></script>
     <script src="JS/Media.js"></script>
     <script src="JS/Lightbox.js"></script>
+    <script src="JS/Modal.js"></script>
     <script src="JS/DetailPage.js"></script>
     <script src="JS/detail.js"></script>
 </body>

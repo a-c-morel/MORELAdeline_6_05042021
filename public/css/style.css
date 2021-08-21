@@ -112,6 +112,11 @@
   cursor: pointer;
 }
 
+.tag-filter {
+  margin-top: 0.4rem;
+  text-transform: capitalize;
+}
+
 .profile {
   display: flex;
   justify-content: space-between;
@@ -375,6 +380,17 @@
   width: 100%;
 }
 
+.contact-modal {
+  display: none;
+  width: 80vw;
+  height: 80%;
+  position: fixed;
+  background-color: #DB8876;
+  /*&__heading{
+
+  }*/
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -427,7 +443,7 @@ header nav {
   align-items: center;
   width: 17.8rem;
   height: 3.1rem;
-  margin-top: -2rem;
+  margin-top: 1.6rem;
   margin-right: 3.19rem;
   margin-bottom: 3.1rem;
   margin-left: 1.2rem;

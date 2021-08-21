@@ -9,3 +9,8 @@
     @include font($darkColor, 1rem, .75rem, 500);
     cursor: pointer;
 }
+
+.tag-filter{
+    margin-top: 0.4rem;
+    text-transform: capitalize;
+}

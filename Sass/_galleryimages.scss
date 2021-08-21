@@ -34,7 +34,7 @@
     padding: 1rem;
     width: 376px;
     //height: 73px;
-    background-color: $hoverAndFocusBtn1;
+    background-color: $secondaryColor;
     &__likes{
         @include font(black, 1.95rem, 1.5rem, normal);
         #total-likes__icon{

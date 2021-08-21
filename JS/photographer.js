@@ -105,41 +105,49 @@ class Profile{
         this.mainElement = document.querySelector("main");
     }
     display(){
-        //create elements
         const newArticle = document.createElement("article");
         newArticle.classList.add("profile");
 
+        //section with photographer infos
         const firstSection = document.createElement("section");
         firstSection.classList.add("profile-info");
-
+        /*name*/
         const firstSectionH1 = document.createElement("h1");
         firstSectionH1.classList.add("profile-info__name");
         firstSectionH1.innerHTML = `${this.name}`;
-
+        /*city, country*/
         const locationParagraph = document.createElement("p");
         locationParagraph.classList.add("profile-info__location");
         locationParagraph.innerHTML = `${this.city}, ${this.country}`;
-
+        /*tagline*/
         const quoteParagraph = document.createElement("p");
         quoteParagraph.classList.add("profile-info__quote");
         quoteParagraph.innerHTML = `${this.tagline}`;
-
+        /*tags*/
         const tagsSection = document.createElement("section");
         tagsSection.classList.add("profile-info__tags");
-
         const tagsSectionList = document.createElement("ul");
 
+        //contact button
+        const contactBtn = document.createElement("button");
+        contactBtn.innerHTML = "Contactez-moi";
+        contactBtn.addEventListener('click', () => {
+            //ouverture de la modale:
+            const modal = new Modal(this.name);
+            modal.display();
+        });
+
+        //section with photographer picture
         const secondSection = document.createElement("section");
         secondSection.classList.add("profile-image");
-
         const newDiv = document.createElement("div");
-
         const newProfileImg = document.createElement("img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
 
         //add elements to their parents
         this.mainElement.appendChild(newArticle);
         newArticle.appendChild(firstSection);
+        newArticle.appendChild(contactBtn);
         newArticle.appendChild(secondSection);
         firstSection.appendChild(firstSectionH1);
         firstSection.appendChild(locationParagraph);
