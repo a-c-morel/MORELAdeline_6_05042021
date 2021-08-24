@@ -130,6 +130,7 @@ class Profile{
 
         //contact button
         const contactBtn = document.createElement("button");
+        contactBtn.classList.add("contact-btn");
         contactBtn.innerHTML = "Contactez-moi";
         contactBtn.addEventListener('click', () => {
             //ouverture de la modale:

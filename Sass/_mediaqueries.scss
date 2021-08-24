@@ -1,6 +1,6 @@
 /*700px
 remonter la nav au mm niveau que le logo et le h1*/
-@media screen and (min-width: 700px){
+@media screen and (min-width: 800px){
     header{
         flex-direction: row;
         justify-content: space-between;
@@ -10,7 +10,11 @@ remonter la nav au mm niveau que le logo et le h1*/
             height: 3.13rem;
         }
         nav{
-            margin-right: auto;
+            position: absolute;
+            left: 50%;
+            max-width: 400px;
+            transform: translateX(-50%);
+            //margin-right: auto;
             margin-top: 0;
             width: 100%;
         }

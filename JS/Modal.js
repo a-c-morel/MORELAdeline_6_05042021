@@ -14,44 +14,15 @@ class Modal{
         
         this.modalContainer.appendChild(this.modalHeading);
         this.modalContainer.style.display = "flex";
-    }
-
-    checkFirstName(){
-        if(!this.firstName.value){
-            return false;
-        } else{
-            return true;
-        }
-    }
-
-    checkLastName(){
-        if(!this.lastName.value){
-            return false;
-        } else{
-            return true;
-        }
-    }
-
-    checkEmail(){
-        if(!this.email.value){
-            return false;
-        } else{
-            return true;
-        }
+        this.validateform();
     }
     
     validateform(){
-        this.submit.addEventListener('click', (e) => {
-            e.preventDefault();
-            const checkFirstNameResult = this.checkFirstName();
-            const checkLastNameResult = this.checkLastName();
-            const checkEmailResult = this.checkEmail();
-            if(checkFirstNameResult && checkLastNameResult && checkEmailResult){
+        this.submit.addEventListener('click', () => {
                 this.modalContainer.style.display = "none";
                 console.log(this.firstName.value);
                 console.log(this.lastName.value);
                 console.log(this.email.value);
-            }
-        })
+        });
     }
 }

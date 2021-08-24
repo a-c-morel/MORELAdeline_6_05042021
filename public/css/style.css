@@ -3,7 +3,7 @@
 /*COLOURS*/
 /*VALUES*/
 .card {
-  max-width: 32.87rem;
+  max-width: 32.68rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -187,6 +187,29 @@
   background: #C4C4C4;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
   object-fit: cover;
+}
+
+.contact-btn {
+  position: absolute;
+  position: fixed;
+  bottom: 1.87rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #901C1C;
+  border: none;
+  border-radius: 5px;
+  width: 170px;
+  height: 35px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: white;
+  line-height: 23.44px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 /*max-width: 32.87rem;
@@ -468,7 +491,7 @@ header nav {
 
 /*700px
 remonter la nav au mm niveau que le logo et le h1*/
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 800px) {
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -479,7 +502,10 @@ remonter la nav au mm niveau que le logo et le h1*/
     height: 3.13rem;
   }
   header nav {
-    margin-right: auto;
+    position: absolute;
+    left: 50%;
+    max-width: 400px;
+    transform: translateX(-50%);
     margin-top: 0;
     width: 100%;
   }
