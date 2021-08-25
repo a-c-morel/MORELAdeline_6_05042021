@@ -1,9 +1,16 @@
 .media{
+    height: 190px;
+    width: 335px;
+    margin-bottom: 38px;
+    overflow: hidden;
+    border-radius: .3rem;
+
     .media-preview{
         &__media{
-        max-width: 335px;
-        height: auto;
-        border-radius: .3rem;
+        //max-width: 335px;
+        width: 335px;
+        height: 190px;
+        object-fit: cover;
         }
     }
     .media-info{

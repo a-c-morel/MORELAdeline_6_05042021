@@ -271,10 +271,17 @@
         }
     }
 }*/
-.media .media-preview__media {
-  max-width: 335px;
-  height: auto;
+.media {
+  height: 190px;
+  width: 335px;
+  margin-bottom: 38px;
+  overflow: hidden;
   border-radius: 0.3rem;
+}
+.media .media-preview__media {
+  width: 335px;
+  height: 190px;
+  object-fit: cover;
 }
 .media .media-info {
   margin-top: 0.63rem;
@@ -487,6 +494,14 @@ header nav {
   /*left: 14.6rem;*/
   right: 1.4rem;
   top: 3.1rem;
+}
+
+#sorting-form {
+  display: none;
+}
+
+.recap-infos {
+  display: none;
 }
 
 /*700px
