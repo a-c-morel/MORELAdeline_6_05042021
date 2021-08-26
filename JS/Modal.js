@@ -10,10 +10,11 @@ class Modal{
     }
 
     display(){
-        this.modalHeading.innerHTML = `Contactez-moi ${this.name}`;
-        
+        this.modalHeading.innerHTML = `Contactez-moi </br> ${this.name}`;
+        this.modalHeading.style.order = "-1";
         this.modalContainer.appendChild(this.modalHeading);
         this.modalContainer.style.display = "flex";
+        this.modalContainer.style.flexWrap = "wrap";
         this.validateform();
     }
     

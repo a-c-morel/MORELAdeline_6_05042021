@@ -52,19 +52,8 @@
     
 }
 
-.contact-btn{position: absolute;
-    position: fixed;
-    bottom: 1.87rem;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: $darkColor;
-    border: none;
-    border-radius: 5px;
-    width: 170px;
-    height: 35px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    @include font(white, 23.44px, 18px, normal);
+.contact-btn{
+    @include buttons(fixed);    
 }
 
 
