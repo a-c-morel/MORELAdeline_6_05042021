@@ -5,32 +5,32 @@
     position: fixed;
     top: 0;
     background-color: white;
-}
-
-//boutons de la lightbox
-.fas{
+    z-index: 6;
     color: $darkColor;
 }
 
-.fa-times, .fa-chevron-left, .fa-chevron-right{
-    cursor: pointer;
-}
+//boutons de la lightbox
+
+//.fa-times, .fa-chevron-left, .fa-chevron-right{
 
 #lightbox-btn{
     &__close{
         position: absolute;
         top: 35.2%;
         right: 6.26%;
+        @include clickable-icons(11.57px, 11.57px, inherit);
     }
     &__previous{
         position: absolute;
         top: 49.2%;
         left: 6.9%;
+        @include clickable-icons(13.23px, 8.16px, inherit);    
     }
     &__next{
         position: absolute;
         top: 49.2%;
         right: 6.9%;
+        @include clickable-icons(13.23px, 8.16px, inherit);    
     }
 }
 
@@ -48,10 +48,15 @@
             @include font($darkColor, 18px, 14px, normal);
             text-align: left;
             margin-top: 0;
+            width: 93.85%;
+            transform: translateX(3.07%);
         }
         &__image, &__video{
-            width: 100%;
-            //-o-object-fit:contain;
-            //object-fit:contain;
+            width: 93.85%;
+            transform: translateX(3.07%);
+            height: 248px;
+            -o-object-fit:cover;
+            object-fit:cover;
+            border-radius: 5px;
         }
 }

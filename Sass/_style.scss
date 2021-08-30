@@ -26,6 +26,11 @@ ul{
     }
 }
 
+button{
+    background-color: inherit;
+    border: none;
+}
+
 a{
     text-decoration: none;
     &:visited{

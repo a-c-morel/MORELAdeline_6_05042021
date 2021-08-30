@@ -1,16 +1,15 @@
 .media{
     height: auto;
     width: 335px;
-    //margin-bottom: 38px;
     overflow: hidden;
-    border-radius: .3rem;
 
     .media-preview{
         &__media{
-        //max-width: 335px;
         width: 335px;
         height: 190px;
         object-fit: cover;
+        cursor: pointer;
+        border-radius: .3rem;
         }
     }
     .media-info{

@@ -275,12 +275,13 @@
   height: auto;
   width: 335px;
   overflow: hidden;
-  border-radius: 0.3rem;
 }
 .media .media-preview__media {
   width: 335px;
   height: 190px;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 0.3rem;
 }
 .media .media-info {
   margin-top: 0.63rem;
@@ -357,30 +358,36 @@
   position: fixed;
   top: 0;
   background-color: white;
-}
-
-.fas {
+  z-index: 6;
   color: #901C1C;
-}
-
-.fa-times, .fa-chevron-left, .fa-chevron-right {
-  cursor: pointer;
 }
 
 #lightbox-btn__close {
   position: absolute;
   top: 35.2%;
   right: 6.26%;
+  cursor: pointer;
+  width: 11.57px;
+  height: 11.57px;
+  color: inherit;
 }
 #lightbox-btn__previous {
   position: absolute;
   top: 49.2%;
   left: 6.9%;
+  cursor: pointer;
+  width: 13.23px;
+  height: 8.16px;
+  color: inherit;
 }
 #lightbox-btn__next {
   position: absolute;
   top: 49.2%;
   right: 6.9%;
+  cursor: pointer;
+  width: 13.23px;
+  height: 8.16px;
+  color: inherit;
 }
 
 .lightbox-media {
@@ -404,9 +411,16 @@
   font-weight: normal;
   text-align: left;
   margin-top: 0;
+  width: 93.85%;
+  transform: translateX(3.07%);
 }
 .lightbox-media__image, .lightbox-media__video {
-  width: 100%;
+  width: 93.85%;
+  transform: translateX(3.07%);
+  height: 248px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 .contact-modal {
@@ -512,6 +526,11 @@ ul {
 }
 ul li {
   margin-right: 0.3rem;
+}
+
+button {
+  background-color: inherit;
+  border: none;
 }
 
 a {
