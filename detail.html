@@ -11,7 +11,7 @@
 <body>
   <header>
     <a href="index.html">
-        <img class="logo" src="images/logo.png" alt="">
+        <img class="logo" src="images/icons/logo.png" alt="">
     </a>
   </header>
   <main>
@@ -29,8 +29,11 @@
       </button>
     </div>
 
-    <div class="contact-modal">
+    <div id="contact-modal" class="contact-modal">
       <h1 class="contact-modal__heading"></h1>
+      <button>
+        <img id="modal-btn__close" src="images/icons/Vector.png">
+      </button>
       <form name="contact" id="modal-form" method="">
         <label for="first">Prénom</label>
         <input class="text-control" type="text" id="first" name="first" minlength="2"/>

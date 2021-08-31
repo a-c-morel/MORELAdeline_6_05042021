@@ -2,6 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 /*COLOURS*/
 /*VALUES*/
+/*@mixin profile-image($height: 12.5rem, $width: 12.5rem, $position){
+        height: $height;
+        width: $width;
+        object-position: $position;
+}*/
 .card {
   max-width: 32.68rem;
   display: flex;
@@ -31,7 +36,6 @@
   background: #C4C4C4;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
   object-fit: cover;
-  /*border-radius: $round;*/
 }
 .card .card-profile__name {
   font-family: "DM Sans", sans-serif;
@@ -197,9 +201,7 @@
   transform: translateX(-50%);
   background-color: #901C1C;
   border: none;
-  border-radius: 5px;
-  width: 170px;
-  height: 35px;
+  border-radius: 0.31rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: "DM Sans", sans-serif;
@@ -210,6 +212,8 @@
   line-height: 23.44px;
   font-size: 18px;
   font-weight: normal;
+  width: 170px;
+  height: 35px;
 }
 
 /*max-width: 32.87rem;
@@ -281,7 +285,7 @@
   height: 190px;
   object-fit: cover;
   cursor: pointer;
-  border-radius: 0.3rem;
+  border-radius: 0.31rem;
 }
 .media .media-info {
   margin-top: 0.63rem;
@@ -364,30 +368,30 @@
 
 #lightbox-btn__close {
   position: absolute;
+  cursor: pointer;
+  color: inherit;
   top: 35.2%;
   right: 6.26%;
-  cursor: pointer;
   width: 11.57px;
   height: 11.57px;
-  color: inherit;
 }
 #lightbox-btn__previous {
   position: absolute;
+  cursor: pointer;
+  color: inherit;
   top: 49.2%;
   left: 6.9%;
-  cursor: pointer;
   width: 13.23px;
   height: 8.16px;
-  color: inherit;
 }
 #lightbox-btn__next {
   position: absolute;
+  cursor: pointer;
+  color: inherit;
   top: 49.2%;
   right: 6.9%;
-  cursor: pointer;
   width: 13.23px;
   height: 8.16px;
-  color: inherit;
 }
 
 .lightbox-media {
@@ -420,7 +424,7 @@
   height: 248px;
   -o-object-fit: cover;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 0.31rem;
 }
 
 .contact-modal {
@@ -431,7 +435,7 @@
   top: 0;
   background-color: #DB8876;
   z-index: 2;
-  border-radius: 5px;
+  border-radius: 0.31rem;
   padding-left: 17px;
   padding-top: 20px;
 }
@@ -445,6 +449,15 @@
   font-size: 36px;
   font-weight: normal;
   text-align: left;
+}
+.contact-modal #modal-btn__close {
+  position: absolute;
+  cursor: pointer;
+  color: inherit;
+  top: 26.67px;
+  right: 26.67px;
+  width: 18.67px;
+  height: 18.67px;
 }
 
 #modal-form {
@@ -471,7 +484,7 @@
   width: 100%;
   height: 52px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.31rem;
   margin-bottom: 14px;
 }
 #modal-form #message {
@@ -485,9 +498,7 @@
   transform: translateX(-50%);
   background-color: #901C1C;
   border: none;
-  border-radius: 5px;
-  width: 170px;
-  height: 35px;
+  border-radius: 0.31rem;
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: "DM Sans", sans-serif;
@@ -498,6 +509,8 @@
   line-height: 23.44px;
   font-size: 18px;
   font-weight: normal;
+  width: 170px;
+  height: 35px;
   top: 716px;
 }
 

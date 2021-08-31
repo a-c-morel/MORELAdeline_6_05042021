@@ -53,7 +53,8 @@
 }
 
 .contact-btn{
-    @include buttons(fixed);    
+    @include buttons(fixed);
+    @include w-h(170px, 35px);    
 }
 
 

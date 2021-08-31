@@ -6,14 +6,20 @@
     top: 0;
     background-color: $secondaryColor;
     z-index: 2;
-    border-radius: 5px;
+    border-radius: $littleRadius;
     padding-left: 17px;
     padding-top: 20px;
     &__heading{
         @include font(black, 46.87px, 36px, normal);
         text-align: left;
     }
+    #modal-btn__close{
+        @include clickable-iconsTR(26.67px, 26.67px, inherit);
+        @include w-h(18.67px, 18.67px);
+    }
 }
+
+
 
 #modal-form{
     height: 100%;
@@ -31,15 +37,15 @@
         width: 100%;
         height: 52px;
         border: none;
-        border-radius: 5px;
+        border-radius: $littleRadius;
         margin-bottom: 14px;
     }
     #message{
         height: 184px;
     }
     #submitdata{
-        //@extend .contact-btn;
         @include buttons(absolute);
+        @include w-h(170px, 35px);
         top: 716px;
     }
 }

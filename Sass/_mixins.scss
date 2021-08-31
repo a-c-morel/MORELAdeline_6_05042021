@@ -8,12 +8,17 @@
     font-weight: $weight;
 }
 
+@mixin w-h($width, $height){
+    width: $width;
+    height: $height;
+}
 
-@mixin profile-image($height: 12.5rem, $width: 12.5rem, $position){
+
+/*@mixin profile-image($height: 12.5rem, $width: 12.5rem, $position){
         height: $height;
         width: $width;
         object-position: $position;
-}
+}*/
 
 @mixin buttons($position){
     cursor: pointer;
@@ -23,17 +28,24 @@
     transform: translateX(-50%);
     background-color: $darkColor;
     border: none;
-    border-radius: 5px;
-    width: 170px;
-    height: 35px;
+    border-radius: $littleRadius;
     padding-left: 1rem;
     padding-right: 1rem;
     @include font(white, 23.44px, 18px, normal);
 }
 
-@mixin clickable-icons($width, $height, $color){
+@mixin clickable-iconsTR($top, $right, $color){
+    position: absolute;
     cursor: pointer;
-    width: $width;
-    height: $height;
     color: $color;
+    top: $top;
+    right: $right;
+}
+
+@mixin clickable-iconsTL($top, $left, $color){
+    position: absolute;
+    cursor: pointer;
+    color: $color;
+    top: $top;
+    left: $left;
 }
