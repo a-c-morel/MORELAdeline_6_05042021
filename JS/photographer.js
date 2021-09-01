@@ -49,6 +49,8 @@ class Card{
         const newProfileImg = document.createElement("img");
         newProfileImg.classList.add("card-profile__img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+        newProfileImg.setAttribute("alt", "");
+        newProfileImg.setAttribute("aria-label", `${this.name}`);
 
         const newProfileTitle = document.createElement("h2");
         newProfileTitle.setAttribute("id", "photographer-name");
@@ -144,6 +146,8 @@ class Profile{
         const newDiv = document.createElement("div");
         const newProfileImg = document.createElement("img");
         newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+        newProfileImg.setAttribute("alt", "");
+        newProfileImg.setAttribute("aria-label", `${this.name}`);
 
         //add elements to their parents
         this.mainElement.appendChild(newArticle);

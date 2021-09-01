@@ -34,6 +34,8 @@ class Image{
         const newImage = document.createElement("img");
         newImage. classList.add("media-preview__media");
         newImage.setAttribute("src", `images/medias/${this.url}`);
+        newImage.setAttribute("alt", "");
+        newImage.setAttribute("aria-label", `${this.title}`);
 
         const newImageTitle = document.createElement("h2");
         newImageTitle.classList.add("media-info__title");
@@ -41,6 +43,7 @@ class Image{
 
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
+        newImageLikes.setAttribute("aria-label", "likes");
         newImageLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
 
         newImageLikes.addEventListener('click', (e)=> {
@@ -100,6 +103,7 @@ class Video{
 
         const newVideo = document.createElement("video");
         newVideo. classList.add("media-preview__media");
+        newVideo.setAttribute("aria-label", `${this.title}`);
 
         const newSource = document.createElement("source");
         newSource.setAttribute("src", `images/medias/${this.url}`);
@@ -110,6 +114,7 @@ class Video{
 
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
+        newVideoLikes.setAttribute("aria-label", "likes");
         newVideoLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
 
         newVideoLikes.addEventListener('click', (e)=> {

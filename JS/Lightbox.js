@@ -14,6 +14,7 @@ class LightboxFactory{
                 this.element = document.createElement("img");
                 this.element.classList.add("lightbox-media__image");
                 this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
+                this.element.setAttribute("alt", "");
             }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
             else if(this.medias[this.position] instanceof Video){
                 this.element = document.createElement("video");

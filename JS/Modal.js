@@ -25,6 +25,7 @@ class Modal{
                 console.log(this.firstName.value);
                 console.log(this.lastName.value);
                 console.log(this.email.value);
+                //essayer de voir pourquoi ça me les log x3
         });
     }
 }

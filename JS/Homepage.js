@@ -40,6 +40,7 @@ class Homepage{
         this.tags = new Set(this.tags);
         
         const navigation = document.createElement("nav");
+        navigation.setAttribute("role", "navigation");
         const navigationList = document.createElement("ul");
 
         for(let tag of this.tags){

@@ -11,28 +11,28 @@
 <body>
   <header>
     <a href="index.html">
-        <img class="logo" src="images/icons/logo.png" alt="">
+        <img class="logo" src="images/icons/logo.png" alt="Fisheye Home page">
     </a>
   </header>
   <main>
     <!--Lightbox-->
-    <div id="lightbox-modal">
-      <button id="lightbox-btn__close">
+    <aside id="lightbox-modal" aria-label="image closeup view">
+      <button id="lightbox-btn__close" aria-label="Close dialog">
         <i class="fas fa-times"></i>
       </button>
-      <button id="lightbox-btn__previous">
+      <button id="lightbox-btn__previous" aria-label="Previous image">
         <i class= "fas fa-chevron-left"></i>
       </button>
       <div class="lightbox-media"></div>
-      <button id="lightbox-btn__next">
+      <button id="lightbox-btn__next" aria-label="Next image">
         <i class= "fas fa-chevron-right"></i>
       </button>
-    </div>
-
-    <div id="contact-modal" class="contact-modal">
+    </aside>
+    <!--contact modal-->
+    <aside id="contact-modal" class="contact-modal">
       <h1 class="contact-modal__heading"></h1>
       <button>
-        <img id="modal-btn__close" src="images/icons/Vector.png">
+        <img id="modal-btn__close" src="images/icons/Vector.png" alt="">
       </button>
       <form name="contact" id="modal-form" method="">
         <label for="first">Prénom</label>
@@ -45,9 +45,8 @@
         <input class="text-control" type="text" id="message" name="message" minlength="10"/>
         <button id="submitdata" class="btn-submit button" type="button">Envoyer</button>
       </form>
-    </div>
-
-    <!--Menu de sélection-->
+    </aside>
+    <!--selection menu-->
     <form id="sorting-form" action="" method="post">
       <label for="sorting-options">Trier par:</label>
       <select name="sorting-group" id="sorting-options">
@@ -56,18 +55,14 @@
         <option value="2">Titre</option>
       </select>
     </form>
-    
-    
-
-    <div class="recap-infos">
+    <!--summary of main infos for tablet and desktop-->
+    <aside class="recap-infos">
       <p class="recap-infos__likes">likes
         <i class="fas fa-heart" id="total-likes__icon"></i>
       </p>
       <p class="recap-infos__price">price</p>
-    </div>
-
+    </aside>
   </main>
-    
     <script src="JS/Photographer.js"></script>
     <script src="JS/Media.js"></script>
     <script src="JS/Lightbox.js"></script>
