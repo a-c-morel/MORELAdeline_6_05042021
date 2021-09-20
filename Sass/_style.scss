@@ -31,6 +31,19 @@ button{
     border: none;
 }
 
+fieldset{
+    border: none;
+}
+
+.sr-only{
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -10000px;
+    width: 1px;
+}
+
 a{
     text-decoration: none;
     &:visited{
@@ -60,6 +73,10 @@ header{
     margin-bottom: 3.1rem;
     margin-left: 1.2rem;
     }
+}
+
+.screenreader-text, .title, .desc{
+    display: none;
 }
 
 .home-first-heading{

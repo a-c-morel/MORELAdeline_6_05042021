@@ -134,10 +134,15 @@ class Profile{
         const contactBtn = document.createElement("button");
         contactBtn.classList.add("contact-btn");
         contactBtn.innerHTML = "Contactez-moi";
+        //const mainElement = document.querySelector("main");
+        //const headerElement = document.querySelector("header");
+
         contactBtn.addEventListener('click', () => {
             //ouverture de la modale:
             const modal = new Modal(this.name);
             modal.display();
+            document.body.setAttribute('aria-hidden', 'true');
+            document.body.tabIndex = -1;
         });
 
         //section with photographer picture

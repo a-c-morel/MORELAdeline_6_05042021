@@ -47,6 +47,7 @@ class Homepage{
             const tagContainer = document.createElement("li");
             tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
+            //tagContainer.tabIndex = 0;
             tagContainer.innerHTML = `<span aria-hidden ="true">#</span>${tag}`;
             navigationList.appendChild(tagContainer);
 

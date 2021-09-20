@@ -24,6 +24,7 @@ class Image{
         //create elements
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
+        newImageArticle.setAttribute("tabindex", "0");
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
@@ -34,7 +35,7 @@ class Image{
         const newImage = document.createElement("img");
         newImage. classList.add("media-preview__media");
         newImage.setAttribute("src", `images/medias/${this.url}`);
-        newImage.setAttribute("alt", "");
+        newImage.setAttribute("alt", `${this.title}`);
         newImage.setAttribute("aria-label", `${this.title}`);
 
         const newImageTitle = document.createElement("h2");
@@ -103,10 +104,13 @@ class Video{
 
         const newVideo = document.createElement("video");
         newVideo. classList.add("media-preview__media");
-        newVideo.setAttribute("aria-label", `${this.title}`);
+        newVideo.setAttribute("alt", `${this.title}`);
 
         const newSource = document.createElement("source");
         newSource.setAttribute("src", `images/medias/${this.url}`);
+
+        const newDefaultText = document.createElement("p");
+        newDefaultText.innerHTML = "Votre navigateur ne supporte pas l'élément vidéo."
 
         const newVideoTitle = document.createElement("h2");
         newVideoTitle.classList.add("media-info__title");
@@ -127,6 +131,7 @@ class Video{
         newVideoArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newVideo);
         newVideo.appendChild(newSource);
+        newVideo.appendChild(newDefaultText);
         newInfoSection.appendChild(newVideoTitle);
         newInfoSection.appendChild(newVideoLikes);
         

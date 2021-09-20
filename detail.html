@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/36462bbf07.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body aria-hidden="false">
   <header>
     <a href="index.html">
         <img class="logo" src="images/icons/logo.png" alt="Fisheye Home page">
@@ -16,33 +16,41 @@
   </header>
   <main>
     <!--Lightbox-->
-    <aside id="lightbox-modal" aria-label="image closeup view">
-      <button id="lightbox-btn__close" aria-label="Close dialog">
-        <i class="fas fa-times"></i>
+    <aside id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
+      <button id="lightbox-btn__close">
+        <i class="fas fa-times" aria-hidden="true" title="Close dialog"></i>
+        <span class="screenreader-text">Close dialog</span>
       </button>
-      <button id="lightbox-btn__previous" aria-label="Previous image">
-        <i class= "fas fa-chevron-left"></i>
+      <button id="lightbox-btn__previous">
+        <i class= "fas fa-chevron-left" aria-hidden="true" title="Previous image"></i>
+        <span class="screenreader-text">Previous image</span>
       </button>
       <div class="lightbox-media"></div>
       <button id="lightbox-btn__next" aria-label="Next image">
-        <i class= "fas fa-chevron-right"></i>
+        <i class= "fas fa-chevron-right" aria-hidden="true" title="Next image"></i>
+        <span class="screenreader-text">Next image</span>
       </button>
     </aside>
     <!--contact modal-->
-    <aside id="contact-modal" class="contact-modal">
-      <h1 class="contact-modal__heading"></h1>
-      <button>
-        <img id="modal-btn__close" src="images/icons/Vector.png" alt="">
+    <aside id="contact-modal" class="contact-modal" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
+      <h1 id="contact-heading" class="contact-modal__heading"></h1>
+      <button aria-label="Close Contact form" id="modal-btn__close">
+        <img src="images/icons/Vector.svg" alt="">
       </button>
       <form name="contact" id="modal-form" method="">
-        <label for="first">Prénom</label>
-        <input class="text-control" type="text" id="first" name="first" minlength="2"/>
-        <label for="last">Nom</label>
-        <input class="text-control" type="text" id="last" name="last"/>
-        <label for="email">Email</label>
-        <input class="text-control" type="email" id="email" name="email"/>
-        <label for="message">Votre message</label>
-        <input class="text-control" type="text" id="message" name="message" minlength="10"/>
+        <fieldset>
+          <legend aria-label="Vos coordonées" id="legend" class="sr-only">Vos coordonées</legend>
+          <label aria-label="Prénom" for="first">Prénom</label>
+          <input class="text-control" type="text" id="first" name="prénom" minlength="2"/>
+          <label aria-label="Nom" for="last">Nom</label>
+          <input class="text-control" type="text" id="last" name="nom"/>
+          <label aria-label="Email" for="email">Email</label>
+          <input class="text-control" type="email" id="email" name="email"/>
+        </fieldset>
+        <fieldset>
+          <label for="message">Votre message</label>
+          <input class="text-control" type="text" id="message" name="message" minlength="10"/>
+        </fieldset>
         <button id="submitdata" class="btn-submit button" type="button">Envoyer</button>
       </form>
     </aside>
