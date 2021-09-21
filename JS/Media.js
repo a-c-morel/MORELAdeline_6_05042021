@@ -95,6 +95,7 @@ class Video{
         //create elements
         const newVideoArticle = document.createElement("article");
         newVideoArticle.classList.add("media");
+        newVideoArticle.setAttribute("tabindex", "0");
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");

@@ -57,20 +57,40 @@ class Detail{
 
     displayFilter(){
         const sortingOptions = document.getElementById("sorting-options");
+        sortingOptions.options[0].setAttribute("selected", "");
+        sortingOptions.options[0].setAttribute("disabled", "");
         sortingOptions.addEventListener("change", () => {
             if(sortingOptions.options[0].selected){
                 console.log("Tri par popularité"); //pb = il semble que ce soit déjà sélectionné par défaut
                 this.removeMedias();
+                sortingOptions.options[0].setAttribute("disabled", "");
+                sortingOptions.options[1].removeAttribute("disabled", "");
+                sortingOptions.options[2].removeAttribute("disabled", "");
+                sortingOptions.options[0].setAttribute("selected", "");
+                sortingOptions.options[1].removeAttribute("selected", "");
+                sortingOptions.options[2].removeAttribute("selected", "");
                 this.byPopularity();
                 this.displayMedias();
             }else if(sortingOptions.options[1].selected){
                 console.log("Tri par date");
                 this.removeMedias();
+                sortingOptions.options[0].removeAttribute("disabled", "");
+                sortingOptions.options[1].setAttribute("disabled", "");
+                sortingOptions.options[2].removeAttribute("disabled", "");
+                sortingOptions.options[0].removeAttribute("selected", "");
+                sortingOptions.options[1].setAttribute("selected", "");
+                sortingOptions.options[2].removeAttribute("selected", "");
                 this.byDate();
                 this.displayMedias();
             }else if(sortingOptions.options[2].selected){
                 console.log("Tri par titre");
                 this.removeMedias();
+                sortingOptions.options[0].removeAttribute("disabled", "");
+                sortingOptions.options[1].removeAttribute("disabled", "");
+                sortingOptions.options[2].setAttribute("disabled", "");
+                sortingOptions.options[0].removeAttribute("selected", "");
+                sortingOptions.options[1].removeAttribute("selected", "");
+                sortingOptions.options[2].setAttribute("selected", "");
                 this.byTitle();
                 this.displayMedias();
             }

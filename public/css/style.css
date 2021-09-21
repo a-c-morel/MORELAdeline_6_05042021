@@ -639,6 +639,37 @@ remonter la nav au mm niveau que le logo et le h1*/
     margin-top: 0;
     width: 100%;
   }
+
+  #sorting-form {
+    display: block;
+  }
+
+  #sorting-options {
+    background-color: #901C1C;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: white;
+    line-height: 23.44px;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 5px;
+    width: 170px;
+    height: 55px;
+    cursor: pointer;
+    border: none;
+    /*.sorting-option{
+        width: 170px;
+        height: 55px;
+    }*/
+  }
+  #sorting-options .sorting-option[disabled] {
+    display: none;
+  }
+  #sorting-options:focus .sorting-option {
+    padding: 3rem;
+  }
 }
 @media screen and (min-width: 1052px) {
   main {

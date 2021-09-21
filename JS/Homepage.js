@@ -45,6 +45,7 @@ class Homepage{
 
         for(let tag of this.tags){
             const tagContainer = document.createElement("li");
+            tagContainer.setAttribute("tabindex", "0");
             tagContainer.classList.add("tag-filter");
             tagContainer.classList.add("tags-links");
             //tagContainer.tabIndex = 0;

@@ -19,6 +19,31 @@ remonter la nav au mm niveau que le logo et le h1*/
             width: 100%;
         }
     }
+    #sorting-form{
+        display: block;
+    }
+    #sorting-options{
+        background-color: $darkColor;
+        @include font(white, 23.44px, 18px, normal);
+        border-radius: 5px;
+        width: 170px;
+        height: 55px;
+        cursor: pointer;
+        border: none;
+        .sorting-option[disabled]{
+            display: none;
+        }
+        &:focus{
+            .sorting-option{
+                padding: 3rem;
+            }
+        }
+        /*.sorting-option{
+            width: 170px;
+            height: 55px;
+        }*/
+    }
+    
 }
 
 @media screen and (min-width: 1052px){
