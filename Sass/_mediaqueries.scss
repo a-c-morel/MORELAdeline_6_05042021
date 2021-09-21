@@ -33,11 +33,6 @@ remonter la nav au mm niveau que le logo et le h1*/
         .sorting-option[disabled]{
             display: none;
         }
-        &:focus{
-            .sorting-option{
-                padding: 3rem;
-            }
-        }
         /*.sorting-option{
             width: 170px;
             height: 55px;

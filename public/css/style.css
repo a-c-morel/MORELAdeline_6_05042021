@@ -667,9 +667,6 @@ remonter la nav au mm niveau que le logo et le h1*/
   #sorting-options .sorting-option[disabled] {
     display: none;
   }
-  #sorting-options:focus .sorting-option {
-    padding: 3rem;
-  }
 }
 @media screen and (min-width: 1052px) {
   main {

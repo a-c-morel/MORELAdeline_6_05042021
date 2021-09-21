@@ -57,40 +57,44 @@ class Detail{
 
     displayFilter(){
         const sortingOptions = document.getElementById("sorting-options");
-        sortingOptions.options[0].setAttribute("selected", "");
-        sortingOptions.options[0].setAttribute("disabled", "");
+        /*sortingOptions.input[0].setAttribute("selected", "");
+        sortingOptions.input[0].setAttribute("disabled", "");*/
         sortingOptions.addEventListener("change", () => {
-            if(sortingOptions.options[0].selected){
+            const sortingOption0 = document.querySelector("#sorting-option0");
+            const sortingOption1 = document.querySelector("#sorting-option1");
+            const sortingOption2 = document.querySelector("#sorting-option2");
+
+            if(sortingOption0.checked){
                 console.log("Tri par popularité"); //pb = il semble que ce soit déjà sélectionné par défaut
                 this.removeMedias();
-                sortingOptions.options[0].setAttribute("disabled", "");
-                sortingOptions.options[1].removeAttribute("disabled", "");
-                sortingOptions.options[2].removeAttribute("disabled", "");
-                sortingOptions.options[0].setAttribute("selected", "");
-                sortingOptions.options[1].removeAttribute("selected", "");
-                sortingOptions.options[2].removeAttribute("selected", "");
+                /*sortingOptions.input[0].setAttribute("disabled", "");
+                sortingOptions.input[1].removeAttribute("disabled", "");
+                sortingOptions.input[2].removeAttribute("disabled", "");
+                sortingOptions.input[0].setAttribute("selected", "");
+                sortingOptions.input[1].removeAttribute("selected", "");
+                sortingOptions.input[2].removeAttribute("selected", "");*/
                 this.byPopularity();
                 this.displayMedias();
-            }else if(sortingOptions.options[1].selected){
+            }else if(sortingOption1.checked){
                 console.log("Tri par date");
                 this.removeMedias();
-                sortingOptions.options[0].removeAttribute("disabled", "");
-                sortingOptions.options[1].setAttribute("disabled", "");
-                sortingOptions.options[2].removeAttribute("disabled", "");
-                sortingOptions.options[0].removeAttribute("selected", "");
-                sortingOptions.options[1].setAttribute("selected", "");
-                sortingOptions.options[2].removeAttribute("selected", "");
+                /*sortingOptions.input[0].removeAttribute("disabled", "");
+                sortingOptions.input[1].setAttribute("disabled", "");
+                sortingOptions.input[2].removeAttribute("disabled", "");
+                sortingOptions.input[0].removeAttribute("selected", "");
+                sortingOptions.input[1].setAttribute("selected", "");
+                sortingOptions.input[2].removeAttribute("selected", "");*/
                 this.byDate();
                 this.displayMedias();
-            }else if(sortingOptions.options[2].selected){
+            }else if(sortingOption2.checked){
                 console.log("Tri par titre");
                 this.removeMedias();
-                sortingOptions.options[0].removeAttribute("disabled", "");
-                sortingOptions.options[1].removeAttribute("disabled", "");
-                sortingOptions.options[2].setAttribute("disabled", "");
-                sortingOptions.options[0].removeAttribute("selected", "");
-                sortingOptions.options[1].removeAttribute("selected", "");
-                sortingOptions.options[2].setAttribute("selected", "");
+                /*sortingOptions.input[0].removeAttribute("disabled", "");
+                sortingOptions.input[1].removeAttribute("disabled", "");
+                sortingOptions.input[2].setAttribute("disabled", "");
+                sortingOptions.input[0].removeAttribute("selected", "");
+                sortingOptions.input[1].removeAttribute("selected", "");
+                sortingOptions.input[2].setAttribute("selected", "");*/
                 this.byTitle();
                 this.displayMedias();
             }
@@ -126,14 +130,14 @@ class Detail{
         this.medias.sort( (a, b) => {
             return a.likes - b.likes;
         });
-        console.log(this.medias);
+        //console.log(this.medias);
     }
 
     byDate(){
         this.medias.sort( (a, b) => {
             return a.date - b.date;
         });
-        console.log(this.medias);
+        //console.log(this.medias);
     }
 
     byTitle(){
@@ -147,7 +151,7 @@ class Detail{
                 return 0;
             }
         });
-        console.log(this.medias);
+        //console.log(this.medias);
     }
 
 }
