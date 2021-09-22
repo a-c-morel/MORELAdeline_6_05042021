@@ -57,44 +57,37 @@ class Detail{
 
     displayFilter(){
         const sortingOptions = document.getElementById("sorting-options");
-        /*sortingOptions.input[0].setAttribute("selected", "");
-        sortingOptions.input[0].setAttribute("disabled", "");*/
         sortingOptions.addEventListener("change", () => {
-            const sortingOption0 = document.querySelector("#sorting-option0");
-            const sortingOption1 = document.querySelector("#sorting-option1");
-            const sortingOption2 = document.querySelector("#sorting-option2");
+            const sortingOptionInput0 = document.querySelector("#sorting-option0");
+            const sortingOptionInput1 = document.querySelector("#sorting-option1");
+            const sortingOptionInput2 = document.querySelector("#sorting-option2");
 
-            if(sortingOption0.checked){
-                console.log("Tri par popularité"); //pb = il semble que ce soit déjà sélectionné par défaut
+            const sortingOption0 = document.querySelector('#option0');
+            const sortingOption1 = document.querySelector('#option1');
+            const sortingOption2 = document.querySelector('#option2');
+
+            if(sortingOptionInput0.checked){
+                console.log("Tri par popularité");
+                sortingOption0.style.order = "1";
+                sortingOption1.style.order= "2";
+                sortingOption2.style.order= "3";
                 this.removeMedias();
-                /*sortingOptions.input[0].setAttribute("disabled", "");
-                sortingOptions.input[1].removeAttribute("disabled", "");
-                sortingOptions.input[2].removeAttribute("disabled", "");
-                sortingOptions.input[0].setAttribute("selected", "");
-                sortingOptions.input[1].removeAttribute("selected", "");
-                sortingOptions.input[2].removeAttribute("selected", "");*/
                 this.byPopularity();
                 this.displayMedias();
-            }else if(sortingOption1.checked){
+            }else if(sortingOptionInput1.checked){
                 console.log("Tri par date");
+                sortingOption1.style.order= "1";
+                sortingOption2.style.order= "2";
+                sortingOption0.style.order = "3";
                 this.removeMedias();
-                /*sortingOptions.input[0].removeAttribute("disabled", "");
-                sortingOptions.input[1].setAttribute("disabled", "");
-                sortingOptions.input[2].removeAttribute("disabled", "");
-                sortingOptions.input[0].removeAttribute("selected", "");
-                sortingOptions.input[1].setAttribute("selected", "");
-                sortingOptions.input[2].removeAttribute("selected", "");*/
                 this.byDate();
                 this.displayMedias();
-            }else if(sortingOption2.checked){
+            }else if(sortingOptionInput2.checked){
                 console.log("Tri par titre");
+                sortingOption2.style.order= "1";
+                sortingOption0.style.order= "2";
+                sortingOption1.style.order = "3";
                 this.removeMedias();
-                /*sortingOptions.input[0].removeAttribute("disabled", "");
-                sortingOptions.input[1].removeAttribute("disabled", "");
-                sortingOptions.input[2].setAttribute("disabled", "");
-                sortingOptions.input[0].removeAttribute("selected", "");
-                sortingOptions.input[1].removeAttribute("selected", "");
-                sortingOptions.input[2].setAttribute("selected", "");*/
                 this.byTitle();
                 this.displayMedias();
             }

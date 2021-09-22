@@ -657,14 +657,15 @@ remonter la nav au mm niveau que le logo et le h1*/
     border-radius: 5px;
     width: 170px;
     height: 55px;
-    cursor: pointer;
     border: none;
-    /*.sorting-option{
-        width: 170px;
-        height: 55px;
-    }*/
+    display: flex;
+    flex-direction: column;
   }
-  #sorting-options .sorting-option[disabled] {
+  #sorting-options label {
+    cursor: pointer;
+  }
+
+  input[type=radio] {
     display: none;
   }
 }
