@@ -27,6 +27,13 @@ class Homepage{
             let myCard = new PhotographerFactory("card", {portrait : photographer.portrait, name : photographer.name, city : photographer.city, country : photographer.country, tagline : photographer.tagline, price : photographer.price, tags : photographer.tags, id : photographer.id});
             this.photographers.push(myCard);
             this.tags.push(...photographer.tags);
+            /*Si tag en doublon singulier + pluriel, supprimer pluriel de l'array
+            for(let this.tag of this.tags){
+                if(!this.tags)
+            }
+            
+            
+            */
         }
     }
 

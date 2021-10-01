@@ -31,9 +31,13 @@
         });
 
     /*CONTACT MODAL EVENTS*/
+    const mainElement = document.querySelector("main");
     const contactModal = document.querySelector(".contact-modal");
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {
         contactModal.style.display = "none";
+        contactModal.setAttribute("aria-hidden", "true");
+        mainElement.tabIndex = 0;
+        mainElement.setAttribute("aria-hidden", "false");
     });
 })();

@@ -104,7 +104,8 @@ class Profile{
         this.tagline = props.tagline;
         this.tags = props.tags;
         this.id = props.id;
-        this.mainElement = document.querySelector("main");
+        //this.mainElement = document.querySelector("main");
+        this.headerElement = document.querySelector("header");
     }
     display(){
         const newArticle = document.createElement("article");
@@ -141,8 +142,8 @@ class Profile{
             //ouverture de la modale:
             const modal = new Modal(this.name);
             modal.display();
-            document.body.setAttribute('aria-hidden', 'true');
-            document.body.tabIndex = -1;
+            this.mainElement.setAttribute('aria-hidden', 'true');
+            this.mainElement.tabIndex = -1;
         });
 
         //section with photographer picture
@@ -155,7 +156,7 @@ class Profile{
         newProfileImg.setAttribute("aria-label", `${this.name}`);
 
         //add elements to their parents
-        this.mainElement.appendChild(newArticle);
+        this.headerElement.appendChild(newArticle);
         newArticle.appendChild(firstSection);
         newArticle.appendChild(contactBtn);
         newArticle.appendChild(secondSection);

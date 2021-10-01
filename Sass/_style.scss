@@ -9,13 +9,6 @@ body{
     background: #ffffff;
 }
 
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 ul{
     list-style-type: none;
     display: flex;
@@ -75,6 +68,12 @@ header{
     }
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .screenreader-text, .title, .desc{
     display: none;
 }
@@ -89,7 +88,17 @@ header{
     top: 3.1rem;
 }
 
-#sorting-form{
+/*.hidden-toggle{
+    display: none;
+}*/
+
+.sorting-menu-title{
+        display: none;
+}
+#sorting-menu-btn{
+       display: none;
+}
+.sorting-options{
     display: none;
 }
 

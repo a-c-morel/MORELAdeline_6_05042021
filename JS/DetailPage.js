@@ -2,6 +2,7 @@ class Detail{
     constructor(){
         this.photographer = null;
         this.medias = [];
+        this.headerElement = document.querySelector("header");
         this.mainElement = document.querySelector("main");
         this.lightboxContainer = document.querySelector(".lightbox-media");
     }
@@ -24,7 +25,7 @@ class Detail{
     }
 
     displayPhotographer(){
-        this.mainElement.appendChild(this.photographer.display());
+        this.headerElement.appendChild(this.photographer.display());
     }
 
     async getMedias(id){
@@ -56,42 +57,93 @@ class Detail{
     }
 
     displayFilter(){
-        const sortingOptions = document.getElementById("sorting-options");
-        sortingOptions.addEventListener("change", () => {
-            const sortingOptionInput0 = document.querySelector("#sorting-option0");
-            const sortingOptionInput1 = document.querySelector("#sorting-option1");
-            const sortingOptionInput2 = document.querySelector("#sorting-option2");
+        const sortingBtn = document.querySelector("#sorting-menu-btn");
+        const popularityOption = "Popularité";
+        const dateOption = "Date";
+        const titleOption = "Titre";
+        //const sortingOptions = document.getElementById("sorting-options");
+        const sortingOption0 = document.querySelector("#sorting-menu-btn");
+        const sortingOption1 = document.querySelector("#option1");
+        const sortingOption2 = document.querySelector("#option2");
 
-            const sortingOption0 = document.querySelector('#option0');
-            const sortingOption1 = document.querySelector('#option1');
-            const sortingOption2 = document.querySelector('#option2');
+        //sortingOption1.classList.toggle("hidden-toggle");
+        //sortingOption2.classList.toggle("hidden-toggle");
 
-            if(sortingOptionInput0.checked){
-                console.log("Tri par popularité");
-                sortingOption0.style.order = "1";
-                sortingOption1.style.order= "2";
-                sortingOption2.style.order= "3";
+        sortingOption0.innerHTML = popularityOption;
+        sortingOption1.innerHTML = dateOption;
+        sortingOption2.innerHTML = titleOption;
+
+        sortingOption0.style.order = "1";
+        sortingOption1.style.order = "2";
+        sortingOption2.style.order = "3";
+
+        //par défaut = appliquer le tri par popularité (appeler fonction en dehors de l'event listener)
+
+        sortingBtn.addEventListener("click", () => { //ajouter condition "ou quand on clique sur le chevron"
+            this.removeMedias();
+            this.byPopularity();
+            sortingOption0.innerHTML = popularityOption;
+            sortingOption1.innerHTML = dateOption;
+            sortingOption2.innerHTML = titleOption;
+            this.displayMedias();
+        });
+
+        
+        sortingOption1.addEventListener('click', () => {
+            if(sortingOption1 == popularityOption){
                 this.removeMedias();
                 this.byPopularity();
-                this.displayMedias();
-            }else if(sortingOptionInput1.checked){
-                console.log("Tri par date");
-                sortingOption1.style.order= "1";
-                sortingOption2.style.order= "2";
-                sortingOption0.style.order = "3";
-                this.removeMedias();
-                this.byDate();
-                this.displayMedias();
-            }else if(sortingOptionInput2.checked){
-                console.log("Tri par titre");
-                sortingOption2.style.order= "1";
-                sortingOption0.style.order= "2";
-                sortingOption1.style.order = "3";
-                this.removeMedias();
-                this.byTitle();
+                sortingOption0.innerHTML = popularityOption;
+                sortingOption1.innerHTML = dateOption;
+                sortingOption2.innerHTML = titleOption;
                 this.displayMedias();
             }
-        });
+            if(sortingOption1 == dateOption){
+                this.removeMedias();
+                this.byDate();
+                sortingOption0.innerHTML = dateOption;
+                sortingOption1.innerHTML = titleOption;
+                sortingOption2.innerHTML = popularityOption;
+                this.displayMedias();
+            }
+            if(sortingOption1 == titleOption){
+                this.removeMedias();
+                this.byTitle();
+                sortingOption0.innerHTML = titleOption;
+                sortingOption1.innerHTML = popularityOption;
+                sortingOption2.innerHTML = dateOption;
+                this.displayMedias();
+            }
+            
+            sortingOption2.addEventlistener('click', () => {
+                 if(sortingOption2 == popularityOption){
+                    this.removeMedias();
+                    this.byPopularity();
+                    sortingOption0.innerHTML = popularityOption;
+                    sortingOption1.innerHTML = dateOption;
+                    sortingOption2.innerHTML = titleOption;
+                    - this.displayMedias();
+                 }
+                if(sortingOption2 == dateOption){
+                    this.removeMedias();
+                    this.byDate();
+                    sortingOption0.innerHTML = dateOption;
+                    sortingOption1.innerHTML = titleOption;
+                    sortingOption2.innerHTML = popularityOption;
+                    this.displayMedias();
+                }
+                if(sortingOption2 == titleOption){
+                    this.removeMedias();
+                    this.byTitle();
+                    sortingOption0.innerHTML = titleOption;
+                    sortingOption1.innerHTML = popularityOption;
+                    sortingOption2.innerHTML = dateOption;
+                    this.displayMedias();
+                }
+                
+            })
+            
+        })
     }
 
     removeMedias(){
