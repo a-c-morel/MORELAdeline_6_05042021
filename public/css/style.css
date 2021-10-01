@@ -576,10 +576,77 @@ main {
   header {
     padding-left: 6.25rem;
   }
+  header .logo {
+    width: 200px;
+    height: 50px;
+    margin-bottom: 40px;
+  }
 
   .profile {
     background-color: #FAFAFA;
     width: 86.11vw;
+    height: 313px;
+    padding-left: 0;
+    transform: translateX(-50%);
+  }
+  .profile .profile-info__name {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #D3573C;
+    line-height: 83.33px;
+    font-size: 64px;
+    font-weight: normal;
+    margin-top: 3.5rem;
+    margin-left: 3.125rem;
+    text-align: left;
+  }
+  .profile .profile-info__location {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #901C1C;
+    line-height: 31.25px;
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 19px;
+    margin-left: 3.125rem;
+  }
+  .profile .profile-info__quote {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #000000;
+    line-height: 23.44px;
+    font-size: 18px;
+    font-weight: normal;
+    margin-bottom: 13px;
+    margin-left: 3.125rem;
+  }
+  .profile .profile-info__tags {
+    margin-left: 3.125rem;
+  }
+  .profile .profile-info__tags ul {
+    justify-content: flex-start;
+    margin-bottom: 2.9rem;
+  }
+
+  .tags-links {
+    padding: 0.05rem;
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #901C1C;
+    line-height: 23.44px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
   }
 
   .profile-image div {

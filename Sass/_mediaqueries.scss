@@ -1,13 +1,53 @@
 @media screen and(min-width:700px){
     header{
         padding-left: 6.25rem;
+        .logo{
+            width: 200px;
+            height: 50px;
+            margin-bottom: 40px;
+        }
     }
     .profile{
         background-color: $lightBG;
         width: 86.11vw;
+        height: 313px;
+        padding-left: 0;
+        transform: translateX(-50%);
+        .profile-info{
+            &__name{
+                @include font($mediumColor, 83.33px, 64px, normal);
+                margin-top: 3.5rem;
+                margin-left: 3.125rem;
+                text-align: left;
+            }
+            &__location{
+                @include font($darkColor, 31.25px, 24px, normal);
+                margin-bottom: 19px;
+                margin-left: 3.125rem;
+            }
+            &__quote{
+                @include font(#000000, 23.44px, 18px, normal);
+                margin-bottom: 13px;
+                margin-left: 3.125rem;
+
+            }
+            &__tags{
+                margin-left: 3.125rem;
+                ul{
+                    justify-content: flex-start;
+                    margin-bottom: 2.9rem;
+                }
+            }
+        }
+    }
+    .tags-links{
+        padding: .05rem;
+        padding-left: .3rem;
+        padding-right: .3rem;
+        @include font($darkColor, 23.44px, 18px, 500);
+        cursor: pointer;
     }
     .profile-image{
-        
         div{
             max-width: 12.5rem;
             max-height: 12.5rem;
