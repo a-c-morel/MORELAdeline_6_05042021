@@ -172,6 +172,7 @@ class Profile{
             const liTag = document.createElement("li");
             const hashtag = document.createElement("a");
             liTag.classList.add("tags-links");
+            liTag.classList.add("profile-tags");
             tagsSectionList.appendChild(liTag);
             hashtag.setAttribute("href", ``);
             hashtag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;

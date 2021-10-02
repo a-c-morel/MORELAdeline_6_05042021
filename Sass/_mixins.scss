@@ -20,12 +20,11 @@
         object-position: $position;
 }*/
 
-@mixin buttons($position){
+@mixin buttons($position, $bottom, $left){
     cursor: pointer;
     position: $position;
-    bottom: 1.87rem;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: $bottom;
+    left: $left;
     background-color: $darkColor;
     border: none;
     border-radius: $littleRadius;
