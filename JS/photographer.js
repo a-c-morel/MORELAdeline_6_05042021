@@ -104,7 +104,7 @@ class Profile{
         this.tagline = props.tagline;
         this.tags = props.tags;
         this.id = props.id;
-        //this.mainElement = document.querySelector("main");
+        this.mainElement = document.querySelector("main");
         this.headerElement = document.querySelector("header");
     }
     display(){

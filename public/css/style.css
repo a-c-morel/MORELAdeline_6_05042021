@@ -778,12 +778,12 @@ main {
     top: 2.75rem;
   }
 }
-@media screen and (min-width: 1320px) {
+@media screen and (min-width: 1280px) {
   .contact-btn {
     cursor: pointer;
     position: absolute;
     bottom: 57.8%;
-    left: 60.3%;
+    left: 65.3%;
     background-color: #901C1C;
     border: none;
     border-radius: 0.31rem;

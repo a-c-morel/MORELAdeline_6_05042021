@@ -165,9 +165,9 @@
     }
 }
 
-@media screen and(min-width: 1320px){
+@media screen and(min-width: 1280px){
     .contact-btn{
-        @include buttons(absolute, 57.8%, 60.3%);
+        @include buttons(absolute, 57.8%, 65.3%);
         @include w-h(170px, 69px);
     }
 }

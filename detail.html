@@ -15,63 +15,35 @@
     </a>
   </header>
   <main aria-hidden="false">
-    <!--Lightbox-->
-    <aside id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
-      <button id="lightbox-btn__close">
-        <i class="fas fa-times" aria-hidden="true" title="Close dialog"></i>
-        <span class="screenreader-text">Close dialog</span>
-      </button>
-      <button id="lightbox-btn__previous">
-        <i class= "fas fa-chevron-left" aria-hidden="true" title="Previous image"></i>
-        <span class="screenreader-text">Previous image</span>
-      </button>
-      <div class="lightbox-media"></div>
-      <button id="lightbox-btn__next" aria-label="Next image">
-        <i class= "fas fa-chevron-right" aria-hidden="true" title="Next image"></i>
-        <span class="screenreader-text">Next image</span>
-      </button>
-    </aside>
-    
     <!--selection menu-->
-    <p class="sorting-menu-title">Trier par :</p>
-    <button id="sorting-menu-btn" role="button" aria-haspopup="listbox" aria-expanded="false"></button>
-    <ul class="sorting-options" role="listbox" aria-labelledby="sorting-menu-btn">
-      <li id="option1" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
-      <li id="option2" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
-    </ul>
-    <!--<div id="sorting-options">
-      <div id="option0" class="option-container">
-        <input class="sorting-option" value="0" type="radio" id="sorting-option0"
-        name="sorting-option">
-        <label id="sorting-label0" for="sorting-option0"></label>
-      </div>
-      <div id="option1" class="option-container">
-        <input class="sorting-option" value="1" type="radio" id="sorting-option1"
-        name="sorting-option">
-        <label id="sorting-label1" for="sorting-option1"></label>
-      </div>
-      <div id="option2" class="option-container">
-        <input class="sorting-option" value="2" type="radio" id="sorting-option2"
-        name="sorting-option">
-        <label id="sorting-label2" for="sorting-option2"></label>
-      </div>
-    </div>-->
-    <!--<form id="sorting-form" action="" method="post">
-      <label for="sorting-options">Trier par:</label>
-      <select name="sorting-group" id="sorting-options">
-        <option class="sorting-option" value="0">Popularité</option>
-        <option class="sorting-option" value="1">Date</option>
-        <option class="sorting-option" value="2">Titre</option>
-      </select>
-    </form>-->
-    <!--summary of main infos for tablet and desktop-->
-    <aside class="recap-infos">
-      <p class="recap-infos__likes">likes
-        <i class="fas fa-heart" id="total-likes__icon"></i>
-      </p>
-      <p class="recap-infos__price">price</p>
-    </aside>
+    <section>
+      <p class="sorting-menu-title">Trier par :</p>
+      <button id="sorting-menu-btn" role="button" aria-haspopup="listbox" aria-expanded="false"></button>
+      <ul class="sorting-options" role="listbox" aria-labelledby="sorting-menu-btn">
+        <li id="option1" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+        <li id="option2" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+      </ul>
+    </section>
+    <section id="medias-section"></section>
   </main>
+
+  <!--Lightbox-->
+  <aside id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
+    <button id="lightbox-btn__close">
+      <i class="fas fa-times" aria-hidden="true" title="Close dialog"></i>
+      <span class="screenreader-text">Close dialog</span>
+    </button>
+    <button id="lightbox-btn__previous">
+      <i class= "fas fa-chevron-left" aria-hidden="true" title="Previous image"></i>
+      <span class="screenreader-text">Previous image</span>
+    </button>
+    <div class="lightbox-media"></div>
+    <button id="lightbox-btn__next" aria-label="Next image">
+      <i class= "fas fa-chevron-right" aria-hidden="true" title="Next image"></i>
+      <span class="screenreader-text">Next image</span>
+    </button>
+  </aside>
+
   <!--contact modal-->
   <aside id="contact-modal" class="contact-modal" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
     <h1 id="contact-heading" class="contact-modal__heading"></h1>
@@ -95,11 +67,21 @@
       <button id="submitdata" class="btn-submit button" type="button">Envoyer</button>
     </form>
   </aside>
+
+  <!--summary of main infos for tablet and desktop-->
+  <aside class="recap-infos">
+    <p class="recap-infos__likes">likes
+      <i class="fas fa-heart" id="total-likes__icon"></i>
+    </p>
+    <p class="recap-infos__price">price</p>
+  </aside>
+
     <script src="JS/Photographer.js"></script>
     <script src="JS/Media.js"></script>
     <script src="JS/Lightbox.js"></script>
     <script src="JS/Modal.js"></script>
     <script src="JS/DetailPage.js"></script>
     <script src="JS/detail.js"></script>
+
 </body>
 </html>
