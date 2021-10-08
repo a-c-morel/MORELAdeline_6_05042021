@@ -4,6 +4,7 @@ class Detail{
         this.medias = [];
         this.headerElement = document.querySelector("header");
         this.mainElement = document.querySelector("main");
+        this.mediasContainer = document.querySelector("#medias-section");
         this.lightboxContainer = document.querySelector(".lightbox-media");
     }
 
@@ -49,7 +50,7 @@ class Detail{
 
     displayMedias(){
         for(let media of this.medias){
-            this.mainElement.appendChild(media.display()).addEventListener('click', () => {
+            this.mediasContainer.appendChild(media.display()).addEventListener('click', () => {
                 console.log(media);
                 this.startLightbox(this.medias.indexOf(media));
             });            
@@ -149,7 +150,7 @@ class Detail{
     removeMedias(){
         const medias = document.querySelectorAll(".media");
         for (let media of medias){
-                this.mainElement.removeChild(media);
+            this.mediasContainer.removeChild(media);
         }
     }
 
