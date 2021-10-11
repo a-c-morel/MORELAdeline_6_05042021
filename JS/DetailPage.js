@@ -81,14 +81,10 @@ class Detail{
         sortingOption2.style.order = "3";
 
         //par défaut = appliquer le tri par popularité (appeler fonction en dehors de l'event listener)
-
         
-        sortingBtn.addEventListener("click", () => { //ajouter condition "ou quand on clique sur le chevron"
-            console.log("dérouler la liste + rotation chevron vers le haut");
-            //passer li2 en display block ou le remettre en display none -> toggle avec une classe ?
+        sortingBtn.addEventListener("click", () => {
             sortingOptions.classList.toggle("options-showed");
             sortingBtn.classList.toggle("sorting-menu-expanded");
-            //rotation du chevron vers ^
             if(chevron.classList.contains("fa-chevron-up")){
                 chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
             } else if(chevron.classList.contains("fa-chevron-down")){
@@ -97,6 +93,7 @@ class Detail{
         });
         
         sortingOption1.addEventListener('click', () => {
+            console.log("option 1 a été cliquée");
             if(sortingOption1 === popularityOption){
                 this.removeMedias();
                 this.byPopularity();
@@ -124,15 +121,16 @@ class Detail{
             }
         });
             
-        sortingOption2.addEventlistener('click', () => {
-                if(sortingOption2 === popularityOption){
-                this.removeMedias();
-                this.byPopularity();
-                sortingOption0.innerHTML = popularityOption;
-                sortingOption1.innerHTML = dateOption;
-                sortingOption2.innerHTML = titleOption;
-                this.displayMedias();
-                }
+        sortingOption2.addEventListener('click', () => {
+            console.log("option 2 a été cliquée");
+            if(sortingOption2 === popularityOption){
+            this.removeMedias();
+            this.byPopularity();
+            sortingOption0.innerHTML = popularityOption;
+            sortingOption1.innerHTML = dateOption;
+            sortingOption2.innerHTML = titleOption;
+            this.displayMedias();
+            }
             if(sortingOption2 === dateOption){
                 this.removeMedias();
                 this.byDate();
@@ -175,8 +173,6 @@ class Detail{
         totalLikes.innerText = `${sum}`;
     }
 
-
-    //Je pense que je vais revert l'ordre car il est plus logique de mettre les + populaires et les + récents en premier
     byPopularity(){
         this.medias.sort( (a, b) => {
             return a.likes - b.likes;
