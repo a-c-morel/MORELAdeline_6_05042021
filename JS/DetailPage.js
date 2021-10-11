@@ -58,14 +58,16 @@ class Detail{
     }
 
     displayFilter(){
-        const sortingBtn = document.querySelector("#sorting-menu-btn");
+        const sortingBtn = document.querySelector(".sorting-menu-btn");
+        const chevron = document.querySelector("#sorting-menu-chevron");
         const popularityOption = "Popularité";
         const dateOption = "Date";
         const titleOption = "Titre";
         //const sortingOptions = document.getElementById("sorting-options");
-        const sortingOption0 = document.querySelector("#sorting-menu-btn");
+        const sortingOption0 = document.querySelector("#option0");
         const sortingOption1 = document.querySelector("#option1");
         const sortingOption2 = document.querySelector("#option2");
+        const sortingOptions = document.querySelector("#sorting-options");
 
         //sortingOption1.classList.toggle("hidden-toggle");
         //sortingOption2.classList.toggle("hidden-toggle");
@@ -80,18 +82,22 @@ class Detail{
 
         //par défaut = appliquer le tri par popularité (appeler fonction en dehors de l'event listener)
 
+        
         sortingBtn.addEventListener("click", () => { //ajouter condition "ou quand on clique sur le chevron"
-            this.removeMedias();
-            this.byPopularity();
-            sortingOption0.innerHTML = popularityOption;
-            sortingOption1.innerHTML = dateOption;
-            sortingOption2.innerHTML = titleOption;
-            this.displayMedias();
+            console.log("dérouler la liste + rotation chevron vers le haut");
+            //passer li2 en display block ou le remettre en display none -> toggle avec une classe ?
+            sortingOptions.classList.toggle("options-showed");
+            sortingBtn.classList.toggle("sorting-menu-expanded");
+            //rotation du chevron vers ^
+            if(chevron.classList.contains("fa-chevron-up")){
+                chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+            } else if(chevron.classList.contains("fa-chevron-down")){
+                chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+            }
         });
-
         
         sortingOption1.addEventListener('click', () => {
-            if(sortingOption1 == popularityOption){
+            if(sortingOption1 === popularityOption){
                 this.removeMedias();
                 this.byPopularity();
                 sortingOption0.innerHTML = popularityOption;
@@ -99,7 +105,8 @@ class Detail{
                 sortingOption2.innerHTML = titleOption;
                 this.displayMedias();
             }
-            if(sortingOption1 == dateOption){
+            if(sortingOption1 === dateOption){
+                console.log("test");
                 this.removeMedias();
                 this.byDate();
                 sortingOption0.innerHTML = dateOption;
@@ -107,7 +114,7 @@ class Detail{
                 sortingOption2.innerHTML = popularityOption;
                 this.displayMedias();
             }
-            if(sortingOption1 == titleOption){
+            if(sortingOption1 === titleOption){
                 this.removeMedias();
                 this.byTitle();
                 sortingOption0.innerHTML = titleOption;
@@ -115,36 +122,34 @@ class Detail{
                 sortingOption2.innerHTML = dateOption;
                 this.displayMedias();
             }
+        });
             
-            sortingOption2.addEventlistener('click', () => {
-                 if(sortingOption2 == popularityOption){
-                    this.removeMedias();
-                    this.byPopularity();
-                    sortingOption0.innerHTML = popularityOption;
-                    sortingOption1.innerHTML = dateOption;
-                    sortingOption2.innerHTML = titleOption;
-                    - this.displayMedias();
-                 }
-                if(sortingOption2 == dateOption){
-                    this.removeMedias();
-                    this.byDate();
-                    sortingOption0.innerHTML = dateOption;
-                    sortingOption1.innerHTML = titleOption;
-                    sortingOption2.innerHTML = popularityOption;
-                    this.displayMedias();
+        sortingOption2.addEventlistener('click', () => {
+                if(sortingOption2 === popularityOption){
+                this.removeMedias();
+                this.byPopularity();
+                sortingOption0.innerHTML = popularityOption;
+                sortingOption1.innerHTML = dateOption;
+                sortingOption2.innerHTML = titleOption;
+                this.displayMedias();
                 }
-                if(sortingOption2 == titleOption){
-                    this.removeMedias();
-                    this.byTitle();
-                    sortingOption0.innerHTML = titleOption;
-                    sortingOption1.innerHTML = popularityOption;
-                    sortingOption2.innerHTML = dateOption;
-                    this.displayMedias();
-                }
-                
-            })
-            
-        })
+            if(sortingOption2 === dateOption){
+                this.removeMedias();
+                this.byDate();
+                sortingOption0.innerHTML = dateOption;
+                sortingOption1.innerHTML = titleOption;
+                sortingOption2.innerHTML = popularityOption;
+                this.displayMedias();
+            }
+            if(sortingOption2 === titleOption){
+                this.removeMedias();
+                this.byTitle();
+                sortingOption0.innerHTML = titleOption;
+                sortingOption1.innerHTML = popularityOption;
+                sortingOption2.innerHTML = dateOption;
+                this.displayMedias();
+            }  
+        });
     }
 
     removeMedias(){

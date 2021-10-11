@@ -80,37 +80,71 @@
         }
         
     }
-    .sorting-menu-title{
-        display: block;
-        position: absolute;
+    .selection-menu{
+        display: flex;
+        margin-top: 9px;
     }
-    #sorting-menu-btn{
+    #sorting-menu-title{
+        display: block;
+        padding-top: 11px;
+        position: absolute;
+        left: 6.73%;
+        //top:45.5%;
+        top: 466px;
+    }
+    .sorting-menu-btn{
         display: block;
         background-color: $darkColor;
         @include font(white, 23.44px, 18px, normal);
         border-radius: 5px;
         width: 170px;
-        height: 55px;
+        height: 60px;
         border: none;
+        position: absolute;
+        left: 13.6%;
+        top: 466px;
+    }
+    .sorting-menu-expanded{
+        height: 170px;
+        background-color: $darkColor;
+        @include font(white, 23.44px, 18px, normal);
+        border-radius: 5px;
+        width: 170px;
+        height: 170px;
+        border: none;
+        //position: absolute;
+    }
+    #option0{
+        position: absolute;
+        left: 20px;
+        top: 23px;
+    }
+
+    #option1{
+        position: absolute;
+        left: 20px;
+        top: 75px;
+    }
+    #option2{
+        position: absolute;
+        left: 20px;
+        top: 127px;
+    }
+    #sorting-menu-chevron{
+        color: white;
+        position: absolute;
+        top: 28.67px;
+        right: 18px;
     }
     .sorting-options{
-        display: block;
+        display: none;
     }
-    #sorting-options{
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
+    .options-showed{
+        display: block;
+        position: relative;
     }
     label{
         cursor: pointer;
-    }
-    .option-container{
-        width: 100%;
-        height: 55px;
-        padding: 1rem;
-    }
-    input[type="radio"] {
-        display: none;
     }
 }
 
@@ -130,13 +164,13 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        width: 100vw;
     }
 }
 
 @media screen and (min-width: 1000px){
     #medias-section{
         width: 100%;
+        margin-top: 101px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

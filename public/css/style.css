@@ -681,12 +681,20 @@ main {
     object-fit: cover;
   }
 
-  .sorting-menu-title {
-    display: block;
-    position: absolute;
+  .selection-menu {
+    display: flex;
+    margin-top: 9px;
   }
 
-  #sorting-menu-btn {
+  #sorting-menu-title {
+    display: block;
+    padding-top: 11px;
+    position: absolute;
+    left: 6.73%;
+    top: 466px;
+  }
+
+  .sorting-menu-btn {
     display: block;
     background-color: #901C1C;
     font-family: "DM Sans", sans-serif;
@@ -699,32 +707,66 @@ main {
     font-weight: normal;
     border-radius: 5px;
     width: 170px;
-    height: 55px;
+    height: 60px;
+    border: none;
+    position: absolute;
+    left: 13.6%;
+    top: 466px;
+  }
+
+  .sorting-menu-expanded {
+    height: 170px;
+    background-color: #901C1C;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: white;
+    line-height: 23.44px;
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 5px;
+    width: 170px;
+    height: 170px;
     border: none;
   }
 
-  .sorting-options {
-    display: block;
+  #option0 {
+    position: absolute;
+    left: 20px;
+    top: 23px;
   }
 
-  #sorting-options {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+  #option1 {
+    position: absolute;
+    left: 20px;
+    top: 75px;
+  }
+
+  #option2 {
+    position: absolute;
+    left: 20px;
+    top: 127px;
+  }
+
+  #sorting-menu-chevron {
+    color: white;
+    position: absolute;
+    top: 28.67px;
+    right: 18px;
+  }
+
+  .sorting-options {
+    display: none;
+  }
+
+  .options-showed {
+    display: block;
+    position: relative;
   }
 
   label {
     cursor: pointer;
-  }
-
-  .option-container {
-    width: 100%;
-    height: 55px;
-    padding: 1rem;
-  }
-
-  input[type=radio] {
-    display: none;
   }
 }
 @media screen and (min-width: 900px) {
@@ -741,12 +783,12 @@ main {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100vw;
   }
 }
 @media screen and (min-width: 1000px) {
   #medias-section {
     width: 100%;
+    margin-top: 101px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

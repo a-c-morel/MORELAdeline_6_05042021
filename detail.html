@@ -16,13 +16,19 @@
   </header>
   <main class="detail-main" aria-hidden="false">
     <!--selection menu-->
-    <section>
-      <p class="sorting-menu-title">Trier par :</p>
-      <button id="sorting-menu-btn" role="button" aria-haspopup="listbox" aria-expanded="false"></button>
-      <ul class="sorting-options" role="listbox" aria-labelledby="sorting-menu-btn">
-        <li id="option1" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
-        <li id="option2" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+    <section class="selection-menu">
+      <p id="sorting-menu-title">Trier par :</p>
+      <ul class="sorting-menu-btn" role="button" aria-haspopup="listbox" aria-expanded="false">
+        <li id="option0"></li>
+        <li><i id="sorting-menu-chevron" class="fas fa-chevron-up"></i></li>
+        <li>
+          <ul id="sorting-options" class="sorting-options" role="listbox" aria-labelledby="sorting-menu-btn">
+            <li id="option1" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+            <li id="option2" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+          </ul>
+        </li>
       </ul>
+      
     </section>
     <section id="medias-section"></section>
   </main>
