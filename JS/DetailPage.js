@@ -58,7 +58,7 @@ class Detail{
     }
 
     displayFilter(){
-        const sortingBtn = document.querySelector(".sorting-menu-btn");
+        const sortingBtn = document.querySelector("#sorting-menu-btn");
         const chevron = document.querySelector("#sorting-menu-chevron");
         const popularityOption = "Popularité";
         const dateOption = "Date";
@@ -92,26 +92,25 @@ class Detail{
             }
         });
         
-        sortingOption1.addEventListener('click', () => {
-            console.log("option 1 a été cliquée");
-            if(sortingOption1 === popularityOption){
+        sortingBtn.addEventListener('click', (e) => {
+            if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
+                console.log(popularityOption);
                 this.removeMedias();
                 this.byPopularity();
                 sortingOption0.innerHTML = popularityOption;
                 sortingOption1.innerHTML = dateOption;
                 sortingOption2.innerHTML = titleOption;
                 this.displayMedias();
-            }
-            if(sortingOption1 === dateOption){
-                console.log("test");
+            }else if(e.target.innerHTML === dateOption){ //&& (!e.target.id === 0)
+                console.log(dateOption);
                 this.removeMedias();
                 this.byDate();
                 sortingOption0.innerHTML = dateOption;
                 sortingOption1.innerHTML = titleOption;
                 sortingOption2.innerHTML = popularityOption;
                 this.displayMedias();
-            }
-            if(sortingOption1 === titleOption){
+            }else if(e.target.innerHTML === titleOption){ //&& (!e.target.id === 0)
+                console.log(titleOption);
                 this.removeMedias();
                 this.byTitle();
                 sortingOption0.innerHTML = titleOption;
@@ -121,7 +120,7 @@ class Detail{
             }
         });
             
-        sortingOption2.addEventListener('click', () => {
+        /*sortingOption2.addEventListener('click', () => {
             console.log("option 2 a été cliquée");
             if(sortingOption2 === popularityOption){
             this.removeMedias();
@@ -147,7 +146,7 @@ class Detail{
                 sortingOption2.innerHTML = dateOption;
                 this.displayMedias();
             }  
-        });
+        });*/
     }
 
     removeMedias(){
