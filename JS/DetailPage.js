@@ -92,7 +92,7 @@ class Detail{
             }
         });
         
-        sortingBtn.addEventListener('click', (e) => {
+        sortingOptions.addEventListener('click', (e) => {
             if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
                 console.log(popularityOption);
                 this.removeMedias();
