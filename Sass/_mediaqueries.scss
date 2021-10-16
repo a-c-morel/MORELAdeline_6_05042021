@@ -121,23 +121,27 @@
         position: absolute;
         left: 20px;
         top: 23px;
+        cursor: pointer;
     }
 
     #option1{
         position: absolute;
         left: 20px;
         top: 75px;
+        cursor: pointer;
     }
     #option2{
         position: absolute;
         left: 20px;
         top: 127px;
+        cursor: pointer;
     }
     #sorting-menu-chevron{
         color: white;
         position: absolute;
         top: 28.67px;
         right: 18px;
+        cursor: pointer;
     }
     .sorting-options{
         display: none;
@@ -148,6 +152,39 @@
     }
     label{
         cursor: pointer;
+    }
+    /*.recap-infos{
+        display: flex;
+        height: 73px;
+        width: 376px;
+        margin-right: 36px;
+    }*/
+    .recap-infos{
+        position: fixed;
+        bottom: 0;
+        right: 36px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 73px;
+        width: 376px;
+        padding-left: 31px;
+        padding-right: 34px;
+        border-top-left-radius: $littleRadius;
+        border-top-right-radius: $littleRadius;
+        background-color: $secondaryColor;
+        &__likes{
+            @include font(black, 1.95rem, 1.5rem, normal);
+            #total-likes__icon{
+                color: black;
+                line-height: 1.95rem;
+                font-size: 1.5rem;
+            }
+        }
+        &__price{
+            @include font(black, 1.95rem, 1.5rem, normal);
+        }
     }
 }
 

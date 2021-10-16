@@ -76,7 +76,7 @@ class Image{
             
         const sum = arrayLikes.reduce((a, b) => a + b);
         //console.log(sum);
-        totalLikes.innerText = `${sum}`;
+        totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
     }
 }
 

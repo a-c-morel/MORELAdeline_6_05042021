@@ -20,8 +20,9 @@ class Detail{
         for (let photographer of photographers){
             if(photographer.id == id){
                 this.photographer = new PhotographerFactory("profile", {portrait: photographer.portrait, name: photographer.name, city: photographer.city, country: photographer.country, tagline: photographer.tagline, tags: photographer.tags, id: photographer.id});
+                this.price = photographer.price;
                 break;
-            }
+            }   
         }
     }
 
@@ -119,34 +120,6 @@ class Detail{
                 this.displayMedias();
             }
         });
-            
-        /*sortingOption2.addEventListener('click', () => {
-            console.log("option 2 a été cliquée");
-            if(sortingOption2 === popularityOption){
-            this.removeMedias();
-            this.byPopularity();
-            sortingOption0.innerHTML = popularityOption;
-            sortingOption1.innerHTML = dateOption;
-            sortingOption2.innerHTML = titleOption;
-            this.displayMedias();
-            }
-            if(sortingOption2 === dateOption){
-                this.removeMedias();
-                this.byDate();
-                sortingOption0.innerHTML = dateOption;
-                sortingOption1.innerHTML = titleOption;
-                sortingOption2.innerHTML = popularityOption;
-                this.displayMedias();
-            }
-            if(sortingOption2 === titleOption){
-                this.removeMedias();
-                this.byTitle();
-                sortingOption0.innerHTML = titleOption;
-                sortingOption1.innerHTML = popularityOption;
-                sortingOption2.innerHTML = dateOption;
-                this.displayMedias();
-            }  
-        });*/
     }
 
     removeMedias(){
@@ -169,7 +142,12 @@ class Detail{
 
         const sum = arrayLikes.reduce((a, b) => a + b);
         console.log(sum);
-        totalLikes.innerText = `${sum}`;
+        totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
+    }
+
+    displayPrice(){
+        const recapPrice = document.querySelector(".recap-infos__price");
+        recapPrice.innerHTML = `${this.price}€ / jour`;
     }
 
     byPopularity(){

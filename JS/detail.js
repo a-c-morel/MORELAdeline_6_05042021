@@ -9,6 +9,7 @@
     myDetail.displayMedias();
     myDetail.displayFilter();
     myDetail.totalLikesDefault();
+    myDetail.displayPrice();
 
     /*LIGHTBOX EVENTS*/
 
