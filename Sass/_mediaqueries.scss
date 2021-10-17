@@ -1,11 +1,35 @@
 @media screen and(min-width:700px){
-    header{
+    body{
         padding-left: 6.25rem;
         padding-right: 6.25rem;
+    }
+    header{
+        //padding-left: 6.25rem;
+        //padding-right: 6.25rem;
         .logo{
             width: 200px;
             height: 50px;
             margin-bottom: 40px;
+        }
+    }
+    .lightbox-media{
+        height: 87.89%;
+    }
+    #lightbox-btn{
+        &__close{
+            @include clickable-iconsTR(7.5%, 6.26%, inherit);
+            //@include w-h(11.57px, 11.57px)
+            @include font(inherit, 3rem, 3rem, normal);
+        }
+        &__previous{
+            @include clickable-iconsTL(49.2%, 6.9%, inherit);   
+            //@include w-h(13.23px, 8.16px); 
+            @include font(inherit, 3rem, 3rem, normal);
+        }
+        &__next{
+            @include clickable-iconsTR(49.2%, 6.9%, inherit);   
+            //@include w-h(13.23px, 8.16px); 
+            @include font(inherit, 3rem, 3rem, normal);
         }
     }
 }
@@ -28,7 +52,6 @@
         background-color: $lightBG;
         width: 100%;
         height: 313px;
-        padding-left: 0;
         .profile-info{
             &__name{
                 @include font($mediumColor, 83.33px, 64px, normal);
@@ -80,19 +103,75 @@
         }
         
     }
+    .recap-infos{
+        position: fixed;
+        bottom: 0;
+        right: 36px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 73px;
+        width: 376px;
+        padding-left: 31px;
+        padding-right: 34px;
+        border-top-left-radius: $littleRadius;
+        border-top-right-radius: $littleRadius;
+        background-color: $secondaryColor;
+        &__likes{
+            @include font(black, 1.95rem, 1.5rem, normal);
+            #total-likes__icon{
+                color: black;
+                line-height: 1.95rem;
+                font-size: 1.5rem;
+            }
+        }
+        &__price{
+            @include font(black, 1.95rem, 1.5rem, normal);
+        }
+    }
+}
+
+@media screen and(min-width: 900px){
+    header{
+        nav{
+        position: absolute;
+        left: 50%;
+        max-width: 400px;
+        transform: translateX(-50%);
+        margin-top: 0;
+        width: 100%;
+        }
+    }
+    .detail-main{
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    #medias-section{
+        width: 100%;
+        margin-top: 101px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media screen and(min-width: 1005px){
     #sorting-menu-btn{
         display: block;
     }
     .selection-menu{
-        display: flex;
+        display: block;
         margin-top: 9px;
+        align-self: flex-start;
     }
     #sorting-menu-title{
-        display: block;
         padding-top: 11px;
-        position: absolute;
-        left: 6.73%;
-        //top:45.5%;
         top: 466px;
     }
     .sorting-menu-btn{
@@ -150,80 +229,13 @@
         display: block;
         position: relative;
     }
-    label{
-        cursor: pointer;
-    }
-    /*.recap-infos{
-        display: flex;
-        height: 73px;
-        width: 376px;
-        margin-right: 36px;
-    }*/
-    .recap-infos{
-        position: fixed;
-        bottom: 0;
-        right: 36px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 73px;
-        width: 376px;
-        padding-left: 31px;
-        padding-right: 34px;
-        border-top-left-radius: $littleRadius;
-        border-top-right-radius: $littleRadius;
-        background-color: $secondaryColor;
-        &__likes{
-            @include font(black, 1.95rem, 1.5rem, normal);
-            #total-likes__icon{
-                color: black;
-                line-height: 1.95rem;
-                font-size: 1.5rem;
-            }
-        }
-        &__price{
-            @include font(black, 1.95rem, 1.5rem, normal);
-        }
-    }
-}
-
-@media screen and(min-width: 900px){
-    header{
-        nav{
-        position: absolute;
-        left: 50%;
-        max-width: 400px;
-        transform: translateX(-50%);
-        //margin-right: auto;
-        margin-top: 0;
-        width: 100%;
-        }
-    }
-    .detail-main{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-
-@media screen and (min-width: 1000px){
-    #medias-section{
-        width: 100%;
-        margin-top: 101px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
 }
 
 
 @media screen and (min-width: 1052px){
     header{
-        padding-left: 0;
-        padding-left: 100px;
-        padding-right: 106px;
+        //padding-left: 100px;
+        //padding-right: 106px;
         nav{
             left: 43%;
         }

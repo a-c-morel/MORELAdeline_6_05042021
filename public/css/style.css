@@ -2,11 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 /*COLOURS*/
 /*VALUES*/
-/*@mixin profile-image($height: 12.5rem, $width: 12.5rem, $position){
-        height: $height;
-        width: $width;
-        object-position: $position;
-}*/
 .card {
   max-width: 32.68rem;
   display: flex;
@@ -267,9 +262,13 @@
   height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   background-color: white;
   z-index: 6;
   color: #901C1C;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.31rem;
 }
 
 #lightbox-btn__close {
@@ -278,8 +277,14 @@
   color: inherit;
   top: 35.2%;
   right: 6.26%;
-  width: 11.57px;
-  height: 11.57px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: inherit;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
 }
 #lightbox-btn__previous {
   position: absolute;
@@ -287,8 +292,14 @@
   color: inherit;
   top: 49.2%;
   left: 6.9%;
-  width: 13.23px;
-  height: 8.16px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: inherit;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
 }
 #lightbox-btn__next {
   position: absolute;
@@ -296,19 +307,19 @@
   color: inherit;
   top: 49.2%;
   right: 6.9%;
-  width: 13.23px;
-  height: 8.16px;
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  text-align: center;
+  /*à voir si je dois le passer en argument plus tard*/
+  color: inherit;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 .lightbox-media {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  overflow: hidden;
-  width: 100%;
-  max-width: 300px;
-  max-height: 80vh;
+  width: 77%;
+  height: 30.54%;
 }
 .lightbox-media__title {
   font-family: "DM Sans", sans-serif;
@@ -325,9 +336,8 @@
   transform: translateX(3.07%);
 }
 .lightbox-media__image, .lightbox-media__video {
-  width: 93.85%;
-  transform: translateX(3.07%);
-  height: 248px;
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 0.31rem;
@@ -429,6 +439,8 @@
 body {
   font-family: "DM Sans", sans-serif;
   background: #ffffff;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 ul {
@@ -476,7 +488,6 @@ header {
   flex-direction: column;
   align-items: flex-start;
   padding-top: 2.7rem;
-  padding-left: 1.25rem;
 }
 header nav {
   align-self: center;
@@ -537,14 +548,65 @@ main {
 }
 
 @media screen and (min-width: 700px) {
-  header {
+  body {
     padding-left: 6.25rem;
     padding-right: 6.25rem;
   }
+
   header .logo {
     width: 200px;
     height: 50px;
     margin-bottom: 40px;
+  }
+
+  .lightbox-media {
+    height: 87.89%;
+  }
+
+  #lightbox-btn__close {
+    position: absolute;
+    cursor: pointer;
+    color: inherit;
+    top: 7.5%;
+    right: 6.26%;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: inherit;
+    line-height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+  }
+  #lightbox-btn__previous {
+    position: absolute;
+    cursor: pointer;
+    color: inherit;
+    top: 49.2%;
+    left: 6.9%;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: inherit;
+    line-height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+  }
+  #lightbox-btn__next {
+    position: absolute;
+    cursor: pointer;
+    color: inherit;
+    top: 49.2%;
+    right: 6.9%;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: inherit;
+    line-height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
   }
 }
 @media screen and (min-width: 800px) {
@@ -567,7 +629,6 @@ main {
     background-color: #FAFAFA;
     width: 100%;
     height: 313px;
-    padding-left: 0;
   }
   .profile .profile-info__name {
     font-family: "DM Sans", sans-serif;
@@ -644,20 +705,87 @@ main {
     object-fit: cover;
   }
 
+  .recap-infos {
+    position: fixed;
+    bottom: 0;
+    right: 36px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 73px;
+    width: 376px;
+    padding-left: 31px;
+    padding-right: 34px;
+    border-top-left-radius: 0.31rem;
+    border-top-right-radius: 0.31rem;
+    background-color: #DB8876;
+  }
+  .recap-infos__likes {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: black;
+    line-height: 1.95rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+  .recap-infos__likes #total-likes__icon {
+    color: black;
+    line-height: 1.95rem;
+    font-size: 1.5rem;
+  }
+  .recap-infos__price {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: black;
+    line-height: 1.95rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+  }
+}
+@media screen and (min-width: 900px) {
+  header nav {
+    position: absolute;
+    left: 50%;
+    max-width: 400px;
+    transform: translateX(-50%);
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .detail-main {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #medias-section {
+    width: 100%;
+    margin-top: 101px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1005px) {
   #sorting-menu-btn {
     display: block;
   }
 
   .selection-menu {
-    display: flex;
+    display: block;
     margin-top: 9px;
+    align-self: flex-start;
   }
 
   #sorting-menu-title {
-    display: block;
     padding-top: 11px;
-    position: absolute;
-    left: 6.73%;
     top: 466px;
   }
 
@@ -735,91 +863,8 @@ main {
     display: block;
     position: relative;
   }
-
-  label {
-    cursor: pointer;
-  }
-
-  /*.recap-infos{
-      display: flex;
-      height: 73px;
-      width: 376px;
-      margin-right: 36px;
-  }*/
-  .recap-infos {
-    position: fixed;
-    bottom: 0;
-    right: 36px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 73px;
-    width: 376px;
-    padding-left: 31px;
-    padding-right: 34px;
-    border-top-left-radius: 0.31rem;
-    border-top-right-radius: 0.31rem;
-    background-color: #DB8876;
-  }
-  .recap-infos__likes {
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    text-align: center;
-    /*à voir si je dois le passer en argument plus tard*/
-    color: black;
-    line-height: 1.95rem;
-    font-size: 1.5rem;
-    font-weight: normal;
-  }
-  .recap-infos__likes #total-likes__icon {
-    color: black;
-    line-height: 1.95rem;
-    font-size: 1.5rem;
-  }
-  .recap-infos__price {
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    text-align: center;
-    /*à voir si je dois le passer en argument plus tard*/
-    color: black;
-    line-height: 1.95rem;
-    font-size: 1.5rem;
-    font-weight: normal;
-  }
-}
-@media screen and (min-width: 900px) {
-  header nav {
-    position: absolute;
-    left: 50%;
-    max-width: 400px;
-    transform: translateX(-50%);
-    margin-top: 0;
-    width: 100%;
-  }
-
-  .detail-main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-@media screen and (min-width: 1000px) {
-  #medias-section {
-    width: 100%;
-    margin-top: 101px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
 }
 @media screen and (min-width: 1052px) {
-  header {
-    padding-left: 0;
-    padding-left: 100px;
-    padding-right: 106px;
-  }
   header nav {
     left: 43%;
   }

@@ -4,41 +4,38 @@
     height: 100%;
     position: fixed;
     top: 0;
+    left: 0;
     background-color: white;
     z-index: 6;
     color: $darkColor;
+    align-items: center;
+    justify-content: center;
+    border-radius: $littleRadius;
 }
 
-//boutons de la lightbox
-
-//.fa-times, .fa-chevron-left, .fa-chevron-right{
 
 #lightbox-btn{
     &__close{
         @include clickable-iconsTR(35.2%, 6.26%, inherit);
-        @include w-h(11.57px, 11.57px)
+        //@include w-h(11.57px, 11.57px)
+        @include font(inherit, 1rem, 1rem, normal);
     }
     &__previous{
         @include clickable-iconsTL(49.2%, 6.9%, inherit);   
-        @include w-h(13.23px, 8.16px); 
+        //@include w-h(13.23px, 8.16px); 
+        @include font(inherit, 1rem, 1rem, normal);
     }
     &__next{
         @include clickable-iconsTR(49.2%, 6.9%, inherit);   
-        @include w-h(13.23px, 8.16px); 
+        //@include w-h(13.23px, 8.16px); 
+        @include font(inherit, 1rem, 1rem, normal);
     }
 }
 
 .lightbox-media{
-        position: absolute;
-        top:50%;
-        left:50%;
-        transform:translate(-50%, -50%);
-        overflow: hidden;
-        width:100%;
-        max-width: 300px;
-        max-height:80vh;
-        
-        &__title{
+        width: 77%;
+        height: 30.54%;
+            &__title{
             @include font($darkColor, 18px, 14px, normal);
             text-align: left;
             margin-top: 0;
@@ -46,9 +43,9 @@
             transform: translateX(3.07%);
         }
         &__image, &__video{
-            width: 93.85%;
-            transform: translateX(3.07%);
-            height: 248px;
+            width: 100%; //93.85%;
+            //transform: translateX(3.07%);
+            height: 100%; //248px;
             -o-object-fit:cover;
             object-fit:cover;
             border-radius: $littleRadius;
