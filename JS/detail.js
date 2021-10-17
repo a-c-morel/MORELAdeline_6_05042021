@@ -30,6 +30,15 @@
     nextButton.addEventListener('click', () => {
             myDetail.lightbox.goNext();
         });
+    document.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'ArrowLeft') {
+            myDetail.lightbox.goPrev();
+        }
+        if (keyName === 'ArrowRight') {
+            myDetail.lightbox.goNext();
+        }
+    });
 
     /*CONTACT MODAL EVENTS*/
     const mainElement = document.querySelector("main");
