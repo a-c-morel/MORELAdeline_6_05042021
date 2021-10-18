@@ -18,15 +18,12 @@ class Modal{
         this.modalContainer.appendChild(this.modalHeading);
         this.modalContainer.style.display = "flex";
         this.modalContainer.style.flexWrap = "wrap";
-        this.modalContainer.setAttribute('aria-hidden', 'false');
         this.validateform();
     }
     
     validateform(){
         this.submit.addEventListener('click', () => {
             this.modalContainer.style.display = "none";
-            this.modalContainer.setAttribute('aria-hidden', 'true');
-            this.mainElement.setAttribute('aria-hidden', 'false');
             console.log(this.firstName.value);
             console.log(this.lastName.value);
             console.log(this.email.value);

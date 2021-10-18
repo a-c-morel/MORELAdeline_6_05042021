@@ -56,7 +56,6 @@ class LightboxFactory{
     goPrev(){
             if(this.position > 0){
                 this.position--;
-                console.log(this.position);
                 
             }else{
                 this.position = this.medias.length -1
@@ -68,7 +67,6 @@ class LightboxFactory{
     goNext(){
             if(this.position < (this.medias).length-1){
                 this.position++;
-                console.log(this.position);
             }else{
                 this.position = 0;
             }

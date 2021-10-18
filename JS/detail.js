@@ -12,16 +12,16 @@
     myDetail.displayPrice();
 
     /*LIGHTBOX EVENTS*/
-
     const lightboxModal = document.querySelector("#lightbox-modal");
 
     //close the lightbox
     const closeLightboxBtn = document.querySelector("#lightbox-btn__close");
     closeLightboxBtn.addEventListener('click', () => {
         lightboxModal.style.display = "none";
+
     });
 
-    //navigate inside lightbox
+    //navigate inside the lightbox
     const previousButton = document.querySelector("#lightbox-btn__previous");
     const nextButton = document.querySelector("#lightbox-btn__next");
     previousButton.addEventListener('click', () => {
@@ -30,7 +30,9 @@
     nextButton.addEventListener('click', () => {
             myDetail.lightbox.goNext();
         });
-    document.addEventListener('keydown', (event) => {
+    
+    //il faut régler le pb de la tab qui est hors modale. Quand la tab est capturée dans la modale, les flèches fonctionnent.
+    lightboxModal.addEventListener('keydown', (event) => {
         const keyName = event.key;
         if (keyName === 'ArrowLeft') {
             myDetail.lightbox.goPrev();
@@ -39,6 +41,7 @@
             myDetail.lightbox.goNext();
         }
     });
+    
 
     /*CONTACT MODAL EVENTS*/
     const mainElement = document.querySelector("main");
@@ -46,8 +49,6 @@
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {
         contactModal.style.display = "none";
-        contactModal.setAttribute("aria-hidden", "true");
         mainElement.tabIndex = 0;
-        mainElement.setAttribute("aria-hidden", "false");
     });
 })();

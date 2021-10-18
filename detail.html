@@ -14,7 +14,7 @@
         <img class="logo" src="images/icons/logo.png" alt="Fisheye Home page">
     </a>
   </header>
-  <main class="detail-main" aria-hidden="false">
+  <main class="detail-main">
     <!--Selection menu-->
     <section class="selection-menu">
       <p id="sorting-menu-title">Trier par :</p>
@@ -33,24 +33,24 @@
   </main>
 
   <!--Lightbox-->
-  <aside id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
-    <button id="lightbox-btn__close">
-      <i class="fas fa-times" aria-hidden="true" title="Close dialog"></i>
+  <aside  id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
+    <button tabindex="1" id="lightbox-btn__close">
+      <i class="fas fa-times" title="Close dialog"></i>
       <span class="screenreader-text">Close dialog</span>
     </button>
     <button id="lightbox-btn__previous">
-      <i class= "fas fa-chevron-left" aria-hidden="true" title="Previous image"></i>
+      <i class= "fas fa-chevron-left" title="Previous image"></i>
       <span class="screenreader-text">Previous image</span>
     </button>
     <div class="lightbox-media"></div>
     <button id="lightbox-btn__next" aria-label="Next image">
-      <i class= "fas fa-chevron-right" aria-hidden="true" title="Next image"></i>
+      <i class= "fas fa-chevron-right" title="Next image"></i>
       <span class="screenreader-text">Next image</span>
     </button>
   </aside>
 
   <!--contact modal-->
-  <aside id="contact-modal" class="contact-modal" role="dialog" aria-hidden="true" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
+  <aside id="contact-modal" class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
     <h1 id="contact-heading" class="contact-modal__heading"></h1>
     <button aria-label="Close Contact form" id="modal-btn__close">
       <img src="images/icons/Vector.svg" alt="">

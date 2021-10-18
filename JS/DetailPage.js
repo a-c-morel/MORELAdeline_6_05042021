@@ -51,10 +51,19 @@ class Detail{
 
     displayMedias(){
         for(let media of this.medias){
-            this.mediasContainer.appendChild(media.display()).addEventListener('click', () => {
-                console.log(media);
+            /*this.mediasContainer.appendChild(media.display()).addEventListener('click', () => {
                 this.startLightbox(this.medias.indexOf(media));
-            });            
+            });*/
+            const mediasCreated = this.mediasContainer.appendChild(media.display());
+            mediasCreated.addEventListener('click', () => {
+                this.startLightbox(this.medias.indexOf(media));
+            });
+            mediasCreated.addEventListener('keydown', (event) => {
+                const keyName = event.key;
+                if (keyName === 'Enter') {
+                    this.startLightbox(this.medias.indexOf(media));
+                }
+            });
         }
     }
 
@@ -64,14 +73,10 @@ class Detail{
         const popularityOption = "Popularité";
         const dateOption = "Date";
         const titleOption = "Titre";
-        //const sortingOptions = document.getElementById("sorting-options");
         const sortingOption0 = document.querySelector("#option0");
         const sortingOption1 = document.querySelector("#option1");
         const sortingOption2 = document.querySelector("#option2");
         const sortingOptions = document.querySelector("#sorting-options");
-
-        //sortingOption1.classList.toggle("hidden-toggle");
-        //sortingOption2.classList.toggle("hidden-toggle");
 
         sortingOption0.innerHTML = popularityOption;
         sortingOption1.innerHTML = dateOption;
@@ -80,8 +85,6 @@ class Detail{
         sortingOption0.style.order = "1";
         sortingOption1.style.order = "2";
         sortingOption2.style.order = "3";
-
-        //par défaut = appliquer le tri par popularité (appeler fonction en dehors de l'event listener)
         
         sortingBtn.addEventListener("click", () => {
             sortingOptions.classList.toggle("options-showed");
@@ -141,7 +144,6 @@ class Detail{
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
 
         const sum = arrayLikes.reduce((a, b) => a + b);
-        console.log(sum);
         totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
     }
 
@@ -154,14 +156,12 @@ class Detail{
         this.medias.sort( (a, b) => {
             return a.likes - b.likes;
         });
-        //console.log(this.medias);
     }
 
     byDate(){
         this.medias.sort( (a, b) => {
             return a.date - b.date;
         });
-        //console.log(this.medias);
     }
 
     byTitle(){
@@ -175,7 +175,6 @@ class Detail{
                 return 0;
             }
         });
-        //console.log(this.medias);
     }
 
 }
