@@ -55,7 +55,6 @@
     #submitdata{
         @include buttons(absolute, 716px, 50%);
         @include w-h(170px, 35px);
-        //top: 716px;
         transform: translateX(-50%);
     }
 }

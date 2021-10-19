@@ -95,6 +95,17 @@ class Detail{
                 chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
             }
         });
+        sortingBtn.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Enter') {
+                sortingOptions.classList.toggle("options-showed");
+                sortingBtn.classList.toggle("sorting-menu-expanded");
+                if(chevron.classList.contains("fa-chevron-up")){
+                    chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+                } else if(chevron.classList.contains("fa-chevron-down")){
+                    chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+                }            }
+        });
         
         sortingOptions.addEventListener('click', (e) => {
             if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
