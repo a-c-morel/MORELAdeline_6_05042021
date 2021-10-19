@@ -14,7 +14,7 @@
         <img class="logo" src="images/icons/logo.png" alt="Fisheye Home page">
     </a>
   </header>
-  <main class="detail-main">
+  <main class="detail-main" aria-modal="false">
     <!--Selection menu-->
     <section class="selection-menu">
       <p id="sorting-menu-title">Trier par :</p>
@@ -34,7 +34,7 @@
 
   <!--Lightbox-->
   <aside  id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
-    <button tabindex="1" id="lightbox-btn__close">
+    <button tabindex="0" id="lightbox-btn__close">
       <i class="fas fa-times" title="Close dialog"></i>
       <span class="screenreader-text">Close dialog</span>
     </button>

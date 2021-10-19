@@ -18,7 +18,6 @@
     const closeLightboxBtn = document.querySelector("#lightbox-btn__close");
     closeLightboxBtn.addEventListener('click', () => {
         lightboxModal.style.display = "none";
-
     });
 
     //navigate inside the lightbox
@@ -44,11 +43,10 @@
     
 
     /*CONTACT MODAL EVENTS*/
-    const mainElement = document.querySelector("main");
+    //const mainElement = document.querySelector("main");
     const contactModal = document.querySelector(".contact-modal");
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {
         contactModal.style.display = "none";
-        mainElement.tabIndex = 0;
     });
 })();

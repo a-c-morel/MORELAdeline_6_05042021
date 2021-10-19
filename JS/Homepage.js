@@ -62,6 +62,11 @@ class Homepage{
             tagContainer.addEventListener("click", () =>{
                 this.filter(tag);
             });
+            tagContainer.addEventListener('keydown', (event) => {
+                const keyName = event.key;
+                if (keyName === 'Enter') {
+                    this.filter(tag);                }
+            });
 
             navigation.appendChild(navigationList);
         }
