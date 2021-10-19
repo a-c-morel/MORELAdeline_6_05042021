@@ -87,24 +87,13 @@ class Detail{
         sortingOption2.style.order = "3";
         
         sortingBtn.addEventListener("click", () => {
-            sortingOptions.classList.toggle("options-showed");
-            sortingBtn.classList.toggle("sorting-menu-expanded");
-            if(chevron.classList.contains("fa-chevron-up")){
-                chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
-            } else if(chevron.classList.contains("fa-chevron-down")){
-                chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-            }
+            this.expandMenu(sortingOptions, sortingBtn, chevron);
         });
         sortingBtn.addEventListener('keydown', (event) => {
             const keyName = event.key;
             if (keyName === 'Enter') {
-                sortingOptions.classList.toggle("options-showed");
-                sortingBtn.classList.toggle("sorting-menu-expanded");
-                if(chevron.classList.contains("fa-chevron-up")){
-                    chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
-                } else if(chevron.classList.contains("fa-chevron-down")){
-                    chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
-                }            }
+                this.expandMenu(sortingOptions, sortingBtn, chevron);
+            }
         });
         
         sortingOptions.addEventListener('click', (e) => {
@@ -134,6 +123,16 @@ class Detail{
                 this.displayMedias();
             }
         });
+    }
+
+    expandMenu(sortingOptions, sortingBtn, chevron){
+        sortingOptions.classList.toggle("options-showed");
+        sortingBtn.classList.toggle("sorting-menu-expanded");
+        if(chevron.classList.contains("fa-chevron-up")){
+            chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
+        } else if(chevron.classList.contains("fa-chevron-down")){
+            chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+        }
     }
 
     removeMedias(){
