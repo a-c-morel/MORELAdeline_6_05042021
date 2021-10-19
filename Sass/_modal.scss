@@ -4,6 +4,7 @@
     height: 812px;
     position: absolute;
     top: 0;
+    left: 0;
     background-color: $secondaryColor;
     z-index: 2;
     border-radius: $littleRadius;
@@ -50,4 +51,3 @@
         transform: translateX(-50%);
     }
 }
-

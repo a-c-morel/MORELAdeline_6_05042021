@@ -349,6 +349,7 @@
   height: 812px;
   position: absolute;
   top: 0;
+  left: 0;
   background-color: #DB8876;
   z-index: 2;
   border-radius: 0.31rem;
