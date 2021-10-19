@@ -193,7 +193,7 @@
 .contact-btn {
   cursor: pointer;
   position: fixed;
-  bottom: 1.87rem;
+  top: 1.87rem;
   left: 50%;
   background-color: #901C1C;
   border: none;
@@ -375,6 +375,11 @@
   right: 26.67px;
   width: 18.67px;
   height: 18.67px;
+  margin-right: 17px;
+}
+.contact-modal #modal-btn__close #close-btn-cross {
+  width: 100%;
+  height: 100%;
 }
 
 #modal-form {
@@ -404,13 +409,19 @@
   border-radius: 0.31rem;
   margin-bottom: 14px;
 }
+#modal-form fieldset {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 #modal-form #message {
   height: 184px;
 }
 #modal-form #submitdata {
   cursor: pointer;
   position: absolute;
-  bottom: 1.87rem;
+  top: 716px;
   left: 50%;
   background-color: #901C1C;
   border: none;
@@ -427,7 +438,6 @@
   font-weight: normal;
   width: 170px;
   height: 35px;
-  top: 716px;
   transform: translateX(-50%);
 }
 
@@ -706,6 +716,18 @@ main {
     object-fit: cover;
   }
 
+  .contact-modal {
+    width: 46.46%;
+    height: 800px;
+    top: 6.05%;
+    left: 26.73%;
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.295);
+  }
+  .contact-modal #modal-btn__close {
+    width: 6.28%;
+    height: 4.66%;
+  }
+
   .recap-infos {
     position: fixed;
     bottom: 0;
@@ -775,6 +797,60 @@ main {
   }
 }
 @media screen and (min-width: 1005px) {
+  .contact-modal {
+    width: 46.46%;
+    height: 900px;
+    top: 6.05%;
+    left: 26.73%;
+  }
+  .contact-modal__heading {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: black;
+    line-height: 3rem;
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  #modal-form {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: #312E2E;
+    line-height: 47px;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  #modal-form #message {
+    height: 170px;
+  }
+  #modal-form #submitdata {
+    cursor: pointer;
+    position: absolute;
+    top: 88.11%;
+    left: 5.23%;
+    background-color: #901C1C;
+    border: none;
+    border-radius: 0.31rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    /*à voir si je dois le passer en argument plus tard*/
+    color: white;
+    line-height: 23.44px;
+    font-size: 18px;
+    font-weight: normal;
+    width: 170px;
+    height: 69px;
+    transform: unset;
+  }
+
   #sorting-menu-btn {
     display: block;
   }
@@ -901,7 +977,7 @@ main {
   .contact-btn {
     cursor: pointer;
     position: absolute;
-    bottom: 57.8%;
+    top: 57.8%;
     left: 65.3%;
     background-color: #901C1C;
     border: none;

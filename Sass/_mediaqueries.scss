@@ -103,6 +103,16 @@
         }
         
     }
+    .contact-modal{
+        width: 46.46%;
+        height: 800px;
+        top: 6.05%;
+        left: 26.73%;
+        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.295);
+        #modal-btn__close{
+            @include w-h(6.28%, 4.66%);
+        }
+    }
     .recap-infos{
         position: fixed;
         bottom: 0;
@@ -162,6 +172,28 @@
 }
 
 @media screen and(min-width: 1005px){
+    .contact-modal{
+        width: 46.46%;
+        height: 900px;
+        top: 6.05%;
+        left: 26.73%;
+        &__heading{
+            @include font(black, 3rem, 3rem, normal);
+            text-align: left;
+        }
+    }
+    #modal-form{
+        @include font(#312E2E, 47px, 2rem, normal);
+        #message{
+            height: 170px;
+        }
+        #submitdata{
+            @include buttons(absolute, 88.11%, 5.23%);
+            @include w-h(170px, 69px);
+            //top: 716px;
+            transform: unset;
+        }
+    }
     #sorting-menu-btn{
         display: block;
     }

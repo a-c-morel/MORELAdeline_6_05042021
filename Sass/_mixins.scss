@@ -13,10 +13,10 @@
     height: $height;
 }
 
-@mixin buttons($position, $bottom, $left){
+@mixin buttons($position, $top, $left){
     cursor: pointer;
     position: $position;
-    bottom: $bottom;
+    top: $top;
     left: $left;
     background-color: $darkColor;
     border: none;

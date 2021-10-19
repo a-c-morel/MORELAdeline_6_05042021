@@ -17,11 +17,13 @@
     #modal-btn__close{
         @include clickable-iconsTR(26.67px, 26.67px, inherit);
         @include w-h(18.67px, 18.67px);
+        margin-right: 17px;
+        #close-btn-cross{
+            width: 100%;
+            height: 100%;
+        }
     }
 }
-
-
-
 #modal-form{
     height: 100%;
     width: 100%;
@@ -41,13 +43,19 @@
         border-radius: $littleRadius;
         margin-bottom: 14px;
     }
+    fieldset{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
     #message{
         height: 184px;
     }
     #submitdata{
-        @include buttons(absolute, 1.87rem, 50%);
+        @include buttons(absolute, 716px, 50%);
         @include w-h(170px, 35px);
-        top: 716px;
+        //top: 716px;
         transform: translateX(-50%);
     }
 }
