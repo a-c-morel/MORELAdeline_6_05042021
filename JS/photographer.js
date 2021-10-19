@@ -142,8 +142,8 @@ class Profile{
             //ouverture de la modale:
             const modal = new Modal(this.name);
             modal.display();
-            this.mainElement.setAttribute('aria-hidden', 'true');
-            this.mainElement.tabIndex = -1;
+            //this.mainElement.setAttribute('aria-hidden', 'true');
+            //this.mainElement.tabIndex = -1;
         });
 
         //section with photographer picture
@@ -170,13 +170,11 @@ class Profile{
         
         for (const tag of this.tags){
             const liTag = document.createElement("li");
-            const hashtag = document.createElement("a");
             liTag.classList.add("tags-links");
             liTag.classList.add("profile-tags");
             tagsSectionList.appendChild(liTag);
-            hashtag.setAttribute("href", ``);
-            hashtag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
-            liTag.appendChild(hashtag);
+            liTag.innerHTML = `<span aria-hidden="true">#</span>${tag}`;
+            liTag.style.cursor = "unset";
         }
         return newArticle;
     }
