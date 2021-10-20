@@ -25,7 +25,6 @@ class Card{
         this.id = props.id;
     }
     display(){
-        //create elements
         const newArticle = document.createElement("article");
         newArticle.classList.add("card");
         newArticle.setAttribute("role", "article");
@@ -71,7 +70,6 @@ class Card{
 
         const thirdSectionList = document.createElement("ul");
 
-        //add elements to their parents
         newArticle.appendChild(firstSection);
         newArticle.appendChild(secondSection);
         newArticle.appendChild(thirdSection);
@@ -135,15 +133,11 @@ class Profile{
         const contactBtn = document.createElement("button");
         contactBtn.classList.add("contact-btn");
         contactBtn.innerHTML = "Contactez-moi";
-        //const mainElement = document.querySelector("main");
-        //const headerElement = document.querySelector("header");
 
+        //ouverture de la modale:
         contactBtn.addEventListener('click', () => {
-            //ouverture de la modale:
             const modal = new Modal(this.name);
             modal.display();
-            //this.mainElement.setAttribute('aria-hidden', 'true');
-            //this.mainElement.tabIndex = -1;
         });
 
         //section with photographer picture
@@ -155,7 +149,6 @@ class Profile{
         newProfileImg.setAttribute("alt", "");
         newProfileImg.setAttribute("aria-label", `${this.name}`);
 
-        //add elements to their parents
         this.headerElement.appendChild(newArticle);
         newArticle.appendChild(firstSection);
         newArticle.appendChild(contactBtn);

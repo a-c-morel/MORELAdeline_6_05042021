@@ -21,7 +21,6 @@ class Image{
         this.price = props.price
     }
     display(){
-        //create elements
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
         newImageArticle.setAttribute("tabindex", "0");
@@ -53,7 +52,6 @@ class Image{
             this.totalLikesCounter();
         });
         
-        //add elements to their parents
         newImageArticle.appendChild(newMediaSection);
         newImageArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newImage);
@@ -75,7 +73,6 @@ class Image{
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        //console.log(sum);
         totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
     }
 }
@@ -92,7 +89,6 @@ class Video{
         this.price = props.price
     }
     display(){
-        //create elements
         const newVideoArticle = document.createElement("article");
         newVideoArticle.classList.add("media");
         newVideoArticle.setAttribute("tabindex", "0");
@@ -127,7 +123,7 @@ class Video{
             newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
             this.totalLikesCounter();
         });
-        //add elements to their parents
+
         newVideoArticle.appendChild(newMediaSection);
         newVideoArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newVideo);
@@ -153,7 +149,6 @@ class Video{
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        //console.log(sum);
         totalLikes.innerText = `${sum}`;
     }
 }

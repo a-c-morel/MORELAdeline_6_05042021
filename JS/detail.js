@@ -41,9 +41,7 @@
         }
     });
     
-
     /*CONTACT MODAL EVENTS*/
-    //const mainElement = document.querySelector("main");
     const contactModal = document.querySelector(".contact-modal");
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {

@@ -51,9 +51,6 @@ class Detail{
 
     displayMedias(){
         for(let media of this.medias){
-            /*this.mediasContainer.appendChild(media.display()).addEventListener('click', () => {
-                this.startLightbox(this.medias.indexOf(media));
-            });*/
             const mediasCreated = this.mediasContainer.appendChild(media.display());
             mediasCreated.addEventListener('click', () => {
                 this.startLightbox(this.medias.indexOf(media));
@@ -88,39 +85,25 @@ class Detail{
         
         sortingBtn.addEventListener("click", () => {
             this.expandMenu(sortingOptions, sortingBtn, chevron);
+            sortingOption1.tabIndex = "0";
+            sortingOption2.tabIndex = "0";
         });
         sortingBtn.addEventListener('keydown', (event) => {
             const keyName = event.key;
             if (keyName === 'Enter') {
                 this.expandMenu(sortingOptions, sortingBtn, chevron);
+                sortingOption1.tabIndex = "0";
+                sortingOption2.tabIndex = "0";
             }
         });
-        
+
         sortingOptions.addEventListener('click', (e) => {
-            if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
-                console.log(popularityOption);
-                this.removeMedias();
-                this.byPopularity();
-                sortingOption0.innerHTML = popularityOption;
-                sortingOption1.innerHTML = dateOption;
-                sortingOption2.innerHTML = titleOption;
-                this.displayMedias();
-            }else if(e.target.innerHTML === dateOption){ //&& (!e.target.id === 0)
-                console.log(dateOption);
-                this.removeMedias();
-                this.byDate();
-                sortingOption0.innerHTML = dateOption;
-                sortingOption1.innerHTML = titleOption;
-                sortingOption2.innerHTML = popularityOption;
-                this.displayMedias();
-            }else if(e.target.innerHTML === titleOption){ //&& (!e.target.id === 0)
-                console.log(titleOption);
-                this.removeMedias();
-                this.byTitle();
-                sortingOption0.innerHTML = titleOption;
-                sortingOption1.innerHTML = popularityOption;
-                sortingOption2.innerHTML = dateOption;
-                this.displayMedias();
+            this.selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption);
+        });
+        sortingOptions.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Enter') {
+                this.selectOption(event, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption);
             }
         });
     }
@@ -132,6 +115,34 @@ class Detail{
             chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
         } else if(chevron.classList.contains("fa-chevron-down")){
             chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
+        }
+    }
+
+    selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption){
+        if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
+            console.log(popularityOption);
+            this.removeMedias();
+            this.byPopularity();
+            sortingOption0.innerHTML = popularityOption;
+            sortingOption1.innerHTML = dateOption;
+            sortingOption2.innerHTML = titleOption;
+            this.displayMedias();
+        }else if(e.target.innerHTML === dateOption){ //&& (!e.target.id === 0)
+            console.log(dateOption);
+            this.removeMedias();
+            this.byDate();
+            sortingOption0.innerHTML = dateOption;
+            sortingOption1.innerHTML = titleOption;
+            sortingOption2.innerHTML = popularityOption;
+            this.displayMedias();
+        }else if(e.target.innerHTML === titleOption){ //&& (!e.target.id === 0)
+            console.log(titleOption);
+            this.removeMedias();
+            this.byTitle();
+            sortingOption0.innerHTML = titleOption;
+            sortingOption1.innerHTML = popularityOption;
+            sortingOption2.innerHTML = dateOption;
+            this.displayMedias();
         }
     }
 
@@ -186,5 +197,4 @@ class Detail{
             }
         });
     }
-
 }
