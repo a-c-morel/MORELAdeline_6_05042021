@@ -23,11 +23,21 @@ class Modal{
     
     validateform(){
         this.submit.addEventListener('click', () => {
-            this.modalContainer.style.display = "none";
-            console.log(this.firstName.value);
-            console.log(this.lastName.value);
-            console.log(this.email.value);
-            this.form.reset();
+        this.submitData();
         });
+        this.submit.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Enter') {
+                this.submitData();
+            }
+        });
+    }
+
+    submitData(){
+        this.modalContainer.style.display = "none";
+        console.log(this.firstName.value);
+        console.log(this.lastName.value);
+        console.log(this.email.value);
+        this.form.reset();
     }
 }

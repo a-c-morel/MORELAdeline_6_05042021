@@ -120,7 +120,6 @@ class Detail{
 
     selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption){
         if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
-            console.log(popularityOption);
             this.removeMedias();
             this.byPopularity();
             sortingOption0.innerHTML = popularityOption;
@@ -128,7 +127,6 @@ class Detail{
             sortingOption2.innerHTML = titleOption;
             this.displayMedias();
         }else if(e.target.innerHTML === dateOption){ //&& (!e.target.id === 0)
-            console.log(dateOption);
             this.removeMedias();
             this.byDate();
             sortingOption0.innerHTML = dateOption;
@@ -136,7 +134,6 @@ class Detail{
             sortingOption2.innerHTML = popularityOption;
             this.displayMedias();
         }else if(e.target.innerHTML === titleOption){ //&& (!e.target.id === 0)
-            console.log(titleOption);
             this.removeMedias();
             this.byTitle();
             sortingOption0.innerHTML = titleOption;

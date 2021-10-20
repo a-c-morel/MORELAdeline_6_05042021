@@ -1,7 +1,7 @@
 (async function createDetailPage(){
     let params = new URLSearchParams(window.location.search);
     let photographerId = params.get("id");
-    console.log(`L'Id du photographe est ${photographerId}`);
+    //console.log(`L'Id du photographe est ${photographerId}`);
     let myDetail = new Detail();
     await myDetail.getPhotographer(photographerId);
     myDetail.displayPhotographer();
