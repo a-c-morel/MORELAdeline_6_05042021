@@ -18,6 +18,14 @@
     const closeLightboxBtn = document.querySelector("#lightbox-btn__close");
     closeLightboxBtn.addEventListener('click', () => {
         lightboxModal.style.display = "none";
+        //+ remettre focus sur le media qui a été cliqué au départ
+    });
+    closeLightboxBtn.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Escape') {
+            lightboxModal.style.display = "none";
+            //+ remettre focus sur le media qui a été cliqué au départ
+        }
     });
 
     //navigate inside the lightbox
@@ -30,7 +38,6 @@
             myDetail.lightbox.goNext();
         });
     
-    //il faut régler le pb de la tab qui est hors modale. Quand la tab est capturée dans la modale, les flèches fonctionnent.
     lightboxModal.addEventListener('keydown', (event) => {
         const keyName = event.key;
         if (keyName === 'ArrowLeft') {
@@ -46,5 +53,13 @@
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {
         contactModal.style.display = "none";
+        //+ remettre focus sur le bouton de contact
+    });
+    contactModal.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Escape') {
+            contactModal.style.display = "none";
+            //+ remettre focus sur le bouton de contact
+        }
     });
 })();

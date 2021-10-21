@@ -11,13 +11,30 @@ body{
     padding-right: 1.25rem;
 }
 
+
 ul{
     list-style-type: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    li{
-        margin-right: .3rem;
+}
+
+.profile-info-tags{
+    ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li{
+            margin-right: .3rem;
+        }
+    }
+}
+
+nav{
+    ul{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li{
+            margin-right: .3rem;
+        }
     }
 }
 
@@ -93,16 +110,19 @@ main{
 /*.hidden-toggle{
     display: none;
 }*/
+.selection-menu{
+    display: none
+}
 
-.sorting-menu-title{
-        display: none;
+/*.sorting-menu-title{
+        display: none
 }
 #sorting-menu-btn{
-       display: none;
+       display: none
 }
 .sorting-options{
-    display: none;
-}
+    display: none
+}*/
 
 .recap-infos{
     display: none;

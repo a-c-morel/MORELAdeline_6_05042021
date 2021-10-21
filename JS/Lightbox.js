@@ -43,13 +43,17 @@ class LightboxFactory{
 
     display(){
         const lightboxContainer = document.querySelector("#lightbox-modal");
+        const lightboxCloseBtn = document.querySelector("#lightbox-btn__close");
         lightboxContainer.style.display = "flex";
+        lightboxCloseBtn.focus();
         this.clearMedia();
     }
     
     start(index = 0){
+        //const closeModalBtn = document.querySelector("#modal-btn__close");
         this.position = index;
         this.display();
+        //closeModalBtn.focus();
         this.createElem();
     }
 

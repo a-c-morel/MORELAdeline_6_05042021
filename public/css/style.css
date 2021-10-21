@@ -456,11 +456,23 @@ body {
 
 ul {
   list-style-type: none;
+}
+
+.profile-info-tags ul {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-ul li {
+.profile-info-tags ul li {
+  margin-right: 0.3rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav ul li {
   margin-right: 0.3rem;
 }
 
@@ -542,18 +554,19 @@ main {
 /*.hidden-toggle{
     display: none;
 }*/
-.sorting-menu-title {
+.selection-menu {
   display: none;
 }
 
-#sorting-menu-btn {
-  display: none;
+/*.sorting-menu-title{
+        display: none
 }
-
-.sorting-options {
-  display: none;
+#sorting-menu-btn{
+       display: none
 }
-
+.sorting-options{
+    display: none
+}*/
 .recap-infos {
   display: none;
 }
@@ -851,10 +864,9 @@ main {
     transform: unset;
   }
 
-  #sorting-menu-btn {
-    display: block;
-  }
-
+  /*#sorting-menu-btn{
+      display: block;
+  }*/
   .selection-menu {
     display: block;
     margin-top: 9px;
@@ -867,7 +879,6 @@ main {
   }
 
   .sorting-menu-btn {
-    display: block;
     background-color: #901C1C;
     font-family: "DM Sans", sans-serif;
     font-style: normal;

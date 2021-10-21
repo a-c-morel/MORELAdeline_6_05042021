@@ -194,9 +194,9 @@
             transform: unset;
         }
     }
-    #sorting-menu-btn{
+    /*#sorting-menu-btn{
         display: block;
-    }
+    }*/
     .selection-menu{
         display: block;
         margin-top: 9px;
@@ -207,7 +207,7 @@
         top: 466px;
     }
     .sorting-menu-btn{
-        display: block;
+        //display: block;
         background-color: $darkColor;
         @include font(white, 23.44px, 18px, normal);
         border-radius: 5px;
