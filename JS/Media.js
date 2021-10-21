@@ -44,12 +44,22 @@ class Image{
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
         newImageLikes.setAttribute("aria-label", "likes");
-        newImageLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+        newImageLikes.innerHTML = `${this.likes} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`
 
         newImageLikes.addEventListener('click', (e)=> {
+            e.preventDefault();
             e.stopPropagation();
-            newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+            newImageLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
             this.totalLikesCounter();
+        });
+        newImageLikes.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Enter') {
+                event.preventDefault();
+                event.stopPropagation();
+                newImageLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+                this.totalLikesCounter();
+            }
         });
         
         newImageArticle.appendChild(newMediaSection);
@@ -116,12 +126,22 @@ class Video{
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
         newVideoLikes.setAttribute("aria-label", "likes");
-        newVideoLikes.innerHTML = `${this.likes} <i class="fas fa-heart"></i>`
+        newVideoLikes.innerHTML = `${this.likes} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`
 
         newVideoLikes.addEventListener('click', (e)=> {
+            e.preventDefault();
             e.stopPropagation();
-            newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart"></i>`;
+            newVideoLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
             this.totalLikesCounter();
+        });
+        newVideoLikes.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Enter') {
+                event.preventDefault();
+                event.stopPropagation();
+                newVideoLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+                this.totalLikesCounter();
+            }
         });
 
         newVideoArticle.appendChild(newMediaSection);

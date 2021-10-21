@@ -32,7 +32,7 @@ class Card{
         const firstSection = document.createElement("section");
         firstSection.classList.add("card-profile");
         firstSection.setAttribute("role", "region");
-        firstSection.setAttribute("aria-labelledby", "photographer-name");
+        firstSection.setAttribute("aria-labelledby", `${this.name}`);
 
         const secondSection = document.createElement("section");
         secondSection.classList.add("card-info");
@@ -47,12 +47,12 @@ class Card{
 
         const newProfileImg = document.createElement("img");
         newProfileImg.classList.add("card-profile__img");
-        newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+        newProfileImg.setAttribute("src", `images/Photographers_ID_Photos/${this.portrait}`);
         newProfileImg.setAttribute("alt", "");
         newProfileImg.setAttribute("aria-label", `${this.name}`);
 
         const newProfileTitle = document.createElement("h2");
-        newProfileTitle.setAttribute("id", "photographer-name");
+        newProfileTitle.setAttribute("id", `${this.name}`);
         newProfileTitle.classList.add("card-profile__name");
         newProfileTitle.innerHTML = `${this.name}`;
 

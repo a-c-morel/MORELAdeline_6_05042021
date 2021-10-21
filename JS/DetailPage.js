@@ -52,12 +52,14 @@ class Detail{
     displayMedias(){
         for(let media of this.medias){
             const mediasCreated = this.mediasContainer.appendChild(media.display());
-            mediasCreated.addEventListener('click', () => {
+            mediasCreated.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.startLightbox(this.medias.indexOf(media));
             });
             mediasCreated.addEventListener('keydown', (event) => {
                 const keyName = event.key;
                 if (keyName === 'Enter') {
+                    event.preventDefault();
                     this.startLightbox(this.medias.indexOf(media));
                 }
             });
