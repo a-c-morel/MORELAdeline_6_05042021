@@ -45,6 +45,7 @@ class LightboxFactory{
         const lightboxContainer = document.querySelector("#lightbox-modal");
         const lightboxCloseBtn = document.querySelector("#lightbox-btn__close");
         lightboxContainer.style.display = "flex";
+        //lightboxCloseBtn.tabIndex = '0';
         lightboxCloseBtn.focus();
         this.clearMedia();
     }

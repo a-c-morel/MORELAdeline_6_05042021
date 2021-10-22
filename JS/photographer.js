@@ -8,9 +8,6 @@ class PhotographerFactory{
             return new Profile(props);
         }
     }
-    display(){
-        console.log("ceci est un message provenant de la factory Photographer");
-    }
 }
 
 class Card{
@@ -145,7 +142,7 @@ class Profile{
         secondSection.classList.add("profile-image");
         const newDiv = document.createElement("div");
         const newProfileImg = document.createElement("img");
-        newProfileImg.setAttribute("src", `images/Photographers ID Photos/${this.portrait}`);
+        newProfileImg.setAttribute("src", `images/Photographers_ID_Photos/${this.portrait}`);
         newProfileImg.setAttribute("alt", "");
         newProfileImg.setAttribute("aria-label", `${this.name}`);
 

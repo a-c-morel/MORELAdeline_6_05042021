@@ -19,7 +19,18 @@ class Modal{
         this.modalContainer.style.display = "flex";
         this.modalContainer.style.flexWrap = "wrap";
         this.closeModalBtn.focus();
+        this.captureFocus();
         this.validateform();
+    }
+
+    captureFocus(){
+        this.submit.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Tab') {
+                event.preventDefault();
+                this.closeModalBtn.focus();
+            }
+        });
     }
     
     validateform(){

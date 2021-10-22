@@ -46,9 +46,37 @@
         if (keyName === 'ArrowRight') {
             myDetail.lightbox.goNext();
         }
+        if (keyName === ' '){
+            event.preventDefault();
+        }
+    });
+
+    previousButton.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Escape') {
+            lightboxModal.style.display = "none";
+        }
+        if (keyName === ' '){
+            event.preventDefault();
+        }
+    });
+    nextButton.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Tab') {
+            event.preventDefault();
+            closeLightboxBtn.focus();
+        }
+        if (keyName === 'Escape') {
+            lightboxModal.style.display = "none";
+        }
+        if (keyName === ' '){
+            event.preventDefault();
+        }
     });
     
     /*CONTACT MODAL EVENTS*/
+
+    //closing the modal
     const contactModal = document.querySelector(".contact-modal");
     const closeModalBtn = document.querySelector("#modal-btn__close");
     closeModalBtn.addEventListener('click', () => {
