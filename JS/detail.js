@@ -1,7 +1,6 @@
 (async function createDetailPage(){
     let params = new URLSearchParams(window.location.search);
     let photographerId = params.get("id");
-    //console.log(`L'Id du photographe est ${photographerId}`);
     let myDetail = new Detail();
     await myDetail.getPhotographer(photographerId);
     myDetail.displayPhotographer();
@@ -11,20 +10,39 @@
     myDetail.totalLikesDefault();
     myDetail.displayPrice();
 
+    /*CONTACT MODAL EVENTS*/
+
+    //closing the modal
+    const contactModal = document.querySelector(".contact-modal");
+    const closeModalBtn = document.querySelector("#modal-btn__close");
+    const contactBtn = document.querySelector(".contact-btn")
+    closeModalBtn.addEventListener('click', () => {
+        contactModal.style.display = "none";
+        contactBtn.focus();
+    });
+    contactModal.addEventListener('keydown', (event) => {
+        const keyName = event.key;
+        if (keyName === 'Escape') {
+            contactModal.style.display = "none";
+            contactBtn.focus();
+        }
+    });
+
     /*LIGHTBOX EVENTS*/
     const lightboxModal = document.querySelector("#lightbox-modal");
+    const firstMedia = document.querySelector(".media");
 
     //close the lightbox
     const closeLightboxBtn = document.querySelector("#lightbox-btn__close");
     closeLightboxBtn.addEventListener('click', () => {
         lightboxModal.style.display = "none";
-        //+ remettre focus sur le media qui a été cliqué au départ
+        firstMedia.focus();
     });
     closeLightboxBtn.addEventListener('keydown', (event) => {
         const keyName = event.key;
         if (keyName === 'Escape') {
             lightboxModal.style.display = "none";
-            //+ remettre focus sur le media qui a été cliqué au départ
+            firstMedia.focus();
         }
     });
 
@@ -37,7 +55,6 @@
     nextButton.addEventListener('click', () => {
             myDetail.lightbox.goNext();
         });
-    
     lightboxModal.addEventListener('keydown', (event) => {
         const keyName = event.key;
         if (keyName === 'ArrowLeft') {
@@ -51,10 +68,12 @@
         }
     });
 
+    //prevent default behavior of space key, and make sure the user can escape the lightbox even if an element is focused inside lightbox
     previousButton.addEventListener('keydown', (event) => {
         const keyName = event.key;
         if (keyName === 'Escape') {
             lightboxModal.style.display = "none";
+            firstMedia.focus();
         }
         if (keyName === ' '){
             event.preventDefault();
@@ -68,26 +87,10 @@
         }
         if (keyName === 'Escape') {
             lightboxModal.style.display = "none";
+            firstMedia.focus();
         }
         if (keyName === ' '){
             event.preventDefault();
-        }
-    });
-    
-    /*CONTACT MODAL EVENTS*/
-
-    //closing the modal
-    const contactModal = document.querySelector(".contact-modal");
-    const closeModalBtn = document.querySelector("#modal-btn__close");
-    closeModalBtn.addEventListener('click', () => {
-        contactModal.style.display = "none";
-        //+ remettre focus sur le bouton de contact
-    });
-    contactModal.addEventListener('keydown', (event) => {
-        const keyName = event.key;
-        if (keyName === 'Escape') {
-            contactModal.style.display = "none";
-            //+ remettre focus sur le bouton de contact
         }
     });
 })();

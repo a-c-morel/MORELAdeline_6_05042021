@@ -6,6 +6,15 @@ class Detail{
         this.mainElement = document.querySelector("main");
         this.mediasContainer = document.querySelector("#medias-section");
         this.lightboxContainer = document.querySelector(".lightbox-media");
+        this.sortingBtn = document.querySelector("#sorting-menu-btn");
+        this.chevron = document.querySelector("#sorting-menu-chevron");
+        this.popularityOption = "Popularité";
+        this.dateOption = "Date";
+        this.titleOption = "Titre";
+        this.sortingOption0 = document.querySelector("#option0");
+        this.sortingOption1 = document.querySelector("#option1");
+        this.sortingOption2 = document.querySelector("#option2");
+        this.sortingOptions = document.querySelector("#sorting-options");
     }
 
     async getPhotographer(id){
@@ -67,46 +76,55 @@ class Detail{
     }
 
     displayFilter(){
-        const sortingBtn = document.querySelector("#sorting-menu-btn");
-        const chevron = document.querySelector("#sorting-menu-chevron");
-        const popularityOption = "Popularité";
-        const dateOption = "Date";
-        const titleOption = "Titre";
-        const sortingOption0 = document.querySelector("#option0");
-        const sortingOption1 = document.querySelector("#option1");
-        const sortingOption2 = document.querySelector("#option2");
-        const sortingOptions = document.querySelector("#sorting-options");
+        this.sortingOption0.innerHTML = this.popularityOption;
+        this.sortingOption1.innerHTML = this.dateOption;
+        this.sortingOption2.innerHTML = this.titleOption;
 
-        sortingOption0.innerHTML = popularityOption;
-        sortingOption1.innerHTML = dateOption;
-        sortingOption2.innerHTML = titleOption;
-
-        sortingOption0.style.order = "1";
-        sortingOption1.style.order = "2";
-        sortingOption2.style.order = "3";
+        this.sortingOption0.style.order = "1";
+        this.sortingOption1.style.order = "2";
+        this.sortingOption2.style.order = "3";
         
-        sortingBtn.addEventListener("click", () => {
-            this.expandMenu(sortingOptions, sortingBtn, chevron);
-            sortingOption1.tabIndex = "0";
-            sortingOption2.tabIndex = "0";
+        this.sortingBtn.addEventListener("click", () => {
+            this.expandMenu(this.sortingOptions, this.sortingBtn, this.chevron);
+            this.toggleAttribute(this.sortingBtn);
+            this.sortingOption1.tabIndex = "0";
+            this.sortingOption2.tabIndex = "0";
         });
-        sortingBtn.addEventListener('keydown', (event) => {
+        this.sortingBtn.addEventListener('keydown', (event) => {
             const keyName = event.key;
             if (keyName === 'Enter') {
-                this.expandMenu(sortingOptions, sortingBtn, chevron);
-                sortingOption1.tabIndex = "0";
-                sortingOption2.tabIndex = "0";
+                this.expandMenu(this.sortingOptions, this.sortingBtn, this.chevron);
+                this.toggleAttribute(this.sortingBtn);
+                this.sortingOption1.tabIndex = "0";
+                this.sortingOption2.tabIndex = "0";
             }
         });
 
-        sortingOptions.addEventListener('click', (e) => {
-            this.selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption);
+        this.sortingOptions.addEventListener('click', (e) => {
+            this.selectOption(e,
+                this.popularityOption,
+                this.sortingOption0,
+                this.sortingOption1,
+                this.dateOption,
+                this.sortingOption2,
+                this.titleOption);
         });
-        sortingOptions.addEventListener('keydown', (event) => {
+        this.sortingOptions.addEventListener('keydown', (event) => {
             const keyName = event.key;
             if (keyName === 'Enter') {
-                this.selectOption(event, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption);
+                this.selectOption(event,
+                    this.popularityOption,
+                    this.sortingOption0,
+                    this.sortingOption1,
+                    this.dateOption,
+                    this.sortingOption2,
+                    this.titleOption);
             }
+        });
+        this.sortingOption1.addEventListener("focus", (e) =>{
+            this.sortingOption1.setAttribute("aria-activedescendant", "true");
+            this.sortingOption1.setAttribute("aria-selected", "true");
+            this.sortingOption2.setAttribute("aria-activedescendant", "false")
         });
     }
 
@@ -120,22 +138,32 @@ class Detail{
         }
     }
 
+    toggleAttribute(sortingBtn){
+        let x = sortingBtn.getAttribute("aria-expanded"); 
+        if (x == "true"){
+            x = "false"
+        }else{
+            x = "true"
+        }
+        sortingBtn.setAttribute("aria-expanded", x);
+    }
+
     selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption){
-        if(e.target.innerHTML === popularityOption){ //&& (!e.target.id === 0)
+        if(e.target.innerHTML === popularityOption){
             this.removeMedias();
             this.byPopularity();
             sortingOption0.innerHTML = popularityOption;
             sortingOption1.innerHTML = dateOption;
             sortingOption2.innerHTML = titleOption;
             this.displayMedias();
-        }else if(e.target.innerHTML === dateOption){ //&& (!e.target.id === 0)
+        }else if(e.target.innerHTML === dateOption){
             this.removeMedias();
             this.byDate();
             sortingOption0.innerHTML = dateOption;
             sortingOption1.innerHTML = titleOption;
             sortingOption2.innerHTML = popularityOption;
             this.displayMedias();
-        }else if(e.target.innerHTML === titleOption){ //&& (!e.target.id === 0)
+        }else if(e.target.innerHTML === titleOption){
             this.removeMedias();
             this.byTitle();
             sortingOption0.innerHTML = titleOption;
