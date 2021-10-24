@@ -43,13 +43,12 @@ class Image{
 
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
-        newImageLikes.setAttribute("aria-label", "likes");
-        newImageLikes.innerHTML = `${this.likes} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`
-
+        newImageLikes.innerHTML = `${this.likes} `;
+        
         newImageLikes.addEventListener('click', (e)=> {
-            e.preventDefault();
+            e.preventDefault();//pour que cela n'ouvre pas la lightbox
             e.stopPropagation();
-            newImageLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+            newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
             this.totalLikesCounter();
         });
         newImageLikes.addEventListener('keydown', (event) => {
@@ -57,16 +56,24 @@ class Image{
             if (keyName === 'Enter') {
                 event.preventDefault();
                 event.stopPropagation();
-                newImageLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+                newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
                 this.totalLikesCounter();
+                newImageArticle.focus();
             }
         });
+
+        const newLikeIcon = document.createElement("i");
+        newLikeIcon.classList.add("fas");
+        newLikeIcon.classList.add("fa-heart");
+        newLikeIcon.setAttribute("aria-label", "likes");
+        newLikeIcon.setAttribute("tabindex", "0");
         
         newImageArticle.appendChild(newMediaSection);
         newImageArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newImage);
         newInfoSection.appendChild(newImageTitle);
         newInfoSection.appendChild(newImageLikes);
+        newImageLikes.appendChild(newLikeIcon);
 
         return newImageArticle;
     }
@@ -125,13 +132,12 @@ class Video{
 
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
-        newVideoLikes.setAttribute("aria-label", "likes");
-        newVideoLikes.innerHTML = `${this.likes} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`
+        newVideoLikes.innerHTML = `${this.likes} `
 
         newVideoLikes.addEventListener('click', (e)=> {
             e.preventDefault();
             e.stopPropagation();
-            newVideoLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+            newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
             this.totalLikesCounter();
         });
         newVideoLikes.addEventListener('keydown', (event) => {
@@ -139,10 +145,17 @@ class Video{
             if (keyName === 'Enter') {
                 event.preventDefault();
                 event.stopPropagation();
-                newVideoLikes.innerHTML = `${this.increment(this.likes)} <a href="#" aria-label="J'aime ce média"><i class="fas fa-heart" aria-hidden="true"></i></a>`;
+                newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
                 this.totalLikesCounter();
+                newVideoArticle.focus();
             }
         });
+
+        const newLikeIcon = document.createElement("i");
+        newLikeIcon.classList.add("fas");
+        newLikeIcon.classList.add("fa-heart");
+        newLikeIcon.setAttribute("aria-label", "likes");
+        newLikeIcon.setAttribute("tabindex", "0");
 
         newVideoArticle.appendChild(newMediaSection);
         newVideoArticle.appendChild(newInfoSection);
@@ -151,6 +164,7 @@ class Video{
         newVideo.appendChild(newDefaultText);
         newInfoSection.appendChild(newVideoTitle);
         newInfoSection.appendChild(newVideoLikes);
+        newVideoLikes.appendChild(newLikeIcon);
         
         return newVideoArticle;
     }

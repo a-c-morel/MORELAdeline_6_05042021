@@ -121,10 +121,11 @@ class Detail{
                     this.titleOption);
             }
         });
-        this.sortingOption1.addEventListener("focus", (e) =>{
-            this.sortingOption1.setAttribute("aria-activedescendant", "true");
-            this.sortingOption1.setAttribute("aria-selected", "true");
-            this.sortingOption2.setAttribute("aria-activedescendant", "false")
+        this.sortingOption1.addEventListener("focus", () =>{
+            this.isAriaSelected(this.sortingOption1);
+        });
+        this.sortingOption2.addEventListener("focus", () =>{
+            this.isAriaSelected(this.sortingOption2);
         });
     }
 
@@ -139,13 +140,30 @@ class Detail{
     }
 
     toggleAttribute(sortingBtn){
-        let x = sortingBtn.getAttribute("aria-expanded"); 
-        if (x == "true"){
-            x = "false"
+        let ariaExpanded = sortingBtn.getAttribute("aria-expanded"); 
+        if (ariaExpanded == "true"){
+            ariaExpanded = "false"
         }else{
-            x = "true"
+            ariaExpanded = "true"
         }
-        sortingBtn.setAttribute("aria-expanded", x);
+        sortingBtn.setAttribute("aria-expanded", ariaExpanded);
+    }
+
+    isAriaSelected(sortingOption){
+        let ariaSelected = sortingOption.getAttribute("aria-selected");
+        let ariaActiveDescendant = sortingOption.getAttribute("aria-activedescendant");
+        if((sortingOption.focus) && (ariaSelected == "false")){
+            ariaSelected = "true";
+            ariaActiveDescendant = "true";
+        }else if ((!sortingOption.focus) && (ariaSelected == "true")){
+            ariaSelected = "false";
+            ariaActiveDescendant = "false";
+        }else{
+            ariaSelected = "false";
+            ariaActiveDescendant = "false";
+        }
+        sortingOption.setAttribute("aria-selected", ariaSelected);
+        sortingOption.setAttribute("aria-activedescendant", ariaActiveDescendant);
     }
 
     selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption){
