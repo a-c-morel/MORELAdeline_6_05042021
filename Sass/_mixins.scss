@@ -1,7 +1,7 @@
 @mixin font($color, $line-height, $size, $weight){
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
-    text-align: center; /*à voir si je dois le passer en argument plus tard*/    
+    text-align: center;  
     color: $color;
     line-height: $line-height;
     font-size: $size;
@@ -23,7 +23,7 @@
     border-radius: $littleRadius;
     padding-left: 1rem;
     padding-right: 1rem;
-    @include font(white, 23.44px, 18px, normal);
+    @include font(white, 1.44rem, 1.13rem, normal);
 }
 
 @mixin clickable-iconsTR($top, $right, $color){

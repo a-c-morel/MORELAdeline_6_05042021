@@ -4,12 +4,10 @@
         padding-right: 6.25rem;
     }
     header{
-        //padding-left: 6.25rem;
-        //padding-right: 6.25rem;
         .logo{
-            width: 200px;
-            height: 50px;
-            margin-bottom: 40px;
+            width: 12.5rem;
+            height: 3.13rem;
+            margin-bottom: 2.5rem;
         }
     }
     .lightbox-media{
@@ -18,17 +16,14 @@
     #lightbox-btn{
         &__close{
             @include clickable-iconsTR(7.5%, 6.26%, inherit);
-            //@include w-h(11.57px, 11.57px)
             @include font(inherit, 3rem, 3rem, normal);
         }
         &__previous{
-            @include clickable-iconsTL(49.2%, 6.9%, inherit);   
-            //@include w-h(13.23px, 8.16px); 
+            @include clickable-iconsTL(49.2%, 6.9%, inherit);
             @include font(inherit, 3rem, 3rem, normal);
         }
         &__next{
-            @include clickable-iconsTR(49.2%, 6.9%, inherit);   
-            //@include w-h(13.23px, 8.16px); 
+            @include clickable-iconsTR(49.2%, 6.9%, inherit);
             @include font(inherit, 3rem, 3rem, normal);
         }
     }
@@ -51,22 +46,22 @@
     .profile{
         background-color: $lightBG;
         width: 100%;
-        height: 313px;
+        height: 19.56rem;
         .profile-info{
             &__name{
-                @include font($mediumColor, 83.33px, 64px, normal);
+                @include font($mediumColor, 5.19rem, 4rem, normal);
                 margin-top: 3.5rem;
                 margin-left: 3.125rem;
                 text-align: left;
             }
             &__location{
-                @include font($darkColor, 31.25px, 24px, normal);
-                margin-bottom: 19px;
+                @include font($darkColor, 1.94rem, 1.5rem, normal);
+                margin-bottom: 1.19rem;
                 margin-left: 3.125rem;
             }
             &__quote{
-                @include font(#000000, 23.44px, 18px, normal);
-                margin-bottom: 13px;
+                @include font(#000000, 1.44rem, 1.13rem, normal);
+                margin-bottom: .81rem;
                 margin-left: 3.125rem;
 
             }
@@ -83,7 +78,7 @@
         padding: .05rem;
         padding-left: .3rem;
         padding-right: .3rem;
-        @include font($darkColor, 23.44px, 18px, 500);
+        @include font($darkColor, 1.44rem, 1.13rem, 500);
         cursor: pointer;
     }
     .profile-image{
@@ -105,10 +100,10 @@
     }
     .contact-modal{
         width: 46.46%;
-        height: 800px;
+        height: 50rem;
         top: 6.05%;
         left: 26.73%;
-        box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.295);
+        box-shadow: .19rem .19rem .44rem rgba(0, 0, 0, 0.295);
         #modal-btn__close{
             @include w-h(6.28%, 4.66%);
         }
@@ -116,15 +111,15 @@
     .recap-infos{
         position: fixed;
         bottom: 0;
-        right: 36px;
+        right: 2.25rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        height: 73px;
-        width: 376px;
-        padding-left: 31px;
-        padding-right: 34px;
+        height: 4.56rem;
+        width: 23.5rem;
+        padding-left: 1.94rem;
+        padding-right: 2.13rem;
         border-top-left-radius: $littleRadius;
         border-top-right-radius: $littleRadius;
         background-color: $secondaryColor;
@@ -147,7 +142,7 @@
         nav{
         position: absolute;
         left: 50%;
-        max-width: 400px;
+        max-width: 25rem;
         transform: translateX(-50%);
         margin-top: 0;
         width: 100%;
@@ -163,7 +158,7 @@
 @media screen and (min-width: 1000px){
     #medias-section{
         width: 100%;
-        margin-top: 101px;
+        margin-top: 6.31rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -174,7 +169,7 @@
 @media screen and(min-width: 1005px){
     .contact-modal{
         width: 46.46%;
-        height: 900px;
+        height: 56.25rem;
         top: 6.05%;
         left: 26.73%;
         &__heading{
@@ -183,75 +178,69 @@
         }
     }
     #modal-form{
-        @include font(#312E2E, 47px, 2rem, normal);
+        @include font(#312E2E, 2.94rem, 2rem, normal);
         #message{
-            height: 170px;
+            height: 10.63rem;
         }
         #submitdata{
             @include buttons(absolute, 88.11%, 5.23%);
-            @include w-h(170px, 69px);
-            //top: 716px;
+            @include w-h(10.63rem, 4.31rem);
             transform: unset;
         }
     }
-    /*#sorting-menu-btn{
-        display: block;
-    }*/
     .selection-menu{
         display: block;
-        margin-top: 9px;
+        margin-top: .56rem;
         align-self: flex-start;
     }
     #sorting-menu-title{
-        padding-top: 11px;
-        top: 466px;
+        padding-top: .69rem;
+        top: 29.13rem;
     }
     .sorting-menu-btn{
-        //display: block;
         background-color: $darkColor;
-        @include font(white, 23.44px, 18px, normal);
-        border-radius: 5px;
-        width: 170px;
-        height: 60px;
+        @include font(white, 1.44rem, 1.13rem, normal);
+        border-radius: .31rem;
+        width: 10.63rem;
+        height: 3.75rem;
         border: none;
         position: absolute;
         left: 13.6%;
-        top: 466px;
+        top: 29.13rem;
     }
     .sorting-menu-expanded{
-        height: 170px;
+        height: 10.63rem;
         background-color: $darkColor;
-        @include font(white, 23.44px, 18px, normal);
-        border-radius: 5px;
-        width: 170px;
-        height: 170px;
+        @include font(white, 1.44rem, 1.13rem, normal);
+        border-radius: .31rem;
+        width: 10.63rem;
+        height: 10.63rem;
         border: none;
-        //position: absolute;
     }
     #option0{
         position: absolute;
-        left: 20px;
-        top: 23px;
+        left: 1.25rem;
+        top: 1.44rem;
         cursor: pointer;
     }
 
     #option1{
         position: absolute;
-        left: 20px;
-        top: 75px;
+        left: 1.25rem;
+        top: 4.69rem;
         cursor: pointer;
     }
     #option2{
         position: absolute;
-        left: 20px;
-        top: 127px;
+        left: 1.25rem;
+        top: 7.94rem;
         cursor: pointer;
     }
     #sorting-menu-chevron{
         color: white;
         position: absolute;
-        top: 28.67px;
-        right: 18px;
+        top: 1.75rem;
+        right: 1.13rem;
         cursor: pointer;
     }
     .sorting-options{
@@ -266,8 +255,6 @@
 
 @media screen and (min-width: 1052px){
     header{
-        //padding-left: 100px;
-        //padding-right: 106px;
         nav{
             left: 43%;
         }
@@ -276,7 +263,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        padding-top: 113px;
+        padding-top: 7.06rem;
     }
     .card{
         width: 23rem;
@@ -285,7 +272,6 @@
         @include font($darkColor, 2.94rem, 2.25rem, normal);
         width: 19.13rem;
         height: 2.94rem;
-        /*left: 14.6rem;*/
         right: 7.31rem;
         top: 2.75rem;
     }
@@ -294,7 +280,7 @@
 @media screen and(min-width: 1280px){
     .contact-btn{
         @include buttons(absolute, 57.8%, 65.3%);
-        @include w-h(170px, 69px);
+        @include w-h(10.63rem, 4.31rem);
     }
 }
 
@@ -302,18 +288,11 @@
     header{
         nav{
             position: absolute;
-            //left: 50%;
-            left: 365px;
-            width: 590px;
+            left: 22.81rem;
+            width: 36.88rem;
             max-width: unset;
-            //max-width: 400px;
             transform: none;
-            //margin-right: auto;
-            margin-top: 50px;
-            //margin-right: 0;
-            //margin-bottom: 0;
-            //margin-left: 0;
-            //width: 386px;
+            margin-top: 3.13rem;
             ul{
                 width: 100%;
             }

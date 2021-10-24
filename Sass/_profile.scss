@@ -35,8 +35,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    top: 40px;
-    //justify-content: space-around;
+    top: 2.5rem;
     align-items: center;
     div{
         max-width: 6.25rem;
@@ -52,11 +51,10 @@
             object-fit: cover;
         }
     }
-    
 }
 
 .contact-btn{
     @include buttons(fixed, 1.87rem, 50%);
-    @include w-h(170px, 35px);
+    @include w-h(10.63rem, 2.19rem);
     transform: translateX(-50%);
 }

@@ -1,12 +1,11 @@
 .media{
     height: auto;
-    width: 335px;
+    width: 20.9rem;
     overflow: hidden;
-
     .media-preview{
         &__media{
-        width: 335px;
-        height: 190px;
+        width: 20.9rem;
+        height: 11.88rem;
         object-fit: cover;
         cursor: pointer;
         border-radius: $littleRadius;
@@ -29,17 +28,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

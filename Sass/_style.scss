@@ -18,9 +18,31 @@ ul{
 
 a{
     color: inherit;
+    text-decoration: none;
+    &:visited{
+        color: inherit;
+    }
 }
 
-.profile-info-tags{
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 2.7rem;
+    nav{
+    align-self: center;
+    display: flex;
+    align-items: center;
+    width: 17.8rem;
+    height: 3.1rem;
+    margin-top: 1.6rem;
+    margin-right: 3.19rem;
+    margin-bottom: 3.1rem;
+    margin-left: 1.2rem;
+    }
+}
+
+nav{
     ul{
         display: flex;
         justify-content: center;
@@ -31,7 +53,7 @@ a{
     }
 }
 
-nav{
+.profile-info-tags{
     ul{
         display: flex;
         justify-content: center;
@@ -60,35 +82,9 @@ fieldset{
     width: 1px;
 }
 
-a{
-    text-decoration: none;
-    &:visited{
-        color: inherit;
-    }
-}
-
 .logo{
     width: 9.4rem;
     height: 2.3rem;
-}
-
-header{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-top: 2.7rem;
-    //padding-left: 1.25rem;
-    nav{
-    align-self: center;
-    display: flex;
-    align-items: center;
-    width: 17.8rem;
-    height: 3.1rem;
-    margin-top: 1.6rem; //-2rem;
-    margin-right: 3.19rem;
-    margin-bottom: 3.1rem;
-    margin-left: 1.2rem;
-    }
 }
 
 main{
@@ -106,27 +102,13 @@ main{
     position: absolute;
     width: 7.4rem;
     height: 1.1rem;
-    /*left: 14.6rem;*/
     right: 1.4rem;
     top: 3.1rem;
 }
 
-/*.hidden-toggle{
-    display: none;
-}*/
 .selection-menu{
     display: none
 }
-
-/*.sorting-menu-title{
-        display: none
-}
-#sorting-menu-btn{
-       display: none
-}
-.sorting-options{
-    display: none
-}*/
 
 .recap-infos{
     display: none;

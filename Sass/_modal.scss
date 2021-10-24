@@ -1,23 +1,23 @@
 .contact-modal{
     display: none;
     width: 100%;
-    height: 812px;
+    height: 50.75rem;
     position: absolute;
     top: 0;
     left: 0;
     background-color: $secondaryColor;
     z-index: 2;
     border-radius: $littleRadius;
-    padding-left: 17px;
-    padding-top: 20px;
+    padding-left: 1.06rem;
+    padding-top: 1.25rem;
     &__heading{
-        @include font(black, 46.87px, 36px, normal);
+        @include font(black, 2.88rem, 2.25rem, normal);
         text-align: left;
     }
     #modal-btn__close{
-        @include clickable-iconsTR(26.67px, 26.67px, inherit);
-        @include w-h(18.67px, 18.67px);
-        margin-right: 17px;
+        @include clickable-iconsTR(1.63rem, 1.63rem, inherit);
+        @include w-h(1.13rem, 1.13rem);
+        margin-right: 1.06rem;
         #close-btn-cross{
             width: 100%;
             height: 100%;
@@ -27,21 +27,21 @@
 #modal-form{
     height: 100%;
     width: 100%;
-    margin-top: 26px;
+    margin-top: 1.63rem;
     margin-right: 20px;
-    @include font(#312E2E, 31px, 24px, normal);
+    @include font(#312E2E, 1.94rem, 1.5rem, normal);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     label{
-        margin-bottom: 14px;
+        margin-bottom: .88rem;
     }
     input{
         width: 100%;
         height: 52px;
         border: none;
         border-radius: $littleRadius;
-        margin-bottom: 14px;
+        margin-bottom: .88rem;
     }
     fieldset{
         width: 100%;
@@ -50,11 +50,11 @@
         align-items: flex-start;
     }
     #message{
-        height: 184px;
+        height: 11.5rem;
     }
     #submitdata{
-        @include buttons(absolute, 716px, 50%);
-        @include w-h(170px, 35px);
+        @include buttons(absolute, 44.75rem, 50%);
+        @include w-h(10.63rem, 2.19rem);
         transform: translateX(-50%);
     }
 }
