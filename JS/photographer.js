@@ -1,17 +1,17 @@
-class PhotographerFactory{
-    constructor(type, props){
+class PhotographerFactory {
+    constructor(type, props) {
         this.type = type; //"card" ou "profile"
-        if(type === "card"){
+        if (type === "card") {
             return new Card(props);
         }
-        if(type === "profile"){
+        if (type === "profile") {
             return new Profile(props);
         }
     }
 }
 
-class Card{
-    constructor(props){
+class Card {
+    constructor(props) {
         this.portrait = props.portrait;
         this.name = props.name;
         this.city = props.city;
@@ -21,7 +21,8 @@ class Card{
         this.tags = props.tags;
         this.id = props.id;
     }
-    display(){
+
+    display() {
         const newArticle = document.createElement("article");
         newArticle.classList.add("card");
         newArticle.setAttribute("role", "article");
@@ -80,7 +81,7 @@ class Card{
         thirdSection.appendChild(thirdSectionList);
 
         //create tags
-        for (const tag of this.tags){
+        for (const tag of this.tags) {
             const liTag = document.createElement("li");
             liTag.classList.add("tags-links");
             thirdSectionList.appendChild(liTag);
@@ -90,8 +91,8 @@ class Card{
     }
 }
 
-class Profile{
-    constructor(props){
+class Profile {
+    constructor(props) {
         this.portrait = props.portrait;
         this.name = props.name;
         this.city = props.city;
@@ -102,22 +103,23 @@ class Profile{
         this.mainElement = document.querySelector("main");
         this.headerElement = document.querySelector("header");
     }
-    display(){
+
+    display() {
         const newArticle = document.createElement("article");
         newArticle.classList.add("profile");
 
-        //section with photographer infos
+        //section avec les infos du photographe
         const firstSection = document.createElement("section");
         firstSection.classList.add("profile-info");
-        /*name*/
+        /*nom*/
         const firstSectionH1 = document.createElement("h1");
         firstSectionH1.classList.add("profile-info__name");
         firstSectionH1.innerHTML = `${this.name}`;
-        /*city, country*/
+        /*ville, pays*/
         const locationParagraph = document.createElement("p");
         locationParagraph.classList.add("profile-info__location");
         locationParagraph.innerHTML = `${this.city}, ${this.country}`;
-        /*tagline*/
+        /*citation*/
         const quoteParagraph = document.createElement("p");
         quoteParagraph.classList.add("profile-info__quote");
         quoteParagraph.innerHTML = `${this.tagline}`;
@@ -126,13 +128,13 @@ class Profile{
         tagsSection.classList.add("profile-info__tags");
         const tagsSectionList = document.createElement("ul");
 
-        //contact button
+        //bouton de contact
         const contactBtn = document.createElement("button");
         contactBtn.classList.add("contact-btn");
         contactBtn.innerHTML = "Contactez-moi";
 
         //ouverture de la modale:
-        contactBtn.addEventListener('click', () => {
+        contactBtn.addEventListener("click", () => {
             const modal = new Modal(this.name);
             modal.display();
         });
@@ -158,7 +160,7 @@ class Profile{
         secondSection.appendChild(newDiv);
         newDiv.appendChild(newProfileImg);
         
-        for (const tag of this.tags){
+        for (const tag of this.tags) {
             const liTag = document.createElement("li");
             liTag.classList.add("tags-links");
             liTag.classList.add("profile-tags");

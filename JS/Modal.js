@@ -1,5 +1,5 @@
-class Modal{
-    constructor(photographerName){
+class Modal {
+    constructor(photographerName) {
         this.name = photographerName;
         this.modalContainer = document.querySelector(".contact-modal");
         this.modalHeading = document.querySelector(".contact-modal__heading");
@@ -12,7 +12,7 @@ class Modal{
         this.mainElement = document.querySelector("main");
     }
 
-    display(){
+    display() {
         this.modalHeading.innerHTML = `Contactez-moi </br> ${this.name}`;
         this.modalHeading.style.order = "-1";
         this.modalContainer.appendChild(this.modalHeading);
@@ -23,29 +23,29 @@ class Modal{
         this.validateform();
     }
 
-    captureFocus(){
-        this.submit.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Tab') {
-                event.preventDefault();
+    captureFocus() {
+        this.submit.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Tab") {
+                e.preventDefault();
                 this.closeModalBtn.focus();
             }
         });
     }
     
-    validateform(){
-        this.submit.addEventListener('click', () => {
+    validateform() {
+        this.submit.addEventListener("click", () => {
         this.submitData();
         });
-        this.submit.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Enter') {
+        this.submit.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Enter") {
                 this.submitData();
             }
         });
     }
 
-    submitData(){
+    submitData() {
         this.modalContainer.style.display = "none";
         console.log(this.firstName.value);
         console.log(this.lastName.value);

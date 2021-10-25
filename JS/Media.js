@@ -1,16 +1,16 @@
-class MediaFactory{
-    constructor(type, props){
-        if(type === "image"){
+class MediaFactory {
+    constructor(type, props) {
+        if(type === "image") {
             return new Image(props);
         }
-        if(type === "video"){
+        if(type === "video") {
             return new Video(props);
         }
     }
 }
 
-class Image{
-    constructor(props){
+class Image {
+    constructor(props) {
         this.id = props.id;
         this.url = props.url;
         this.title = props.title;
@@ -20,7 +20,8 @@ class Image{
         this.date = new Date(props.date);
         this.price = props.price
     }
-    display(){
+
+    display() {
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
         newImageArticle.setAttribute("tabindex", "0");
@@ -45,17 +46,17 @@ class Image{
         newImageLikes.classList.add("media-info__likes");
         newImageLikes.innerHTML = `${this.likes} `;
         
-        newImageLikes.addEventListener('click', (e)=> {
-            e.preventDefault();//pour que cela n'ouvre pas la lightbox
+        newImageLikes.addEventListener("click", (e) => {
+            e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
             newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
             this.totalLikesCounter();
         });
-        newImageLikes.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Enter') {
-                event.preventDefault();
-                event.stopPropagation();
+        newImageLikes.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Enter") {
+                e.preventDefault();
+                e.stopPropagation();
                 newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
                 this.totalLikesCounter();
                 newImageArticle.focus();
@@ -77,12 +78,13 @@ class Image{
 
         return newImageArticle;
     }
-    increment(likes){
+
+    increment(likes) {
         this.likes++
         return this.likes;
     }
 
-    totalLikesCounter(){
+    totalLikesCounter() {
         const totalLikes = document.querySelector(".recap-infos__likes");
         const mediasLikes = document.querySelectorAll(".media-info__likes");
         
@@ -94,8 +96,8 @@ class Image{
     }
 }
 
-class Video{
-    constructor(props){
+class Video {
+    constructor(props) {
         this.id = props.id;
         this.url = props.url;
         this.title = props.title;
@@ -105,7 +107,8 @@ class Video{
         this.date = new Date(props.date);
         this.price = props.price
     }
-    display(){
+
+    display() {
         const newVideoArticle = document.createElement("article");
         newVideoArticle.classList.add("media");
         newVideoArticle.setAttribute("tabindex", "0");
@@ -134,17 +137,17 @@ class Video{
         newVideoLikes.classList.add("media-info__likes");
         newVideoLikes.innerHTML = `${this.likes} `
 
-        newVideoLikes.addEventListener('click', (e)=> {
+        newVideoLikes.addEventListener("click", (e)=> {
             e.preventDefault();
             e.stopPropagation();
             newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
             this.totalLikesCounter();
         });
-        newVideoLikes.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Enter') {
-                event.preventDefault();
-                event.stopPropagation();
+        newVideoLikes.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Enter") {
+                e.preventDefault();
+                e.stopPropagation();
                 newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
                 this.totalLikesCounter();
                 newVideoArticle.focus();
@@ -168,14 +171,15 @@ class Video{
         
         return newVideoArticle;
     }
-    increment(likes){
+
+    increment(likes) {
         let numberOfLikes = likes;
         numberOfLikes++;
         this.likes = numberOfLikes;
         return this.likes;
     }
 
-    totalLikesCounter(){
+    totalLikesCounter() {
         const totalLikes = document.querySelector(".recap-infos__likes");
         const mediasLikes = document.querySelectorAll(".media-info__likes");
         

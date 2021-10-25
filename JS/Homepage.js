@@ -14,7 +14,7 @@ class Homepage{
     }
 
     async getPhotographers(){
-        const response = await fetch('./JS/photographers.json');
+        const response = await fetch("./JS/photographers.json");
         const obj = await response.json();
 
         if (!response.ok) {
@@ -36,14 +36,14 @@ class Homepage{
         });
     }
 
-    displayTags(){
+    displayTags() {
         this.tags = new Set(this.tags);
         
         const navigation = document.createElement("nav");
         navigation.setAttribute("role", "navigation");
         const navigationList = document.createElement("ul");
 
-        for(let tag of this.tags){
+        for (let tag of this.tags) {
             const tagContainer = document.createElement("li");
             tagContainer.setAttribute("tabindex", "0");
             tagContainer.classList.add("tag-filter");
@@ -51,12 +51,12 @@ class Homepage{
             tagContainer.innerHTML = `<span aria-hidden ="true">#</span>${tag}`;
             navigationList.appendChild(tagContainer);
 
-            tagContainer.addEventListener("click", () =>{
+            tagContainer.addEventListener("click", () => {
                 this.filter(tag);
             });
-            tagContainer.addEventListener('keydown', (event) => {
-                const keyName = event.key;
-                if (keyName === 'Enter') {
+            tagContainer.addEventListener("keydown", (e) => {
+                const keyName = e.key;
+                if (keyName === "Enter") {
                     this.filter(tag);                }
             });
 
@@ -65,12 +65,12 @@ class Homepage{
         this.headerElement.appendChild(navigation);
     }
 
-    filter(tag){
+    filter(tag) {
         let cards = document.querySelectorAll(".card");
     
-        for (let card of cards){
+        for (let card of cards) {
         card.style.display = "block";
-            if(!card.innerText.includes(tag)){
+            if (!card.innerText.includes(tag)) {
                 card.style.display = "none";
             }
         }

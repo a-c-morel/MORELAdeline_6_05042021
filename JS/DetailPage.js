@@ -1,5 +1,5 @@
-class Detail{
-    constructor(){
+class Detail {
+    constructor() {
         this.photographer = null;
         this.medias = [];
         this.headerElement = document.querySelector("header");
@@ -17,8 +17,8 @@ class Detail{
         this.sortingOptions = document.querySelector("#sorting-options");
     }
 
-    async getPhotographer(id){
-        const response = await fetch('./JS/photographers.json');
+    async getPhotographer(id) {
+        const response = await fetch("./JS/photographers.json");
         const obj = await response.json();
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
@@ -26,8 +26,8 @@ class Detail{
 
         const photographers = obj.photographers;
 
-        for (let photographer of photographers){
-            if(photographer.id == id){
+        for (let photographer of photographers) {
+            if (photographer.id == id) {
                 this.photographer = new PhotographerFactory("profile", {portrait: photographer.portrait, name: photographer.name, city: photographer.city, country: photographer.country, tagline: photographer.tagline, tags: photographer.tags, id: photographer.id});
                 this.price = photographer.price;
                 break;
@@ -35,21 +35,21 @@ class Detail{
         }
     }
 
-    displayPhotographer(){
+    displayPhotographer() {
         this.headerElement.appendChild(this.photographer.display());
     }
 
-    async getMedias(id){
-        const response = await fetch('./JS/photographers.json');
+    async getMedias(id) {
+        const response = await fetch("./JS/photographers.json");
         const obj = await response.json();
         if (!response.ok) {
             throw new Error(`Erreur HTTP ! statut : ${response.status}`);
         }
-        for (let media of obj.media){
-            if((media.image == undefined) && (media.photographerId == id)){
+        for (let media of obj.media) {
+            if ((media.image == undefined) && (media.photographerId == id)) {
                 let video = new MediaFactory("video", {id: media.id, url: media.video, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 this.medias.push(video);
-            }else if((media.video == undefined) && (media.photographerId == id)){
+            } else if((media.video == undefined) && (media.photographerId == id)) {
                 let image = new MediaFactory("image", {id: media.id, url: media.image, title: media.title, photographerId: media.photographerId, tags: media.tags, likes: media.likes, date: media.date, price: media.price});
                 this.medias.push(image);
             }
@@ -58,24 +58,24 @@ class Detail{
         this.lightbox = new LightboxFactory(this.medias, this.lightboxContainer);
     }
 
-    displayMedias(){
-        for(let media of this.medias){
+    displayMedias() {
+        for (let media of this.medias) {
             const mediasCreated = this.mediasContainer.appendChild(media.display());
-            mediasCreated.addEventListener('click', (e) => {
+            mediasCreated.addEventListener("click", (e) => {
                 e.preventDefault();
                 this.startLightbox(this.medias.indexOf(media));
             });
-            mediasCreated.addEventListener('keydown', (event) => {
-                const keyName = event.key;
-                if (keyName === 'Enter') {
-                    event.preventDefault();
+            mediasCreated.addEventListener("keydown", (e) => {
+                const keyName = e.key;
+                if (keyName === "Enter") {
+                    e.preventDefault();
                     this.startLightbox(this.medias.indexOf(media));
                 }
             });
         }
     }
 
-    displayFilter(){
+    displayFilter() {
         this.sortingOption0.innerHTML = this.popularityOption;
         this.sortingOption1.innerHTML = this.dateOption;
         this.sortingOption2.innerHTML = this.titleOption;
@@ -90,9 +90,9 @@ class Detail{
             this.sortingOption1.tabIndex = "0";
             this.sortingOption2.tabIndex = "0";
         });
-        this.sortingBtn.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Enter') {
+        this.sortingBtn.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Enter") {
                 this.expandMenu(this.sortingOptions, this.sortingBtn, this.chevron);
                 this.toggleAttribute(this.sortingBtn);
                 this.sortingOption1.tabIndex = "0";
@@ -100,7 +100,7 @@ class Detail{
             }
         });
 
-        this.sortingOptions.addEventListener('click', (e) => {
+        this.sortingOptions.addEventListener("click", (e) => {
             this.selectOption(e,
                 this.popularityOption,
                 this.sortingOption0,
@@ -109,10 +109,10 @@ class Detail{
                 this.sortingOption2,
                 this.titleOption);
         });
-        this.sortingOptions.addEventListener('keydown', (event) => {
-            const keyName = event.key;
-            if (keyName === 'Enter') {
-                this.selectOption(event,
+        this.sortingOptions.addEventListener("keydown", (e) => {
+            const keyName = e.key;
+            if (keyName === "Enter") {
+                this.selectOption(e,
                     this.popularityOption,
                     this.sortingOption0,
                     this.sortingOption1,
@@ -121,67 +121,71 @@ class Detail{
                     this.titleOption);
             }
         });
-        this.sortingOption1.addEventListener("focus", () =>{
+        this.sortingOption1.addEventListener("focus", () => {
             this.isAriaSelected(this.sortingOption1);
         });
-        this.sortingOption2.addEventListener("focus", () =>{
+        this.sortingOption2.addEventListener("focus", () => {
             this.isAriaSelected(this.sortingOption2);
         });
     }
 
-    expandMenu(sortingOptions, sortingBtn, chevron){
+    expandMenu(sortingOptions, sortingBtn, chevron) {
         sortingOptions.classList.toggle("options-showed");
         sortingBtn.classList.toggle("sorting-menu-expanded");
-        if(chevron.classList.contains("fa-chevron-up")){
+        
+        if (chevron.classList.contains("fa-chevron-up")) {
             chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
-        } else if(chevron.classList.contains("fa-chevron-down")){
+        } else if(chevron.classList.contains("fa-chevron-down")) {
             chevron.classList.replace("fa-chevron-down", "fa-chevron-up");
         }
     }
 
-    toggleAttribute(sortingBtn){
+    toggleAttribute(sortingBtn) {
         let ariaExpanded = sortingBtn.getAttribute("aria-expanded"); 
-        if (ariaExpanded == "true"){
+        
+        if (ariaExpanded == "true") {
             ariaExpanded = "false"
-        }else{
+        } else {
             ariaExpanded = "true"
         }
+
         sortingBtn.setAttribute("aria-expanded", ariaExpanded);
     }
 
-    isAriaSelected(sortingOption){
+    /* NE FONCTIONNE PAS !
+    isAriaSelected(sortingOption) {
         let ariaSelected = sortingOption.getAttribute("aria-selected");
         let ariaActiveDescendant = sortingOption.getAttribute("aria-activedescendant");
-        if((sortingOption.focus) && (ariaSelected == "false")){
+        if ((sortingOption.focus) && (ariaSelected == "false")) {
             ariaSelected = "true";
             ariaActiveDescendant = "true";
-        }else if ((!sortingOption.focus) && (ariaSelected == "true")){
+        } else if ((!sortingOption.focus) && (ariaSelected == "true")) {
             ariaSelected = "false";
             ariaActiveDescendant = "false";
-        }else{
+        } else {
             ariaSelected = "false";
             ariaActiveDescendant = "false";
         }
         sortingOption.setAttribute("aria-selected", ariaSelected);
         sortingOption.setAttribute("aria-activedescendant", ariaActiveDescendant);
-    }
+    }*/
 
-    selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption){
-        if(e.target.innerHTML === popularityOption){
+    selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption) {
+        if (e.target.innerHTML === popularityOption) {
             this.removeMedias();
             this.byPopularity();
             sortingOption0.innerHTML = popularityOption;
             sortingOption1.innerHTML = dateOption;
             sortingOption2.innerHTML = titleOption;
             this.displayMedias();
-        }else if(e.target.innerHTML === dateOption){
+        } else if (e.target.innerHTML === dateOption) {
             this.removeMedias();
             this.byDate();
             sortingOption0.innerHTML = dateOption;
             sortingOption1.innerHTML = titleOption;
             sortingOption2.innerHTML = popularityOption;
             this.displayMedias();
-        }else if(e.target.innerHTML === titleOption){
+        } else if (e.target.innerHTML === titleOption) {
             this.removeMedias();
             this.byTitle();
             sortingOption0.innerHTML = titleOption;
@@ -191,18 +195,18 @@ class Detail{
         }
     }
 
-    removeMedias(){
+    removeMedias() {
         const medias = document.querySelectorAll(".media");
-        for (let media of medias){
+        for (let media of medias) {
             this.mediasContainer.removeChild(media);
         }
     }
 
-    startLightbox(index){
+    startLightbox(index) {
         this.lightbox.start(index);
     }
 
-    totalLikesDefault(){
+    totalLikesDefault() {
         const totalLikes = document.querySelector(".recap-infos__likes");
         const mediasLikes = document.querySelectorAll(".media-info__likes");
         let arrayLikes = [];
@@ -213,31 +217,31 @@ class Detail{
         totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
     }
 
-    displayPrice(){
+    displayPrice() {
         const recapPrice = document.querySelector(".recap-infos__price");
         recapPrice.innerHTML = `${this.price}€ / jour`;
     }
 
-    byPopularity(){
-        this.medias.sort( (a, b) => {
+    byPopularity() {
+        this.medias.sort((a, b) => {
             return a.likes - b.likes;
         });
     }
 
-    byDate(){
-        this.medias.sort( (a, b) => {
+    byDate() {
+        this.medias.sort((a, b) => {
             return a.date - b.date;
         });
     }
 
-    byTitle(){
-        this.medias.sort( (a, b) => {
-            if (a.title < b.title){
+    byTitle() {
+        this.medias.sort((a, b) => {
+            if (a.title < b.title) {
                 return -1;
             }
-            if (a.title > b.title){
+            if (a.title > b.title) {
                 return 1;
-            }else{
+            } else {
                 return 0;
             }
         });

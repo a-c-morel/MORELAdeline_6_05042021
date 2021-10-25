@@ -1,4 +1,4 @@
-(async function createHomepage(){
+(async function createHomepage() {
 let myHomePage = new Homepage();
 myHomePage.heading();
 await myHomePage.getPhotographers();

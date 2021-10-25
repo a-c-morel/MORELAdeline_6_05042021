@@ -1,22 +1,22 @@
-class LightboxFactory{
-    constructor(medias, lightbox){
+class LightboxFactory {
+    constructor(medias, lightbox) {
         this.medias = medias;
         this.position = 0;
         this.element = null;
         this.lightbox = lightbox;
     }
 
-    createElem(){
+    createElem() {
         const lightboxTitle = document.createElement("p");
 
-        //si le média à cette position correspond à une instance de l'objet "Image" :
-            if(this.medias[this.position] instanceof Image){
+        //si le média à cette position correspond à une instance de l"objet "Image" :
+            if (this.medias[this.position] instanceof Image) {
                 this.element = document.createElement("img");
                 this.element.classList.add("lightbox-media__image");
                 this.element.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
                 this.element.setAttribute("alt", "");
-            }//sinon si le média à cette position correspond à une instance de l'objet "Video" :
-            else if(this.medias[this.position] instanceof Video){
+            } //sinon si le média à cette position correspond à une instance de l"objet "Video" :
+            else if (this.medias[this.position] instanceof Video) {
                 this.element = document.createElement("video");
                 const videoSource = document.createElement("source");
                 videoSource.setAttribute("src", `images/medias/${this.medias[this.position].url}`);
@@ -35,13 +35,13 @@ class LightboxFactory{
         this.lightbox.appendChild(lightboxTitle);
     }
 
-    clearMedia(){
+    clearMedia() {
         while (this.lightbox.firstChild) {
             this.lightbox.removeChild(this.lightbox.firstChild);
         }
     }
 
-    display(){
+    display() {
         const lightboxContainer = document.querySelector("#lightbox-modal");
         const lightboxCloseBtn = document.querySelector("#lightbox-btn__close");
         lightboxContainer.style.display = "flex";
@@ -49,30 +49,30 @@ class LightboxFactory{
         this.clearMedia();
     }
     
-    start(index = 0){
+    start (index = 0) {
         this.position = index;
         this.display();
         this.createElem();
     }
 
-    goPrev(){
-            if(this.position > 0){
-                this.position--;
-                
-            }else{
-                this.position = this.medias.length -1
-            }
-            this.clearMedia();
-            this.createElem();
+    goPrev() {
+        if (this.position > 0) {
+            this.position--;
+            
+        } else {
+            this.position = this.medias.length -1
+        }
+        this.clearMedia();
+        this.createElem();
     }
 
-    goNext(){
-            if(this.position < (this.medias).length-1){
-                this.position++;
-            }else{
-                this.position = 0;
-            }
-            this.clearMedia();
-            this.createElem();
+    goNext() {
+        if (this.position < (this.medias).length-1) {
+            this.position++;
+        } else {
+            this.position = 0;
+        }
+        this.clearMedia();
+        this.createElem();
     }
 }

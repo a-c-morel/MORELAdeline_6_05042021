@@ -181,6 +181,7 @@
         @include font(#312E2E, 2.94rem, 2rem, normal);
         #message{
             height: 10.63rem;
+            background-color: red;
         }
         #submitdata{
             @include buttons(absolute, 88.11%, 5.23%);
