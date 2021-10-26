@@ -25,6 +25,7 @@ class Image {
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
         newImageArticle.setAttribute("tabindex", "0");
+        newImageArticle.setAttribute("aria-label", `${this.title}`);
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
@@ -36,20 +37,26 @@ class Image {
         newImage. classList.add("media-preview__media");
         newImage.setAttribute("src", `images/medias/${this.url}`);
         newImage.setAttribute("alt", `${this.title}`);
-        newImage.setAttribute("aria-label", `${this.title}`);
 
         const newImageTitle = document.createElement("h2");
         newImageTitle.classList.add("media-info__title");
-        newImageTitle.innerHTML = `${this.title}`;
+        newImageTitle.textContent = `${this.title}`;
 
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
-        newImageLikes.innerHTML = `${this.likes} `;
+        newImageLikes.textContent = `${this.likes} `;
+
+        const heartImg = document.createElement("img");
+        heartImg.classList.add("heart-img");
+        heartImg.setAttribute("tabindex", "0");
+        heartImg.setAttribute("src", "images/icons/heart.png");
+        heartImg.setAttribute("alt", "likes");
         
         newImageLikes.addEventListener("click", (e) => {
             e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
+            newImageLikes.textContent = `${this.increment(this.likes)} `;
+            newImageLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
         newImageLikes.addEventListener("keydown", (e) => {
@@ -57,24 +64,19 @@ class Image {
             if (keyName === "Enter") {
                 e.preventDefault();
                 e.stopPropagation();
-                newImageLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
+                newImageLikes.textContent = `${this.increment(this.likes)} `;
+                newImageLikes.appendChild(heartImg);
                 this.totalLikesCounter();
                 newImageArticle.focus();
             }
         });
-
-        const newLikeIcon = document.createElement("i");
-        newLikeIcon.classList.add("fas");
-        newLikeIcon.classList.add("fa-heart");
-        newLikeIcon.setAttribute("aria-label", "likes");
-        newLikeIcon.setAttribute("tabindex", "0");
         
         newImageArticle.appendChild(newMediaSection);
         newImageArticle.appendChild(newInfoSection);
         newMediaSection.appendChild(newImage);
         newInfoSection.appendChild(newImageTitle);
         newInfoSection.appendChild(newImageLikes);
-        newImageLikes.appendChild(newLikeIcon);
+        newImageLikes.appendChild(heartImg);
 
         return newImageArticle;
     }
@@ -112,6 +114,7 @@ class Video {
         const newVideoArticle = document.createElement("article");
         newVideoArticle.classList.add("media");
         newVideoArticle.setAttribute("tabindex", "0");
+        newVideoArticle.setAttribute("aria-label", `${this.title}`);
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
@@ -135,12 +138,19 @@ class Video {
 
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
-        newVideoLikes.innerHTML = `${this.likes} `
+        newVideoLikes.textContent = `${this.likes} `;
 
-        newVideoLikes.addEventListener("click", (e)=> {
-            e.preventDefault();
+        const heartImg = document.createElement("img");
+        heartImg.classList.add("heart-img");
+        heartImg.setAttribute("tabindex", "0");
+        heartImg.setAttribute("src", "images/icons/heart.png");
+        heartImg.setAttribute("alt", "likes");
+        
+        newVideoLikes.addEventListener("click", (e) => {
+            e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
+            newVideoLikes.textContent = `${this.increment(this.likes)} `;
+            newVideoLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
         newVideoLikes.addEventListener("keydown", (e) => {
@@ -148,17 +158,12 @@ class Video {
             if (keyName === "Enter") {
                 e.preventDefault();
                 e.stopPropagation();
-                newVideoLikes.innerHTML = `${this.increment(this.likes)} <i class="fas fa-heart" aria-label="likes"></i>`;
+                newVideoLikes.textContent = `${this.increment(this.likes)} `;
+                newVideoLikes.appendChild(heartImg);
                 this.totalLikesCounter();
                 newVideoArticle.focus();
             }
         });
-
-        const newLikeIcon = document.createElement("i");
-        newLikeIcon.classList.add("fas");
-        newLikeIcon.classList.add("fa-heart");
-        newLikeIcon.setAttribute("aria-label", "likes");
-        newLikeIcon.setAttribute("tabindex", "0");
 
         newVideoArticle.appendChild(newMediaSection);
         newVideoArticle.appendChild(newInfoSection);
@@ -167,7 +172,7 @@ class Video {
         newVideo.appendChild(newDefaultText);
         newInfoSection.appendChild(newVideoTitle);
         newInfoSection.appendChild(newVideoLikes);
-        newVideoLikes.appendChild(newLikeIcon);
+        newVideoLikes.appendChild(heartImg);
         
         return newVideoArticle;
     }
