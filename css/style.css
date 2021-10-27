@@ -240,6 +240,11 @@
   text-align: left;
   cursor: pointer;
   user-select: none;
+  display: flex;
+  align-items: center;
+}
+.media .media-info .heart-img {
+  margin-left: 0.38rem;
 }
 
 #lightbox-modal {
@@ -805,7 +810,6 @@ main {
   }
   #modal-form #message {
     height: 10.63rem;
-    background-color: red;
   }
   #modal-form #submitdata {
     cursor: pointer;

@@ -25,7 +25,7 @@ class Image {
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
         newImageArticle.setAttribute("tabindex", "0");
-        newImageArticle.setAttribute("aria-label", `${this.title}`);
+        newImageArticle.setAttribute("aria-labelledby", `${this.id}`);
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
@@ -41,10 +41,11 @@ class Image {
         const newImageTitle = document.createElement("h2");
         newImageTitle.classList.add("media-info__title");
         newImageTitle.textContent = `${this.title}`;
+        newImageTitle.setAttribute("id", `${this.id}`);
 
         const newImageLikes = document.createElement("p");
         newImageLikes.classList.add("media-info__likes");
-        newImageLikes.textContent = `${this.likes} `;
+        newImageLikes.textContent = `${this.likes}`;
 
         const heartImg = document.createElement("img");
         heartImg.classList.add("heart-img");
@@ -55,7 +56,7 @@ class Image {
         newImageLikes.addEventListener("click", (e) => {
             e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newImageLikes.textContent = `${this.increment(this.likes)} `;
+            newImageLikes.textContent = `${this.increment(this.likes)}`;
             newImageLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
@@ -64,7 +65,7 @@ class Image {
             if (keyName === "Enter") {
                 e.preventDefault();
                 e.stopPropagation();
-                newImageLikes.textContent = `${this.increment(this.likes)} `;
+                newImageLikes.textContent = `${this.increment(this.likes)}`;
                 newImageLikes.appendChild(heartImg);
                 this.totalLikesCounter();
                 newImageArticle.focus();
@@ -138,7 +139,7 @@ class Video {
 
         const newVideoLikes = document.createElement("p");
         newVideoLikes.classList.add("media-info__likes");
-        newVideoLikes.textContent = `${this.likes} `;
+        newVideoLikes.textContent = `${this.likes}`;
 
         const heartImg = document.createElement("img");
         heartImg.classList.add("heart-img");
@@ -149,7 +150,7 @@ class Video {
         newVideoLikes.addEventListener("click", (e) => {
             e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newVideoLikes.textContent = `${this.increment(this.likes)} `;
+            newVideoLikes.textContent = `${this.increment(this.likes)}`;
             newVideoLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
@@ -158,7 +159,7 @@ class Video {
             if (keyName === "Enter") {
                 e.preventDefault();
                 e.stopPropagation();
-                newVideoLikes.textContent = `${this.increment(this.likes)} `;
+                newVideoLikes.textContent = `${this.increment(this.likes)}`;
                 newVideoLikes.appendChild(heartImg);
                 this.totalLikesCounter();
                 newVideoArticle.focus();
