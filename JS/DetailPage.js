@@ -6,6 +6,7 @@ class Detail {
         this.mainElement = document.querySelector("main");
         this.mediasContainer = document.querySelector("#medias-section");
         this.lightboxContainer = document.querySelector(".lightbox-media");
+        this.sortingMenuContainer = document.querySelector(".sorting-menu-container");
         this.sortingBtn = document.querySelector("#sorting-menu-btn");
         this.chevron = document.querySelector("#sorting-menu-chevron");
         this.popularityOption = "Popularité";
@@ -85,7 +86,7 @@ class Detail {
         this.sortingOption2.style.order = "3";
         
         this.sortingBtn.addEventListener("click", () => {
-            this.expandMenu(this.sortingOptions, this.sortingBtn, this.chevron);
+            this.expandMenu(this.sortingOptions, this.sortingMenuContainer, this.chevron);
             this.toggleAttribute(this.sortingBtn);
             this.sortingOption1.tabIndex = "0";
             this.sortingOption2.tabIndex = "0";
@@ -93,7 +94,7 @@ class Detail {
         this.sortingBtn.addEventListener("keydown", (e) => {
             const keyName = e.key;
             if (keyName === "Enter") {
-                this.expandMenu(this.sortingOptions, this.sortingBtn, this.chevron);
+                this.expandMenu(this.sortingOptions, this.sortingMenuContainer, this.chevron);
                 this.toggleAttribute(this.sortingBtn);
                 this.sortingOption1.tabIndex = "0";
                 this.sortingOption2.tabIndex = "0";
@@ -121,17 +122,11 @@ class Detail {
                     this.titleOption);
             }
         });
-        this.sortingOption1.addEventListener("focus", () => {
-            this.isAriaSelected(this.sortingOption1);
-        });
-        this.sortingOption2.addEventListener("focus", () => {
-            this.isAriaSelected(this.sortingOption2);
-        });
     }
 
-    expandMenu(sortingOptions, sortingBtn, chevron) {
+    expandMenu(sortingOptions, sortingMenuContainer, chevron) {
         sortingOptions.classList.toggle("options-showed");
-        sortingBtn.classList.toggle("sorting-menu-expanded");
+        sortingMenuContainer.classList.toggle("sorting-menu-expanded");
         
         if (chevron.classList.contains("fa-chevron-up")) {
             chevron.classList.replace("fa-chevron-up", "fa-chevron-down");
@@ -151,24 +146,6 @@ class Detail {
 
         sortingBtn.setAttribute("aria-expanded", ariaExpanded);
     }
-
-    /* NE FONCTIONNE PAS !
-    isAriaSelected(sortingOption) {
-        let ariaSelected = sortingOption.getAttribute("aria-selected");
-        let ariaActiveDescendant = sortingOption.getAttribute("aria-activedescendant");
-        if ((sortingOption.focus) && (ariaSelected == "false")) {
-            ariaSelected = "true";
-            ariaActiveDescendant = "true";
-        } else if ((!sortingOption.focus) && (ariaSelected == "true")) {
-            ariaSelected = "false";
-            ariaActiveDescendant = "false";
-        } else {
-            ariaSelected = "false";
-            ariaActiveDescendant = "false";
-        }
-        sortingOption.setAttribute("aria-selected", ariaSelected);
-        sortingOption.setAttribute("aria-activedescendant", ariaActiveDescendant);
-    }*/
 
     selectOption(e, popularityOption, sortingOption0, sortingOption1, dateOption, sortingOption2, titleOption) {
         if (e.target.innerHTML === popularityOption) {

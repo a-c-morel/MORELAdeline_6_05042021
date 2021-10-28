@@ -844,7 +844,7 @@ main {
     top: 29.13rem;
   }
 
-  .sorting-menu-btn {
+  .sorting-menu-container {
     background-color: #901C1C;
     font-family: "DM Sans", sans-serif;
     font-style: normal;
@@ -857,9 +857,19 @@ main {
     width: 10.63rem;
     height: 3.75rem;
     border: none;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     left: 13.6%;
     top: 29.13rem;
+    padding: 1.44rem 1.23rem;
+  }
+
+  .sorting-menu-btn ul {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .sorting-menu-expanded {
@@ -879,29 +889,28 @@ main {
   }
 
   #option0 {
-    position: absolute;
-    left: 1.25rem;
-    top: 1.44rem;
     cursor: pointer;
   }
 
+  .sorting-options {
+    text-align: left;
+  }
+  .sorting-options li {
+    margin-top: 0.88rem;
+    border-top: 1px solid #FFFFFF;
+    padding-top: 0.88rem;
+  }
+
   #option1 {
-    position: absolute;
-    left: 1.25rem;
-    top: 4.69rem;
     cursor: pointer;
   }
 
   #option2 {
-    position: absolute;
-    left: 1.25rem;
-    top: 7.94rem;
     cursor: pointer;
   }
 
   #sorting-menu-chevron {
     color: white;
-    position: absolute;
     top: 1.75rem;
     right: 1.13rem;
     cursor: pointer;
@@ -913,7 +922,6 @@ main {
 
   .options-showed {
     display: block;
-    position: relative;
   }
 }
 @media screen and (min-width: 1052px) {

@@ -18,13 +18,18 @@
     <!--Selection menu-->
     <section class="selection-menu">
       <p id="sorting-menu-title">Trier par :</p>
-      <ul tabindex = "0" id="sorting-menu-btn" class="sorting-menu-btn" role="button" aria-haspopup="listbox" aria-expanded="false">
-        <li id="option0"></li>
-        <li><i id="sorting-menu-chevron" class="fas fa-chevron-up"></i></li>
-        <li>
+      <ul class="sorting-menu-container">
+      <!-- role="button" non ajouté par choix, car non accepté par le validateur du W3C, mais demandé sur les maquettes Figma...-->
+        <li tabindex="0" id="sorting-menu-btn" class="sorting-menu-btn" aria-haspopup="listbox" aria-expanded="false">
+          <ul>
+            <li id="option0"></li>
+            <li><i id="sorting-menu-chevron" class="fas fa-chevron-up"></i></li>
+          </ul>
+        </li>
+        <li id="listbox-container">
           <ul id="sorting-options" class="sorting-options" role="listbox" aria-labelledby="sorting-menu-btn">
-            <li id="option1" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
-            <li id="option2" role="textbox" aria-activedescendant="false" aria-selected="false"></li>
+            <li id="option1"></li><!--aria-activedescendant="false" aria-selected="false" non accepté par validateur du W3C-->
+            <li id="option2"></li><!--idem-->
           </ul>
         </li>
       </ul>
@@ -33,7 +38,7 @@
   </main>
 
   <!--Lightbox-->
-  <aside  id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
+  <div  id="lightbox-modal" aria-label="image closeup view" role="dialog" aria-modal="true">
     <button tabindex="0" id="lightbox-btn__close">
       <i class="fas fa-times" title="Close dialog"></i>
       <span class="screenreader-text">Close dialog</span>
@@ -47,15 +52,15 @@
       <i class= "fas fa-chevron-right" title="Next image"></i>
       <span class="screenreader-text">Next image</span>
     </button>
-  </aside>
+  </div>
 
   <!--contact modal-->
-  <aside id="contact-modal" class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
+  <div id="contact-modal" class="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-heading" aria-describedby="contact-modal">
     <h1 id="contact-heading" class="contact-modal__heading"></h1>
     <button aria-label="Close Contact form" id="modal-btn__close">
       <img id="close-btn-cross" src="images/icons/Vector.svg" alt="">
     </button>
-    <form name="contact" id="modal-form" method="">
+    <form name="contact" id="modal-form" method="post">
       <fieldset>
         <legend aria-label="Vos coordonées" id="legend" class="sr-only">Vos coordonées</legend>
         <label aria-label="Prénom" for="first">Prénom</label>
@@ -71,15 +76,15 @@
       </fieldset>
       <button id="submitdata" class="btn-submit button" type="button">Envoyer</button>
     </form>
-  </aside>
+  </div>
 
   <!--summary of main infos for tablet and desktop-->
-  <aside class="recap-infos">
+  <div class="recap-infos">
     <p class="recap-infos__likes">
       <i class="fas fa-heart" id="total-likes__icon"></i>
     </p>
     <p class="recap-infos__price"></p>
-  </aside>
+  </div>
 
     <script src="JS/photographer.js"></script>
     <script src="JS/media.js"></script>

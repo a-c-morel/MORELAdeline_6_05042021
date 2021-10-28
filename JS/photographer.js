@@ -25,12 +25,10 @@ class Card {
     display() {
         const newArticle = document.createElement("article");
         newArticle.classList.add("card");
-        newArticle.setAttribute("role", "article");
 
         const firstSection = document.createElement("section");
         firstSection.classList.add("card-profile");
-        firstSection.setAttribute("role", "region");
-        firstSection.setAttribute("aria-labelledby", `${this.name}`);
+        firstSection.setAttribute("aria-labelledby", `${this.name.split(' ').join('_')}`);
 
         const secondSection = document.createElement("section");
         secondSection.classList.add("card-info");
@@ -50,7 +48,7 @@ class Card {
         newProfileImg.setAttribute("aria-label", `${this.name}`);
 
         const newProfileTitle = document.createElement("h2");
-        newProfileTitle.setAttribute("id", `${this.name}`);
+        newProfileTitle.setAttribute("id", `${this.name.split(' ').join('_')}`);
         newProfileTitle.classList.add("card-profile__name");
         newProfileTitle.innerHTML = `${this.name}`;
 

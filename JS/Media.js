@@ -25,7 +25,7 @@ class Image {
         const newImageArticle = document.createElement("article");
         newImageArticle.classList.add("media");
         newImageArticle.setAttribute("tabindex", "0");
-        newImageArticle.setAttribute("aria-labelledby", `${this.id}`);
+        newImageArticle.setAttribute("aria-label", `${this.title}`);
 
         const newMediaSection = document.createElement("section");
         newMediaSection.classList.add("media-preview");
@@ -36,7 +36,7 @@ class Image {
         const newImage = document.createElement("img");
         newImage. classList.add("media-preview__media");
         newImage.setAttribute("src", `images/medias/${this.url}`);
-        newImage.setAttribute("alt", `${this.title}`);
+        newImage.setAttribute("alt", `${this.title}, closeup view`);
 
         const newImageTitle = document.createElement("h2");
         newImageTitle.classList.add("media-info__title");
@@ -125,7 +125,7 @@ class Video {
 
         const newVideo = document.createElement("video");
         newVideo. classList.add("media-preview__media");
-        newVideo.setAttribute("alt", `${this.title}`);
+        newVideo.setAttribute("alt", `${this.title}, closeup view`);
 
         const newSource = document.createElement("source");
         newSource.setAttribute("src", `images/medias/${this.url}`);
