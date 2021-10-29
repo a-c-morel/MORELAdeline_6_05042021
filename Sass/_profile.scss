@@ -26,6 +26,8 @@
             ul{
                 justify-content: flex-start;
                 margin-bottom: 2.9rem;
+                display: flex;
+                gap: .31rem;
             }
         }
     }
@@ -57,4 +59,5 @@
     @include buttons(fixed, 1.87rem, 50%);
     @include w-h(10.63rem, 2.19rem);
     transform: translateX(-50%);
+    z-index: 2;
 }
