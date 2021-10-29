@@ -201,7 +201,7 @@ class Detail {
 
     byPopularity() {
         this.medias.sort((a, b) => {
-            return a.likes - b.likes;
+            return b.likes - a.likes;
         });
     }
 
