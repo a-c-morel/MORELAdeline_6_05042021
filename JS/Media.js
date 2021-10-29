@@ -95,7 +95,7 @@ class Image {
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        totalLikes.innerHTML = `${sum} <i class="fas fa-heart" id="total-likes__icon"></i>`;
+        totalLikes.innerHTML = `${sum} <span class="fas fa-heart" id="total-likes__icon"></span>`;
     }
 }
 
