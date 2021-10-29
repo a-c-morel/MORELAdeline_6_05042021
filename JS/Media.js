@@ -125,7 +125,7 @@ class Video {
 
         const newVideo = document.createElement("video");
         newVideo. classList.add("media-preview__media");
-        newVideo.setAttribute("alt", `${this.title}, closeup view`);
+        newVideo.setAttribute("aria-label", `${this.title}, closeup view`);
 
         const newSource = document.createElement("source");
         newSource.setAttribute("src", `images/medias/${this.url}`);
