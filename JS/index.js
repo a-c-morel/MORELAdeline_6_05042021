@@ -4,5 +4,4 @@ myHomePage.heading();
 await myHomePage.getPhotographers();
 myHomePage.displayPhotographers();
 myHomePage.displayTags();
-myHomePage.filterPhotographers();
 })();

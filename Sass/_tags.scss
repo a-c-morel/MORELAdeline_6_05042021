@@ -13,4 +13,8 @@
 .tag-filter{
     margin-top: 0.4rem;
     text-transform: capitalize;
+    &:hover{
+        background-color: $darkColor;
+        color: #ffff;
+    }
 }

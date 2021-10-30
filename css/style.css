@@ -108,6 +108,10 @@
   margin-top: 0.4rem;
   text-transform: capitalize;
 }
+.tag-filter:hover {
+  background-color: #901C1C;
+  color: #ffff;
+}
 
 .profile {
   display: flex;
