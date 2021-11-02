@@ -53,10 +53,18 @@ class Image {
         heartImg.setAttribute("src", "images/icons/heart.png");
         heartImg.setAttribute("alt", "likes");
         
+        let clicked = false;
         newImageLikes.addEventListener("click", (e) => {
             e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newImageLikes.textContent = `${this.increment(this.likes)}`;
+            if (!clicked) {
+                clicked = true;
+                this.likes++;
+            }else {
+                clicked = false;
+                this.likes--;
+            }
+            newImageLikes.textContent = `${this.likes}`;
             newImageLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
@@ -80,11 +88,6 @@ class Image {
         newImageLikes.appendChild(heartImg);
 
         return newImageArticle;
-    }
-
-    increment(likes) {
-        this.likes++
-        return this.likes;
     }
 
     totalLikesCounter() {
@@ -147,10 +150,18 @@ class Video {
         heartImg.setAttribute("src", "images/icons/heart.png");
         heartImg.setAttribute("alt", "likes");
         
+        let clicked = false;
         newVideoLikes.addEventListener("click", (e) => {
             e.preventDefault();//pour que cela n"ouvre pas la lightbox
             e.stopPropagation();
-            newVideoLikes.textContent = `${this.increment(this.likes)}`;
+            if (!clicked) {
+                clicked = true;
+                this.likes++;
+            }else {
+                clicked = false;
+                this.likes--;
+            }
+            newVideoLikes.textContent = `${this.likes}`;
             newVideoLikes.appendChild(heartImg);
             this.totalLikesCounter();
         });
@@ -193,6 +204,6 @@ class Video {
         mediasLikes.forEach(element => arrayLikes.push(parseInt(element.outerText)));
             
         const sum = arrayLikes.reduce((a, b) => a + b);
-        totalLikes.innerText = `${sum}`;
+        totalLikes.innerHTML = `${sum} <span class="fas fa-heart" id="total-likes__icon"></span>`;
     }
 }
