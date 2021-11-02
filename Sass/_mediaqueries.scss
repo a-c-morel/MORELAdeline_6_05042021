@@ -1,4 +1,217 @@
-@media screen and(min-width:700px){
+/*MOBILE*/
+
+//Dimensions : Galaxy Fold
+@media screen and(min-width:280px){
+    .logo {
+        width: 6.4rem;
+        height: auto;
+    }
+    header nav {
+        margin-right: 1.19rem;
+    }
+    .profile{
+        padding-left: 0; 
+        .tag-links, .profile-tags{
+            font-size: .6rem;
+        }
+    }
+    .profile .profile-info__name {
+        font-size: 1.1rem;
+    }
+    .profile-image {
+        position: absolute;
+        top: 2rem;
+        right: 0;
+    }
+    .profile-image div {
+        max-width: 4.25rem;
+        max-height: 4.25rem;
+    }
+    .profile-image div img {
+        width: 4.25rem;
+        height: 4.25rem;
+    }
+    .contact-btn {
+        top: 28.87rem;
+    }
+    .media{
+        height: auto;
+        width: 15.1rem;
+        overflow: hidden;
+        .media-preview{
+            &__media{
+            width: 15.1rem;
+            height: 11.88rem;
+            object-fit: cover;
+            cursor: pointer;
+            border-radius: $littleRadius;
+            }
+        }
+    }
+    #lightbox-btn__close {
+        top: 23%;
+    }
+    .lightbox-media {
+        top: 23%;
+        position: absolute;
+    }
+    #lightbox-btn__previous {
+        top: 37%;
+    }
+    #lightbox-btn__next {
+        top: 37%;
+    }
+}
+
+//Dimensions : iPhone 5 /SE
+@media screen and(min-width:320px){
+    header nav {
+        margin-right: 1.19rem;
+    }
+    .profile{
+        padding-left: 0; 
+        .tag-links, .profile-tags{
+            font-size: .6rem;
+        }
+    }
+    .profile .profile-info__name {
+        font-size: 1.5rem;
+    }
+    .profile-image {
+        position: absolute;
+        top: 2rem;
+        right: 11px;
+    }
+    .profile-image div {
+        max-width: 4.25rem;
+        max-height: 4.25rem;
+    }
+    .profile-image div img {
+        width: 4.25rem;
+        height: 4.25rem;
+    }
+    .media{
+        height: auto;
+        width: 17.5rem;
+        .media-preview{
+            &__media{
+            width: 17.5rem;
+            }
+        }
+    }
+}
+
+//Dimensions : Moto G4
+@media screen and(min-width:360px){
+    .profile-image {
+        position: absolute;
+        top: .46rem;
+        right: 11px;
+    }
+    .media{
+        width: 19.9rem;
+        overflow: hidden;
+        .media-preview{
+            &__media{
+            width: 19.9rem;
+            }
+        }
+    }
+}
+
+//Dimensions : iPhone 6 /7/8
+@media screen and(min-width:375px){
+    .logo{
+        width: 9.4rem;
+        height: 2.3rem;
+    }
+    .profile-image{
+        top: 1.46rem;
+        div{
+            max-width: 5.25rem;
+            max-height: 5.25rem;
+            img {
+            width: 5.25rem;
+            height: 5.25rem;
+            }
+        }
+    }
+    .media{
+        width: 21rem;
+        .media-preview{
+            &__media{
+            width: 21rem;
+            }
+        }
+    }
+}
+
+//Dimensions : iPhone X
+@media screen and(min-width:375px) and(min-height: 812px){
+    #lightbox-btn__close {
+        top: 16%;
+    }
+    .lightbox-media {
+        top: 16%;
+        position: absolute;
+    }
+    #lightbox-btn__previous {
+        top: 30%;
+    }
+    #lightbox-btn__next {
+        top: 30%;
+    }
+}
+
+
+//Dimensions : Pixel 2
+@media screen and(min-width:411px){
+    .profile{
+        padding-left: 0;
+        .profile-info__name {
+            font-size: 1.8rem;
+        }
+    }
+    #lightbox-btn__close {
+        top: 16%;
+    }
+    .lightbox-media {
+        top: 16%;
+        position: absolute;
+    }
+    #lightbox-btn__previous {
+        top: 32.2%;
+    }
+    #lightbox-btn__next {
+        top: 32.2%;
+    }
+    .media{
+        width: 23.2rem;
+        .media-preview{
+            &__media{
+            width: 23.2rem;
+            }
+        }
+    }
+}
+
+//Dimensions : Surface Duo
+@media screen and(min-width:540px){
+    .lightbox-media{
+        height: 87.89%;
+        &__image{
+            height: 50%;
+        }
+        &__video{
+            height: 50%;
+        }
+    }
+}
+
+/*TABLETTES*/
+
+//Dimensions : iPad
+@media screen and(min-width:768px){
     body{
         padding-left: 6.25rem;
         padding-right: 6.25rem;
@@ -10,8 +223,42 @@
             margin-bottom: 2.5rem;
         }
     }
+    .home-first-heading {
+        right: 6.5rem;
+    }
+    .profile{
+        padding-left: 0; 
+        .tag-links, .profile-tags{
+            font-size: .6rem;
+            padding: .05rem;
+        }
+        
+    .profile-tags{
+        padding-left: .3rem;
+        padding-right: .3rem;
+        @include font($darkColor, 1.44rem, 1.13rem, 500);
+    }
+    }
+    .profile-image{
+        div{
+            max-width: 6.25rem;
+            max-height: 6.25rem;
+            img{
+                width: 6.25rem;
+                height: 6.25rem;
+                max-width: 6.25rem;
+            }
+        }
+    }
     .lightbox-media{
         height: 87.89%;
+        top: 8%;
+        &__image{
+            height: 43%;
+        }
+        &__video{
+            height: 43%;
+        }
     }
     #lightbox-btn{
         &__close{
@@ -19,12 +266,20 @@
             @include font(inherit, 3rem, 3rem, normal);
         }
         &__previous{
-            @include clickable-iconsTL(49.2%, 6.9%, inherit);
+            @include clickable-iconsTL(27%, 6.9%, inherit);
             @include font(inherit, 3rem, 3rem, normal);
         }
         &__next{
-            @include clickable-iconsTR(49.2%, 6.9%, inherit);
+            @include clickable-iconsTR(27%, 6.9%, inherit);
             @include font(inherit, 3rem, 3rem, normal);
+        }
+    }
+    .media{
+        width: 20.9rem;
+        .media-preview{
+            &__media{
+            width: 20.9rem;
+            }
         }
     }
 }
@@ -43,7 +298,6 @@
         justify-content: flex-start;
         flex-wrap: wrap;
     }
-    
     .contact-modal{
         width: 46.46%;
         height: 50rem;
@@ -139,7 +393,25 @@
     }
 }
 
-@media screen and(min-width: 1025px){
+
+/*LAPTOPS, DESKTOPS*/
+
+//Dimensions : Nest Hub
+@media screen and(min-width: 1024px) and (min-width:600px){
+    .lightbox-media{
+        height: 113%;
+        top: 6%;
+        &__image{
+            height: 65%;
+        }
+        &__video{
+            height: 65%;
+        }
+    }
+}
+
+//Dimensions : iPad Pro
+@media screen and(min-width: 1024px) and (min-height: 1366px){
     .profile{
         background-color: $lightBG;
         width: 100%;
@@ -171,13 +443,6 @@
             }
         }
     }
-    .profile-tags{
-        padding: .05rem;
-        padding-left: .3rem;
-        padding-right: .3rem;
-        @include font($darkColor, 1.44rem, 1.13rem, 500);
-        cursor: pointer;
-    }
     .profile-image{
         div{
             max-width: 12.5rem;
@@ -195,12 +460,41 @@
         }
         
     }
-}
-
-@media screen and (min-width: 1052px){
+    .lightbox-media{
+        height: 65%;
+        top: 6%;
+        &__image{
+            height: 43%;
+        }
+        &__video{
+            height: 43%;
+        }
+    }
+    #lightbox-btn{
+        &__close{
+            @include clickable-iconsTR(5.5%, 6.26%, inherit);
+            @include font(inherit, 3rem, 3rem, normal);
+        }
+        &__previous{
+            @include clickable-iconsTL(18%, 6.9%, inherit);
+            @include font(inherit, 3rem, 3rem, normal);
+        }
+        &__next{
+            @include clickable-iconsTR(18%, 6.9%, inherit);
+            @include font(inherit, 3rem, 3rem, normal);
+        }
+    }
     header{
         nav{
-            left: 43%;
+            position: absolute;
+            left: 11.81rem;
+            width: 36.88rem;
+            max-width: unset;
+            transform: none;
+            margin-top: 7.13rem;
+            ul{
+                width: 100%;
+            }
         }
     }
     .home-main{
@@ -221,8 +515,14 @@
     }
 }
 
-@media screen and(min-width: 1259px){
+@media screen and(min-width: 1030px){
+    .contact-btn{
+        @include buttons(absolute, 57.8%, 65.3%);
+        @include w-h(10.63rem, 4.31rem);
+    }
+}
 
+@media screen and(min-width: 1266px){
     .selection-menu{
         display: block;
         margin-top: .56rem;
@@ -291,28 +591,5 @@
     }
     .options-showed{
         display: block;
-    }
-}
-
-@media screen and(min-width: 1280px){
-    .contact-btn{
-        @include buttons(absolute, 57.8%, 65.3%);
-        @include w-h(10.63rem, 4.31rem);
-    }
-}
-
-@media screen and(min-width: 1440px){
-    header{
-        nav{
-            position: absolute;
-            left: 22.81rem;
-            width: 36.88rem;
-            max-width: unset;
-            transform: none;
-            margin-top: 3.13rem;
-            ul{
-                width: 100%;
-            }
-        }
     }
 }
