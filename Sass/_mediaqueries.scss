@@ -6,9 +6,11 @@
         width: 6.4rem;
         height: auto;
     }
-    header nav {
-        margin-right: 1.19rem;
-        width: 16.8rem;
+    header{
+        nav {
+            margin-right: 1.19rem;
+            width: 16.8rem;
+        }
     }
     .profile{
         padding-left: 0; 
@@ -66,9 +68,6 @@
 
 //Dimensions : iPhone 5 /SE
 @media screen and(min-width:320px){
-    header nav {
-        margin-right: 1.19rem;
-    }
     .profile{
         padding-left: 0; 
         .tag-links, .profile-tags{
@@ -81,7 +80,7 @@
     .profile-image {
         position: absolute;
         top: 2rem;
-        right: 11px;
+        right: .69rem;
     }
     .profile-image div {
         max-width: 4.25rem;
@@ -92,7 +91,6 @@
         height: 4.25rem;
     }
     .media{
-        height: auto;
         width: 17.5rem;
         .media-preview{
             &__media{
@@ -107,7 +105,7 @@
     .profile-image {
         position: absolute;
         top: .46rem;
-        right: 11px;
+        right: .69rem;
     }
     .media{
         width: 19.9rem;
@@ -440,9 +438,11 @@
         @include buttons(absolute, 21.8%, 65.3%);
         @include w-h(10.63rem, 4.31rem);
     }
-    header nav {
-        left: 44%;
-        top: 98px;
+    header{
+        nav {
+            left: 44%;
+            top: 6.13rem;
+        }
     }
 }
 
@@ -529,7 +529,6 @@
 @media screen and(min-width: 1266px){
     header{
         nav{
-            position: absolute;
             left: 11.81rem;
             width: 36.88rem;
             max-width: unset;
@@ -613,21 +612,25 @@
 
 //Dimensions : Nest Hub Max
 @media screen and(min-width: 1280px){
-    header nav {
-        left: 16.81rem;
-        top: 0;
+    header{
+        nav {
+            left: 16.81rem;
+            top: 0;
+        }
     }
 }
 
 //Dimensions : maquette Figma
 @media screen and(min-width: 1440px){
-    header nav {
-        left: 20.81rem;
-        top: -68px;
+    header{
+        nav {
+            left: 20.81rem;
+            top: -68px;
+        }
     }
     .lightbox-media{
         &__title{
-            font-size: 24px;
+            font-size: 1.5rem;
         }
     }
 }
