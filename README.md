@@ -11,19 +11,19 @@ __Page__ __d'accueil__ __:__
 
 __Pages__ __des__ __photographes__ (une pour chaque photographe échantillon) :  
 * Affiche une galerie des travaux du photographe.
-* Les photographes peuvent montrer à la fois des photos et des vidéos.
+* Les photographes peuvent montrer à la fois des photos et des vidéos.  
 	`* Dans le cas des vidéos, une image miniature est présente dans la galerie.
-* Chaque média comprend un titre et un nombre de likes.
+* Chaque média comprend un titre et un nombre de likes.  
 	`* Lorsque l'utilisateur clique sur l'icône "Like", le nombre de likes affiché est incrémenté. (consignes de ma formation)
 	`* Lorsque l'utilisateur clique à nouveau sur l'icône "Like", le nombre de likes affiché est décrémenté. (ajout personnel pour que cela ressemble au comportement d'un bouton "like" sur n'importe quel site web)
 	`* Le nombre de likes total affiché en bas à droite d’une page de photographe corespond à la somme des likes de chacun de ses médias.
 * Les médias peuvent être triés par popularité, par date ou par titre.
-* Lorsque l'utilisateur clique sur un média, celui-ci s'ouvre dans une lightbox :
+* Lorsque l'utilisateur clique sur un média, celui-ci s'ouvre dans une lightbox :  
 	`* Lorsque la lightbox est affichée, il y a une croix dans le coin pour fermer la fenêtre. L'utilisateur peut également quitter la lightbox en pressant la touche Echap.
 	`* Des boutons de navigation permettent de passer d'un élément média à l'autre.
 	`* Les touches fléchées permettent également de naviguer entre les médias.
 * Affiche un bouton pour contacter le photographe.
-* Le formulaire de contact est une modale qui s'affiche par-dessus le reste.
+* Le formulaire de contact est une modale qui s'affiche par-dessus le reste.  
 	`* Il comprend des champs pour les noms, l'adresse électronique et le message.
 	`* Pour l'instant, le bouton de contact n'envoie pas de message au photographe, il va seulement afficher le contenu des trois champs dans les logs de la console.
 
