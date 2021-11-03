@@ -1,7 +1,13 @@
 # Fisheye
 
-FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
+FishEye est un site web fictif que j'ai été amenée à coder dans le cadre de ma formation OpenClassrooms.
 L'objectif était de construire un prototype fonctionnel de site web, pour lequel j'étais chargée de fournir tout le HTML, le CSS et le JavaScript.
+
+Les compétences sur lesquelles j'étais évaluées sont :
+* Développer une application web modulaire avec des design patterns
+* Assurer l'accessibilité d'un site web
+* Ecrire du code JavaScript maintenable
+* Gérer les évènements d'un site avec JavaScript
 
 __Page__ __d'accueil__ __:__ 
 * Liste de tous les photographes avec leur nom, leur slogan, leur localisation, leur prix/heure, leurs tags et une image miniature de leur choix.
