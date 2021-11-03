@@ -30,7 +30,7 @@ __Pages__ __des__ __photographes__ (une pour chaque photographe échantillon) :
 Un lecteur d'écran comme NVDA peut-être utilisé sur ce site afin de rendre accessible son utilisation.
 
 
-##titrePREREQUIS, INSTALLATION, DEPLOIEMENT :
+##PREREQUIS, INSTALLATION, DEPLOIEMENT :
 
 Les langages utilisés dans ce projet sont __JavaScript__, __HTML__, __CSS__ (compilé depuis du SASS, en format SCSS). Vous n'êtes pas obligé de connaître ces langages pour utiliser le site et ajouter des photographes ou des médias.
 
