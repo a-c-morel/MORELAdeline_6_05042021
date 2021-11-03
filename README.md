@@ -3,7 +3,7 @@
 FishEye est un site web qui permet aux photographes indépendants de présenter leurs meilleurs travaux.
 L'objectif était de construire un prototype fonctionnel de site web, pour lequel j'étais chargée de fournir tout le HTML, le CSS et le JavaScript.
 
-Page d'accueil :
+Page d'accueil : 
 ○ Liste de tous les photographes avec leur nom, leur slogan, leur localisation, leur prix/heure, leurs tags et une image miniature de leur choix.
 ○ En cliquant sur une étiquette (tag) dans la barre de navigation, la liste des photographes est filtrée pour n'afficher que ceux qui correspondent à cette
 étiquette.
