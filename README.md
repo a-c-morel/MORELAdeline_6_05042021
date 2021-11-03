@@ -30,22 +30,52 @@ Le formulaire de contact est une modale qui s'affiche par-dessus le reste.
 Un lecteur d'écran comme NVDA peut-être utilisé sur ce site afin de rendre accessible son utilisation.
 
 
-Prérequis, installation, déploiement :
+PREREQUIS, INSTALLATION, DEPLOIEMENT :
+
 Les langages utilisés dans ce projet sont JavaScript, HTML, CSS (compilé depuis du SASS, en format SCSS). Vous n'êtes pas obligé de connaître ces langages pour utiliser le site et ajouter des photographes ou des médias.
 
-Pour télécharger ce projet afin de l'avoir en local sur votre machine, voici la marche à suivre.
+A. Télécharger le projet en local
 
-1) Depuis le repository Github (https://github.com/a-c-morel/MORELAdeline_6_05042021), cliquez sur le bouton "Code", puis sur "Download Zip".
+Pour télécharger ce projet afin de l'avoir en local sur votre machine, voici la marche à suivre. (cela vous permettra d'afficher et modifier le projet en local uniquement. Si vous souhaitez réellement agir sur le projet, se référer aux étapes de la partie C "Cloner le projet et envoyer des modifications").
 
+Depuis le repository Github (https://github.com/a-c-morel/MORELAdeline_6_05042021), cliquez sur le bouton "Code", puis sur "Download Zip".
 Après avoir extrait les fichiers dans le dossier de votre choix, vous avez la possibilité :
-- d'afficher le projet en son état actuel, en ouvrant simplement le fichier index.html avec votre navigateur
-- d'ajouter des photographes et des médias en modifiant le fichier photographers.json, que vous trouverez dans le dossier JS, et en ajoutant vos médias dans le dossier images.
 
-Les photos de profil vont dans le dossier images/Photographers_ID_Photos
-Les médias vont dans le dossier images/medias
+- d'afficher le projet en son état actuel:
+	1) Rendez-vous sur https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb et ajoutez l'application à Chrome.
+	2) Lancez cette application, et cliquez sur CHOOSE FOLDER. Sélectionnez le dossier que vous avez extrait.
+	3) Cliquez sur le lien du Web Server URL qui ressemble à http://127.0.0.1:8887
+
+- d'ajouter des photographes et des médias en modifiant le fichier photographers.json, que vous trouverez dans le dossier JS, et en ajoutant vos médias dans le dossier images. (partie C de ce Readme).
+(vous pouvez ensuite afficher le site de la même façon qu'expliqué ci-dessus, en utilisant l'application Web Server for Chrome).
+
+
+B. Me proposer des modifications
+
+Si vous ne savez pas utiliser Git et Github, vous pouvez simplement m'envoyer les données et les médias que vous souhaitez ajouter, en m'envoyant un mail sur adelinemorel72@gmail.com
+Vous trouverez dans la partie D la manière de rédiger les informations pour que je puisse les ajouter moi-même au fichier json. Vous pouvez me les envoyer au format .txt par exemple.
+
+
+C. Cloner le projet et envoyer des modifications
+
+Pour cela, vous devrez connaître un minimum le fonctionnement de Git et Github.
+
+Pour réellement proposer vous-même des modifications sur mon projet, vous devrez procéder de cette façon :
+
+1) Depuis le repository Github, forkez le projet en cliquant sur Fork (en haut à droite).
+2) Vous allez ensuite créer un clone local de votre fork : rendez-vous sur votre fork, puis cliquez sur "Code" et copiez l'URL.
+3) Ouvrez la fenêtre de Terminal
+4) Tapez la commande [git clone] (sans les crochets), et collez l'URL copiée précédemment.
+5) Créez une branche et travaillez dessus en local
+6) Pushez votre branche sur votre fork
+7) Créez une pull request
+
+
+D. Procédure à suivre pour ajouter des photographes et des médias
+- Les photos de profil vont dans le dossier images/Photographers_ID_Photos
+- Les médias vont dans le dossier images/medias
 
 Attention ! Ne pas modifier la structure de ces dossiers, ne pas créer de sous-dossiers.
-
 
 Ensuite, il suffit d'ajouter le nouveau photographe ou média dans les données du fichier json, en suivant le même modèle que les autres photographes et médias inscrits dans le fichier.
 
