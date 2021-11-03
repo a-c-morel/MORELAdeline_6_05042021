@@ -257,9 +257,8 @@
 
 #lightbox-modal {
   display: none;
-  width: 100vw;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -571,6 +570,7 @@ main {
 
   header nav {
     margin-right: 1.19rem;
+    width: 16.8rem;
   }
 
   .profile {
@@ -714,6 +714,14 @@ main {
     width: 21rem;
   }
 }
+@media screen and (min-width: 768px) {
+  .profile {
+    background-color: #FAFAFA;
+  }
+  .profile .profile-info {
+    padding-left: 1rem;
+  }
+}
 @media screen and (min-width: 375px) and (min-height: 812px) {
   #lightbox-btn__close {
     top: 16%;
@@ -788,8 +796,33 @@ main {
     margin-bottom: 2.5rem;
   }
 
+  .home-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1.06rem;
+  }
+
+  .card {
+    width: 23rem;
+  }
+
   .home-first-heading {
     right: 6.5rem;
+  }
+
+  .home-first-heading {
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: #901C1C;
+    line-height: 2.94rem;
+    font-size: 2.25rem;
+    font-weight: normal;
+    width: 19.13rem;
+    height: 2.94rem;
+    right: 7.31rem;
+    top: 2.75rem;
   }
 
   .profile {
@@ -891,6 +924,10 @@ main {
   .home-header .logo {
     width: 12.5rem;
     height: 3.13rem;
+  }
+
+  .home-main {
+    padding-top: 7.06rem;
   }
 
   .detail-header {
@@ -1044,8 +1081,55 @@ main {
   .lightbox-media__video {
     height: 65%;
   }
+
+  .contact-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 21.8%;
+    left: 65.3%;
+    background-color: #901C1C;
+    border: none;
+    border-radius: 0.31rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    line-height: 1.44rem;
+    font-size: 1.13rem;
+    font-weight: normal;
+    width: 10.63rem;
+    height: 4.31rem;
+  }
+
+  header nav {
+    left: 44%;
+    top: 98px;
+  }
 }
 @media screen and (min-width: 1024px) and (min-height: 1366px) {
+  .contact-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 47.8%;
+    left: 60.3%;
+    background-color: #901C1C;
+    border: none;
+    border-radius: 0.31rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: "DM Sans", sans-serif;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    line-height: 1.44rem;
+    font-size: 1.13rem;
+    font-weight: normal;
+    width: 10.63rem;
+    height: 4.31rem;
+  }
+
   .profile {
     background-color: #FAFAFA;
     width: 100%;
@@ -1108,17 +1192,16 @@ main {
     object-fit: cover;
   }
 
-  .lightbox-media {
-    height: 65%;
-    top: 6%;
-  }
-  .lightbox-media__image {
-    height: 43%;
-  }
-  .lightbox-media__video {
-    height: 43%;
-  }
-
+  /*.lightbox-media{
+      height: 65%;
+      top: 6%;
+      &__image{
+          height: 43%;
+      }
+      &__video{
+          height: 43%;
+      }
+  }*/
   #lightbox-btn__close {
     position: absolute;
     cursor: pointer;
@@ -1161,7 +1244,8 @@ main {
     font-size: 3rem;
     font-weight: normal;
   }
-
+}
+@media screen and (min-width: 1266px) {
   header nav {
     position: absolute;
     left: 11.81rem;
@@ -1174,54 +1258,6 @@ main {
     width: 100%;
   }
 
-  .home-main {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-top: 7.06rem;
-  }
-
-  .card {
-    width: 23rem;
-  }
-
-  .home-first-heading {
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    text-align: center;
-    color: #901C1C;
-    line-height: 2.94rem;
-    font-size: 2.25rem;
-    font-weight: normal;
-    width: 19.13rem;
-    height: 2.94rem;
-    right: 7.31rem;
-    top: 2.75rem;
-  }
-}
-@media screen and (min-width: 1030px) {
-  .contact-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 57.8%;
-    left: 65.3%;
-    background-color: #901C1C;
-    border: none;
-    border-radius: 0.31rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-family: "DM Sans", sans-serif;
-    font-style: normal;
-    text-align: center;
-    color: white;
-    line-height: 1.44rem;
-    font-size: 1.13rem;
-    font-weight: normal;
-    width: 10.63rem;
-    height: 4.31rem;
-  }
-}
-@media screen and (min-width: 1266px) {
   .selection-menu {
     display: block;
     margin-top: 0.56rem;
@@ -1250,7 +1286,7 @@ main {
     flex-direction: column;
     position: absolute;
     left: 13.6%;
-    top: 29.13rem;
+    top: 20.13rem;
     padding: 1.44rem 1.23rem;
   }
 
@@ -1311,6 +1347,22 @@ main {
 
   .options-showed {
     display: block;
+  }
+}
+@media screen and (min-width: 1280px) {
+  header nav {
+    left: 16.81rem;
+    top: 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  header nav {
+    left: 20.81rem;
+    top: -68px;
+  }
+
+  .lightbox-media__title {
+    font-size: 24px;
   }
 }
 

@@ -8,6 +8,7 @@
     }
     header nav {
         margin-right: 1.19rem;
+        width: 16.8rem;
     }
     .profile{
         padding-left: 0; 
@@ -146,6 +147,15 @@
     }
 }
 
+@media screen and(min-width: 768px){
+    .profile{
+        background-color: $lightBG;
+        .profile-info {
+            padding-left: 1rem
+        }
+    }
+}
+
 //Dimensions : iPhone X
 @media screen and(min-width:375px) and(min-height: 812px){
     #lightbox-btn__close {
@@ -223,8 +233,24 @@
             margin-bottom: 2.5rem;
         }
     }
+    .home-main{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 1.06rem;
+    }
+    .card{
+        width: 23rem;
+    }
     .home-first-heading {
         right: 6.5rem;
+    }
+    .home-first-heading{
+        @include font($darkColor, 2.94rem, 2.25rem, normal);
+        width: 19.13rem;
+        height: 2.94rem;
+        right: 7.31rem;
+        top: 2.75rem;
     }
     .profile{
         padding-left: 0; 
@@ -232,7 +258,6 @@
             font-size: .6rem;
             padding: .05rem;
         }
-        
     .profile-tags{
         padding-left: .3rem;
         padding-right: .3rem;
@@ -293,6 +318,9 @@
             width: 12.5rem;
             height: 3.13rem;
         }
+    }
+    .home-main{
+        padding-top: 7.06rem;
     }
     .detail-header{
         justify-content: flex-start;
@@ -408,10 +436,22 @@
             height: 65%;
         }
     }
+    .contact-btn{
+        @include buttons(absolute, 21.8%, 65.3%);
+        @include w-h(10.63rem, 4.31rem);
+    }
+    header nav {
+        left: 44%;
+        top: 98px;
+    }
 }
 
 //Dimensions : iPad Pro
 @media screen and(min-width: 1024px) and (min-height: 1366px){
+    .contact-btn{
+        @include buttons(absolute, 47.8%, 60.3%);
+        @include w-h(10.63rem, 4.31rem);
+    }
     .profile{
         background-color: $lightBG;
         width: 100%;
@@ -460,7 +500,7 @@
         }
         
     }
-    .lightbox-media{
+    /*.lightbox-media{
         height: 65%;
         top: 6%;
         &__image{
@@ -469,7 +509,7 @@
         &__video{
             height: 43%;
         }
-    }
+    }*/
     #lightbox-btn{
         &__close{
             @include clickable-iconsTR(5.5%, 6.26%, inherit);
@@ -484,6 +524,9 @@
             @include font(inherit, 3rem, 3rem, normal);
         }
     }
+}
+
+@media screen and(min-width: 1266px){
     header{
         nav{
             position: absolute;
@@ -497,32 +540,6 @@
             }
         }
     }
-    .home-main{
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        padding-top: 7.06rem;
-    }
-    .card{
-        width: 23rem;
-    }
-    .home-first-heading{
-        @include font($darkColor, 2.94rem, 2.25rem, normal);
-        width: 19.13rem;
-        height: 2.94rem;
-        right: 7.31rem;
-        top: 2.75rem;
-    }
-}
-
-@media screen and(min-width: 1030px){
-    .contact-btn{
-        @include buttons(absolute, 57.8%, 65.3%);
-        @include w-h(10.63rem, 4.31rem);
-    }
-}
-
-@media screen and(min-width: 1266px){
     .selection-menu{
         display: block;
         margin-top: .56rem;
@@ -543,7 +560,7 @@
         flex-direction: column;
         position: absolute;
         left: 13.6%;
-        top: 29.13rem;
+        top: 20.13rem;
         padding: 1.44rem 1.23rem;
     }
     .sorting-menu-btn{
@@ -591,5 +608,26 @@
     }
     .options-showed{
         display: block;
+    }
+}
+
+//Dimensions : Nest Hub Max
+@media screen and(min-width: 1280px){
+    header nav {
+        left: 16.81rem;
+        top: 0;
+    }
+}
+
+//Dimensions : maquette Figma
+@media screen and(min-width: 1440px){
+    header nav {
+        left: 20.81rem;
+        top: -68px;
+    }
+    .lightbox-media{
+        &__title{
+            font-size: 24px;
+        }
     }
 }
